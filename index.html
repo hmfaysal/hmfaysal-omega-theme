@@ -1,0 +1,305 @@
+---
+layout: home
+title: Latest Posts
+description: "The personal blog of Hossain Mohd. Faysal, a doctoral candidate in Electrical Engineering at University of Pennsylvania."
+headline: An Engineer's Diary
+tags: [Hossain, Mohd, Faysal, electrical, engineering, blog, university, pennsylvania, doha, Qatar]
+---
+{% if site.paginate %}
+{% for post in paginator.posts limit:10 %}
+{% assign readtime = post.content | number_of_words | divided_by:200 %} 
+{% assign modifiedtime = post.modified | date: "%Y%m%d" %} 
+{% assign posttime = post.date | date: "%Y%m%d" %} 
+		{% if post.type == 'quote' %}
+		<div class="row">
+            <article class="post col-md-8 col-md-offset-2">
+            	<header class="post-header">
+                    <h2 class="post-title text-center super lighter">
+                        <a href="{{ site.url }}{{ post.url }}"><i class="icon-quote-left"></i> {{ post.excerpt | strip_html }}</a>
+                    </h2>
+                    <p class="light small text-center">
+                                Share this Quote
+                            </p>
+                            <ul class="social-mini text-center">
+                                <li>
+                                    <a href="https://twitter.com/intent/tweet?text=&quot;{{ post.title }}&quot;%20{{ site.url }}{{ post.url }}%20via%20&#64;{{ site.owner.twitter }}"
+                                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" data-toggle="tooltip" title="Share on Twitter">
+                                        <i class="icon-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a  href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ post.url }}"
+                                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" data-toggle="tooltip" title="Share on Facebook">
+                                        <i class="icon-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://plus.google.com/share?url={{ site.url }}{{ post.url }}"
+                                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" data-toggle="tooltip" title="Share on Google plus">
+                                        <i class="icon-google-plus"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                <div class="post-body bordered-bottom text-center">
+                    <a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="{{ post.description }}">
+                       <i class="icon-quote-left"></i> permalink
+                    </a>
+                </div>
+                </header>
+            </article>
+        </div>
+        {% endif %}
+        {% if post.type == 'status' %}
+        <div class="row">
+            <article class="post col-md-8 col-md-offset-2">
+               <header class="post-header">
+                    <h2 class="post-title text-center super lighter">
+                        <a href="{{ site.url }}{{ post.url }}" style="color: #c91b26"><i class="icon-retweet"></i> "{{ post.excerpt | strip_html }}"</a>
+                    </h2>
+
+
+
+                            <p class="light small text-center">
+                                Share this Status
+                            </p>
+                            <ul class="social-mini text-center">
+                                <li>
+                                    <a href="https://twitter.com/intent/tweet?text=&quot;{{ post.title }}&quot;%20{{ site.url }}{{ post.url }}%20via%20&#64;{{ site.owner.twitter }}"
+                                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" data-toggle="tooltip" title="Share on Twitter">
+                                        <i class="icon-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a  href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ post.url }}"
+                                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" data-toggle="tooltip" title="Share on Facebook">
+                                        <i class="icon-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://plus.google.com/share?url={{ site.url }}{{ post.url }}"
+                                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" data-toggle="tooltip" title="Share on Google plus">
+                                        <i class="icon-google-plus"></i>
+                                    </a>
+                                </li>
+                            </ul>
+
+
+                    <div class="post-info text-center small">
+                        Status posted @ <time datetime="{{ post.date | date_to_xmlschema }}" class="post-time">{{ post.date | date: "%d %b %Y" }}</time>{% if page.modified %}{% if modifiedtime != posttime %} and last modified on <time datetime="{{ post.modified | date: "%Y-%m-%d" }}" itemprop="dateModified">{{ post.modified | date: "%d %b %Y" }}</time>{% endif %}{% endif %}
+                         in <span class="post-tags"><a href="{{ site.url }}/categories/index.html#{{ post.categories | cgi_encode }}" data-toggle="tooltip" title="Other posts from the {{ post.categories }} category" rel="tag">{{ post.categories | join: ', ' | capitalize }}</a></span>&nbsp;<span class="post-tags">by {{ site.owner.name }}
+</span><div class="post-body bordered-bottom"></div>
+                    </div>
+                </header>
+                
+
+            </article>
+        </div>
+        {% endif %}
+        {% if post.type == null %}
+        <div class="row">
+            <article class="post tag-people tag-nature post col-md-8 col-md-offset-2">
+               <header class="post-header">
+                    {% if post.link %}
+                    <h2 class="post-title text-center super lighter">
+                        <a href="{{ site.url }}{{ post.url }}" style="color: #fff; background-color: #45ADA8; border-radius: 4px; padding: 10px"><i class="icon-link"></i> {{ post.title }}</a>
+                    {% else %}
+                    <h2 class="post-title text-center super lighter bordered-bottom">
+                        <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+                    {% endif %}
+                    </h2>
+                    <div class="post-info text-center small">
+                        <time datetime="{{ post.date | date_to_xmlschema }}" class="post-time">{{ post.date | date: "%d %b %Y" }}</time>{% if page.modified %}{% if modifiedtime != posttime %} and last modified on <time datetime="{{ post.modified | date: "%Y-%m-%d" }}" itemprop="dateModified">{{ post.modified | date: "%d %b %Y" }}</time>{% endif %}{% endif %}
+                         in <span class="post-tags"><a href="{{ site.url }}/categories/index.html#{{ post.categories | cgi_encode }}" data-toggle="tooltip" title="Other posts from the {{ post.categories }} category" rel="tag">{{ post.categories | join: ', ' | capitalize }}</a></span>{% if site.readtime %}&nbsp;<span class="post-tags"><i class="icon-time"></i>{% if readtime == 1 %}
+                    1 minute read
+                    {% endif %}
+                    {% if readtime > 1 %}
+                    {{ readtime }} minutes read
+                    {% endif %}
+                    {% if readtime == 0 %}
+                    Less than 1 minute read
+                    {% endif %}
+</span>{% endif %}
+                    </div>
+                </header>
+                <div class="post-body bordered-bottom">
+                {% assign excerptsize = post.excerpt | number_of_words %}
+                {% if excerptsize <= 100 and excerptsize >= 50 %}<p class = "lead">{{ post.excerpt | strip_html }}</p>&hellip;{% else %}
+                    <p>{{ post.content | strip_html | truncatewords:100 }}&hellip;</p>{% endif %}
+                    <a href="{{ site.url }}{{ post.url }}" {% if post.description %}data-toggle="tooltip" title="{{ post.description }}"{% endif %}>
+                        <i class="icon-link"></i> read more
+                    </a>
+                </div>
+
+            </article>
+        </div>
+
+{% endif %}      
+{% endfor %}  
+        
+    {% if paginator.total_pages != 1 %}  
+        <div class="row text-center text-caps">
+            <div class="col-md-8 col-md-offset-2">
+                <nav class="pagination" role="pagination">
+    
+    <span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+    {% if site.paginate_path != 'page:num'%}
+	{% assign paginate_url = site.paginate_path | remove:'/page:num' %}
+    {% if paginator.previous_page %}
+      {% if paginator.previous_page == 1 %}
+      <a class="newer-posts" href="{{ site.url }}/{{ paginate_url }}/" class="btn" title="Newer Posts">&larr; Newer Posts</a>
+      {% else %}
+     <a class="newer-posts" href="{{ site.url }}/{{ paginate_url }}/page{{ paginator.previous_page }}/" class="btn" title="Newer Posts">&larr; Newer Posts</a>
+      {% endif %}
+    {% endif %}
+    {% if paginator.next_page %} 
+    <a class="older-posts" href="{{ site.url }}/{{ paginate_url }}/page{{ paginator.next_page }}/" class="btn" title="Older Posts">Older Posts &rarr;</a>
+    {% endif %} 
+    {% else %}
+    {% if paginator.previous_page %}
+      {% if paginator.previous_page == 1 %}
+      <a class="newer-posts" href="{{ site.url }}/" class="btn" title="Newer Posts">&larr; Newer Posts</a>
+      {% else %}
+     <a class="newer-posts" href="{{ site.url }}/page{{ paginator.previous_page }}/" class="btn" title="Newer Posts">&larr; Newer Posts</a>
+      {% endif %}
+    {% endif %}
+    {% if paginator.next_page %} 
+    <a class="older-posts" href="{{ site.url }}/page{{ paginator.next_page }}/" class="btn" title="Older Posts">Older Posts &rarr;</a>
+    {% endif %}
+    {% endif %}
+    {% endif %}
+{% else %}
+{% for post in site.posts %}
+{% assign readtime = post.content | number_of_words | divided_by:200 %} 
+{% assign modifiedtime = post.modified | date: "%Y%m%d" %} 
+{% assign posttime = post.date | date: "%Y%m%d" %} 
+		{% if post.type == 'quote' %}
+		<div class="row">
+            <article class="post col-md-8 col-md-offset-2">
+            	<header class="post-header">
+                    <h2 class="post-title text-center super lighter">
+                        <a href="{{ site.url }}{{ post.url }}"><i class="icon-quote-left"></i> {{ post.excerpt | strip_html }}</a>
+                    </h2>
+                    <p class="light small text-center">
+                                Share this Quote
+                            </p>
+                            <ul class="social-mini text-center">
+                                <li>
+                                    <a href="https://twitter.com/intent/tweet?text=&quot;{{ post.title }}&quot;%20{{ site.url }}{{ post.url }}%20via%20&#64;{{ site.owner.twitter }}"
+                                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" data-toggle="tooltip" title="Share on Twitter">
+                                        <i class="icon-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a  href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ post.url }}"
+                                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" data-toggle="tooltip" title="Share on Facebook">
+                                        <i class="icon-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://plus.google.com/share?url={{ site.url }}{{ post.url }}"
+                                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" data-toggle="tooltip" title="Share on Google plus">
+                                        <i class="icon-google-plus"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                <div class="post-body bordered-bottom text-center">
+                    <a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="{{ post.description }}">
+                       <i class="icon-quote-left"></i> permalink
+                    </a>
+                </div>
+                </header>
+            </article>
+        </div>
+        {% endif %}
+        {% if post.type == 'status' %}
+        <div class="row">
+            <article class="post col-md-8 col-md-offset-2">
+               <header class="post-header">
+                    <h2 class="post-title text-center super lighter">
+                        <a href="{{ site.url }}{{ post.url }}" style="color: #c91b26"><i class="icon-retweet"></i> "{{ post.excerpt | strip_html }}"</a>
+                    </h2>
+
+
+
+                            <p class="light small text-center">
+                                Share this Status
+                            </p>
+                            <ul class="social-mini text-center">
+                                <li>
+                                    <a href="https://twitter.com/intent/tweet?text=&quot;{{ post.title }}&quot;%20{{ site.url }}{{ post.url }}%20via%20&#64;{{ site.owner.twitter }}"
+                                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" data-toggle="tooltip" title="Share on Twitter">
+                                        <i class="icon-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a  href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ post.url }}"
+                                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" data-toggle="tooltip" title="Share on Facebook">
+                                        <i class="icon-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://plus.google.com/share?url={{ site.url }}{{ post.url }}"
+                                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" data-toggle="tooltip" title="Share on Google plus">
+                                        <i class="icon-google-plus"></i>
+                                    </a>
+                                </li>
+                            </ul>
+
+
+                    <div class="post-info text-center small">
+                        Status posted @ <time datetime="{{ post.date | date_to_xmlschema }}" class="post-time">{{ post.date | date: "%d %b %Y" }}</time>{% if page.modified %}{% if modifiedtime != posttime %} and last modified on <time datetime="{{ post.modified | date: "%Y-%m-%d" }}" itemprop="dateModified">{{ post.modified | date: "%d %b %Y" }}</time>{% endif %}{% endif %}
+                         in <span class="post-tags"><a href="{{ site.url }}/categories/index.html#{{ post.categories | cgi_encode }}" data-toggle="tooltip" title="Other posts from the {{ post.categories }} category" rel="tag">{{ post.categories | join: ', ' | capitalize }}</a></span>&nbsp;<span class="post-tags">by {{ site.owner.name }}
+</span><div class="post-body bordered-bottom"></div>
+                    </div>
+                </header>
+                
+
+            </article>
+        </div>
+        {% endif %}
+        {% if post.type == null %}
+        <div class="row">
+            <article class="post tag-people tag-nature post col-md-8 col-md-offset-2">
+               <header class="post-header">
+                    {% if post.link %}
+                    <h2 class="post-title text-center super lighter">
+                        <a href="{{ site.url }}{{ post.url }}" style="color: #fff; background-color: #45ADA8; border-radius: 4px; padding: 10px"><i class="icon-link"></i> {{ post.title }}</a>
+                    {% else %}
+                    <h2 class="post-title text-center super lighter bordered-bottom">
+                        <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+                    {% endif %}
+                    </h2>
+                    <div class="post-info text-center small">
+                        <time datetime="{{ post.date | date_to_xmlschema }}" class="post-time">{{ post.date | date: "%d %b %Y" }}</time>{% if page.modified %}{% if modifiedtime != posttime %} and last modified on <time datetime="{{ post.modified | date: "%Y-%m-%d" }}" itemprop="dateModified">{{ post.modified | date: "%d %b %Y" }}</time>{% endif %}{% endif %}
+                         in <span class="post-tags"><a href="{{ site.url }}/categories/index.html#{{ post.categories | cgi_encode }}" data-toggle="tooltip" title="Other posts from the {{ post.categories }} category" rel="tag">{{ post.categories | join: ', ' | capitalize }}</a></span>{% if site.readtime %}&nbsp;<span class="post-tags"><i class="icon-time"></i>{% if readtime == 1 %}
+                    1 minute read
+                    {% endif %}
+                    {% if readtime > 1 %}
+                    {{ readtime }} minutes read
+                    {% endif %}
+                    {% if readtime == 0 %}
+                    Less than 1 minute read
+                    {% endif %}
+</span>{% endif %}
+                    </div>
+                </header>
+                <div class="post-body bordered-bottom">
+                {% assign excerptsize = post.excerpt | number_of_words %}
+                {% if excerptsize <= 100 and excerptsize >= 50 %}<p class = "lead">{{ post.excerpt | strip_html }}</p>&hellip;{% else %}
+                    <p>{{ post.content | strip_html | truncatewords:100 }}&hellip;</p>{% endif %}
+                    <a href="{{ site.url }}{{ post.url }}" {% if post.description %}data-toggle="tooltip" title="{{ post.description }}"{% endif %}>
+                        <i class="icon-link"></i> read more
+                    </a>
+                </div>
+
+            </article>
+        </div>
+        {% endif %}      
+{% endfor %}
+
+{% endif %}
+
+    
+</nav>
+</div>
+        </div>

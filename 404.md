@@ -1,0 +1,18 @@
+---
+layout: pageminimal
+title: "Page Not Found"
+description: "Page not found. Your pixels are in another canvas."
+image:
+  feature: sangeh-monkey-forest-10.jpg
+---  
+<figure>
+<img src="{{ site.url }}/images/hmfaysal-404.jpg" alt="{{ page.title }} at {{ site.title }}">
+</figure>
+<div class="text-center">
+<h1>I am sorry</h1>
+<p>The Adorable Monkey has eaten the page you are looking for,
+please try one of the links below instead</p>
+</div>
+<figure>
+<img src="{{ site.url }}/images/bg-arrow.png" alt="down-arrow">
+</figure>

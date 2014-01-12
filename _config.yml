@@ -1,0 +1,86 @@
+title:            HMFAYSAL
+description:      "Omega: The Coolest Theme for Jekyll"
+logo:             omikron.png
+disqus_shortname: hmfaysal
+# Assign a default image for your site's header and footer
+default_bg:       default_bg.jpg
+search:           true
+# Read Time is a calculator tp provide post read-time based on word count. Usage is recommended.
+readtime:         true
+# Turn on or off the fin animations in the header and footer
+animated_fins:	  true
+# Specify the fin color in RGB value
+fin_color:        "255,255,255"
+# Change url to your domain. Leave localhost server or blank when working locally.
+url:              http://hmfaysal.github.io/hmfaysal-omega-theme
+
+# Owner/author information
+owner:
+  name:           Hossain Mohd Faysal
+  avatar:         hmfaysal.jpg
+  email:          hmfaysal@alum.mit.edu
+  # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
+  description:    Hossain Mohammad Faysal is an Electrical Engineer and a Mathematician based in Doha, Qatar. His interests are anything that&#8217;s related to math, from math itself to programming languages to music to physics to engineering to philosophy.
+  # Social networking links used in footer. Update and remove as you like.
+  # To register at HMFAYSAL SOCIAL, visit http://social.hmfaysal.tk
+  twitter:        hmfaysal
+  facebook:       hmfaysal
+  github:         hmfaysal
+  stackexchange:  https://stackexchange.com/users/3402032/hossain-mohd-faysal
+  linkedin:       
+  instagram:      
+  flickr:         
+  tumblr:         
+  hmfaysalsocial: hmfaysal
+  # For Google Authorship https://plus.google.com/authorship
+  google_plus:    https://plus.google.com/u/0/102602916593522619858
+
+# Analytics and webmaster tools stuff goes here
+google_analytics:   UA-39365944-7
+google_verify:      
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify:         
+
+# Links to include in top navigation
+# For external links add external: true
+links:
+  - title: Home
+    url: /
+    external: false
+    icon: home
+  - title: <i class="icon-book"></i> Documentation
+    url: /documentation
+  - title: Categories
+    url: /categories
+  - title: Tags
+    url: /tags
+  - title: Faysal who?
+    url: /hossain-mohd-faysal
+
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:    America/New_York
+future:      true
+pygments:    true
+markdown:    kramdown
+paginate:    6
+paginate_path: "page:num"
+
+# https://github.com/mojombo/jekyll/wiki/Permalinks
+permalink:   /:categories/:title
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  use_coderay: false
+
+  coderay:
+    coderay_line_numbers: 
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: class
+
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Gemfile", "Capfile", "Gemfile.lock", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]

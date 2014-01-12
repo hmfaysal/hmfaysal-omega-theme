@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+{% include head.html %}
+</head>
+<body class="post-template tag-people tag-nature">
+    
+    
+
+{% include header.html %}
+
+
+<div id="main" class="content" role="main">
+    <div class="container">
+
+        <div class="row">
+            <article class="post col-md-8 col-md-offset-2">
+
+                    {% assign readtime = page.content | number_of_words | divided_by:200 %}
+                    {% assign modifiedtime = page.modified | date: "%Y%m%d" %} 
+                    {% assign posttime = page.date | date: "%Y%m%d" %}
+                    
+
+                    
+                    
+
+                    <header class="post-header">
+                        {% if page.link %}
+                        <h1 class="post-title text-center hyper lighter"><a href="{{ page.link }}" data-toggle="tooltip" title="Go to {{ page.link }}" style="color: #fff; background-color: #45ADA8; border-radius: 4px; padding: 10px">{{ page.title }} <span class="link-arrow">&rarr;</span></a></h1>
+                        {% else %}
+                        <h1 class="post-title text-center hyper lighter bordered-bottom">{{ page.title }}</h1>
+                        {% endif %}
+                        <div class="post-info text-center small">
+                            <time datetime="{{ page.date | date_to_xmlschema }}" class="post-time">{{ page.date | date: "%d %b %Y" }}</time>{% if page.modified %}{% if modifiedtime != posttime %} and last modified on <time datetime="{{ page.modified | date: "%Y-%m-%d" }}" itemprop="dateModified">{{ page.modified | date: "%d %b %Y" }}</time>{% endif %}{% endif %}
+                             in <span class="post-tags"><a href="{{ site.url }}/categories/index.html#{{ page.categories | cgi_encode }}" data-toggle="tooltip" title="Other posts from the {{ page.categories }} category" rel="tag">{{ page.categories | join: ', ' | capitalize }}</a></span>{% if site.readtime %}&nbsp;<span class="post-tags"><i class="icon-time"></i>{% if readtime == 1 %}
+                    1 minute read
+                    {% endif %}
+                    {% if readtime > 1 %}
+                    {{ readtime }} minutes read
+                    {% endif %}
+                    {% if readtime == 0 %}
+                    Less than 1 minute read
+                    {% endif %}
+</span>{% endif %}
+
+                        </div>
+                    </header>
+                    <div class="post-body bordered-bottom">
+                        {{ content }}
+<br>
+                    <p>{% if page.tags != empty %}<i class="icon-tags"></i> Tagged with {% for tag in page.tags %}<a href="{{ site.url }}/tags/index.html#{{ tag | cgi_encode }}" data-toggle="tooltip" title="Posts tagged with {{ tag }}" rel="tag">{{ tag }}</a>{% unless forloop.last %}&nbsp;&bull;&nbsp;{% endunless %}{% endfor %}</p>{% else %}{% endif %}</div>
+                    </div>
+
+                    <footer class="post-footer">
+
+                        <div class="post-share text-center">
+                            <p class="light small">
+                                Share this post
+                            </p>
+                            <ul class="social-mini">
+                                <li>
+                                    <a href="https://twitter.com/intent/tweet?text=&quot;{{ page.title }}&quot;%20{{ site.url }}{{ page.url }}%20via%20&#64;{{ site.owner.twitter }}"
+                                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" data-toggle="tooltip" title="Share on Twitter">
+                                        <i class="icon-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a  href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}"
+                                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" data-toggle="tooltip" title="Share on Facebook">
+                                        <i class="icon-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}"
+                                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" data-toggle="tooltip" title="Share on Google plus">
+                                        <i class="icon-google-plus"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        {% include signoff.html %} 
+                        {% if site.disqus_shortname and page.comments %}<div id="disqus_thread"></div><!-- /#disqus_thread -->{% endif %}
+
+                    </footer>
+
+                
+
+            </article>
+    </div>
+</div>
+{% include footer.html %}
+
+    
+{% include scripts.html %} 
+</body>
+</html>
