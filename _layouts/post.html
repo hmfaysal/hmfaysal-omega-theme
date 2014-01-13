@@ -11,8 +11,8 @@
             <article class="post col-md-8 col-md-offset-2 hentry" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
             {% assign ert = page.content | strip_html | number_of_words | divided_by:180 %}
             {% assign ertremainder = page.content | strip_html | number_of_words | modulo:180 %}
-                {% if ertremainder >= 90 %}
-            {% assign readtime = ert | plus:1 %}
+            {% if ertremainder >= 90 %}
+                {% assign readtime = ert | plus:1 %}
             {% else %}
                 {% assign readtime = ert %}
             {% endif %}
@@ -38,7 +38,7 @@
                     </p>
                     </span>
                     </div>
-                    </div>
+        </div>
                     <footer class="post-footer entry-meta">
                         {% if site.share %}{% include share.html %}{% endif %}
                         {% include signoff.html %} 

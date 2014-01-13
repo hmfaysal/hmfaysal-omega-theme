@@ -4,9 +4,6 @@
 {% include head.html %}
 </head>
 <body class="home-template" itemscope itemtype="http://schema.org/WebPage">
-    
-    
-
 {% include header.html %}
 <div id="main" class="content" role="main" itemprop="mainContentOfPage">
     <div class="container">
@@ -14,7 +11,13 @@
         <div class="row">
             <article class="page col-md-8 col-md-offset-2">
 
-                    {% assign readtime = page.content | number_of_words | divided_by:200 %}
+                {% assign ert = page.content | strip_html | number_of_words | divided_by:180 %}
+                {% assign ertremainder = page.content | strip_html | number_of_words | modulo:180 %}
+                    {% if ertremainder >= 90 %}
+                        {% assign readtime = ert | plus:1 %}
+                    {% else %}
+                        {% assign readtime = ert %}
+                    {% endif %}
                     <header class="post-header">
                         {% if page.link %}
                         <h1 class="post-title text-center hyper lighter"><a href="{{ page.link }}" data-toggle="tooltip" title="Go to {{ page.link }}" style="color: #fff; background-color: #45ADA8; border-radius: 4px; padding: 10px">{{ page.title }} <span class="link-arrow">&rarr;</span></a></h1>
