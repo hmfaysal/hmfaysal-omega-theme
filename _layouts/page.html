@@ -8,7 +8,7 @@
     
 
 {% include header.html %}
-<div id="main" class="content" role="main">
+<div id="main" class="content" role="main" itemprop="mainContentOfPage">
     <div class="container">
 
         <div class="row">
@@ -23,20 +23,10 @@
                         {% endif %}
                         <div class="post-info text-center small">
                             {% if page.modified %}Last modified on <time datetime="{{ page.modified | date: "%Y-%m-%d" }}" itemprop="dateModified">{{ page.modified | date: "%d %b %Y" }}</time>{% endif %}
-                             {% if site.readtime %}&nbsp;<span class="post-tags"><i class="icon-time"></i>{% if readtime == 1 %}
-                    1 minute read
-                    {% endif %}
-                    {% if readtime > 1 %}
-                    {{ readtime }} minutes read
-                    {% endif %}
-                    {% if readtime == 0 %}
-                    Less than 1 minute read
-                    {% endif %}
-</span>{% endif %}
-
+                            {% if site.readtime %}&nbsp;<span class="post-tags"><i class="icon-time"></i>{% if readtime == 1 %}1 minute read{% endif %}{% if readtime > 1 %}{{ readtime }} minutes read{% endif %}{% if readtime == 0 %}Less than 1 minute read{% endif %}</span>{% endif %}
                         </div>
                     </header>
-                    <div class="post-body">
+                    <div class="post-body" itemprop="description">
                         {{ content }}
                     </div>
                     </footer>

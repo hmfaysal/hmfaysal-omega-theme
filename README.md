@@ -66,6 +66,7 @@ disqus_shortname: shortname
 # Assign a default image for your site's header and footer
 default_bg:       some-image.jpg
 search:           true
+share:            true
 # Read Time is a calculator tp provide post read-time based on word count. Usage is recommended.
 readtime:         true
 # Turn on or off the fin animations in the header and footer
