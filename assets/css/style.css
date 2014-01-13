@@ -2587,7 +2587,7 @@ figure img {
 
 figure a img {
     filter: gray; /* IE6-9 */
-    -webkit-filter: grayscale(1); /* Google Chrome & Safari 6+ */
+    -webkit-filter: brightness(80%); /* Google Chrome & Safari 6+ */
     -webkit-transform: translate(0,0);
     -moz-transform: translate(0,0);
     -ms-transform: translate(0,0);
@@ -2600,7 +2600,7 @@ figure a img {
 
 figure a img:hover {
     filter: none;
-    -webkit-filter: none;
+    -webkit-filter: brightness(110%);
     -webkit-transform: translate(0,-5px);
     -moz-transform: translate(0,-5px);
     -ms-transform: translate(0,-5px);
