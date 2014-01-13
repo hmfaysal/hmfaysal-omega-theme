@@ -85,7 +85,7 @@ tags: [Hossain, Mohd, Faysal, electrical, engineering, blog, university, pennsyl
 
 
                     <div class="post-info text-center small">
-                        Status posted @ <time datetime="{{ post.date | date_to_xmlschema }}" class="post-time">{{ post.date | date: "%d %b %Y" }}</time>{% if page.modified %}{% if modifiedtime != posttime %} and last modified on <time datetime="{{ post.modified | date: "%Y-%m-%d" }}" itemprop="dateModified">{{ post.modified | date: "%d %b %Y" }}</time>{% endif %}{% endif %}
+                        Status posted @ <time datetime="{{ post.date | date_to_xmlschema }}" class="post-time">{{ post.date | date: "%d %b %Y" }}</time>{% if post.modified %}{% if modifiedtime != posttime %} and last modified on <time datetime="{{ post.modified | date: "%Y-%m-%d" }}" itemprop="dateModified">{{ post.modified | date: "%d %b %Y" }}</time>{% endif %}{% endif %}
                          in <span class="post-tags"><a href="{{ site.url }}/categories/index.html#{{ post.categories | cgi_encode }}" data-toggle="tooltip" title="Other posts from the {{ post.categories }} category" rel="tag">{{ post.categories | join: ', ' | capitalize }}</a></span>&nbsp;<span class="post-tags">by {{ site.owner.name }}
 </span><div class="post-body bordered-bottom"></div>
                     </div>
@@ -108,7 +108,7 @@ tags: [Hossain, Mohd, Faysal, electrical, engineering, blog, university, pennsyl
                     {% endif %}
                     </h2>
                     <div class="post-info text-center small">
-                        <time datetime="{{ post.date | date_to_xmlschema }}" class="post-time">{{ post.date | date: "%d %b %Y" }}</time>{% if page.modified %}{% if modifiedtime != posttime %} and last modified on <time datetime="{{ post.modified | date: "%Y-%m-%d" }}" itemprop="dateModified">{{ post.modified | date: "%d %b %Y" }}</time>{% endif %}{% endif %}
+                        <time datetime="{{ post.date | date_to_xmlschema }}" class="post-time">{{ post.date | date: "%d %b %Y" }}</time>{% if post.modified %}{% if modifiedtime != posttime %} and last modified on <time datetime="{{ post.modified | date: "%Y-%m-%d" }}" itemprop="dateModified">{{ post.modified | date: "%d %b %Y" }}</time>{% endif %}{% endif %}
                          in <span class="post-tags"><a href="{{ site.url }}/categories/index.html#{{ post.categories | cgi_encode }}" data-toggle="tooltip" title="Other posts from the {{ post.categories }} category" rel="tag">{{ post.categories | join: ', ' | capitalize }}</a></span>{% if site.readtime %}&nbsp;<span class="post-tags"><i class="icon-time"></i>{% if readtime == 1 %}
                     1 minute read
                     {% endif %}
