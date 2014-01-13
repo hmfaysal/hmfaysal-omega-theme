@@ -8,7 +8,7 @@
 <div id="main" class="content" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
     <div class="container">
         <div class="row">
-            <article class="post col-md-8 col-md-offset-2 hentry">
+            <article class="post col-md-8 col-md-offset-2 hentry" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
             {% assign ert = page.content | strip_html | number_of_words | divided_by:180 %}
             {% assign ertremainder = page.content | strip_html | number_of_words | modulo:180 %}
                 {% if ertremainder >= 90 %}
@@ -18,11 +18,11 @@
             {% endif %}
             {% assign modifiedtime = page.modified | date: "%Y%m%d" %} 
             {% assign posttime = page.date | date: "%Y%m%d" %} 
-                    <header class="post-header">
+                    <header class="post-header entry-header">
                         {% if page.link %}
-                        <h1 class="post-title text-center hyper lighter entry-title"><a href="{{ page.link }}" data-toggle="tooltip" title="Go to {{ page.link }}" style="color: #fff; background-color: #45ADA8; border-radius: 4px; padding: 10px">{{ page.title }} <span class="link-arrow">&rarr;</span></a></h1>
+                        <h1 class="post-title text-center hyper lighter entry-title" itemprop="headline"><a href="{{ page.link }}" data-toggle="tooltip" title="Go to {{ page.link }}" style="color: #fff; background-color: #45ADA8; border-radius: 4px; padding: 10px">{{ page.title }} <span class="link-arrow">&rarr;</span></a></h1>
                         {% else %}
-                        <h1 class="post-title text-center hyper lighter bordered-bottom entry-title">{{ page.title }}</h1>
+                        <h1 class="post-title text-center hyper lighter bordered-bottom entry-title" itemprop="headline">{{ page.title }}</h1>
                         {% endif %}
                         <div class="post-info text-center small">
                             {% if page.modified %}<span class="entry-date date published">{% else %}<span class="entry-date date published updated">{% endif %}<time datetime="{{ page.date | date_to_xmlschema }}" class="post-time" itemprop="datePublished">{{ page.date | date: "%d %b %Y" }}</time><span>{% if page.modified %}{% if modifiedtime != posttime %}Last modified on <span class="entry-date date updated"><time datetime="{{ page.modified | date: "%Y-%m-%d" }}" itemprop="dateModified">{{ page.modified | date: "%d %b %Y" }}</time></span>{% endif %}{% endif %}
@@ -32,7 +32,12 @@
                     <div class="post-body bordered-bottom" itemprop="description">
                         {{ content }}
                         <br>
-                    <p>{% if page.tags != empty %}<i class="icon-tags"></i> Tagged with {% for tag in page.tags %}<a href="{{ site.url }}/tags/index.html#{{ tag | cgi_encode }}" data-toggle="tooltip" title="Posts tagged with {{ tag }}" rel="tag">{{ tag }}</a>{% unless forloop.last %}&nbsp;&bull;&nbsp;{% endunless %}{% endfor %}</p>{% else %}{% endif %}</div>
+                    <span class="entry-tags">
+                    <p>
+                        <i class="icon-tags"></i>&nbsp;Tagged with {% for tag in page.tags %}<a href="{{ site.url }}/tags/index.html#{{ tag | cgi_encode }}" data-toggle="tooltip" title="Posts tagged with {{ tag }}" rel="tag">{{ tag }}</a>{% unless forloop.last %}&nbsp;&bull;&nbsp;{% endunless %}{% endfor %}
+                    </p>
+                    </span>
+                    </div>
                     </div>
                     <footer class="post-footer entry-meta">
                         {% if site.share %}{% include share.html %}{% endif %}
