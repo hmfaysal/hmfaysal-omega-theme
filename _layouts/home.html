@@ -74,7 +74,11 @@
 
 <div id="main" class="content" role="main" itemprop="mainContentOfPage">
     <div class="container">
-{{ content }}
+        <div class="row">
+            <div class="page-body" itemprop="description">
+            {{ content }}
+            </div>    
+        </div>
     </div>
 </div>
     {% include footer.html %}

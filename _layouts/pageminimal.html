@@ -7,13 +7,10 @@
 {% include header.html %}
 <div id="main" class="content" role="main" itemprop="mainContentOfPage">
     <div class="container">
-
         <div class="row">
-            <article class="page col-md-10 col-md-offset-1">
-                    <div class="post-body" itemprop="description">
-                        {{ content }}
-                    </div>    
-            </article>
+            <div class="page-body col-md-10 col-md-offset-1" itemprop="description">
+                {{ content }}
+            </div>    
         </div>
     </div>
 </div>

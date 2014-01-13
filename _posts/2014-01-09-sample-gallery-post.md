@@ -1,5 +1,6 @@
 ---
 layout: post
+type: photo
 title: "Sample Gallery Post"
 description: "Examples and code for displaying galleries in posts."
 category: photos
