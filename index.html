@@ -48,11 +48,11 @@ tags: [Hossain, Mohd, Faysal, electrical, engineering, blog, university, pennsyl
 	                    </ul>
 			            <div class="post-body bordered-bottom text-center">
 			                {% if post.description %}
-			                <a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="{{ post.description }}">
+			                <a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="{{ post.description }}" class="more-link">
 			                    <i class="icon-link"></i> permalink...
 			                </a>
 			                {% else %}
-			                <a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="Read more about {{ post.title }}">
+			                <a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="Read more about {{ post.title }}" class="more-link">
 			                    <i class="icon-link"></i> permalink...
 			                </a>
 			                {% endif %}
@@ -120,11 +120,11 @@ tags: [Hossain, Mohd, Faysal, electrical, engineering, blog, university, pennsyl
 	                <div class="post-body bordered-bottom">
 	                <p>{{ post.excerpt }}</p>
 	                    {% if post.description %}
-		                <a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="{{ post.description }}">
+		                <a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="{{ post.description }}" class="more-link">
 		                    <i class="icon-link"></i> see more...
 		                </a>
 		                {% else %}
-		                <a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="Read more about {{ post.title }}">
+		                <a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="Read more about {{ post.title }}" class="more-link">
 		                    <i class="icon-link"></i> see more...
 		                </a>
 		                {% endif %}
@@ -153,11 +153,11 @@ tags: [Hossain, Mohd, Faysal, electrical, engineering, blog, university, pennsyl
 	                <div class="post-body bordered-bottom">
 	                    <p>{{ post.content | strip_html | truncatewords:100 }}&hellip;</p>
 	                    {% if post.description %}
-		                <a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="{{ post.description }}">
+		                <a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="{{ post.description }}" class="more-link">
 		                    <i class="icon-link"></i> read more...
 		                </a>
 		                {% else %}
-		                <a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="Read more about {{ post.title }}">
+		                <a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="Read more about {{ post.title }}" class="more-link">
 		                    <i class="icon-link"></i> read more...
 		                </a>
 		                {% endif %}
@@ -187,11 +187,11 @@ tags: [Hossain, Mohd, Faysal, electrical, engineering, blog, university, pennsyl
 	                {% if excerptsize <= 100 and excerptsize >= 50 %}<p class = "lead">{{ post.excerpt | strip_html }}</p>&hellip;{% else %}
 	                    <p>{{ post.content | strip_html | truncatewords:100 }}&hellip;</p>{% endif %}
 	                    {% if post.description %}
-		                <a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="{{ post.description }}">
+		                <a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="{{ post.description }}" class="more-link">
 		                    <i class="icon-link"></i> read more...
 		                </a>
 		                {% else %}
-		                <a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="Read more about {{ post.title }}">
+		                <a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="Read more about {{ post.title }}" class="more-link">>
 		                    <i class="icon-link"></i> read more...
 		                </a>
 		                {% endif %}
@@ -277,11 +277,11 @@ tags: [Hossain, Mohd, Faysal, electrical, engineering, blog, university, pennsyl
 	                    </ul>
 			            <div class="post-body bordered-bottom text-center">
 			                {% if post.description %}
-			                <a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="{{ post.description }}">
+			                <a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="{{ post.description }}" class="more-link">
 			                    <i class="icon-link"></i> permalink...
 			                </a>
 			                {% else %}
-			                <a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="Read more about {{ post.title }}">
+			                <a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="Read more about {{ post.title }}" class="more-link">
 			                    <i class="icon-link"></i> permalink...
 			                </a>
 			                {% endif %}
@@ -349,11 +349,11 @@ tags: [Hossain, Mohd, Faysal, electrical, engineering, blog, university, pennsyl
 	                <div class="post-body bordered-bottom">
 	                <p>{{ post.excerpt }}</p>
 	                    {% if post.description %}
-		                <a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="{{ post.description }}">
+		                <a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="{{ post.description }}" class="more-link">
 		                    <i class="icon-link"></i> see more...
 		                </a>
 		                {% else %}
-		                <a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="Read more about {{ post.title }}">
+		                <a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="Read more about {{ post.title }}" class="more-link">
 		                    <i class="icon-link"></i> see more...
 		                </a>
 		                {% endif %}
@@ -382,11 +382,11 @@ tags: [Hossain, Mohd, Faysal, electrical, engineering, blog, university, pennsyl
 	                <div class="post-body bordered-bottom">
 	                    <p>{{ post.content | strip_html | truncatewords:100 }}&hellip;</p>
 	                    {% if post.description %}
-		                <a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="{{ post.description }}">
+		                <a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="{{ post.description }}" class="more-link">
 		                    <i class="icon-link"></i> read more...
 		                </a>
 		                {% else %}
-		                <a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="Read more about {{ post.title }}">
+		                <a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="Read more about {{ post.title }}" class="more-link">
 		                    <i class="icon-link"></i> read more...
 		                </a>
 		                {% endif %}
@@ -394,7 +394,7 @@ tags: [Hossain, Mohd, Faysal, electrical, engineering, blog, university, pennsyl
 	            </article>
 	        </div>
 	        {% endif %}
-	        {% if post.type != 'video' and post.type != 'status' and post.type != 'quote' %}
+	        {% if post.type != 'video' and post.type != 'status' and post.type != 'quote' and post.type != 'photo' %}
 	        <div class="row">
 	            <article class="post post col-md-8 col-md-offset-2">
 	               <header class="post-header">
@@ -416,11 +416,11 @@ tags: [Hossain, Mohd, Faysal, electrical, engineering, blog, university, pennsyl
 	                {% if excerptsize <= 100 and excerptsize >= 50 %}<p class = "lead">{{ post.excerpt | strip_html }}</p>&hellip;{% else %}
 	                    <p>{{ post.content | strip_html | truncatewords:100 }}&hellip;</p>{% endif %}
 	                    {% if post.description %}
-		                <a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="{{ post.description }}">
+		                <a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="{{ post.description }}" class="more-link">
 		                    <i class="icon-link"></i> read more...
 		                </a>
 		                {% else %}
-		                <a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="Read more about {{ post.title }}">
+		                <a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="Read more about {{ post.title }}" class="more-link">
 		                    <i class="icon-link"></i> read more...
 		                </a>
 		                {% endif %}
