@@ -23,6 +23,6 @@ This website was built with Jekyll and features the HMFAYSAL OMEGA Theme, the co
 <br>
 
 <div class="span7 text-center" markdown="0">
-<a markdown="0" href="{{ site.url }}/documentation/" class="btn btn-danger btn-large"><i class="icon-book"></i> Theme Documentation</a> <a markdown="0" href="http://alum.mit.edu/www/hmfaysal" class="btn btn-success btn-large"><i class="icon-edit"></i> HMFaysal's blog</a> <a markdown="0" href="http://social.hmfaysal.tk" class="btn btn-info btn-large"><i class="icon-bullseye"></i> HMFAYSAL's Social Network</a></div> 
+<a markdown="0" href="{{ site.url }}/documentation/" class="btn btn-danger btn-large"><i class="icon-book"></i> Theme Documentation</a> <a markdown="0" href="http://alum.mit.edu/www/hmfaysal" class="btn btn-success btn-large"><i class="icon-edit"></i> HMFaysal's blog</a> <a markdown="0" href="http://social.hmfaysal.tk" class="btn btn-info btn-large"><i class="icon-bullseye"></i> HMFAYSAL Social</a></div> 
 <br>
 <br>
