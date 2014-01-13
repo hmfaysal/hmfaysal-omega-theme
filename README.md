@@ -12,7 +12,7 @@ The theme features:
 * Twitter Bootstrap 3
 * Option to set featured image that wraps your post in header and footer
 * Custom Javascript to emphasize the first paragraph `p:first-child` of your post
-* Variable templates for articles, quotation and status updates
+* Variable templates for articles, quotation, video, photo and status updates (post types)
 * Display Equations via Native MathJax Support
 * Plugin-free/Github Pages Deployment Ready
 * Read time Calculator: Calculation of post read-time based on word count (Via Liquid Tags instead of a plugin)
@@ -188,6 +188,45 @@ category: personal
 tags: []
 image: 
   feature: some-image.jpg
+comments: true
+mathjax:
+---
+```
+
+A new video post should have the following structure to utilise the themes functions
+
+``` yaml
+---
+layout: post
+type:  video                # ! Important
+title: "Some Title"         # Title of the post
+description: Some description   # Description of the post, used for Facebook Opengraph & Twitter
+headline: Some headline       # Will appear in bold letters on top of the post
+modified: YYYY-MM-DD        # Date
+category: personal
+tags: []
+image: 
+  feature: some-image.jpg
+comments: true
+mathjax:
+---
+```
+
+A new photo post should have the following structure to utilise the themes functions. By default, the featured image is shown on the blog index, but if you want to display another photo, you can choose to do so :)
+
+``` yaml
+---
+layout: post
+type:  photo                # ! Important
+photo: some-image.jpg 		# In case you do not want the featured image to display on the front page
+title: "Some Title"         # Title of the post
+description: Some description   # Description of the post, used for Facebook Opengraph & Twitter
+headline: Some headline       # Will appear in bold letters on top of the post
+modified: YYYY-MM-DD        # Date
+category: personal
+tags: []
+image: 
+  feature: some-image2.jpg
 comments: true
 mathjax:
 ---

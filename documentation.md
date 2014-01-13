@@ -180,6 +180,45 @@ mathjax:
 ---
 {% endhighlight %}
 
+A new video post should have the following structure to utilise the themes functions
+
+{% highlight yaml %}
+---
+layout: post
+type:  video                # ! Important
+title: "Some Title"         # Title of the post
+description: Some description   # Description of the post, used for Facebook Opengraph & Twitter
+headline: Some headline       # Will appear in bold letters on top of the post
+modified: YYYY-MM-DD        # Date
+category: personal
+tags: []
+image: 
+  feature: some-image.jpg
+comments: true
+mathjax:
+---
+{% endhighlight %}
+
+A new photo post should have the following structure to utilise the themes functions. By default, the featured image is shown on the blog index, but if you want to display another photo, you can choose to do so :)
+
+{% highlight yaml %}
+---
+layout: post
+type:  photo                # ! Important
+photo: some-image.jpg     # In case you do not want the featured image to display on the front page
+title: "Some Title"         # Title of the post
+description: Some description   # Description of the post, used for Facebook Opengraph & Twitter
+headline: Some headline       # Will appear in bold letters on top of the post
+modified: YYYY-MM-DD        # Date
+category: personal
+tags: []
+image: 
+  feature: some-image2.jpg
+comments: true
+mathjax:
+---
+{% endhighlight %}
+
 ---
 
 ## Folder Structure
