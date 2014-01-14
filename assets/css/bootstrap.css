@@ -3491,7 +3491,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .pagination > li > a,
 .pagination > li > span {
   position: relative;
-  float: left;
+  float: center;
   padding: 6px 12px;
   line-height: 1.428571429;
   text-decoration: none;
@@ -3568,6 +3568,9 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .pagination-sm > li:last-child > span {
   border-bottom-right-radius: 3px;
   border-top-right-radius: 3px;
+}
+.pagination-centered {
+  text-align: center;
 }
 .pager {
   padding-left: 0;
