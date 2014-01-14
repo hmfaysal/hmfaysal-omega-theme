@@ -206,153 +206,339 @@ tags: [Hossain, Mohd, Faysal, electrical, engineering, blog, university, pennsyl
 	        </div>
 			{% endif %}      
 	{% endfor %}  
-	        
-	{% if paginator.total_pages != 1 %} 
-	{% if site.paginate_path != 'page:num'%}
-	{% assign paginate_url = site.paginate_path | remove:'page:num' %}
-	<div class="page-body col-md-12">
-	  <ul class="pagination pagination-centered">
-	    {% if paginator.total_pages >= 10 %} 
-	    {% if paginator.previous_page %}
-	        <li>
-	          <a href="{{ site.url }}/{{ paginate_url }}">&laquo;&laquo;</a>
-	        </li>
-	    {% else %}
-	      <li class="disabled">
-	        <a>&laquo;&laquo;</a>
-	      </li>
-	    {% endif %}
-	    {% endif %}
-	    {% if paginator.previous_page %}
-	      {% if paginator.previous_page == 1 %}
-	        <li>
-	          <a href="{{ site.url }}/{{ paginate_url }}">&laquo;</a>
-	        </li>
-	      {% else %}
-	        <li>
-	          <a href="{{ site.url }}/{{ paginate_url }}page{{paginator.previous_page}}">&laquo;</a>
-	        </li>
-	      {% endif %}
-	    {% else %}
-	      <li class="disabled">
-	        <a>&laquo;</a>
-	      </li>
-	    {% endif %}
-	    {% if paginator.page == 1 %}
-	      <li class="active">
-	        <a>1</a>
-	      </li>
-	    {% else %}
-	      <li>
-	        <a href="{{ site.url }}/{{ paginate_url }}">1</a>
-	      </li>
-	    {% endif %}
-	    {% for count in (2..paginator.total_pages) %}
-	      {% if count == paginator.page %}
-	        <li class="active">
-	          <a>{{count}}</a>
-	        </li>
-	      {% else %}
-	        <li>
-	          <a href="{{ site.url }}/{{ paginate_url }}page{{count}}">{{count}}</a>
-	        </li>
-	      {% endif %}
-	    {% endfor %}
-	    {% if paginator.next_page %}
-	      <li>
-	        <a href="{{ site.url }}/{{ paginate_url }}page{{paginator.next_page}}">&raquo;</a>
-	      </li>
-	    {% else %}
-	      <li class="disabled">
-	        <a>&raquo;</a>
-	      </li>
-	    {% endif %}
-	    {% if paginator.total_pages >= 10 %} 
-	    {% if paginator.next_page %}
-	      <li>
-	        <a href="{{ site.url }}/{{ paginate_url }}page{{paginator.total_pages}}">&raquo;&raquo;</a>
-	      </li>
-	    {% else %}
-	      <li class="disabled">
-	        <a>&raquo;&raquo;</a>
-	      </li>
-	    {% endif %}
-	    {% endif %}
-	  </ul>
-	</div>
-	{% else %}
-	<div class="page-body col-md-12">
-	  <ul class="pagination pagination-centered">
-	    {% if paginator.total_pages >= 10 %} 
-	    {% if paginator.previous_page %}
-	        <li>
-	          <a href="{{ site.url }}/">&laquo;&laquo;</a>
-	        </li>
-	    {% else %}
-	      <li class="disabled">
-	        <a>&laquo;&laquo;</a>
-	      </li>
-	    {% endif %}
-	    {% endif %}
-	    {% if paginator.previous_page %}
-	      {% if paginator.previous_page == 1 %}
-	        <li>
-	          <a href="{{ site.url }}/">&laquo;</a>
-	        </li>
-	      {% else %}
-	        <li>
-	          <a href="{{ site.url }}/page{{paginator.previous_page}}">&laquo;</a>
-	        </li>
-	      {% endif %}
-	    {% else %}
-	      <li class="disabled">
-	        <a>&laquo;</a>
-	      </li>
-	    {% endif %}
-	    {% if paginator.page == 1 %}
-	      <li class="active">
-	        <a>1</a>
-	      </li>
-	    {% else %}
-	      <li>
-	        <a href="{{ site.url }}/">1</a>
-	      </li>
-	    {% endif %}
-	    {% for count in (2..paginator.total_pages) %}
-	      {% if count == paginator.page %}
-	        <li class="active">
-	          <a>{{count}}</a>
-	        </li>
-	      {% else %}
-	        <li>
-	          <a href="{{ site.url }}/page{{count}}">{{count}}</a>
-	        </li>
-	      {% endif %}
-	    {% endfor %}
-	    {% if paginator.next_page %}
-	      <li>
-	        <a href="{{ site.url }}/page{{paginator.next_page}}">&raquo;</a>
-	      </li>
-	    {% else %}
-	      <li class="disabled">
-	        <a>&raquo;</a>
-	      </li>
-	    {% endif %}
-	    {% if paginator.total_pages >= 10 %} 
-	    {% if paginator.next_page %}
-	      <li>
-	        <a href="{{ site.url }}/page{{paginator.total_pages}}">&raquo;&raquo;</a>
-	      </li>
-	    {% else %}
-	      <li class="disabled">
-	        <a>&raquo;&raquo;</a>
-	      </li>
-	    {% endif %}
-	    {% endif %}
-	  </ul>
-	</div>
+
+{% if paginator.total_pages != 1 %}         
+  {% if site.paginate_path != 'page:num'%}
+    {% assign paginate_url = site.paginate_path | remove:'page:num' %}
+      {% if paginator.total_pages < 7 %}
+              <div class="page-body col-md-12">
+                <ul class="pagination pagination-centered">
+                  {% if paginator.total_pages >= 10 %} 
+                  {% if paginator.previous_page %}
+                      <li>
+                        <a href="{{ site.url }}/{{ paginate_url }}">&laquo;&laquo;</a>
+                      </li>
+                  {% else %}
+                    <li class="disabled">
+                      <a>&laquo;&laquo;</a>
+                    </li>
+                  {% endif %}
+                  {% endif %}
+                  {% if paginator.previous_page %}
+                    {% if paginator.previous_page == 1 %}
+                      <li>
+                        <a href="{{ site.url }}/{{ paginate_url }}">&laquo;</a>
+                      </li>
+                    {% else %}
+                      <li>
+                        <a href="{{ site.url }}/{{ paginate_url }}page{{paginator.previous_page}}">&laquo;</a>
+                      </li>
+                    {% endif %}
+                  {% else %}
+                    <li class="disabled">
+                      <a>&laquo;</a>
+                    </li>
+                  {% endif %}
+                  {% if paginator.page == 1 %}
+                    <li class="active">
+                      <a>1</a>
+                    </li>
+                  {% else %}
+                    <li>
+                      <a href="{{ site.url }}/{{ paginate_url }}">1</a>
+                    </li>
+                  {% endif %}
+                  {% for count in (2..paginator.total_pages) %}
+                    {% if count == paginator.page %}
+                      <li class="active">
+                        <a>{{count}}</a>
+                      </li>
+                    {% else %}
+                      <li>
+                        <a href="{{ site.url }}/{{ paginate_url }}page{{count}}">{{count}}</a>
+                      </li>
+                    {% endif %}
+                  {% endfor %}
+                  {% if paginator.next_page %}
+                    <li>
+                      <a href="{{ site.url }}/{{ paginate_url }}page{{paginator.next_page}}">&raquo;</a>
+                    </li>
+                  {% else %}
+                    <li class="disabled">
+                      <a>&raquo;</a>
+                    </li>
+                  {% endif %}
+                  {% if paginator.total_pages >= 10 %} 
+                  {% if paginator.next_page %}
+                    <li>
+                      <a href="{{ site.url }}/{{ paginate_url }}page{{paginator.total_pages}}">&raquo;&raquo;</a>
+                    </li>
+                  {% else %}
+                    <li class="disabled">
+                      <a>&raquo;&raquo;</a>
+                    </li>
+                  {% endif %}
+                  {% endif %}
+                </ul>
+              </div>
+      {% else %}
+
+      {% assign page_start = paginator.page | minus: 2 %}
+      {% assign page_end = paginator.page | plus: 2 %}
+      {% if page_end > paginator.total_pages %}
+      {% assign page_end = paginator.total_pages %}
+      {% assign page_start = paginator.page | minus: 4 %}
+      {% endif %}
+      {% if page_start < 2 %}
+      {% assign page_end = paginator.page | plus: 3 %}
+      {% assign page_start = paginator.page | minus: 1 %}
+      {% endif %}
+      {% if page_start == 0 %}
+      {% assign page_end = paginator.page | plus: 4 %}
+      {% assign page_start = paginator.page %}
+      {% endif %}
+       
+      <div class="page-body col-md-12">
+        <ul class="pagination pagination-centered">
+          {% if paginator.total_pages > 5 %} 
+          {% if paginator.previous_page %}
+              <li>
+                <a href="{{ site.url }}/{{ paginate_url }}">&laquo;&laquo;</a>
+              </li>
+          {% else %}
+            <li class="disabled">
+              <a>&laquo;&laquo;</a>
+            </li>
+          {% endif %}
+          {% endif %}
+          {% if paginator.previous_page %}
+            {% if paginator.previous_page == 1 %}
+              <li>
+                <a href="{{ site.url }}/{{ paginate_url }}">&laquo;</a>
+              </li>
+            {% else %}
+              <li>
+                <a href="{{ site.url }}/{{ paginate_url }}page{{paginator.previous_page}}">&laquo;</a>
+              </li>
+            {% endif %}
+          {% else %}
+            <li class="disabled">
+              <a href="#">&laquo;</a>
+            </li>
+          {% endif %}
+          {% if page_start == 1 %}
+        {% assign page_end = paginator.page | plus: 4 %}
+        {% assign page_start = 2 %}
+          {% if paginator.page == 1 %}
+            <li class="active">
+              <a>1</a>
+            </li>
+          {% else %}
+            <li>
+              <a href="{{ site.url }}/{{ paginate_url }}">1</a>
+            </li>
+          {% endif %}
+          {% endif %}
+          {% for count in (page_start..page_end) %}
+            {% if count == paginator.page %}
+              <li class="active">
+                <a>{{count}}</a>
+              </li>
+            {% else %}
+              <li>
+                <a href="{{ site.url }}/{{ paginate_url }}page{{count}}">{{count}}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+          {% if paginator.next_page %}
+            <li>
+              <a href="{{ site.url }}/{{ paginate_url }}page{{paginator.next_page}}">&raquo;</a>
+            </li>
+          {% else %}
+            <li class="disabled">
+              <a href="#">&raquo;</a>
+            </li>
+          {% endif %}
+          {% if paginator.total_pages > 5 %} 
+          {% if paginator.next_page %}
+            <li>
+              <a href="{{ site.url }}/{{ paginate_url }}page{{paginator.total_pages}}">&raquo;&raquo;</a>
+            </li>
+          {% else %}
+            <li class="disabled">
+              <a>&raquo;&raquo;</a>
+            </li>
+          {% endif %}
+          {% endif %}
+        </ul>
+      </div>
+      {% endif %}
+  {% else %}
+    {% if paginator.total_pages < 7 %}
+            <div class="page-body col-md-12">
+              <ul class="pagination pagination-centered">
+                {% if paginator.total_pages >= 10 %} 
+                {% if paginator.previous_page %}
+                    <li>
+                      <a href="{{ site.url }}/">&laquo;&laquo;</a>
+                    </li>
+                {% else %}
+                  <li class="disabled">
+                    <a>&laquo;&laquo;</a>
+                  </li>
+                {% endif %}
+                {% endif %}
+                {% if paginator.previous_page %}
+                  {% if paginator.previous_page == 1 %}
+                    <li>
+                      <a href="{{ site.url }}/">&laquo;</a>
+                    </li>
+                  {% else %}
+                    <li>
+                      <a href="{{ site.url }}/page{{paginator.previous_page}}">&laquo;</a>
+                    </li>
+                  {% endif %}
+                {% else %}
+                  <li class="disabled">
+                    <a>&laquo;</a>
+                  </li>
+                {% endif %}
+                {% if paginator.page == 1 %}
+                  <li class="active">
+                    <a>1</a>
+                  </li>
+                {% else %}
+                  <li>
+                    <a href="{{ site.url }}/">1</a>
+                  </li>
+                {% endif %}
+                {% for count in (2..paginator.total_pages) %}
+                  {% if count == paginator.page %}
+                    <li class="active">
+                      <a>{{count}}</a>
+                    </li>
+                  {% else %}
+                    <li>
+                      <a href="{{ site.url }}/page{{count}}">{{count}}</a>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+                {% if paginator.next_page %}
+                  <li>
+                    <a href="{{ site.url }}/page{{paginator.next_page}}">&raquo;</a>
+                  </li>
+                {% else %}
+                  <li class="disabled">
+                    <a>&raquo;</a>
+                  </li>
+                {% endif %}
+                {% if paginator.total_pages >= 10 %} 
+                {% if paginator.next_page %}
+                  <li>
+                    <a href="{{ site.url }}/page{{paginator.total_pages}}">&raquo;&raquo;</a>
+                  </li>
+                {% else %}
+                  <li class="disabled">
+                    <a>&raquo;&raquo;</a>
+                  </li>
+                {% endif %}
+                {% endif %}
+              </ul>
+            </div>
+    {% else %}
+
+    {% assign page_start = paginator.page | minus: 2 %}
+    {% assign page_end = paginator.page | plus: 2 %}
+    {% if page_end > paginator.total_pages %}
+    {% assign page_end = paginator.total_pages %}
+    {% assign page_start = paginator.page | minus: 4 %}
+    {% endif %}
+    {% if page_start < 2 %}
+    {% assign page_end = paginator.page | plus: 3 %}
+    {% assign page_start = paginator.page | minus: 1 %}
+    {% endif %}
+    {% if page_start == 0 %}
+    {% assign page_end = paginator.page | plus: 4 %}
+    {% assign page_start = paginator.page %}
+    {% endif %}
+     
+    <div class="page-body col-md-12">
+      <ul class="pagination pagination-centered">
+        {% if paginator.total_pages > 5 %} 
+        {% if paginator.previous_page %}
+            <li>
+              <a href="{{ site.url }}/">&laquo;&laquo;</a>
+            </li>
+        {% else %}
+          <li class="disabled">
+            <a>&laquo;&laquo;</a>
+          </li>
+        {% endif %}
+        {% endif %}
+        {% if paginator.previous_page %}
+          {% if paginator.previous_page == 1 %}
+            <li>
+              <a href="{{ site.url }}">&laquo;</a>
+            </li>
+          {% else %}
+            <li>
+              <a href="{{ site.url }}/page{{paginator.previous_page}}">&laquo;</a>
+            </li>
+          {% endif %}
+        {% else %}
+          <li class="disabled">
+            <a>&laquo;</a>
+          </li>
+        {% endif %}
+        {% if page_start == 1 %}
+      {% assign page_end = paginator.page | plus: 4 %}
+      {% assign page_start = 2 %}
+        {% if paginator.page == 1 %}
+          <li class="active">
+            <a>1</a>
+          </li>
+        {% else %}
+          <li>
+            <a href="{{ site.url }}">1</a>
+          </li>
+        {% endif %}
+        {% endif %}
+        {% for count in (page_start..page_end) %}
+          {% if count == paginator.page %}
+            <li class="active">
+              <a>{{count}}</a>
+            </li>
+          {% else %}
+            <li>
+              <a href="{{ site.url }}/page{{count}}">{{count}}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+        {% if paginator.next_page %}
+          <li>
+            <a href="{{ site.url }}/page{{paginator.next_page}}">&raquo;</a>
+          </li>
+        {% else %}
+          <li class="disabled">
+            <a>&raquo;</a>
+          </li>
+        {% endif %}
+        {% if paginator.total_pages > 5 %} 
+        {% if paginator.next_page %}
+          <li>
+            <a href="{{ site.url }}/page{{paginator.total_pages}}">&raquo;&raquo;</a>
+          </li>
+        {% else %}
+          <li class="disabled">
+            <a>&raquo;&raquo;</a>
+          </li>
+        {% endif %}
+        {% endif %}
+      </ul>
+    </div>
+    {% endif %}
 	{% endif %}
-	{% endif %}
+{% endif %}
 {% else %}
 	{% for post in site.posts %}
 		{% assign ert = post.content | strip_html | number_of_words | divided_by:180 %}
