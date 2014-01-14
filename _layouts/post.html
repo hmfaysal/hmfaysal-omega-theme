@@ -30,6 +30,10 @@
                         </div>
                     </header>
                     <div class="post-body bordered-bottom" itemprop="description">
+                        {% if page.video %}
+                        {% assign video_embed = page.video | remove:'http://www.youtube.com/watch?v=' %}
+                        <iframe width="940" height="529" src="//www.youtube.com/embed/{{ video_embed }}?theme=light&amp;color=white" frameborder="0" allowfullscreen> </iframe>
+                        {% endif %}
                         {{ content }}
                         <br>
                     <span class="entry-tags">
