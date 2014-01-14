@@ -135,7 +135,7 @@ permalink:   /:categories/:title
 
 ## Post Front Matter YAML
 
-HMFAYSAL OMEGA uses variable post templates for articles, quotation and status updates. 
+HMFAYSAL OMEGA uses variable post templates for articles, quotation, video, photo and status updates. 
 
 A new blog post should have the following structure to utilise the themes functions
 
