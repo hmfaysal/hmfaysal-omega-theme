@@ -490,6 +490,7 @@ html {
   .blog-description {
     display: none;
   }
+  .home-template .row {margin: 0 -5px;} /* fixes overflow on homepage on small screens (caused by stacked -15px from bootstrap) */
 }
 /* ----------- */
 /* POST STYLES */
