@@ -42,7 +42,7 @@ google_verify:
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
 bing_verify:         
 
-# Links to include in top navigation
+# Links to include in footer navigation
 # For external links add external: true
 links:
   - title: Home
