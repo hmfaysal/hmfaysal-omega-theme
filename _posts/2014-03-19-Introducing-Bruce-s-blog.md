@@ -3,7 +3,7 @@ layout: post
 title: "Introducting Bruce Becker's blog"
 description: I've forked some fantastic work and am now using it as a blog.
 headline: 
-category: Firs tPost
+category: First Post
 tags: [Bruce Becker, first]
 image: 
   feature: picture-37.jpg 
@@ -12,8 +12,6 @@ mathjax:
 ---
 This is my blog, deal with it.
 
-
-Write well, write beautifully, write responsively!
 
 <section id="table-of-contents" class="toc">
   <header>
