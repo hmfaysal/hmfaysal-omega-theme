@@ -9,6 +9,10 @@ image:
   feature: cape-town.jpg 
 comments: true 
 ---
-This is my blog, deal with it.
+#This is my blog, deal with it
+
+I've been thinking about setting up a place to write for a while now. 
+
+
 
 
