@@ -13,13 +13,3 @@ mathjax:
 This is my blog, deal with it.
 
 
-<section id="table-of-contents" class="toc">
-  <header>
-    <h1>Features</h1>
-  </header>
-<div id="drawer" markdown="1">
-*  Auto generated table of contents
-{:toc}
-</div>
-</section><!-- /#table-of-contents -->
-
