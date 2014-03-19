@@ -1,7 +1,7 @@
-title:            HMFAYSAL
-description:      "Omega: The Coolest Theme for Jekyll"
+title:            Digital Dissident
+description:      "Diary of a digital dissident"
 logo:             omikron.png
-disqus_shortname: hmfaysal
+disqus_shortname: brucellino
 # Assign a default image for your site's header and footer
 default_bg:       default_bg.jpg
 search:           true
@@ -9,35 +9,35 @@ share:            true
 # Read Time is a calculator tp provide post read-time based on word count. Usage is recommended.
 readtime:         true
 # Turn on or off the fin animations in the header and footer
-animated_fins:	  true
+animated_fins:	  false
 # Specify the fin color in RGB value
 fin_color:        "255,255,255"
 # Change url to your domain. Leave localhost server or blank when working locally.
-url:              http://hmfaysal.github.io/hmfaysal-omega-theme
+url:              http://brucellino.github.io
 
 # Owner/author information
 owner:
-  name:           Hossain Mohd Faysal
+  name:           Bruce Becker
   avatar:         hmfaysal.jpg
-  email:          hmfaysal@alum.mit.edu
+  email:          brucellino@gmail.com
   # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
-  description:    Hossain Mohammad Faysal is an Electrical Engineer and a Mathematician based in Doha, Qatar. His interests are anything that&#8217;s related to math, from math itself to programming languages to music to physics to engineering to philosophy.
+  description:    Bruce Becker: ex-physicist and volleyball freak; quasi socialist; dad; not-quite-hacker; grid guy.
   # Social networking links used in footer. Update and remove as you like.
   # To register at HMFAYSAL SOCIAL, visit http://social.hmfaysal.tk
-  twitter:        hmfaysal
-  facebook:       hmfaysal
-  github:         hmfaysal
-  stackexchange:  https://stackexchange.com/users/3402032/hossain-mohd-faysal
-  linkedin:       
+  twitter:        brucellino
+  facebook:       brucellino
+  github:         brucellino
+  stackexchange:  
+  linkedin:       brucellino
   instagram:      
-  flickr:         
-  tumblr:         
-  hmfaysalsocial: hmfaysal
+  flickr:         brucellino
+  tumblr:         brucellino
+  
   # For Google Authorship https://plus.google.com/authorship
-  google_plus:    https://plus.google.com/u/0/102602916593522619858
+  google_plus:    https://plus.google.com/u/0/+BruceBecker
 
 # Analytics and webmaster tools stuff goes here
-google_analytics:   UA-39365944-7
+google_analytics: 
 google_verify:      
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
 bing_verify:         
@@ -55,15 +55,15 @@ links:
     url: /categories
   - title: Tags
     url: /tags
-  - title: Faysal who?
-    url: /hossain-mohd-faysal
+  - title: Bruce who?
+    url: /Bruce-Becker
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    America/New_York
+timezone:    Africa/Johannesburg
 future:      true
 pygments:    true
 markdown:    kramdown
-paginate:    6
+paginate:    3
 paginate_path: "page:num"
 
 # https://github.com/mojombo/jekyll/wiki/Permalinks
