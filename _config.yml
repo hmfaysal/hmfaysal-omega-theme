@@ -21,7 +21,7 @@ owner:
   avatar:         hmfaysal.jpg
   email:          brucellino@gmail.com
   # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
-  description:    Bruce Becker: ex-physicist and volleyball freak; quasi socialist; dad; not-quite-hacker; grid guy.
+  description:    'Bruce Becker: ex-physicist and volleyball freak; quasi socialist; dad; not-quite-hacker; grid guy.'
   # Social networking links used in footer. Update and remove as you like.
   # To register at HMFAYSAL SOCIAL, visit http://social.hmfaysal.tk
   twitter:        brucellino
