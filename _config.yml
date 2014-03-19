@@ -9,7 +9,7 @@ share:            true
 # Read Time is a calculator tp provide post read-time based on word count. Usage is recommended.
 readtime:         true
 # Turn on or off the fin animations in the header and footer
-animated_fins:	  false
+animated_fins:	  true
 # Specify the fin color in RGB value
 fin_color:        "255,255,255"
 # Change url to your domain. Leave localhost server or blank when working locally.
