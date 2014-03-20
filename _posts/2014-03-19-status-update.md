@@ -12,3 +12,4 @@ image:
 comments: true
 mathjax:
 ---
+> Ever get the feeling you're a little bit *too* invested in [Github](http://www.github.com) ?
