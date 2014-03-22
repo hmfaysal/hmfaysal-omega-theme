@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Moving data safely for H3A"
+title: "Safe data for H3A"
 description: Some thoughts and feedback from the H3A-BioNet project.
 headline: 'Shifting data safely in Africa'
 category: data management
@@ -22,8 +22,11 @@ while the main goal is :
 
 A large part of the activities of this network is shifting data. Since it's **human genomic data** it has to be moved from where it's collected with extreme care. The data will be collected by field workiers collaborating on the project, all over Africa and sent to a secure staging environment in Cape Town where it can be processed (*e.g.* anonymised). Here, I summarise some thoughts and plans around how this task can be tackled using the services of the [Africa-Arabia Regional Operations Centre](https://roc.africa-grid.org).
 
+# Outline
 
-# General considerations and requirements
+This turned into quite a long article. I first address some [general considarations](#general) and background. Then, I take a look at the isuses around [identity and security](#id), before tackling the main issue of [data](#data), going into detail regarding issues of data movement as well as data management. Finally, I put forward a plan to [implement](#implementatation) full demo which can be taken to production, including the necessary agreements and technology which the ROC can provide.
+
+# General considerations and requirements {#general}
 
 [CBIO](http://www.cbio.uct.ac.za) is the partner who is responsible for processing the collected data safely and securely. As such, they need to provide a secure storage area, which is nonetheless able to accept incoming data from around the African continent. This can of course be done the *easy* way or any number of *right* ways (there are, as always, many ways to skin this cat, depending on what one takes into account).  If this were a project in the '90s, the solution would have probably looked like 
 
@@ -50,7 +53,7 @@ Perhaps it's too ambitious to consider all of the *components* of 'the right way
 There are several services ready to use and others under development which H3ABioNet could use to make it's secure storage accessible to the collaboration. What are the tasks, the functions that need to be executed by the parties involved ? Let's take a further look.
 
 
-# Authentication and Authorisation
+# Authentication and Authorisation {#id}
 You want to be sure you know who is accessing your precious data. This can be done by issuing credentials yourself (ie, user/pass to your resource), however this doens't scale very well. What's more, it's difficult to know where these users are coming from. You could implement an LDAP backend for authentication, but then you'd have one more thing to adminster. Why not leave the authentication to someone else, and focus on authorisation ? 
 
 The concept of [Identity Federations](http://www.geant.net/service/eduGAIN/Pages/home.aspx) makes this separation of roles possible. While this is a modern user-friendly way to authenticate, there's also 'good old' PKI - which can be used on the service and server-side to secure and authenticate access. The best case scenario would be that an researcher who wants to request data to be ingested into the repository should authenticate using their local (institutional or national) identity provider, which the service would trust, since it would be included as a service provider in a federation. Authorisation would be done via a local database (ldap, perhaps, but just containing the identities of the trusted users, not their credentials) - or could be done centrally using a system like [Perun](https://perun.metacentrum.cz). 
@@ -77,7 +80,7 @@ I touched on using Perun to manage authorisation above. According to the [Perun 
 
 We're working with [CESNET](https://www.cesnet.cz) (the developers of Perun) to host such a centralised authorisation service at Meraka[^MerakaPerun]. The benefit to H3A BioNet is that the collaboration can again focus specifically on the service it wants to provide, instead of the overhead for providing it - no need to manage a separate LDAP instance specifically for the data archival service, just define the authorisation in Perun and allow it to manage your service remotely. Even the centralisation of the service can be discussed... 
 
-# Data Management
+# Data Management {#data}
 
 So, AuthN/AuthZ can be solved and provided as service, we can get to the meat of the issue - data management. Data management is not a simple matter, and usually can be considered in three aspects: 
 
@@ -153,12 +156,92 @@ It should be noted this service has some limitations for the long-term. GlobusOn
  
 These alternatives, as far as I know, are actively being pursued by the H3ABioNet collaboration to develop a user-friendly, standards-compliant, secure web-interface to the data staging area. 
 
-## Data movement summary
+### Data movement summary
 
-In summary, I propose that the services necessary to satisfy the design constraints of the collaboration are already in place. Care needs to be taken to quickly develop a demonstrator, using these services, in order to find the 'devils in the details'. 
+In summary, I propose that the services necessary to satisfy the design constraints of the collaboration are already in place. Care needs to be taken to quickly develop a demonstrator, using these services, in order to find the 'devils in the details'. I'll provide some concrete steps in [the Implementation section](#Implementation)
+
+## Data Management
+
+There is a lot of freedom in terms of data management, but again the H3A BioNet collaboration has defined a minimum level of service which it will offer users and relying parties of the data staging area. Essentially, I interpret these aspects as
+
+High Availability and reslience
+: The storage area needs to be available near 100 % and needs to be 100 % reliable. This means proper disaster recovery capability, including **off-site storage**.
+
+Adequate and scalable capacity.
+: The data staging area can't afford to reject transfers from field workers due to insufficient capacity. On the other hand, data size will grow over time (perhaps unpredictably) so it would be wise to acquire a subset of the project storage capacity, reserving the capability to scale it later. 
+
+Long-term preservation
+: The value of the data means that considering long-term preservation, while not an urgent issue, is of utmost importance. Of course, the final products may be stored in the [EGA](https://www.ebi.ac.uk/ega/home), but there is a strong case for preserving the raw data in Africa.
+
+Curation
+: Curation in this case refers to putting in place a metadata system that will ensure that the data is understandable in the long run. It could also refer to a data referencing scheme (read: data sets with *DOI*'s or *handles*) but again, this is somewhat out of scope and will probably be provided anyway by EGA.
+
+I will leave issues of data replication (single-namespace) and metadata issues to perhaps a further article[^replication]. Let's take a closer look at these issues and discuss possible solutions to the needs of the collaboration.
+
+### Availability and resilience
+
+The data staging area is going to be operated by the [CBIO](http://www.cbio.uct.ac.za) at the [University of Cape Town](http://www.uct.ac.za), which has a very good data centre. The university's [Information and Communication Technology Services](https://www.icts.uct.ac.za) (ICTS) has made very significant investments in hardware, offering several PB of raw storage space. This is offered as a service to research communities, provided an SLA is in place to define the scope and level of the service. While similar services (perhaps not at the same scale as UCT's) are also offered by several other institutes, including the [Centre for High-Performance Computing](http://www.chpc.ac.za), UCT offers significant advantages:
+
+  * Research data gets the same backup treatment as enterprise data and is included in the regular schedule of backups
+  * Off-site backup is provided for disaster-recovery capability
+  * UCT's data centre has adequate national and international bandwidth to handle the incoming and outgoing data rates.
+
+It should be noted that the decision on where to host the data needn't exclusively privilege a single site. Flexibility on data staging could easily be built into the system, while still ensuring that all data eventually arrives in the central staging area[^monitoring]. In the [Implementation](#Implementation) section below, we make no assumptions on the location of the services implemented, so different sites could be used as seen fit by the collaboration without changing the usage model.
+
+### Scalability and Capacity
+
+The **capacity** required by the collaboration is $$ O(PB) $$, which poses a significant but not unsurmountable challenge. This can easily be addressed by putting in place something like the storage pods from [45 Drives](http://www.45drives.com) -- which the likes of the [SKA](https://www.ska.ac.za/) are doing -- the hardware really doens't matter that much, as long as one can easily scale it. Another point to consider is filesystem preformance and scalability. Lets's not get into the *"which filesystem should we use"*, but perhaps we can agree that[^nogpfs]
+
+> There's no reason to use a proprietary filesystem.
+
+Probably good choices would be [ZFS](http://en.wikipedia.org/wiki/ZFS) or [BTRFS](http://en.wikipedia.org/wiki/Btrfs)... but even this misses the point that a parallel filesystem like [CePH](http://ceph.com/) is definitely the way to go. Wait, that should totally be quotable:
+
+> **Ceph : it's definitely the way to go**
+
+### Data management summary
+
+There are several distrbuted filesystems out there, and to avoid descending into vulgar name-calling and slinging of opinions, I refer to the recent work of Depardon, Le Mahec and Séguin[^DFScomparison]. Some thought needs to go into  the integration of these with the standard grid middleware I'll mention below, though.
+
+# Implementation {#Implementation}
+
+Let me now describe a specific implementation schema which would produce a working demonstrator as alluded to before. 
+
+## Infrastructure and Service Providers. 
+The H3A BioNet project can be considered a 'peer infrastructure', or 'relying party' of the Africa Arabia Regional Operations Centre. In order for AAROC to provide support and services, we need to first define which services will be provided. The services which H3A BioNet will be using are:
+
+Certificate Authority
+: The various e-Science CA's under the ROC will issue digital certificates to users, services and hosts as needed.
+
+Identity Providers
+: Users can use catch-all or social identity providers to authenticate to a web-based user-interface to stage data
+
+Virtual Organisation Membership Service
+: A [VOMS](https://github.com/italiangrid/voms) service will be made available to the collaboration so that they can manage the members of their collaboration via a Virtual Organisation.
+
+Authorisation service
+: Perun will be used to manage the  authorisation of distributed resources, particularly regarding the VO and IdP imports. 
+
+Access to e-Infrastructure services
+: The new VO will be enabled sites in the ROC, across the region and, where necessary, beyond. This will allow members of the VO to easily access computational and data resources seamlessly as well as permit them to copy data securely (within the VO) to local storage before staging it to Cape Town.
+
+Operations tools
+: In accordance with the standard resource centre Operating Level Agreement[^ola], operation of resources falls within the domain of the site operations team, while operation of the middleware falls within the domain of the GridOps team. Monitoring of the middleware at an infrastructure level is provided, as well as integration with the [GGUS](https://ggus.eu) ticketing system, the [EGI Operations Portal](https://operations.egi.eu/portal) and the [Operations Database](https://goc.egi.eu). H3ABioNet will be responsible only for their VO activities.
 
 
 
+## Middleware
+
+The ROC supports the following middleware stacks:
+  * [EMI-3](https://www.eu-emi.eu/releases/emi-3-montebianco/)
+  * [UMD-3](http://repository.egi.eu/category/umd_releases/distribution/umd-3/)
+  
+The products in these stacks satisfy all of the functional requirements described above. 
+
+
+## Deployment 
+
+
+# Next steps
 
 
 ----
@@ -179,3 +262,8 @@ In summary, I propose that the services necessary to satisfy the design constrai
 [^GlobusFreemium]: Foster, Ian; Vas Vasiliadis; Tuecke, Steven (2013): Software as a Service as a path to software sustainability. figshare. http://dx.doi.org/10.6084/m9.figshare.791604
 [^GlobusOnlineAnnouncement]: This was announced in 2012, precisely because of data protection laws in the EU. See [the EGI.eu announcement](http://www.egi.eu/news-and-media/newsfeed/news_0165_GlobusOnline_goes_live.html)
 [^DataEngineRef]: "A Data Engine for Grid Science Gateways Enabling Easy Transfer and Data Sharing"; M. Fargetta, R. Rotondo, R. Barbera at [The International Symposium on Grids and Clouds (ISGC) 2012](http://indico3.twgrid.org/indico/contributionDisplay.py?sessionId=39&contribId=59&confId=44)
+[^replication]: The data staging area is conceived as a central area - off-site replication is therefore not part of the design. Nonetheless, it may be useful to plan for this in the long-term, at least for anonymised data. Replication also implies a metadata system.
+[^monitoring]: It should however be pointed out that a monitoring and alerting system will be necessarsy to know the state of the various transfers and the staging area itself, which will be left for a separate article.
+[^nogpfs]: I'm looking at you GPFS.
+[^DFScomparison]: "Analysis of Six Distributed File Systems" Depardon, Le Mahec and Séguin; http://hal.inria.fr/hal-00789086
+[^ola]: All sites in the Region are required to sign and adhere to an [Operating Level Agreement](https://documents.egi.eu/document/31) which defines the level of operation and service level requirements, such as compute and other capability, middleware, support, security, etc.
