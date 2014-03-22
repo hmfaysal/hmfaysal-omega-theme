@@ -24,7 +24,7 @@ A large part of the activities of this network is shifting data. Since it's **hu
 
 # Outline
 
-This turned into quite a long article. I first address some [general considarations](#general) and background. Then, I take a look at the isuses around [identity and security](#id), before tackling the main issue of [data](#data), going into detail regarding issues of data movement as well as data management. Finally, I put forward a plan to [implement](#implementatation) full demo which can be taken to production, including the necessary agreements and technology which the ROC can provide.
+This turned into quite a long article. I first address some [general considarations](#general) and background. Then, I take a look at the isuses around [identity and security](#id), before tackling the main issue of [data](#data), going into detail regarding issues of data movement as well as data management. I then put forward a plan to [implement](#implementatation) full demo which can be taken to production, including the necessary agreements and technology which the ROC can provide. Finally some [next steps](#next) and a summary.
 
 # General considerations and requirements {#general}
 
@@ -227,22 +227,38 @@ Access to e-Infrastructure services
 Operations tools
 : In accordance with the standard resource centre Operating Level Agreement[^ola], operation of resources falls within the domain of the site operations team, while operation of the middleware falls within the domain of the GridOps team. Monitoring of the middleware at an infrastructure level is provided, as well as integration with the [GGUS](https://ggus.eu) ticketing system, the [EGI Operations Portal](https://operations.egi.eu/portal) and the [Operations Database](https://goc.egi.eu). H3ABioNet will be responsible only for their VO activities.
 
-
-
 ## Middleware
 
 The ROC supports the following middleware stacks:
+  
   * [EMI-3](https://www.eu-emi.eu/releases/emi-3-montebianco/)
   * [UMD-3](http://repository.egi.eu/category/umd_releases/distribution/umd-3/)
   
-The products in these stacks satisfy all of the functional requirements described above. 
+The products in these stacks satisfy all of the functional requirements described above.
 
+## Deployment and Integration
 
-## Deployment 
+Most services needed to satisfy the requirements of the collaboration for data staging are already in production. The provisioning of a data storage area for the collaboration was recently discussed and agreed to in principle by ICTS. In  order to integrate the staging area into the ROC, so that users and services can use it, we need to deploy a properly-configured grid storage element and register it in the GOCDB. This endpoint could be **DPM**, **xrootd**, **SRM** or **iRODS**[^GocdbServiceTypes]. All storage elements in the ROC, which support VO's are immediately usable by GlobusOnline[^GlobusOnlineCookbook]. UCT ICTS needs to provide the storage element (which can be remotely executed with [Ansible][^ansibleforgrid].)
 
+## Demonstrator
 
-# Next steps
+A realistic demonstration of the full service might include the following scenario : 
 
+> User far away (*e.g.* Tunisia) wants to stage data
+
+The following workflow would be executed:
+  1. Optional - user authenticates to VO and stores data on a local storage element.
+  1. User authenticates to GlobusOnline and activates local and remote storage endpoints
+  1. User requests data transfer to UCT using GlobusOnline
+  1. Data is stored in staging area and (optional) registered in VO-level file catalogue.
+
+# Next steps and Summary. {#next}
+
+The next steps would be simply to deploy the SE at UCT, and run the demo. Of course, performance tuning is a whole other story - we proposed to write a baseline study of real-world expectations during the demo, and the update this at various points during the course of the collaboration's actiivties. We can use dummy data for this, varying file sizes, parallel streams, endpoints, etc. 
+
+In summary, 
+
+> We've got this covered
 
 ----
 
@@ -267,3 +283,6 @@ The products in these stacks satisfy all of the functional requirements describe
 [^nogpfs]: I'm looking at you GPFS.
 [^DFScomparison]: "Analysis of Six Distributed File Systems" Depardon, Le Mahec and Séguin; http://hal.inria.fr/hal-00789086
 [^ola]: All sites in the Region are required to sign and adhere to an [Operating Level Agreement](https://documents.egi.eu/document/31) which defines the level of operation and service level requirements, such as compute and other capability, middleware, support, security, etc.
+[^GocdbServiceTypes]: See [GOC DB Documentation](https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Service_types)
+[^GlobusOnlineCookbook]: See the [EGI.eu documentation](https://wiki.egi.eu/wiki/Globus_Online_cookbook_for_EGI_VOs)
+[^ansible]: See the [ansible playbooks](https://github.com/AAROC/ansible-for-grd) for AAROC services. Remote deployment is possible with only ssh access to the remote machines - the identity of which is also managed with Perun.
