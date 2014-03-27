@@ -281,7 +281,7 @@ In summary,
 [^GlobusOnlineAnnouncement]: This was announced in 2012, precisely because of data protection laws in the EU. See [the EGI.eu announcement](http://www.egi.eu/news-and-media/newsfeed/news_0165_GlobusOnline_goes_live.html)
 [^DataEngineRef]: "A Data Engine for Grid Science Gateways Enabling Easy Transfer and Data Sharing"; M. Fargetta, R. Rotondo, R. Barbera at [The International Symposium on Grids and Clouds (ISGC) 2012](http://indico3.twgrid.org/indico/contributionDisplay.py?sessionId=39&contribId=59&confId=44)
 [^replication]: The data staging area is conceived as a central area - off-site replication is therefore not part of the design. Nonetheless, it may be useful to plan for this in the long-term, at least for anonymised data. Replication also implies a metadata system.
-[^monitoring]: It should however be pointed out that a monitoring and alerting system will be necessarsy to know the state of the various transfers and the staging area itself, which will be left for a separate article.
+[^monitoring]: It should however be pointed out that a monitoring and alerting system will be necessary to know the state of the various transfers and the staging area itself, which will be left for a separate article.
 [^nogpfs]: I'm looking at you GPFS.
 [^DFScomparison]: "Analysis of Six Distributed File Systems" Depardon, Le Mahec and Séguin; http://hal.inria.fr/hal-00789086
 [^ola]: All sites in the Region are required to sign and adhere to an [Operating Level Agreement](https://documents.egi.eu/document/31) which defines the level of operation and service level requirements, such as compute and other capability, middleware, support, security, etc.
