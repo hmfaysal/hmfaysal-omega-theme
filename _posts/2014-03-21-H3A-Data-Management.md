@@ -54,7 +54,7 @@ There are several services ready to use and others under development which H3ABi
 
 
 # Authentication and Authorisation {#id}
-You want to be sure you know who is accessing your precious data. This can be done by issuing credentials yourself (ie, user/pass to your resource), however this doens't scale very well. What's more, it's difficult to know where these users are coming from. You could implement an LDAP backend for authentication, but then you'd have one more thing to adminster. Why not leave the authentication to someone else, and focus on authorisation ? 
+You want to be sure you know who is accessing your precious data. This can be done by issuing credentials yourself (ie, user/pass to your resource), however this doesn't scale very well. What's more, it's difficult to know where these users are coming from. You could implement an LDAP backend for authentication, but then you'd have one more thing to adminster. Why not leave the authentication to someone else, and focus on authorisation ? 
 
 The concept of [Identity Federations](http://www.geant.net/service/eduGAIN/Pages/home.aspx) makes this separation of roles possible. While this is a modern user-friendly way to authenticate, there's also 'good old' PKI - which can be used on the service and server-side to secure and authenticate access. The best case scenario would be that an researcher who wants to request data to be ingested into the repository should authenticate using their local (institutional or national) identity provider, which the service would trust, since it would be included as a service provider in a federation. Authorisation would be done via a local database (ldap, perhaps, but just containing the identities of the trusted users, not their credentials) - or could be done centrally using a system like [Perun](https://perun.metacentrum.cz). 
 
@@ -192,7 +192,7 @@ It should be noted that the decision on where to host the data needn't exclusive
 
 ### Scalability and Capacity
 
-The **capacity** required by the collaboration is $$ O(PB) $$, which poses a significant but not unsurmountable challenge. This can easily be addressed by putting in place something like the storage pods from [45 Drives](http://www.45drives.com) -- which the likes of the [SKA](https://www.ska.ac.za/) are doing -- the hardware really doens't matter that much, as long as one can easily scale it. Another point to consider is filesystem preformance and scalability. Lets's not get into the *"which filesystem should we use"*, but perhaps we can agree that[^nogpfs]
+The **capacity** required by the collaboration is $$ O(PB) $$, which poses a significant but not unsurmountable challenge. This can easily be addressed by putting in place something like the storage pods from [45 Drives](http://www.45drives.com) -- which the likes of the [SKA](https://www.ska.ac.za/) are doing -- the hardware really doesn't matter that much, as long as one can easily scale it. Another point to consider is filesystem preformance and scalability. Lets's not get into the *"which filesystem should we use"*, but perhaps we can agree that[^nogpfs]
 
 > There's no reason to use a proprietary filesystem.
 
