@@ -287,4 +287,4 @@ In summary,
 [^ola]: All sites in the Region are required to sign and adhere to an [Operating Level Agreement](https://documents.egi.eu/document/31) which defines the level of operation and service level requirements, such as compute and other capability, middleware, support, security, etc.
 [^GocdbServiceTypes]: See [GOC DB Documentation](https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Service_types)
 [^GlobusOnlineCookbook]: See the [EGI.eu documentation](https://wiki.egi.eu/wiki/Globus_Online_cookbook_for_EGI_VOs)
-[^ansible]: See the [ansible playbooks](https://github.com/AAROC/ansible-for-grd) for AAROC services. Remote deployment is possible with only ssh access to the remote machines - the identity of which is also managed with Perun.
+[^ansibleforgrid]: See the [ansible playbooks](https://github.com/AAROC/ansible-for-grid) for AAROC services. Remote deployment is possible with only ssh access to the remote machines - the identity of which is also managed with Perun.
