@@ -14,7 +14,7 @@ animated_fins:	  true
 fin_color:        "255,255,255"
 # Change url to your domain. Leave localhost server or blank when working locally.
 url:              http://brucellino.github.io
-
+site.owner.name: Bruce-Becker
 # Owner/author information
 owner:
   name:           Bruce Becker
