@@ -110,8 +110,10 @@ Ignoring the actual *content* of the data to be transferred and assuming that va
 
 Sending party
  : This is the actual user sending the data. The identity, as I've proposed before, could be provided by any number of federated means, not necessarily by the service itself. However, federated identities are not within the trust domain, we need to map the identity to a trusted one, using an authorisation plugin. This will map the federated identity onto a proxy of an x.509 digital robot certificate issued by a trusted CA.
+ 
 Receving party
  : The receiving party is the storage endpoint, which would expose a secure interface such as GSI-FTP[^gsiftp], WebDAV[^WebDAV] or HTTP. The security on the receiving side would be provided again by an x.509 host certificate issued to the storage endpoint. 
+
 Transferring party
  : The transferring party is the agent which actually initiates, executes and monitors the transfer. Instead of being done by the user itself, this agent should be a proxy, mapped from the user's credentials. This is done by creating a short-lived proxy of a robot certificate - authorisation for issueing the proxy is of course taken care of by the web interface which we'll discuss below.
  
