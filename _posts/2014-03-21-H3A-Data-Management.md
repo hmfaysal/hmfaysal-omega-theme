@@ -257,7 +257,7 @@ The following workflow would be executed:
 
 # Next steps and Summary. {#next}
 
-The next steps would be simply to deploy the SE at UCT, and run the demo. Of course, performance tuning is a whole other story - we proposed to write a baseline study of real-world expectations during the demo, and the update this at various points during the course of the collaboration's actiivties. We can use dummy data for this, varying file sizes, parallel streams, endpoints, etc. 
+The next steps would be simply to deploy the SE at UCT, and run the demo. Of course, performance tuning is a whole other story - we proposed to write a baseline study of real-world expectations during the demo, and the update this at various points during the course of the collaboration's activities. We can use dummy data for this, varying file sizes, parallel streams, endpoints, etc. 
 
 In summary, 
 
