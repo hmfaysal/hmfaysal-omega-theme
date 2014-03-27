@@ -249,6 +249,7 @@ A realistic demonstration of the full service might include the following scenar
 > User far away (*e.g.* Tunisia) wants to stage data
 
 The following workflow would be executed:
+
   1. Optional - user authenticates to VO and stores data on a local storage element.
   1. User authenticates to GlobusOnline and activates local and remote storage endpoints
   1. User requests data transfer to UCT using GlobusOnline
