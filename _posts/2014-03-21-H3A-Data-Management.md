@@ -54,7 +54,7 @@ There are several services ready to use and others under development which H3ABi
 
 
 # Authentication and Authorisation {#id}
-You want to be sure you know who is accessing your precious data. This can be done by issuing credentials yourself (ie, user/pass to your resource), however this doens't scale very well. What's more, it's difficult to know where these users are coming from. You could implement an LDAP backend for authentication, but then you'd have one more thing to adminster. Why not leave the authentication to someone else, and focus on authorisation ? 
+You want to be sure you know who is accessing your precious data. This can be done by issuing credentials yourself (ie, user/pass to your resource), however this doesn't scale very well. What's more, it's difficult to know where these users are coming from. You could implement an LDAP backend for authentication, but then you'd have one more thing to adminster. Why not leave the authentication to someone else, and focus on authorisation ? 
 
 The concept of [Identity Federations](http://www.geant.net/service/eduGAIN/Pages/home.aspx) makes this separation of roles possible. While this is a modern user-friendly way to authenticate, there's also 'good old' PKI - which can be used on the service and server-side to secure and authenticate access. The best case scenario would be that an researcher who wants to request data to be ingested into the repository should authenticate using their local (institutional or national) identity provider, which the service would trust, since it would be included as a service provider in a federation. Authorisation would be done via a local database (ldap, perhaps, but just containing the identities of the trusted users, not their credentials) - or could be done centrally using a system like [Perun](https://perun.metacentrum.cz). 
 
@@ -110,8 +110,10 @@ Ignoring the actual *content* of the data to be transferred and assuming that va
 
 Sending party
  : This is the actual user sending the data. The identity, as I've proposed before, could be provided by any number of federated means, not necessarily by the service itself. However, federated identities are not within the trust domain, we need to map the identity to a trusted one, using an authorisation plugin. This will map the federated identity onto a proxy of an x.509 digital robot certificate issued by a trusted CA.
+ 
 Receving party
  : The receiving party is the storage endpoint, which would expose a secure interface such as GSI-FTP[^gsiftp], WebDAV[^WebDAV] or HTTP. The security on the receiving side would be provided again by an x.509 host certificate issued to the storage endpoint. 
+
 Transferring party
  : The transferring party is the agent which actually initiates, executes and monitors the transfer. Instead of being done by the user itself, this agent should be a proxy, mapped from the user's credentials. This is done by creating a short-lived proxy of a robot certificate - authorisation for issueing the proxy is of course taken care of by the web interface which we'll discuss below.
  
@@ -190,7 +192,7 @@ It should be noted that the decision on where to host the data needn't exclusive
 
 ### Scalability and Capacity
 
-The **capacity** required by the collaboration is $$ O(PB) $$, which poses a significant but not unsurmountable challenge. This can easily be addressed by putting in place something like the storage pods from [45 Drives](http://www.45drives.com) -- which the likes of the [SKA](https://www.ska.ac.za/) are doing -- the hardware really doens't matter that much, as long as one can easily scale it. Another point to consider is filesystem preformance and scalability. Lets's not get into the *"which filesystem should we use"*, but perhaps we can agree that[^nogpfs]
+The **capacity** required by the collaboration is $$ O(PB) $$, which poses a significant but not unsurmountable challenge. This can easily be addressed by putting in place something like the storage pods from [45 Drives](http://www.45drives.com) -- which the likes of the [SKA](https://www.ska.ac.za/) are doing -- the hardware really doesn't matter that much, as long as one can easily scale it. Another point to consider is filesystem preformance and scalability. Lets's not get into the *"which filesystem should we use"*, but perhaps we can agree that[^nogpfs]
 
 > There's no reason to use a proprietary filesystem.
 
@@ -200,7 +202,7 @@ Probably good choices would be [ZFS](http://en.wikipedia.org/wiki/ZFS) or [BTRFS
 
 ### Data management summary
 
-There are several distrbuted filesystems out there, and to avoid descending into vulgar name-calling and slinging of opinions, I refer to the recent work of Depardon, Le Mahec and Séguin[^DFScomparison]. Some thought needs to go into  the integration of these with the standard grid middleware I'll mention below, though.
+There are several distributed filesystems out there, and to avoid descending into vulgar name-calling and slinging of opinions, I refer to the recent work of Depardon, Le Mahec and Séguin[^DFScomparison]. Some thought needs to go into  the integration of these with the standard grid middleware I'll mention below, though.
 
 # Implementation {#Implementation}
 
@@ -238,7 +240,7 @@ The products in these stacks satisfy all of the functional requirements describe
 
 ## Deployment and Integration
 
-Most services needed to satisfy the requirements of the collaboration for data staging are already in production. The provisioning of a data storage area for the collaboration was recently discussed and agreed to in principle by ICTS. In  order to integrate the staging area into the ROC, so that users and services can use it, we need to deploy a properly-configured grid storage element and register it in the GOCDB. This endpoint could be **DPM**, **xrootd**, **SRM** or **iRODS**[^GocdbServiceTypes]. All storage elements in the ROC, which support VO's are immediately usable by GlobusOnline[^GlobusOnlineCookbook]. UCT ICTS needs to provide the storage element (which can be remotely executed with [Ansible][^ansibleforgrid].)
+Most services needed to satisfy the requirements of the collaboration for data staging are already in production. The provisioning of a data storage area for the collaboration was recently discussed and agreed to in principle by ICTS. In  order to integrate the staging area into the ROC, so that users and services can use it, we need to deploy a properly-configured grid storage element and register it in the GOCDB. This endpoint could be **DPM**, **xrootd**, **SRM** or **iRODS**[^GocdbServiceTypes]. All storage elements in the ROC, which support VO's are immediately usable by GlobusOnline[^GlobusOnlineCookbook]. UCT ICTS needs to provide the storage element (which can be remotely executed with [Ansible](http://www.ansible.com)[^ansibleforgrid].)
 
 ## Demonstrator
 
@@ -247,14 +249,15 @@ A realistic demonstration of the full service might include the following scenar
 > User far away (*e.g.* Tunisia) wants to stage data
 
 The following workflow would be executed:
-  1. Optional - user authenticates to VO and stores data on a local storage element.
-  1. User authenticates to GlobusOnline and activates local and remote storage endpoints
-  1. User requests data transfer to UCT using GlobusOnline
-  1. Data is stored in staging area and (optional) registered in VO-level file catalogue.
+
+ 1. Optional - user authenticates to VO and stores data on a local storage element.
+ 1. User authenticates to GlobusOnline and activates local and remote storage endpoints
+ 1. User requests data transfer to UCT using GlobusOnline
+ 1. Data is stored in staging area and (optional) registered in VO-level file catalogue.
 
 # Next steps and Summary. {#next}
 
-The next steps would be simply to deploy the SE at UCT, and run the demo. Of course, performance tuning is a whole other story - we proposed to write a baseline study of real-world expectations during the demo, and the update this at various points during the course of the collaboration's actiivties. We can use dummy data for this, varying file sizes, parallel streams, endpoints, etc. 
+The next steps would be simply to deploy the SE at UCT, and run the demo. Of course, performance tuning is a whole other story - we proposed to write a baseline study of real-world expectations during the demo, and the update this at various points during the course of the collaboration's activities. We can use dummy data for this, varying file sizes, parallel streams, endpoints, etc. 
 
 In summary, 
 
@@ -279,10 +282,10 @@ In summary,
 [^GlobusOnlineAnnouncement]: This was announced in 2012, precisely because of data protection laws in the EU. See [the EGI.eu announcement](http://www.egi.eu/news-and-media/newsfeed/news_0165_GlobusOnline_goes_live.html)
 [^DataEngineRef]: "A Data Engine for Grid Science Gateways Enabling Easy Transfer and Data Sharing"; M. Fargetta, R. Rotondo, R. Barbera at [The International Symposium on Grids and Clouds (ISGC) 2012](http://indico3.twgrid.org/indico/contributionDisplay.py?sessionId=39&contribId=59&confId=44)
 [^replication]: The data staging area is conceived as a central area - off-site replication is therefore not part of the design. Nonetheless, it may be useful to plan for this in the long-term, at least for anonymised data. Replication also implies a metadata system.
-[^monitoring]: It should however be pointed out that a monitoring and alerting system will be necessarsy to know the state of the various transfers and the staging area itself, which will be left for a separate article.
+[^monitoring]: It should however be pointed out that a monitoring and alerting system will be necessary to know the state of the various transfers and the staging area itself, which will be left for a separate article.
 [^nogpfs]: I'm looking at you GPFS.
 [^DFScomparison]: "Analysis of Six Distributed File Systems" Depardon, Le Mahec and Séguin; http://hal.inria.fr/hal-00789086
 [^ola]: All sites in the Region are required to sign and adhere to an [Operating Level Agreement](https://documents.egi.eu/document/31) which defines the level of operation and service level requirements, such as compute and other capability, middleware, support, security, etc.
 [^GocdbServiceTypes]: See [GOC DB Documentation](https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Service_types)
 [^GlobusOnlineCookbook]: See the [EGI.eu documentation](https://wiki.egi.eu/wiki/Globus_Online_cookbook_for_EGI_VOs)
-[^ansible]: See the [ansible playbooks](https://github.com/AAROC/ansible-for-grd) for AAROC services. Remote deployment is possible with only ssh access to the remote machines - the identity of which is also managed with Perun.
+[^ansibleforgrid]: See the [ansible playbooks](https://github.com/AAROC/ansible-for-grid) for AAROC services. Remote deployment is possible with only ssh access to the remote machines - the identity of which is also managed with Perun.
