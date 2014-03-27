@@ -202,7 +202,7 @@ Probably good choices would be [ZFS](http://en.wikipedia.org/wiki/ZFS) or [BTRFS
 
 ### Data management summary
 
-There are several distrbuted filesystems out there, and to avoid descending into vulgar name-calling and slinging of opinions, I refer to the recent work of Depardon, Le Mahec and Séguin[^DFScomparison]. Some thought needs to go into  the integration of these with the standard grid middleware I'll mention below, though.
+There are several distributed filesystems out there, and to avoid descending into vulgar name-calling and slinging of opinions, I refer to the recent work of Depardon, Le Mahec and Séguin[^DFScomparison]. Some thought needs to go into  the integration of these with the standard grid middleware I'll mention below, though.
 
 # Implementation {#Implementation}
 
