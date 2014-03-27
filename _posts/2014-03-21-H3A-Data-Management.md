@@ -250,10 +250,10 @@ A realistic demonstration of the full service might include the following scenar
 
 The following workflow would be executed:
 
-  1. Optional - user authenticates to VO and stores data on a local storage element.
-  1. User authenticates to GlobusOnline and activates local and remote storage endpoints
-  1. User requests data transfer to UCT using GlobusOnline
-  1. Data is stored in staging area and (optional) registered in VO-level file catalogue.
+ 1. Optional - user authenticates to VO and stores data on a local storage element.
+ 1. User authenticates to GlobusOnline and activates local and remote storage endpoints
+ 1. User requests data transfer to UCT using GlobusOnline
+ 1. Data is stored in staging area and (optional) registered in VO-level file catalogue.
 
 # Next steps and Summary. {#next}
 
