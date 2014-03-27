@@ -240,7 +240,7 @@ The products in these stacks satisfy all of the functional requirements describe
 
 ## Deployment and Integration
 
-Most services needed to satisfy the requirements of the collaboration for data staging are already in production. The provisioning of a data storage area for the collaboration was recently discussed and agreed to in principle by ICTS. In  order to integrate the staging area into the ROC, so that users and services can use it, we need to deploy a properly-configured grid storage element and register it in the GOCDB. This endpoint could be **DPM**, **xrootd**, **SRM** or **iRODS**[^GocdbServiceTypes]. All storage elements in the ROC, which support VO's are immediately usable by GlobusOnline[^GlobusOnlineCookbook]. UCT ICTS needs to provide the storage element (which can be remotely executed with [Ansible][^ansibleforgrid].)
+Most services needed to satisfy the requirements of the collaboration for data staging are already in production. The provisioning of a data storage area for the collaboration was recently discussed and agreed to in principle by ICTS. In  order to integrate the staging area into the ROC, so that users and services can use it, we need to deploy a properly-configured grid storage element and register it in the GOCDB. This endpoint could be **DPM**, **xrootd**, **SRM** or **iRODS**[^GocdbServiceTypes]. All storage elements in the ROC, which support VO's are immediately usable by GlobusOnline[^GlobusOnlineCookbook]. UCT ICTS needs to provide the storage element (which can be remotely executed with [Ansible](http://www.ansible.com)[^ansibleforgrid].)
 
 ## Demonstrator
 
