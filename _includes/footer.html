@@ -33,6 +33,11 @@
                     <i class="icon-stackexchange"></i>
                 </a>
             </li>{% endif %}
+            {% if site.owner.linkedin %}<li>
+                <a href="https://www.linkedin.com/in/{{ site.owner.linkedin }}" data-toggle="tooltip" title="{{ site.owner.name}} on LinkedIn" target="_blank">
+                    <i class="icon-linkedin"></i>
+                </a>
+            </li>{% endif %}
             {% if site.owner.instagram %}<li>
                 <a href="http://instagram.com/{{ site.owner.instagram }}" data-toggle="tooltip" title="{{ site.owner.name}} on Instagram" target="_blank">
                     <i class="icon-instagram"></i>
