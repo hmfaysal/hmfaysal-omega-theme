@@ -37,6 +37,7 @@ That means that you can, via this simple (too simple for now - we'll get to that
 > How is that different from using the command-line interface ? 
 
 There are two major differences : 
+
 1. You don't need a personal x.509 certificate
 1. Metadata is not stored in a Logical File Catalogue, but in the gateway's tracking database.
 
@@ -79,6 +80,7 @@ Ok, the last bit hides a few issues which you may not be able to overcome if you
 ## Configuring different types of storage
 
 So that gateway itself is pretty useless without these supporting services, but even so it can act as a simple data storage interface, since you can configure different types of storage, not just 'grid storage'. Right now it supports 
+
 + **Local storage** : upload files directly to the gateway
 + **Grid Storage** : upload files to a set of distributed storage, depending on where the VO is supported.
 
