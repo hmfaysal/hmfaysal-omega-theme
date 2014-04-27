@@ -43,7 +43,12 @@ There are two major differences :
 
 First, the good news : you\'re '''this''' close to just uploading files to something that looks very much like cloud storage. If you have an account on an Identity Provider which is in the catch-all test federation, you can request authorisation to the portal and by going to the `my-data page`, you can select the file you want to upload. 
 
-The user is presented with a virtual filesystem where they can create directories and organise their files. Access buttons are provided for download and delete functionality. 
+The user is presented with a virtual filesystem where they can create directories and organise their files. Access buttons are provided for download and delete functionality.
+<figure class="">
+	<img src="/images/data-gateway-screenshot1.png">
+</figure>
+
+
 
 ## Sharing data is not that easy at the moment. 
 Time for the bad news. The primary point of this system is to ''transfer'' data, not to curate, not to share, not to disseminate. 
