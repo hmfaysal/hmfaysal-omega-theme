@@ -105,6 +105,7 @@ The functionality right now is quite simple - you can ask the database where you
 ```
 select * from eInfrSrv_StorageURLs;
 ```
+
 | surlId | url                                                                                                                       | infraId | fileId |
 |--------|---------------------------------------------------------------------------------------------------------------------------|---------|--------|
 |      1 | srm://se.core.wits.ac.za/dpm/core.wits.ac.za/home/sagrid/SAGridDataGateway/10594/1398247101587_grid-security.tgz          |       1 |      1 |
