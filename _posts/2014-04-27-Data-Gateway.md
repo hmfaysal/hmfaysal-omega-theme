@@ -102,7 +102,7 @@ At this point, the file is no longer on the gateway, but transferred safely to a
 The functionality right now is quite simple - you can ask the database where your files are and what the 
 
 
-```mysql
+```
 select * from eInfrSrv_StorageURLs;
 +--------+---------------------------------------------------------------------------------------------------------------------------+---------+--------+
 | surlId | url                                                                                                                       | infraId | fileId |
