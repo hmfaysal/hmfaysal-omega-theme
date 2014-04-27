@@ -37,8 +37,8 @@ That means that you can, via this simple (too simple for now - we'll get to that
 > How is that different from using the command-line interface ? 
 
 There are two major differences : 
-  1. You don't need a personal x.509 certificate
-  1. Metadata is not stored in a Logical File Catalogue, but in the gateway's tracking database.
+1. You don't need a personal x.509 certificate
+1. Metadata is not stored in a Logical File Catalogue, but in the gateway's tracking database.
 
 ## Uploading data is really easy
 
@@ -74,7 +74,7 @@ First of all, the installation is quite simple:
 1. Get the [Liferay Community Edition](https://www.liferay.com/downloads/liferay-portal/available-releases)
 1. Configure stuff... 
   
-Ok, the last bit hides a few issues which you may not be able to overcome if you\'re starting from absolute scratch. For example, the configuration of the Shibboleth federated sign-on won't be possible if you don't have a federation in which to test the service. You need an e-token server, a robot certificate registered in a Virtual Organisation, which has resources that support it. You'll need a MySql database backend, and there's of course a lot of graphical layout work that is desirable but not 100 % necessary. Since SAGrid already has these prerequisites, we don't suggest peer collaborations like H3A going ape and installing everything themselves, but rather use the gateway as a service. 
+Ok, the last bit hides a few issues which you may not be able to overcome if you're starting from absolute scratch. For example, the configuration of the Shibboleth federated sign-on won't be possible if you don't have a federation in which to test the service. You need an e-token server, a robot certificate registered in a Virtual Organisation, which has resources that support it. You'll need a MySql database backend, and there's of course a lot of graphical layout work that is desirable but not 100 % necessary. Since SAGrid already has these prerequisites, we don't suggest peer collaborations like H3A going ape and installing everything themselves, but rather use the gateway as a service. 
 
 ## Configuring different types of storage
 
