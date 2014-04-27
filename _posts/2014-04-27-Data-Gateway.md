@@ -88,7 +88,7 @@ In the future, cloud storage and remote storage over https or WebDAV will be pos
 
 # Discovering Resources
 
-After long discussions some months back, it was decided to do things Properly when adding grid resources. This means obtaining an '''authoritative''' of storage elements, based on a given identity (proxy). The authoritative source of resource information in the grid world is the [GOCDB](https://goc.egi.eu), which, happily, provides an [API to the information contained in it](https://wiki.egi.eu/wiki/GOCDB/PI/Technical_Documentation). This information is of course not entirely public, so accessing the API requires a security context which is again determined by a trusted proxy. 
+After long discussions some months back, it was decided to do things Properly when adding grid resources. This means obtaining an **authoritative** of storage elements, based on a given identity (proxy). The authoritative source of resource information in the grid world is the [GOCDB](https://goc.egi.eu), which, happily, provides an [API to the information contained in it](https://wiki.egi.eu/wiki/GOCDB/PI/Technical_Documentation). This information is of course not entirely public, so accessing the API requires a security context which is again determined by a trusted proxy. 
 
 The Data Gateway uses this API to connect to the GOCDB and obtain an authoritative list of site-BDIIs. These are then used to obtain a full list of top-bdiis. We are now in a position to interrogate them, to find the SE's that support the VO for which we've generated our proxy. This list is passed to the portlet which presents them to the administrator, in order to select a default.
 
@@ -146,7 +146,7 @@ Two other features have been floated for inclusion : Asynchronous transfers and 
 
 ## Security
 
-We've touched on the fact that right now, this system is not set up for 100 % private and confidential transfers and storage. There's an easy way around this - just and store transfer encrypted data - but this is probably going to mean far larged data sizes [^1] and hence very slow trnasfers and some significant computing overhead before and after the transfer. In this case we won't have to worry about snooping, provided we keep the private key that was used to encrypt the data safe, but what we really need is an encrypted ''channel''. One way or another, there's going to be some CPU to pay. 
+We've touched on the fact that right now, this system is not set up for 100 % private and confidential transfers and storage. There's an easy way around this - just and store transfer encrypted data - but this is probably going to mean far larged data sizes [^1] and hence very slow transfers and some significant computing overhead before and after the transfer. In this case we won't have to worry about snooping, provided we keep the private key that was used to encrypt the data safe, but what we really need is an encrypted **channel**. One way or another, there's going to be some CPU to pay. 
 
 ## User Interface
 
