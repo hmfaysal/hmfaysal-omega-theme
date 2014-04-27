@@ -108,7 +108,7 @@ select * from eInfrSrv_StorageURLs;
 
 | surlId | url                                                                                                                       | infraId | fileId |
 |--------|---------------------------------------------------------------------------------------------------------------------------|---------|--------|
-|      1 | srm://se.core.wits.ac.za/dpm/core.wits.ac.za/home/sagrid/SAGridDataGateway/10594/1398247101587_grid-security.tgz          |       1 |      1 |
-|      2 | srm://se.core.wits.ac.za/dpm/core.wits.ac.za/home/sagrid/SAGridDataGateway/10594/1398248657885_epikh-workshop.avi         |       1 |      2 |
-|      5 | srm://se.core.wits.ac.za/dpm/core.wits.ac.za/home/sagrid/SAGridDataGateway/10508/1398263308982_go-server-13.4.1-18342.deb |       1 |      5 |
-|      6 | srm://se.core.wits.ac.za/dpm/core.wits.ac.za/home/sagrid/SAGridDataGateway/10508/1398414405226_64px-PD-icon.svg.png       |       1 |      6 |
+|      1 | srm://se.core.wits.ac.za/dpm/core.wits.ac.za/home/sagrid/SAGridDataGateway/<uid>/<hash>_grid-security.tgz          |       1 |      1 |
+|      2 | srm://se.core.wits.ac.za/dpm/core.wits.ac.za/home/sagrid/SAGridDataGateway/<uid>/<hash>_epikh-workshop.avi         |       1 |      2 |
+|      5 | srm://se.core.wits.ac.za/dpm/core.wits.ac.za/home/sagrid/SAGridDataGateway/<uid>/<hash>_go-server-13.4.1-18342.deb |       1 |      5 |
+|      6 | srm://se.core.wits.ac.za/dpm/core.wits.ac.za/home/sagrid/SAGridDataGateway/<uid>/<hash>_64px-PD-icon.svg.png       |       1 |      6 |
