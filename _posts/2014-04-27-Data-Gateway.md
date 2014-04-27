@@ -68,10 +68,10 @@ I hear you asking "How is this different to any other kind of cloud storage" ? T
 ## Requirements and setup.
 
 First of all, the installation is quite simple:
-  1. Install your favourite OS (we used CentOS)
-  1. Install [glassfish](https://glassfish.java.net/) application server
-  1. Get the [Liferay Community Edition](https://www.liferay.com/downloads/liferay-portal/available-releases)
-  1. Configure stuff... 
+1. Install your favourite OS (we used CentOS)
+1. Install [glassfish](https://glassfish.java.net/) application server
+1. Get the [Liferay Community Edition](https://www.liferay.com/downloads/liferay-portal/available-releases)
+1. Configure stuff... 
   
 Ok, the last bit hides a few issues which you may not be able to overcome if you\'re starting from absolute scratch. For example, the configuration of the Shibboleth federated sign-on won't be possible if you don't have a federation in which to test the service. You need an e-token server, a robot certificate registered in a Virtual Organisation, which has resources that support it. You'll need a MySql database backend, and there's of course a lot of graphical layout work that is desirable but not 100 % necessary. Since SAGrid already has these prerequisites, we don't suggest peer collaborations like H3A going ape and installing everything themselves, but rather use the gateway as a service. 
 
