@@ -36,12 +36,12 @@ That means that you can, via this simple (too simple for now - we'll get to that
 > How is that different from using the command-line interface ? 
 
 There are two major differences : 
-  1. You don't need a personal x.509 certificate
-  2. Metadata is not stored in a Logical File Catalogue, but in the gateway's tracking database.
+ 1. You don't need a personal x.509 certificate
+ 1. Metadata is not stored in a Logical File Catalogue, but in the gateway's tracking database.
 
 ## Uploading data is really easy
 
-First, the good news : you're '''this''' close to just uploading files to something that looks very much like cloud storage. If you have an account on an Identity Provider which is in the catch-all test federation, you can request authorisation to the portal and by going to the `my-data page`, you can select the file you want to upload. 
+First, the good news : you\'re '''this''' close to just uploading files to something that looks very much like cloud storage. If you have an account on an Identity Provider which is in the catch-all test federation, you can request authorisation to the portal and by going to the `my-data page`, you can select the file you want to upload. 
 
 The user is presented with a virtual filesystem where they can create directories and organise their files. Access buttons are provided for download and delete functionality. 
 
