@@ -17,7 +17,7 @@ TL;DR : We've started a new service for uploading data - the ["Data Gateway"](ht
 
 
 # What is it ? 
-The Data Gateway is part of the [Catania Science Gateways Framework](https://catania-science-gateways.it). We're already using it's ''sister'' component, the Grid Engine, in the [SAGrid Science Gateway](https://science-gateway.sagrid.ac.za). The Data Gateway acts in the same way as the Grid Engine, as a simple user interface to distributed resources - based on [LifeRay](https://www.liferay.com/) portal, using Glassfish as an application server. Federated sign-on as usual, using Shibboleth, with an ldap and mysql backend. 
+The Data Gateway is part of the [Catania Science Gateways Framework](https://catania-science-gateways.it). We're already using it's 'sister' component, the Grid Engine, in the [SAGrid Science Gateway](https://science-gateway.sagrid.ac.za). The Data Gateway acts in the same way as the Grid Engine, as a simple user interface to distributed resources - based on [LifeRay](https://www.liferay.com/) portal, using Glassfish as an application server. Federated sign-on as usual, using Shibboleth, with an ldap and mysql backend. 
 
 # YMMV - but we're working in on it.
 This is a very-alpha release ! While the design of the portlet is stable, as well as the general workflow, there is a lot of desired functionality which has not yet been implemented. The aim of this note is to describe what we've got at this point in time and to point out areas for immediate development, prioritised according to user needs. We're taking suggestions from whoever uses the gateway of course, but for various reasons, we're going to be prioritising the needs of the H3ABioNet collaboration. 
@@ -42,7 +42,7 @@ There are two major differences :
 
 ## Uploading data is really easy
 
-First, the good news : you're ''''this'''' close to just uploading files to something that looks very much like cloud storage. If you have an account on an Identity Provider which is in the catch-all test federation, you can request authorisation to the portal and by going to the `my-data page`, you can select the file you want to upload. 
+First, the good news : you're **this** close to just uploading files to something that looks very much like cloud storage. If you have an account on an Identity Provider which is in the catch-all test federation, you can request authorisation to the portal and by going to the `my-data page`, you can select the file you want to upload. 
 
 The user is presented with a virtual filesystem where they can create directories and organise their files. Access buttons are provided for download and delete functionality.
 <figure class="">
@@ -52,7 +52,7 @@ The user is presented with a virtual filesystem where they can create directorie
 
 
 ## Sharing data is not that easy at the moment. 
-Time for the bad news. The primary point of this system is to ''''transfer'''' data, not to curate, not to share, not to disseminate. 
+Time for the bad news. The primary point of this system is to **transfer** data, not to curate, not to share, not to disseminate. 
 
 > TRANSFER DATA, YOU DIG ?
 
@@ -79,8 +79,8 @@ Ok, the last bit hides a few issues which you may not be able to overcome if you
 ## Configuring different types of storage
 
 So that gateway itself is pretty useless without these supporting services, but even so it can act as a simple data storage interface, since you can configure different types of storage, not just 'grid storage'. Right now it supports 
-  + '''Local storage''' : upload files directly to the gateway
-  + '''Grid Storage''' : upload files to a set of distributed storage, depending on where the VO is supported.
++ **Local storage** : upload files directly to the gateway
++ **Grid Storage** : upload files to a set of distributed storage, depending on where the VO is supported.
 
 So, even if you don't have any remote storage, you can still store files quite safely on the gateway itself, just configure the directory to the local storage and voila. 
 
