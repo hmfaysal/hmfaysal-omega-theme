@@ -27,6 +27,7 @@ This is a very-alpha release ! While the design of the portlet is stable, as wel
 > So, what can one do with it ? 
 
 Simple - store data on the grid. 
+
 The next question, of course is : 
 
 > What the heck does that mean ? 
@@ -41,7 +42,7 @@ There are two major differences :
 
 ## Uploading data is really easy
 
-First, the good news : you\'re '''this''' close to just uploading files to something that looks very much like cloud storage. If you have an account on an Identity Provider which is in the catch-all test federation, you can request authorisation to the portal and by going to the `my-data page`, you can select the file you want to upload. 
+First, the good news : you're ''''this'''' close to just uploading files to something that looks very much like cloud storage. If you have an account on an Identity Provider which is in the catch-all test federation, you can request authorisation to the portal and by going to the `my-data page`, you can select the file you want to upload. 
 
 The user is presented with a virtual filesystem where they can create directories and organise their files. Access buttons are provided for download and delete functionality.
 <figure class="">
@@ -51,7 +52,7 @@ The user is presented with a virtual filesystem where they can create directorie
 
 
 ## Sharing data is not that easy at the moment. 
-Time for the bad news. The primary point of this system is to ''transfer'' data, not to curate, not to share, not to disseminate. 
+Time for the bad news. The primary point of this system is to ''''transfer'''' data, not to curate, not to share, not to disseminate. 
 
 > TRANSFER DATA, YOU DIG ?
 
