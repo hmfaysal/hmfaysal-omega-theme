@@ -68,6 +68,7 @@ I hear you asking "How is this different to any other kind of cloud storage" ? T
 ## Requirements and setup.
 
 First of all, the installation is quite simple:
+
 1. Install your favourite OS (we used CentOS)
 1. Install [glassfish](https://glassfish.java.net/) application server
 1. Get the [Liferay Community Edition](https://www.liferay.com/downloads/liferay-portal/available-releases)
