@@ -99,17 +99,16 @@ As you can, you are returned a list of storage elements which are registered in 
 
 At this point, the file is no longer on the gateway, but transferred safely to a remote grid storage. Of course, to be able to download your file again (or interact with it in anyway), you need some kind of metadata to tell you where the file is, and what transfer protocols are supported by the remote storage. This information is kept in the database of the Data Engine, in a very similar way to the Logical File Catalogue. 
 
-The functionality right now is quite simple - you can ask the database where your files are and what the 
+The functionality right now is quite simple - you can ask the database where your files are and how to get them
 
 
 ```
 select * from eInfrSrv_StorageURLs;
-+--------+---------------------------------------------------------------------------------------------------------------------------+---------+--------+
+```
 | surlId | url                                                                                                                       | infraId | fileId |
-+--------+---------------------------------------------------------------------------------------------------------------------------+---------+--------+
++--------+---------------------------------------------------------------------------------------------------------------------------|---------|--------|
 |      1 | srm://se.core.wits.ac.za/dpm/core.wits.ac.za/home/sagrid/SAGridDataGateway/10594/1398247101587_grid-security.tgz          |       1 |      1 |
 |      2 | srm://se.core.wits.ac.za/dpm/core.wits.ac.za/home/sagrid/SAGridDataGateway/10594/1398248657885_epikh-workshop.avi         |       1 |      2 |
 |      5 | srm://se.core.wits.ac.za/dpm/core.wits.ac.za/home/sagrid/SAGridDataGateway/10508/1398263308982_go-server-13.4.1-18342.deb |       1 |      5 |
 |      6 | srm://se.core.wits.ac.za/dpm/core.wits.ac.za/home/sagrid/SAGridDataGateway/10508/1398414405226_64px-PD-icon.svg.png       |       1 |      6 |
 +--------+---------------------------------------------------------------------------------------------------------------------------+---------+--------+
-```
