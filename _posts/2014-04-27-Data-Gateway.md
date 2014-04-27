@@ -117,10 +117,10 @@ select * from eInfrSrv_StorageURLs;
 
 | surlId | url                                                                                                                       |  infraId  | fileId |
 |:--------|:---------------------------------------------------------------------------------------------------------------------------|:---------|:--------|
-|      1 | srm://se.core.wits.ac.za/dpm/core.wits.ac.za/home/sagrid/SAGridDataGateway/<uid>/<hash>_grid-security.tgz          |       1 |      1 |
-|      2 | srm://se.core.wits.ac.za/dpm/core.wits.ac.za/home/sagrid/SAGridDataGateway/<uid>/<hash>_epikh-workshop.avi         |       1 |      2 |
-|      5 | srm://se.core.wits.ac.za/dpm/core.wits.ac.za/home/sagrid/SAGridDataGateway/<uid>/<hash>_go-server-13.4.1-18342.deb |       1 |      5 |
-|      6 | srm://se.core.wits.ac.za/dpm/core.wits.ac.za/home/sagrid/SAGridDataGateway/<uid>/<hash>_64px-PD-icon.svg.png       |       1 |      6 |
+|      1 | `srm://se.core.wits.ac.za/dpm/core.wits.ac.za/home/sagrid/SAGridDataGateway/<uid>/<hash>_grid-security.tgz`          |       1 |      1 |
+|      2 | `srm://se.core.wits.ac.za/dpm/core.wits.ac.za/home/sagrid/SAGridDataGateway/<uid>/<hash>_epikh-workshop.avi`         |       1 |      2 |
+|      5 | `srm://se.core.wits.ac.za/dpm/core.wits.ac.za/home/sagrid/SAGridDataGateway/<uid>/<hash>_go-server-13.4.1-18342.deb` |       1 |      5 |
+|      6 | `srm://se.core.wits.ac.za/dpm/core.wits.ac.za/home/sagrid/SAGridDataGateway/<uid>/<hash>_64px-PD-icon.svg.png`       |       1 |      6 |
 
 ## Who can see my data ? 
 So, you can see that this system provides about as much security as the "typical" grid storage. If you had access to the gateway (as root, or the user which runs the service), you could see all of the data, since it's transferred first tol the gateway, then shipped to the remote storage. The data is not encrypted on the gateway before transfer to grid storage yet, so while it's being staged, it's of course as vulnerable as the machine itself is (which is to say, pretty safe, but not impenetrable).
