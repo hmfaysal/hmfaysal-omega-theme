@@ -106,9 +106,54 @@ The functionality right now is quite simple - you can ask the database where you
 select * from eInfrSrv_StorageURLs;
 ```
 
-| surlId | url                                                                                                                       | infraId | fileId |
-|--------|---------------------------------------------------------------------------------------------------------------------------|---------|--------|
+| surlId | url                                                                                                                       |  infraId  | fileId |
+|:--------|:---------------------------------------------------------------------------------------------------------------------------|:---------|:--------|
 |      1 | srm://se.core.wits.ac.za/dpm/core.wits.ac.za/home/sagrid/SAGridDataGateway/<uid>/<hash>_grid-security.tgz          |       1 |      1 |
 |      2 | srm://se.core.wits.ac.za/dpm/core.wits.ac.za/home/sagrid/SAGridDataGateway/<uid>/<hash>_epikh-workshop.avi         |       1 |      2 |
 |      5 | srm://se.core.wits.ac.za/dpm/core.wits.ac.za/home/sagrid/SAGridDataGateway/<uid>/<hash>_go-server-13.4.1-18342.deb |       1 |      5 |
 |      6 | srm://se.core.wits.ac.za/dpm/core.wits.ac.za/home/sagrid/SAGridDataGateway/<uid>/<hash>_64px-PD-icon.svg.png       |       1 |      6 |
+
+## Who can see my data ? 
+So, you can see that this system provides about as much security as the "typical" grid storage. If you had access to the gateway (as root, or the user which runs the service), you could see all of the data, since it's transferred first tol the gateway, then shipped to the remote storage. The data is not encrypted on the gateway before transfer to grid storage yet, so while it's being staged, it's of course as vulnerable as the machine itself is (which is to say, pretty safe, but not impenetrable).
+
+
+So, it's time to consider where to go with this, and what improvements we can think of, so that we can try to prioritise them.
+
+# Suggested improvements and additional functionality
+
+## Integration with existing grid services
+
+The first thing that comes to mind is that the gateway is actually re-implementing some existing features of gLite and perhaps other middelware. The LFC for example performs much the same task as the tracking database of the gateway, in keeping metadata regarding TURLS and SURLS. However, since under the hood, the gateway is using [jSAGA](http://software.in2p3.fr/jsaga/latest-release/), in order to interact with grid services, you can plug in any storage that's found in the GOCDB right now - whether it be on EGI, OSG or other regional infrastructures life AfricaGrid, independent of the middelware. The metadata could, however be improved with a bit of work, to make it compatible with the LFC or other metadata systems.
+
+## More intelligent selection of endpoints
+
+Currently, there's only one way to obtain a list of endpoints, and only one default. The use case envisioned by H3A indeed foresees to have data transferred to the staging area in Cape Town. However, in more general use cases, it would be useful to have a way to override this, as well as having some kind of algorithm to selct the storage endpoint on the fly, taking into account conditions at the time of transfer. Let's not get into the how for now...
+
+## Transfers
+
+It's clear that there's a bottleneck posed by the gateway itself - data first has to be sent to the gateway, then to whichever storage is set as default.One can imagine a case where we want to send some data from from a laptop to a storage element on the same LAN (say, in Tunisia), but which then has to travel first to the gateway (on the other side of the continent) first. Clearly this doesn't make sense, it should be possible for the gateway to initiate third-party transfers: The user contacts the gateway and request a transfer from laptop to storage. It's then up to the gateway to initiate the transfer. 
+
+This is something that the [FTS](https://svnweb.cern.ch/trac/fts3/wiki/UserGuide) already does quite well. gLibrary's [GridBox](http://sourceforge.net/p/ctsciencegtwys/glibrary/gridbox/ci/master/tree/) apparently does a pretty nifty job too. These two solutions need to be tested and integrated with the DataEngine. 
+
+Two other features have been floated for inclusion : Asynchronous transfers and resumable transfers.
+
+## Security
+
+We've touched on the fact that right now, this system is not set up for 100 % private and confidential transfers and storage. There's an easy way around this - just and store transfer encrypted data - but this is probably going to mean far larged data sizes [^1] and hence very slow trnasfers and some significant computing overhead before and after the transfer. In this case we won't have to worry about snooping, provided we keep the private key that was used to encrypt the data safe, but what we really need is an encrypted ''channel''. One way or another, there's going to be some CPU to pay. 
+
+## User Interface
+
+The user interface is, to say the least, very bare at the moment. It would be nice to add some features, such as graphs of the transfer speeds, current and done transfers, geographical layout of the storage endpoints, and the ability to use a GUI like that to select the storage that you want... there's plenty of work to do here, but it's essentially low-priority at the moment (unless we get told to bump it up, of course !)
+
+## Sharing
+
+There's currently no sharing mechanism in the portlet. This is forseen, but does not have a single, simple way to be implemented. Of course, sharing data safely and securely is different to just sharing data based on some digital identifier (URL, DOI, etc). A security context needs to be maintained, with fine-grained roles, perhaps even personal identification rather than proxies of robot certificates, given the sensitive nature of the data. This may take quite a while to implement to the requirements of H3A, but it's something that other users of the data gateway would be quite interested in. 
+
+# Conclusions and next steps.
+
+The data gateway is now ready for alpha testing and feedback. There is basic functionality, which needs to be heavily extended upon, but the overall design provides for highly-scalabe, simple access to secure, distributed storage. By exploiting OGF and JSR standards as well as SAML, we can build a simple, powerful interface for users to transfer data. Although there are several ideas on how to extend and improve the functionality and interface, these need to be prioritised for the main use case, H3A data transfers. 
+
+
+# References
+
+[^1]: "Efficient methodology for implementation of Encrypted File", S. Kumar, U. S. Rawat, S. Kumar Jasra, and A. K. Jain, International Journal of Computer Science and Information Security, IJCSIS July 2009, Vol. 3, No. 1 (http://arxiv.org/abs/0908.0551)
