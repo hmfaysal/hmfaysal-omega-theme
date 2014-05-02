@@ -4,7 +4,7 @@ title: "Data Gateway Quo Vadis"
 description: Feature requests for the Data Gateway
 headline: Feature requests for the data gateway. 
 category: datagateway
-tags: [datagatway, feature requests, data, Liferay, grid]
+tags: [datagateway, feature requests, data, Liferay, grid]
 image: 
   feature: bluebird.png
 comments: true 
@@ -14,7 +14,7 @@ The image you see here is from the "Powerhouse Museum Collection", part of the F
 
 > [*Sir Malcolm Campbell at the wheel of the "Bluebird", with crowd, 1926 - 1936*](https://www.flickr.com/photos/powerhouse_museum/4361739736/in/photolist-f2oiZ4-7vxx3s-7vkBB4-eKym1q-6NMyCU-dyjJV4-bTcAUB-8mhe7Z-8mhe7F-9WhoVE-7Dr4gf-4ibmrd-6rWQji-eg1Dav-bDur4B-cA7kbf-dLENKZ-4ibCDd-bpw2WQ-4i7fqz-4i95Hx-e5aewZ-dMAExi-a5PWpk-e5aemp-4i8wGp-9qQzN6-cA7jyQ-g5ruVC-8cGJV2-bzn2R8-cyfd7h-eR3bib-9P3pbw-cyf73E-g7akj2-eg2rGR-9NZymR-n1dZ8E-4TqC9T-dAbXuq-n1cmng-4i8AgZ-dJVWAR-fpM2sX-fpM2NX-dB2V7g-do6DYL-e6E3Yy-ceFtvy/)
 
-I chose this image because it shows a work in progress, a community, and a beast of a machine. The data gateway finds itself perhaps far, far way from being a beast of a service, but it certainly shows a lot of potential. 
+I chose this image because it shows a work in progress, a community, and a beast of a machine. The data gateway finds itself perhaps far, far way from being a beast of a service, but it certainly is a work in progress and shows a lot of potential for communities reliant on data-intensive science.
 
 In previous posts, I discussed our work on developing a gateway which could provide the functioanality that the H3ABioNet project needed to ingest data into a staging area easily, from collaborators around the world. We discussed various options, front-end user tools, web interfaces, back-end and CLI tools, *etc*
 
@@ -177,9 +177,9 @@ Implementing this would probably make the site network admins happy, as well as 
 
 ## Scheduled stage 
 
-Another way to make more effient usage of the available bandwidth is to predict when the network will be less congested and schedule large data transfers for that time. This would involve some kind of cron on the host, which Liferay interacts with to schedule actions. I haven't looked too deeply into this, but it seems like you'd have to code that bit yourself[^ScheduledJobs]. 
+Another way to make more efficient usage of the available bandwidth is to predict when the network will be less congested and schedule large data transfers for that time. This would involve some kind of cron on the host, which Liferay interacts with to schedule actions. I haven't looked too deeply into this, but it seems like you'd have to code that bit yourself[^ScheduledJobs]. 
 
-Another way to do this, perhaps the **Right Way &trade;** would be to use the [FTS](https://svnweb.cern.ch/trac/fts3) to schedule transfers. This would of course require a lot of coding, but the FTS in use could be discovered from the GOCDB in the same way that the top-BDIIs and Storage Elements are. There would likely be little need for a UI within Liferay, since the FTS provides it's own [web interface](https://svnweb.cern.ch/trac/fts3/web)
+Another way to do this, perhaps the **Right Way &trade;** would be to use the [FTS](https://svnweb.cern.ch/trac/fts3) to schedule transfers. This would of course require a lot of coding, but the FTS in use could be discovered from the GOCDB in the same way that the top-BDIIs and Storage Elements are. There would likely be little need for a UI within Liferay, since the FTS provides it's own [web interface](https://svnweb.cern.ch/trac/fts3/WEBFTS)
 
 
 ## Upload from URL
