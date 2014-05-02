@@ -112,8 +112,19 @@ I've run a few tests on the gateway to see how stable and performant it is. So f
 	<figcaption><em><b>Left</b>: Snapshot of iptraf during transfer of a 3 GB file. <b>Right</b>: screenshot of network activity during the full duration of the upload which lasted approx. 20 min.</em></figcaption>
 </figure>
 
+Some uploads were made from my laptop using files of various sizes[^filesizes], from an eduroam wireless access point. This was not what one could call a *"high-performance"* network, but was certainly better than most of what our collaborators on the continent will experience. Let's just say the bottleneck was the originating network and not the data gateway. 
+
+The overal experience was very encouraging; there are two numbers you can take away from this brief experience : 
+ 
+ 1. ***10 min / GB*** for upload from the internet
+ 1. ***2.5 min / GB*** staging to data storage on SANREN
+
+For a 50 GB transfer, such as the one that is planned between the group of [Mary Claire King](http://www.gs.washington.edu/faculty/king.htm) at the Genome Sciences Department of the University of Washington School of Medicine, we can probably expect the transfer to take about 8 hours. That's pretty sweet, if you ask me. 
+
+On the downside, I'm informed by collaborators in Tunisia that the gateway is giving them timeouts and errors[^mohamed] - so the user experience is far from unique at this point. The point of these blog posts is about teasing out the finer details and making things better... 
 
 # Data Gateway - Quo Vadis ? 
+
 So, given how apparently great the data gateway is, it's time to think about exploiting it better. This entails some added functionality, and perhaps tweaks in the design and internal algorithms. Everything starts, however with a wishlist. Here we go...
 
 ## Provide more verbosity to the portal admin and user
@@ -249,3 +260,7 @@ This work is partially supported by the [CHAIN-REDS](https://chain-project.eu) p
 [^ScheduledJobs]: A very quick search only showed http://www.apoorvaprakash.in/2011/02/liferay-scheduler.html. Maybe the [Liferay Ajax](http://www.liferay.com/community/wiki/-/wiki/Main/AJAX#section-AJAX-AJAX+in+Liferay+6) support in Allow wil allow that... 
 
 [^cajones]: I haven't had the *cajones* to try files bigger than that, but I suspect that this action will simply kill the jvm and the actual vm.
+
+[^filesizes]: A sequence of files in steps of 1 GB were created from 1 GB to 25 GB. No performance change in average bandwidth was noticed. There might be some impact of overhead for significantly smaller files.
+
+[^mohamed]: Reported on Friday May 2. Can't see anything relevant in the logs and I can't reproduce the error. My first guess is that this is a Liferay timeout issue, although it could likely be an AuthN issue. Boh...
