@@ -25,6 +25,7 @@ When the collaboration grows beyond a certain size[^citationneeded], however, un
 Just to drive home a point (and apologies in advance for harping on), these rely fundamentally on *standards*, which I'll get into a bit later in this post. Interestingly, the recent [e-IRG](http://www.e-irg.org) recommendations suggest that it is the responsibility of the user communities to contribute to the development of these standards[^eirg-standards] : 
 
 > International user communities requiring e-Infrastructure services should organize themselves to be able to address the challenges in their future roles:
+ 
  1. Driving the long term strategy for their e-Infrastructure needs
  1. Using their purchasing power to stimulate the development of suitable, effective e-Infrastructure services;
  1. Participating in the innovation of e-Infrastructure services;
