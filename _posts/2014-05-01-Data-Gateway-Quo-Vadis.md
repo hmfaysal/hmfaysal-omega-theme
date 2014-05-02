@@ -53,13 +53,12 @@ There are no special libraries for this storage type or that, just one implement
 
 To clarify this, here's how the storage resources are discovered[^servportlet]
 
-```java
-	if(resourceRequest.getResourceID().equals("gLite")){
-            if(ParamUtil.getString(resourceRequest, "action","getVOResources").equals("getVOResources")){
-                URL proxy= new URL(ParamUtil.getString(resourceRequest, "proxy"));
-                InformationUtil iu= new InformationUtil(proxy, getInitParameter("GOCDB_TBDII"));
 ```
-
+if(resourceRequest.getResourceID().equals("gLite")){
+if(ParamUtil.getString(resourceRequest, "action","getVOResources").equals("getVOResources")){
+URL proxy= new URL(ParamUtil.getString(resourceRequest, "proxy"));
+InformationUtil iu= new InformationUtil(proxy, getInitParameter("GOCDB_TBDII"));
+```
 The `GOCDB_TBDII` and some other global configuration variables are specified in files internal to the gateway :
 
 ```
