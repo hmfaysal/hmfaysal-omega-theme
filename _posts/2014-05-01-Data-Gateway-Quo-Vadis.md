@@ -74,29 +74,28 @@ import it.infn.ct.einfrsrv.util.gLitePropertiesKeys;
 ... the code then continues: 
 
 ~~~ java
-                resourceResponse.setContentType("application/json");
-                JSONObject json = JSONFactoryUtil.createJSONObject();
-                PortletSession session= resourceRequest.getPortletSession();
-                try {
-                    json.put("voName", iu.getVOName());
-                    session.setAttribute("voName", iu.getVOName());
-                    JSONArray tvobdii= JSONFactoryUtil.createJSONArray();
-                    for(String tb: iu.getVOTopBDII()){
-                        tvobdii.put(tb);
-                    }
+resourceResponse.setContentType("application/json");
+JSONObject json = JSONFactoryUtil.createJSONObject();
+PortletSession session= resourceRequest.getPortletSession();
+	try {
+			json.put("voName", iu.getVOName());
+            session.setAttribute("voName", iu.getVOName());
+            JSONArray tvobdii= JSONFactoryUtil.createJSONArray();
+            for(String tb: iu.getVOTopBDII()){
+				tvobdii.put(tb);
+            }
 ~~~
 
 You can see here that the portlet is dealt a JSON array of top-BDII's which support the VO in question ... 
 
-```
-                    json.put("VOTopBDII", tvobdii);
-                    session.setAttribute("VOTopBDII", iu.getVOTopBDII());
-
-                    JSONArray vose= JSONFactoryUtil.createJSONArray();
-                    for(SE se: iu.getVOSE()){
-                        vose.put(se.getHost());
-                    }               
-```
+~~~ java
+json.put("VOTopBDII", tvobdii);
+session.setAttribute("VOTopBDII", iu.getVOTopBDII());
+JSONArray vose= JSONFactoryUtil.createJSONArray();
+for(SE se: iu.getVOSE()){
+	vose.put(se.getHost());
+	}               
+~~~ 
 ... which is then parsed to retrieve a list of storage hosts. One of these is selected as the default, which the portlets using the API are referred to. 
 
 So, the Data Gateway provides the portlet developer a means to access arbitrary storage; the way it's presented to the user depends entirely on the portlet in use. This could be such a bare-bones portlet as the one current users are seeing, which only allows upload and download, or it could be a feature-rich portlet which allows both new functionality (replication, sharing, etc)  as well as more information given to the user. 
