@@ -53,26 +53,27 @@ There are no special libraries for this storage type or that, just one implement
 
 To clarify this, here's how the storage resources are discovered[^servportlet]
 
-```
+~~~ java
+
 if(resourceRequest.getResourceID().equals("gLite")){
-if(ParamUtil.getString(resourceRequest, "action","getVOResources").equals("getVOResources")){
-URL proxy= new URL(ParamUtil.getString(resourceRequest, "proxy"));
-InformationUtil iu= new InformationUtil(proxy, getInitParameter("GOCDB_TBDII"));
-```
+	if(ParamUtil.getString(resourceRequest, "action","getVOResources").equals("getVOResources")){
+		URL proxy= new URL(ParamUtil.getString(resourceRequest, "proxy"));
+		InformationUtil iu= new InformationUtil(proxy, getInitParameter("GOCDB_TBDII"));
+
+~~~
+
 The `GOCDB_TBDII` and some other global configuration variables are specified in files internal to the gateway :
 
-```
-
+~~~ java
 import it.infn.ct.einfrsrv.sb.service.PropertiesLocalServiceUtil;
 import it.infn.ct.einfrsrv.util.LocalPropertiesKeys;
 import it.infn.ct.einfrsrv.util.eInfraPropertiesKeys;
 import it.infn.ct.einfrsrv.util.gLitePropertiesKeys;
-
-```
+~~~
 
 ... the code then continues: 
 
-```
+~~~ java
                 resourceResponse.setContentType("application/json");
                 JSONObject json = JSONFactoryUtil.createJSONObject();
                 PortletSession session= resourceRequest.getPortletSession();
@@ -83,7 +84,7 @@ import it.infn.ct.einfrsrv.util.gLitePropertiesKeys;
                     for(String tb: iu.getVOTopBDII()){
                         tvobdii.put(tb);
                     }
-```
+~~~
 
 You can see here that the portlet is dealt a JSON array of top-BDII's which support the VO in question ... 
 
