@@ -193,7 +193,28 @@ So, finally, here's what I think the portlet should look like :
 <a href="https://moqups.com/brucellino/XuhvcGCM/p:afb5d323c"><img src="{{ site.url }}/images/data-gateway-moqup1.png"></a>
 </figure>
 
-# Footnotes
+The user would see far more contextual information than just what appears to be a virtual filesystem. Firstly, there would be a simple summary of what state the data gateway is in. The second part of the portlet would be what we now have as the simple input, except that it would allow passing the data gateway a URL as well as a local file. Thirdly, there would be a user dashboard which we currently have, showing the user their own private information. Secondly, there would be a "sharing" dashboard for the community, showing all files belonging to that community. This would likely be curated by a different role than the simple user, for which we'd have to tweak the permissions of the portlet, but this is well supported by Liferay. Finally, there would be the possibility to expose the SURLs of the files that the gateway is managing, so that if need be users could access them in some other way.
+
+I've also imagined a slight modification to the upload procedure where instead of having a simple one-step workflow, two additional steps would be added : 
+ 
+ 1. ***Select a remote storage*** would allow users to select from a predefined list of storage elements (perhaps using one that's closest to them)
+ 1. ***Schedule*** would provide a preferred time (or deadline) to the portal, allowing it to pass this information on to the FTS or it's own internal scheduling system in order to optimise transfers.
+ 
+There are also some additional bits which I've discussed above linked from the nav bar - these would be simple to add and configure.
+
+# Summary and Conclusions
+
+The data gateway has a long way to go. Initial tests show that with the right configuration it can be very stable for file transfers exceeding several GB. Some minor architectural changes to the portlet would take greater advantage of the underlying API, while using additional grid or cloud services would provide a far more responsive and scalable service to user communities. 
+
+Input is requested specifically from the focus community (H3Africa), but we welcome comments from any and all users who want to help us develop this service for the wider user communities. 
+
+# Acknowledgements
+
+I'd like to thank the main developers Marco Fargetta and Riccardo Rotondo for their continued feedback and support while evaluating this service. The resources for the service are made available by the [University of the Free State](http://www.ufs.ac.za) HPC centre, a member of the [South African National Grid](http://www.sagrid.ac.za). 
+
+This work is partially supported by the [CHAIN-REDS](https://chain-project.eu) project and undertaken for [SANREN](http://www.sanren.ac.za) with support of the [South African Government Department of Science and Technology](http://www.dst.gov.za)
+
+# Footnotes and References
 
 [^Globus1]: Yes, I'm comparing Globus online to Dropbox, for two reasons - one with a positive connotation and one with a negative connotation. On the positive side, it's a black box, which is designed to *just work*; user authenticates, sets up transfer endpoints and proxies and shifts data. However, it's not an infrastructure - you have to do all the *collaboration* stuff yourself. There's no concept of VO, there's no trust anchor, you can't discover endpoints (apart from searching what people have already put in), there's no authoritative source of information regarding services.
 
