@@ -32,7 +32,7 @@
    open(filename, 'w') do |post|
      post.puts "---"
      post.puts "layout: post"
-     post.puts "type: qoute"
+     post.puts "type: quote"
      post.puts "title: \"#{title.gsub(/&/,'&amp;')}\""
      post.puts "description: "
      post.puts "headline: "
