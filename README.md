@@ -56,7 +56,7 @@ For a full list of features, visit [this link](http://hmfaysal.github.io/hmfaysa
 
 1. Clone the following folders: `_includes`, `_layouts`, `plugins`, `assets`, and `images`.
 2. Clone the following files and personalize content as need: `about.md`, `technical-details.md`, `theme-setup.md`, `index.html`, `categories.html`, `tags.html`, `feed.xml`, and `sitemap.xml`.
-3. Set the following variables in your `config.yml` file:
+3. Set the following variables in your `_config.yml` file:
 
 ``` yaml
 title:            Site Title
