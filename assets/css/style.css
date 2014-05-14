@@ -2615,9 +2615,9 @@ figure a img:hover {
 @media only screen and (min-width:62.5em) {
     figure.half img {
         float: left;
-        width: 365px;
-        margin-right: 5px;
-        margin-left: 5px;
+        width: 48%;
+        margin-right: 1%;
+        margin-left: 1%;
     }
 
     figure.half figcaption {
@@ -2628,9 +2628,9 @@ figure a img:hover {
 @media only screen and (min-width:62.5em) {
     figure.third img {
         float: left;
-        width: 240px;
-        margin-right: 5px;
-        margin-left: 5px;
+        width: 32.3%;
+        margin-right: 0.5%;
+        margin-left: 0.5%;
     }
 
     figure.third figcaption {

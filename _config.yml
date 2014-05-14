@@ -3,7 +3,7 @@ description:      "Omega: The Coolest Theme for Jekyll"
 logo:             omikron.png
 disqus_shortname: hmfaysal
 # Assign a default image for your site's header and footer
-default_bg:       default_bg.jpg
+default_bg:       4 seasons 125jpg_5987690229_l.jpg
 search:           true
 share:            true
 # Read Time is a calculator tp provide post read-time based on word count. Usage is recommended.
@@ -15,7 +15,7 @@ fin_color:        "255,255,255"
 # Change url to your domain. Leave localhost server or blank when working locally.
 # or use the hint from http://jekyllrb.com/docs/github-pages/ to keep this the same 
 # whether working locally or remotely. Start Jekyll with: jekyll serve --baseurl ''
-baseurl:          /hmfaysal-omega-theme
+url:       		   /hmfaysal-omega-theme
 
 # Owner/author information
 owner:
@@ -63,7 +63,7 @@ links:
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    America/New_York
 future:      true
-pygments:    true
+highlighter: pygments
 markdown:    kramdown
 paginate:    6
 paginate_path: "page:num"

@@ -145,10 +145,10 @@ tags: [Hossain, Mohd, Faysal, electrical, engineering, blog, university, pennsyl
 	               		{% if post.photo %}<figure><a href="{{ site.url }}{{ post.url }}"><img src="{{ site.url }}/images/{{ post.photo }}" alt="{{ post.title }}" itemprop="image"></a></figure>{% else %}<figure><a href="{{ site.url }}{{ post.url }}"><img src="{{ site.url }}/images/{{ post.image.feature }}" alt="{{ post.title }}" itemprop="image"></a></figure>{% endif %}
 	                    {% if post.link %}
 	                    <h2 class="post-title text-center super lighter">
-	                        <a href="{{ site.url }}{{ post.url }}" style="color: #fff; background-color: #45ADA8; border-radius: 4px; padding: 10px"><i class="icon-link"></i> {{ post.title }}</a>
+	                        <a href="{{ site.url }}{{ post.url }}" style="color: #fff; background-color: #45ADA8; border-radius: 4px; padding: 10px"><i class="icon-picture"></i> {{ post.title }}</a>
 	                    {% else %}
 	                    <h2 class="post-title text-center super lighter bordered-bottom">
-	                        <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+	                        <a href="{{ site.url }}{{ post.url }}"><i class="icon-picture"></i> {{ post.title }}</a>
 	                    {% endif %}
 	                    </h2>
 	                    <div class="post-info text-center small">
