@@ -3,7 +3,7 @@ description:      "Omega: The Coolest Theme for Jekyll"
 logo:             omikron.png
 disqus_shortname: hmfaysal
 # Assign a default image for your site's header and footer
-default_bg:       4 seasons 125jpg_5987690229_l.jpg
+default_bg:       default_bg1.jpg
 search:           true
 share:            true
 # Read Time is a calculator tp provide post read-time based on word count. Usage is recommended.
