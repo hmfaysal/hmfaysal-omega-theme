@@ -5,8 +5,7 @@ description: Simple 10 step method to get started with Jekyll
 headline: 
 category: Theme-Setup
 tags: [Jekyll, Installation]
-image: 
-  feature: picture-25.jpg
+imagefeature: picture-25.jpg
 comments: true
 mathjax: 
 ---

@@ -5,8 +5,7 @@ description: Theme Elements will save you tons of time working on the site conte
 category: Theme-Setup
 headline: Discover the theme elements
 tags: [Jekyll, HMFAYSAL OMEGA]
-image: 
-  feature: picture-38.jpg
+imagefeature: picture-38.jpg
 comments: true
 mathjax: true
 ---

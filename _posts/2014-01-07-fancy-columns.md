@@ -5,8 +5,7 @@ description: "Test of Twitter Bootstrap's 12 column setup"
 headline: 
 category: Sample-Posts
 tags: [sample post, columns]
-image: 
-  feature: picture-30.jpg
+imagefeature: picture-30.jpg
 comments: true
 mathjax: 
 ---

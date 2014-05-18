@@ -5,8 +5,7 @@ title: "Sample Gallery Post"
 description: "Examples and code for displaying galleries in posts."
 category: photos
 tags: [sample post, images, gallery, test]
-image: 
-  feature: picture-16.jpg
+imagefeature: picture-16.jpg
 comments: true
 mathjax: 
 ---

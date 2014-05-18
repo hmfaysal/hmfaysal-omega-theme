@@ -6,8 +6,7 @@ description: "Custom written post descriptions are the way to go... if you're no
 category: videos
 tags: [sample post, video]
 video: http://www.youtube.com/watch?v=CQJByFp7H38
-image: 
-  feature: picture-21.jpg
+imagefeature: picture-21.jpg
 comments: true
 share: true
 ---

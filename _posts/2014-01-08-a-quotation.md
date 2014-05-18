@@ -6,8 +6,7 @@ description: See the rest of the post about Albert Einstein
 headline: 
 category: Sample-Posts
 tags: [sample post, quotation]
-image: 
-  feature: albert-einstein-2068-hd-wallpapers.jpg
+imagefeature: albert-einstein-2068-hd-wallpapers.jpg
 comments: true
 mathjax: 
 ---

@@ -5,8 +5,8 @@ description: "Custom written post descriptions are the way to go... if you're no
 category: Sample-Posts
 tags: [sample post, readability]
 modified: 2013-06-30
-image:
-  feature: tokyo.jpg
+
+imagefeature: tokyo.jpg
 comments: true
 share: true
 ---

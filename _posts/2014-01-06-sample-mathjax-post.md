@@ -5,8 +5,7 @@ description: "MathJax Test article"
 headline: 
 category: Sample-Posts
 tags: [sample post, mathjax]
-image: 
-  feature: picture-26.jpg
+imagefeature: picture-26.jpg
 comments: true
 mathjax: true
 ---
