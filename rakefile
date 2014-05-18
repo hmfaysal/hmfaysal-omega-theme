@@ -25,7 +25,7 @@
 
   desc "Start a new quote"
   task :newquote, :title do |t, args|
-   args.with_defaults(:title => 'My New Post')
+   args.with_defaults(:title => 'My New quote')
    title = args.title
    filename = "_posts/#{Time.now.strftime('%Y-%m-%d')}-#{title.downcase.gsub(/&/,'and').gsub(/[,'":\?!\(\)\[\]]/,'').gsub(/[\W\.]/, '-').gsub(/-+$/,'')}.md"
    puts "Creating new post: #{filename}"
@@ -41,7 +41,7 @@
      post.puts "tags: []"
      post.puts "image: "
      post.puts "  feature: "
-     post.puts "comments: true"
+     post.puts "comments: false"
      post.puts "mathjax: "
      post.puts "---"
    end
@@ -65,7 +65,7 @@
      post.puts "tags: []"
      post.puts "image: "
      post.puts "  feature: "
-     post.puts "comments: true"
+     post.puts "comments: false"
      post.puts "mathjax: "
      post.puts "---"
    end

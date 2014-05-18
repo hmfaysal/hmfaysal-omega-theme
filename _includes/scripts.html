@@ -1,8 +1,34 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="{{ site.url }}/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 <script src="{{ site.url }}/assets/js/scripts.min.js"></script>
-    {% if site.animated_fins %}<script type="text/javascript" src="{{ site.url }}/assets/js/waypoints.min.js"></script>{% endif %}
-    <script type="text/javascript" src="{{ site.url }}/assets/js/script.js"></script>
+<script type="text/javascript" src="{{ site.url }}/assets/js/waypoints.min.js"></script>
+<script type="text/javascript" src="{{ site.url }}/assets/js/script.js"></script>
+
+<script type="text/javascript">
+
+/*      Slides       */
+
+$("a#slide").click(function(){
+    $("#sidebar,body,a#slide,#fade").addClass("slide")
+});
+
+$("#fade,#header,#posts-container").click(function(){
+    $("#sidebar,body,a#slide,#fade").removeClass("slide")
+});
+
+$("a#click-filter").click(function(){
+    $("#slide-filter").slideToggle("medium");
+    $("#slide-pages").slideOut("medium");
+});
+
+$("a#click-pages").click(function(){
+    $("#slide-pages").slideToggle("medium");
+    $("#slide-filter").slideOut("medium");
+});
+
+/*      End-Slides      */
+
+</script>
 
 {% if site.search %}
 <!-- Jekyll Simple Search option -->

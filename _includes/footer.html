@@ -1,5 +1,5 @@
-{% if page.image.feature %}
-<footer id="footer"  class="blog-background overlay text-center align-middle animated from-top" style="background-image: url({{ site.url }}/images/{{ page.image.feature }})" >
+{% if page.imagefeature %}
+<footer id="footer"  class="blog-background overlay text-center align-middle animated from-top" style="background-image: url({{ site.url }}/images/{{ page.imagefeature }})" >
 {% else %}
 <footer id="footer"  class="blog-background overlay text-center align-middle animated from-top" style="background-image: url({{ site.url }}/images/{{ site.default_bg }})" >
 {% endif %}
@@ -54,12 +54,9 @@
                 </a>
             </li>{% endif %}
         </ul>
-            <p class="copy-text">
+            <div>
                 <a href="{{ site.url }}/about/">{{ site.owner.name }}</a> &copy; {{ site.time | date: '%Y' }} &bull; All rights reserved.
-            </p>
-            <p class="copy-text">
-                Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <i class="icon-heart"></i> <a href="http://alum.mit.edu/www/hmfaysal/">HMFAYSAL OMEGA</a> theme.
-            </p>
+            </div>
             <ul class="menu-items">
             {% for link in site.links %}
             <li>
@@ -71,11 +68,10 @@
             </li>
             {% endfor %}
             <li><a href="{{ site.url }}/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
-            {% if site.search %}&nbsp;&bull;<li class="dosearch"><i class="icon-search"></i> Search</li>{% endif %}
         </ul>
         </div>
     </div>
-    {% if site.animated_fins %}
+    {% if site.animated_fins and site.triangleheader %}
         <div class="decor-wrapper">
             <svg id="footer-decor" class="decor top" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none">
 
@@ -95,6 +91,7 @@
             </svg>
         </div>
     {% else %}
+    {% if site.triangleheader %}
         <div class="decor-wrapper">
             <svg id="footer-decor" class="decor top" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none">
                 <path d="M0 0 L50 50 L100 0 L0 0" fill="rgba(255,255,255, 1)"></path>
@@ -103,5 +100,6 @@
 
             </svg>
         </div>
+    {% endif %}
     {% endif %}
 </footer>

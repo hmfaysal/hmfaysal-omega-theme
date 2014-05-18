@@ -1,0 +1,14 @@
+---
+layout: pageminimal
+permalink: /featured/
+title: Featured Posts
+description: "An archive of posts sorted by date."
+---
+
+<ul class="post-list">
+{% for post in site.posts %}
+{% if post.featured %}
+  <li><article><i class="icon-star-half-empty"></i> <a href="{{ site.url }}{{ post.url }}">{{ post.title }} <span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></span></a></article></li>
+{% endif %}
+{% endfor %}
+</ul>
