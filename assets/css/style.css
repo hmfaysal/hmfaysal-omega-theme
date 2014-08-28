@@ -4,7 +4,7 @@
 @import url(http://fonts.googleapis.com/css?family=Sacramento);
 
 /*!
- * HMFAYSAL OMEGA v1.0.0
+ * HMFAYSAL OMEGA v1.0.1
  * Responsive Jekyll Theme
  *
  * Copyright 2014 Hossain Mohd Faysal
@@ -2576,8 +2576,6 @@ body.search-overlay:after {
     vertical-align: super;
 }
 figure {
-    padding-top: 10px;
-    padding-bottom: 10px;
     margin: 0;
     *zoom: 1;
 }
@@ -2628,9 +2626,9 @@ figure a img:hover {
 @media only screen and (min-width:62.5em) {
     figure.half img {
         float: left;
-        width: 48%;
-        margin-right: 1%;
-        margin-left: 1%;
+        width: 49%;
+        margin-right: 0.5%;
+        margin-left: 0.5%;
     }
 
     figure.half figcaption {
