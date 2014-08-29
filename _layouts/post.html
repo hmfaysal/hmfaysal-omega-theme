@@ -24,15 +24,13 @@ Description: Awesome dude, awesome life
     <div class="container">
         <div class="row">
             <article class="post col-md-8 col-md-offset-2 hentry" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-            {% assign ert = page.content | strip_html | number_of_words | divided_by:180 %}
-            {% assign ertremainder = page.content | strip_html | number_of_words | modulo:180 %}
-            {% if ertremainder >= 90 %}
-                {% assign readtime = ert | plus:1 %}
+            {% if site.wpm %}
+            {% assign readtime = page.content | strip_html | number_of_words | append: '.0' | divided_by:site.wpm %}
             {% else %}
-                {% assign readtime = ert %}
+            {% assign readtime = page.content | strip_html | number_of_words | append: '.0' | divided_by:180 %}
             {% endif %}
-            {% assign modifiedtime = page.modified | date: "%Y%m%d" %} 
-            {% assign posttime = page.date | date: "%Y%m%d" %} 
+            {% assign modifiedtime = page.modified | date: "%Y%m%d" %}
+            {% assign posttime = page.date | date: "%Y%m%d" %}
                     <header class="post-header entry-header">
                     {% if page.featured %}<div class="cursive">this post is featured</div>{% endif %}
                         {% if page.link %}
@@ -43,7 +41,7 @@ Description: Awesome dude, awesome life
                         <div class="cursive" style="color: #000; font-style:italic;">{{ page.description }}</div>
                         <div class="post-info text-center small">
                             {% if page.modified %}<span class="entry-date date published">{% else %}<span class="entry-date date published updated">{% endif %}<time datetime="{{ page.date | date_to_xmlschema }}" class="post-time" itemprop="datePublished">{{ page.date | date: "%d %b %Y" }}</time><span>{% if page.modified %}{% if modifiedtime != posttime %} and <code>last modified on <span class="entry-date date updated"><time datetime="{{ page.modified | date: "%Y-%m-%d" }}" itemprop="dateModified">{{ page.modified | date: "%d %b %Y" }}</time></code></span>{% endif %}{% endif %}
-                            in <span class="post-tags">{% for tag in page.categories %}<a href="{{ site.url }}/categories/index.html#{{ page.categories | cgi_encode }}" data-toggle="tooltip" title="Other posts from the {{ tag | capitalize }} category" rel="tag">{{ tag | capitalize }}</a>{% unless forloop.last %}&nbsp;&bull;&nbsp;{% endunless %}{% endfor %}</span>{% if site.readtime %}&nbsp;<span class="post-tags"><i class="icon-time"></i>&nbsp;{% if readtime == 1 %}1 minute read{% endif %}{% if readtime > 1 %}{{ readtime }} minutes read{% endif %}{% if readtime == 0 %}Less than 1 minute read{% endif %}</span>{% endif %}
+                            in <span class="post-tags">{% for tag in page.categories %}<a href="{{ site.url }}/categories/index.html#{{ page.categories | cgi_encode }}" data-toggle="tooltip" title="Other posts from the {{ tag | capitalize }} category" rel="tag">{{ tag | capitalize }}</a>{% unless forloop.last %}&nbsp;&bull;&nbsp;{% endunless %}{% endfor %}</span>{% if site.readtime %}&nbsp;<span class="post-tags"><i class="icon-time"></i>&nbsp;{% if readtime > 1 and readtime < 1.5 %}1 minute read{% endif %}{% if readtime > 1.5 %}<span class="time">{{ readtime }}</span> minutes read{% endif %}{% if readtime < 1 %}Less than 1 minute read{% endif %}</span>{% endif %}
                         </div>
                     </header>
                     <div class="post-body bordered-bottom" itemprop="description">

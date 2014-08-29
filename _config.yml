@@ -8,6 +8,8 @@ search:           true
 share:            true
 # Read Time is a calculator tp provide post read-time based on word count. Usage is recommended.
 readtime:         true
+# Specify the average Words per minute. If not defined, 180 will be used
+wpm:				      200
 # Turn on or off the fin animations in the header and footer
 triangleheader:		true
 animated_fins:	  true
@@ -17,7 +19,6 @@ fin_color:        "255,255,255"
 # or use the hint from http://jekyllrb.com/docs/github-pages/ to keep this the same 
 # whether working locally or remotely. Start Jekyll with: jekyll serve --baseurl ''
 url:       		   /hmfaysal-omega-theme
-baseurl:			/hmfaysal-omega-theme
 
 # Owner/author information
 owner:
@@ -27,7 +28,6 @@ owner:
   # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
   description:    Hossain Mohammad Faysal is an Electrical Engineer and a Mathematician based in Doha, Qatar. His interests are anything that&#8217;s related to math, from math itself to programming languages to music to physics to engineering to philosophy.
   # Social networking links used in footer. Update and remove as you like.
-  # To register at HMFAYSAL SOCIAL, visit http://social.hmfaysal.tk
   twitter:        hmfaysal
   facebook:       hmfaysal
   github:         hmfaysal
@@ -36,7 +36,6 @@ owner:
   instagram:      
   flickr:         
   tumblr:         
-  hmfaysalsocial: hmfaysal
   # For Google Authorship https://plus.google.com/authorship
   google_plus:    https://plus.google.com/u/0/102602916593522619858
 
