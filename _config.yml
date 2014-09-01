@@ -13,8 +13,8 @@ animated_fins:	  true
 # Specify the fin color in RGB value
 fin_color:        "255,255,255"
 # Change url to your domain. Leave localhost server or blank when working locally.
-url:              http://brucellino.github.io
-#url:             http://localhost:4000
+#url:              http://brucellino.github.io
+url:             http://localhost:4000
 site.owner.name: Bruce-Becker
 # Owner/author information
 owner:
