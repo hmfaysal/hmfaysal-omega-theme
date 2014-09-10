@@ -15,4 +15,4 @@ mathjax:
 
 Protect Net Neutrality !
 
-Today, 10 September 2014 is "internet slowdown day" to raise awareness of the negative effects that neglecting Net Neutrality would bring about. I wish to add my voice to those campaigning for a free internet.
+Today, 10 September 2014 is "internet slowdown day" to raise awareness of the negative effects that neglecting Net Neutrality would bring about. I wish to add my voice to those campaigning for a free internet. [Read all about it](https://www.eff.org/deeplinks/2014/09/reddit-pornhub-websites-slow-down-net-neutrality-september-10)
