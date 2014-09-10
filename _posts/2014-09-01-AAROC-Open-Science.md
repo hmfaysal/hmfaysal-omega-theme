@@ -1,4 +1,4 @@
-----		
+---		
 layout: post		
 title: "Enabling Open Science with the ROC."		
 description: Invisible Bridges Across the Digital Divide		
@@ -8,9 +8,9 @@ tags: [Open Science, Collaboration, AAROC, digital-divide, thesituation, concept
 image: 		
   feature: map_gray_hi-1600x755.jpg		
 comments: true 		
-----		
--This is part of a series of blog posts, thinking about **"the situation"** in Sub-Saharan Africa. It started out as a concept note to respond to a call by the [IDRC](http://www.idrc.ca/EN/Pages/default.aspx)'s Open Collaborative Science Development Network [OCSDNet](http://ocsdnet.org/) for projects. 		
--		
+---		
+This is part of a series of blog posts, thinking about **"the situation"** in Sub-Saharan Africa. It started out as a concept note to respond to a call by the [IDRC](http://www.idrc.ca/EN/Pages/default.aspx)'s Open Collaborative Science Development Network [OCSDNet](http://ocsdnet.org/) for projects. 		
+		
 # Open Science, Collaborative Science, e-Science		
 		
 We've created the [Africa-Arabia Regional Operations Centre](http://roc.africa-grid.org) to act as a "container" collaboration for the development of e-Infrastructure in Africa and Arabia. A lot of work has gone into ensuring that this container is interoperable at low-levels (the network, computing and data infrastructures) with international peers such as [EGI](http://www.egi.eu). However, a lot of things go unsaid in our line of work - they are simply taken for granted. For example, that the development of such an infrastructure would be good for everyone in our region and not exacerbate existing discriminations; that this infrastructure is conducive to sharing of resources and collaboration at technical and scientific levels. These assumptions need not necessarily be true... more importantly, they may be interpreted in very different ways by the members of the ROC, not to mention the communities that it serves. 		
