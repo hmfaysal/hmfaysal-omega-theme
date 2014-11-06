@@ -146,6 +146,7 @@ However, these are probably not going to be palatable to the majority of users w
 While H3ABioNet could (and probably should) develop a web-based tool which uses these protocol via a nice GUI, there's a very nice way to get started, using [Globus Online](https://www.globusonline.eu) [^GlobusGenomics]. Globus Online makes provision for various authentication methods, and you can specify your own endpoints. The service requires that you are indeed able to authenticate to these endpoints, and then will manage transfers to and from them, reliably. 
 
 Authenticating to these endpoints implies all of the security considerations raised above; specifically, the user needs 
+ 
  1. to have a credential which is trusted by the endpoint - this typically means being mapped onto an x.509 certificate or ssh key.
  1. access to a [myproxy](http://toolkit.globus.org/grid_software/security/myproxy.php) server where they can store credentials safely. 
 
