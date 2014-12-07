@@ -12,9 +12,10 @@ comments: true
 mathjax: 
 ---
 
-{% hightlight c %}
+{% highlight c %}
 #include <stdio.h>
 int main(void){
     printf("Hello, animal!\n");
     return 0;
 }
+{% endhighlight %}
