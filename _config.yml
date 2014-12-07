@@ -58,6 +58,10 @@ links:
     url: /categories
   - title: Tags
     url: /tags
+  - title: Guestbook
+    url: /guestbook
+  - title: Project
+    url: /project
   - title: About me
     url: /about
 
