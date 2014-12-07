@@ -3,7 +3,7 @@ description:      "啊哦"
 logo:             omikron.png
 disqus_shortname: ibrother
 # Assign a default image for your site's header and footer
-default_bg:       default_bg1.jpg
+default_bg:       http://i3brother.qiniudn.com/default_bg1.jpg
 search:           true
 share:            true
 # Read Time is a calculator tp provide post read-time based on word count. Usage is recommended.
