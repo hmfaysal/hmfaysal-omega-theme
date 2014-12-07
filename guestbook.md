@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 permalink: guestbook/index.html
 title: "留言板"
 description: 有問題可以給我留言
