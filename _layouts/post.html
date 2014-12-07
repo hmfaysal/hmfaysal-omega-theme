@@ -65,7 +65,7 @@ Description: Awesome dude, awesome life
                         {% if site.share %}{% include share.html %}{% endif %}
                         {% include signoff.html %} 
                         {% if site.disqus_shortname and page.comments == true %}<div id="disqus_thread"></div><!-- /#disqus_thread -->{% endif %}
-                        {% if site.duoshuo_shortname and page.comments == true %}<div class="ds-thread" data-thread-key="{{ page.id }}" data-title="{{ page.title }}" data-url="{{ page.url }}"></div><!-- /#duoshuo_thread -->{% endif %}
+                        {% if site.duoshuo_shortname and page.comments == true %}<div class="ds-thread" data-thread-key="{{ page.id }}" data-title="{{ page.title }}" data-url="{{ site.url }}/{{ page.url }}"></div><!-- /#duoshuo_thread -->{% endif %}
                     </footer>
             </article>
     </div>
