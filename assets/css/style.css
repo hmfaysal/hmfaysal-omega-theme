@@ -3290,7 +3290,7 @@ pre {
 
 .highlight {
     margin-bottom: 1.5em;
-    border: 1px solid #dedede;
+    /*border: 1px solid #dedede;*/
 }
 
 .highlight pre {
