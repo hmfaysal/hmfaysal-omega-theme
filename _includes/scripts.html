@@ -93,7 +93,10 @@ $("a#click-pages").click(function(){
 {% if page.comments %}{% include duoshuo_comments.html %}{% endif %}
 {% if site.nprogress %}
 <script>
-$(document).on('page:fetch', function() { NProgress.start(); });
-$(document).on('page:load', function() { NProgress.done(); });
+NProgress.start();
+    setTimeout(function () {
+        NProgress.done();
+
+    }, 500);
 </script>
 {% endif %}
