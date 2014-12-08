@@ -46,8 +46,8 @@ Description: Awesome dude, awesome life
                         {{ content }}
                     </div>
                     <footer class="page-footer entry-meta">
-                        {% if site.comment.provider == disqus and page.comments == true %}<div id="disqus_thread"></div><!-- /#disqus_thread -->{% endif %}
-                        {% if site.comment.provider == duoshuo and page.comments == true %}<div class="ds-thread" data-thread-key="{{ page.id }}" data-title="{{ page.title }}" data-url="{{ site.url }}{{ page.url }}"></div><!-- /#duoshuo_thread -->{% endif %}
+                        {% if site.comments.provider == disqus and page.comments == true %}<div id="disqus_thread"></div><!-- /#disqus_thread -->{% endif %}
+                        {% if site.comments.provider == duoshuo and page.comments == true %}<div class="ds-thread" data-thread-key="{{ page.id }}" data-title="{{ page.title }}" data-url="{{ site.url }}{{ page.url }}"></div><!-- /#duoshuo_thread -->{% endif %}
                     </footer>
             </article>
         </div>
