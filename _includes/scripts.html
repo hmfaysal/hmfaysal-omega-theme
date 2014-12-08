@@ -3,6 +3,7 @@
 <script src="{{ site.url }}/assets/js/scripts.min.js"></script>
 <script type="text/javascript" src="{{ site.url }}/assets/js/waypoints.min.js"></script>
 <script type="text/javascript" src="{{ site.url }}/assets/js/script.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.1.6/nprogress.min.js"></script>
 <script type='text/javascript'>console.log("HMFaysal Omega Theme Version 2.0");</script>
 <script type='text/javascript'>console.log("https://alum.mit.edu/www/hmfaysal");</script>
 <script type='text/javascript'>$(document).ready(function(){$(".time").text(function(a,b){return Math.round(parseFloat(b))})});</script>
@@ -87,3 +88,12 @@ $("a#click-pages").click(function(){
 </script>
 {% endif %}
 {% if page.comments %}{% include disqus_comments.html %}{% endif %}
+{% if site.nprogress %}
+<script>
+NProgress.start();
+    setTimeout(function () {
+        NProgress.done();
+
+    }, 500);
+</script>
+{% endif %}
