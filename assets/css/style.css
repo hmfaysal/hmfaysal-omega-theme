@@ -3285,9 +3285,6 @@ pre {
     white-space: pre;
     overflow-x: auto;
     border: 1px solid #999;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
     page-break-inside: avoid;
 }
 
