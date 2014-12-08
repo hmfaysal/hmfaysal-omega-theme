@@ -3284,14 +3284,14 @@ p code,li code {
 pre {
     white-space: pre;
     overflow-x: auto;
-    border: 1px solid #F9F5F9;
+    border: 1px solid #fff;
     page-break-inside: avoid;
 }
 
 .highlight {
     margin-bottom: 1.5em;
-    border: 1px solid #dedede;
-    border-radius: 3px;
+    /*border: 1px solid #dedede;*/
+    /*border-radius: 3px;*/
 }
 
 .highlight pre {
@@ -3299,7 +3299,7 @@ pre {
     padding: 1em;
     margin: 0;
 }
-.highlight  { background: #F9F5F9; color: #000000}
+.highlight  { background: #fff; color: #000000}
 .highlight .hll { background-color: #ffffcc }
 .highlight .c { color: #3F6B5B; font-weight: bold} /* Comment */
 .highlight .err { color: #000000} /* Error */
