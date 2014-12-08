@@ -3284,13 +3284,14 @@ p code,li code {
 pre {
     white-space: pre;
     overflow-x: auto;
-    border: 1px solid #999;
+    border: 1px solid #F9F5F9;
     page-break-inside: avoid;
 }
 
 .highlight {
     margin-bottom: 1.5em;
-    /*border: 1px solid #dedede;*/
+    border: 1px solid #dedede;
+    border-radius: 3px;
 }
 
 .highlight pre {
