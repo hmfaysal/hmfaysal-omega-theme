@@ -72,7 +72,7 @@ timezone:    Asia/Shanghai
 future:      true
 highlighter: pygments
 markdown:    kramdown
-excerpt_separator: "\n\n"
+excerpt_separator: "<!--more-->"
 paginate:    6
 paginate_path: "page:num"
 
