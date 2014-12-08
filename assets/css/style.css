@@ -597,6 +597,32 @@ html {
   position: relative;
   z-index: 2;
 }
+/* --------- */
+/* COPYRIGHT */
+/* --------- */
+.copyright {
+  display: block;
+  padding: 10px 20px;
+  margin: 30px 0 20px;
+  line-height: 24px;
+  font-size: 13px;
+  border-radius: 10px;
+  background-color: #eef;
+}
+.copyright .cc {
+  font-size: 15px;
+  font-weight: 600;
+  zoom: 1;
+}
+.copyright .cc:before,
+.copyright .cc:after {
+  content: "";
+  display: table;
+}
+.copyright .cc:after {
+  clear: both;
+}
+.copyright em,
 /* ---------------- */
 /* THEME UTILITITES */
 /* ---------------- */
@@ -3283,6 +3309,7 @@ p code,li code {
 
 pre {
     white-space: pre;
+    background-color: #eef;
     overflow-x: auto;
     border: 1px solid #fff;
     border-radius: 20px;
