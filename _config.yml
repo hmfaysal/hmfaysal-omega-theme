@@ -46,6 +46,9 @@ google_verify:
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
 bing_verify:         
 
+# nprogress
+nprogress:  true
+
 # Links to include in footer navigation
 # For external links add external: true
 links:
