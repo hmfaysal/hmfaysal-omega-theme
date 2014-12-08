@@ -1,8 +1,9 @@
 title:            Jekyll theme Test
 description:      "啊哦"
 logo:             omikron.png
-disqus_shortname: 
-duoshuo_shortname: i2brother
+comment:
+  provider:       duoshuo
+  short_name:      i2brother
 # Assign a default image for your site's header and footer
 default_bg:       http://i3brother.qiniudn.com/default_bg1.jpg
 search:           true

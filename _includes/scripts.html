@@ -90,4 +90,4 @@ $("a#click-pages").click(function(){
   })();
 </script>
 {% endif %}
-{% if page.comments %}{% include duoshuo_comments.html %}{% endif %}
+{% {% if site.comment.provider and page.comments == true %}{% include site.comment.provide_comments.html %}{% endif %}
