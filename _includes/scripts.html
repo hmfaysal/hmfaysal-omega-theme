@@ -90,4 +90,5 @@ $("a#click-pages").click(function(){
   })();
 </script>
 {% endif %}
-{% {% if site.comment.provider and page.comments == true %}{% include site.comment.provide_comments.html %}{% endif %}
+{% {% if site.comments.provider == disqus and page.comments %}{% include disqus_comments.html %}{% endif %}
+{% {% if site.comments.provider == duoshuo and page.comments %}{% include duoshuo_comments.html %}{% endif %}
