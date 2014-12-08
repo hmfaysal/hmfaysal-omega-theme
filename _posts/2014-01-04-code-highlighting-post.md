@@ -4,7 +4,7 @@ title: Syntax Highlighting Post
 description: "Demo post displaying the various ways of highlighting code in Markdown."
 category: Sample-Posts
 tags: [sample post, code, highlighting]
-imagefeature: picture-29.jpg
+imagefeature: 
 comments: true
 share: true
 ---
