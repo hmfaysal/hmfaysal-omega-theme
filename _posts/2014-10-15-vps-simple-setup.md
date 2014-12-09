@@ -41,6 +41,7 @@ $ useradd -m -G users,sudo -s /bin/bash animal
 ~~~
 
 參數說明:
+
   * -m 表示創建用戶時,同時也創建主目錄,並且拷貝/etc/skel目錄下的模板到主目錄裏面.
   * -G 表示要把新用戶加到哪個組裏.
   * -s 指定新用戶使用哪個shell.
