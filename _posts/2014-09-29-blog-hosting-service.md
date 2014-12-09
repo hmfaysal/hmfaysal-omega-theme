@@ -26,7 +26,7 @@ mathjax:
 
 3. 一旦俺確認完成,你會收到俺的郵件,修改hexo博客目錄下的`_config.yml`中部署的部分爲如下所示(請自行替換相應設置):
 
-~~~
+{% hightlight bash %}
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
@@ -38,7 +38,7 @@ deploy:
   delete: true
   verbose: true
   ignore_errors: false
-~~~
+{% endhighlight %}
 
 4. 接下來修改域名指向俺VPS的ip
 
