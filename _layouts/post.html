@@ -51,6 +51,13 @@ Description: Awesome dude, awesome life
                         {% endif %}
                         {{ content }}
                         <br>
+                        <div class="copyleft">
+                            <span class="cc">版權聲明：自由轉載-非商用-非衍生-保持署名 {{ site.owner.name }}</span>
+                            <span class="post-url">
+                                本文永久鏈接:
+                                <a href="{{ site.url }}{{ page.url }}">{{ site.url }}{{ page.url }}</a>
+                                </span>
+                            </div>
                     {% assign tagsize = page.tags.size %}
                     {% if tagsize != 0 %}
                     <div class="entry-tags text-center">
@@ -62,13 +69,6 @@ Description: Awesome dude, awesome life
                     </div>
         </div>
                     <footer class="post-footer entry-meta">
-                        <div class="copyleft">
-                            <span class="cc">版權聲明：自由轉載-非商用-非衍生-保持署名 {{ site.owner.name }}</span>
-                            <span class="post-url">
-                                本文永久鏈接:
-                                <a href="{{ site.url }}{{ page.url }}">{{ site.url }}{{ page.url }}</a>
-                                </span>
-                            </div>
                         {% if site.share %}{% include share.html %}{% endif %}
                         {% include signoff.html %} 
                         {% if site.disqus_shortname and page.comments == true %}<div id="disqus_thread"></div><!-- /#disqus_thread -->{% endif %}
