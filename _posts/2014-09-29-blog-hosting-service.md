@@ -54,11 +54,13 @@ $ rsync -avz --delete -e 'ssh -p 端口' 靜態網頁目錄/ 用戶名@ip:/home/
 ~~~
 
 爲了方便,可以將上面的命令保存爲腳本文件,比如命名爲blogsync.
+
 ~~~ bash
 $ sudo vim /usr/local/bin/blogsync
 ~~~
 
 內容如下:
+
 ~~~ bash
 #!/bin/sh
 
@@ -66,9 +68,11 @@ rsync -avz --delete -e 'ssh -p 端口' 靜態網頁目錄/ 用戶名@ip:/home/�
 ~~~
 
 加上可執行權限:
+
 ~~~ bash
 $ sudo chmod +x /usr/local/bin/blogsync
 ~~~
+
 以後同步博客,只需要執行blogsync命令.
 
 # ghost博客聚合說明
