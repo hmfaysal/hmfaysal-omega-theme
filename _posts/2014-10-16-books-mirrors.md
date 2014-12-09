@@ -62,5 +62,5 @@ mathjax:
 
 [8]: http://mirrors.ibrother.me/abs/ "Advanced Bash-Scripting Guide"
 
-[0]: http://mirrors.ibrother.me/linux_sea/ "Linux Sea"
+[9]: http://mirrors.ibrother.me/linux_sea/ "Linux Sea"
 
