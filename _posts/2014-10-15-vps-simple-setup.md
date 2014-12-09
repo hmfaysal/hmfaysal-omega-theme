@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "VPS-simple-setup"
+title: "VPS初步配置"
 description: 
 headline: 
 modified: 2014-12-09
