@@ -110,7 +110,7 @@ RSA keys may be between 1024 and 4096 bits long.
 
 默認的長度是2048位，直接回車即可。不過俺強烈建議使用4096位，輸入4096並回車，接下來選擇鑰匙有效期限：
 
-``` bash
+~~~ bash
 Please specify how long the key should be valid.
       0 = key does not expire
 <n> = key expires in n days
@@ -120,7 +120,7 @@ Please specify how long the key should be valid.
 Key is valid for? (0)0
 Key does not expire at all
 Is this correct (y/n)? y
-```
+~~~
 
 默認永久有效，建議輸入一個有效期限並回車，120表示120天，24w表示24個星期，6m表示6個月，1y表示1年。
 我用的默認永久有效，直接回車。問你是否確定，輸入y並回車。
@@ -146,28 +146,28 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? O
 
 接下來，輸入密碼用於保護私鑰，程序就會開始生成鑰匙對，過程可能幾秒鐘到幾分鐘。此時，動動滑鼠讓電腦工作起來有助於產生足夠的隨機數。
 
-```bash
+~~~ bash
 You need a Passphrase to protect your secret key.
 
 Enter passphrase:
-```
+~~~
 
 一旦生成鑰匙對，強烈建議立即生成註銷證書
 
 首先查看一下公鑰ID
 
-```bash
+~~~ bash
 $ gpg --list-keys
 /home/ibrother/.gnupg/pubring.gpg
 ---------------------------------
 pub   2048R/A0A2A2F8 2014-07-09
 uid       [ultimate] ibrother (ibrother in github) <ibrother.linux@gmail.com>
 sub   2048R/4AAB15B9 2014-07-09
-```
+~~~
 
 ## 生成註銷證書
 
-```bash
+~~~ bash
 gpg --output revoke.asc --gen-revoke A0A2A2F8
 
 sec 2048R/A0A2A2F8 2014-07-09 ibrother (ibrother in github) <ibrother.linux@gmail.com>
@@ -200,7 +200,8 @@ access to this certificate he can use it to make your key unusable.
 It is smart to print this certificate and store it away, just in case
 your media become unreadable.  But have some caution:  The print system of
 your machine might store the data and make it available to others!
-```
+~~~
+
 註銷證書已經生成，請妥善保管。如果不小心被人盜取了密碼，這是你註銷公鑰的唯一憑證。
 
 ## 發佈公鑰
@@ -209,31 +210,32 @@ your machine might store the data and make it available to others!
 
 ### 導出公鑰
 
-```bash
+~~~ bash
 $ gpg -a --output key.public --export UID
-```
+~~~
 
 把UID替換成你的名字或email地址。會在當前工作目錄得到key.public文件，使用以下命令查看內容：
 
-```bash
+~~~ bash
 $ cat key.public
-```
+~~~
 
 內容類似如下:
 
-```bash
+~~~ bash
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: GnuPG v2
 .......
 -----END PGP PUBLIC KEY BLOCK-----
-```
+~~~
+
 這樣你就可以把公鑰放在博客上，或者email給你的小夥伴。另一種方法是將公鑰發送至公鑰服務器：
 
 ### 把公鑰發佈到公鑰服務器
 
-```bash
+~~~ bash
 $ gpg --keyserver keys.gnupg.net --send-key ID
-```
+~~~
 
 只需要將ID替換成你的公鑰ID。
 
@@ -241,25 +243,25 @@ $ gpg --keyserver keys.gnupg.net --send-key ID
 
 ## 導入公鑰
 
-```bash
+~~~ bash
 $ gpg --keyserver keys.gnupg.net -recv-key 0xA0A2A2F8
-```
+~~~
 
 0xA0A2A2F8是俺的公鑰id，替換成你的小夥伴的公鑰id
 
 或者導入公鑰文件
 
-```bash
+~~~ bash
 $ gpg --import key.public
-```
+~~~
 
 由於公鑰加密的特點，公鑰的發佈過程，和獲取公鑰的過程必須保證可靠性，因此有了指紋驗證：
 
 ## 驗證指紋並簽收公鑰
 
-```bash
+~~~ bash
 $ gpg --fingerprint
-```
+~~~
 
 輸出應該包含如下所示：
 
@@ -270,15 +272,15 @@ $ gpg --fingerprint
 
 其中“DE91 71DC AE38 DE8E AB5A  C423 3E6A 8CC1 A0A2 A2F8”就是這個公鑰的指紋，和小夥伴核對確認無誤後就可以簽收了:
 
-```bash
+~~~ bash
 $ gpg --sign-key ibrother
-```
+~~~
 
 ## 加密文件
 
-```bash
+~~~ bash
 $ gpg -a --output message-ciper.txt -r ibrother -e message.txt
-```
+~~~
 
 參數說明：
 
@@ -291,9 +293,9 @@ $ gpg -a --output message-ciper.txt -r ibrother -e message.txt
 
 ## 解密文件
 
-```bash
+~~~ bash
 $ gpg --output message-plain.txt -d message-ciper.txt
-```
+~~~
 
 參數說明：
 
@@ -304,29 +306,29 @@ $ gpg --output message-plain.txt -d message-ciper.txt
 
 ### 獨立簽名文件簽名方式
 
-```bash
+~~~ bash
 $ gpg -a -b message.txt
-```
+~~~
 
 獨立簽名方式是原文件和簽名文件分開，可以用如下命令驗證簽名：
 
-```bash
+~~~ bash
 $ gpg --verify message.txt.asc
-```
+~~~
 
 輸出一定要有“Good signature”字樣，就說明驗證成功。
 
 ### clear簽名方式
 
-```bash
+~~~ bash
 $ gpg -a --clearsign message.txt
-```
+~~~
 
 使用如下命令提取原始信息：
 
-```bash
+~~~ bash
 $ gpg --output message-original.txt -d message.txt.asc
-```
+~~~
 
 # GnuPG和mutt的整合
 
@@ -334,21 +336,21 @@ $ gpg --output message-original.txt -d message.txt.asc
 
 一旦mutt安裝好後，在/usr/share/doc/mutt-1.5.22-r3/samples/目錄下可以找到`gpg.rc.bz2`文件
 
-```bash
+~~~ bash
 $ bzcat /usr/share/doc/mutt-1.5.22-r3/samples/gpg.rc.bz2 >> .mutt/gpg.rc
 $ echo echo "source ~/.mutt/gpg.rc" >> .muttrc
-```
+~~~
 
 然後編輯`~/.mutt/gpg.rc`，編輯或者加入以下幾行
 
-```bash
+~~~ bash
 set pgp_good_sign="^\\[GNUPG:\\] GOODSIG"
 
 set pgp_sign_as = 0xA0A2A2F8
 set pgp_timeout = 3600
 set crypt_autosign = yes
 set crypt_replyencrypt = yes
-```
+~~~
 
 將0xA0A2A2F8改為你自己的公鑰id。這樣使用mutt發送郵件默認使用簽名。
 
