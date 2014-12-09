@@ -96,8 +96,12 @@ a:hover {
 }
 /* - Blockquote - */
 blockquote {
-  padding-left: 0;
+  background: #f6f6f6;
+  /*padding-left: 0;*/
   border: 0;
+  border-left: 5px solid #A1A1A1;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px
   position: relative;
 }
 blockquote:before {
@@ -389,7 +393,7 @@ a:hover {
   border-color: #67666a;
 }
 blockquote:before {
-  background: #57ad68;
+  /*background: #57ad68;*/
 }
 .post-title {
   color: #807f83;
