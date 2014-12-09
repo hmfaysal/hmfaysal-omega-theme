@@ -384,13 +384,13 @@ e表示只加密，s表示簽名，b表示既加密又簽名，c表示不進行�
 
 1. [使用 GnuPG 實現文件加密和數字簽名——PGP 30分鐘簡明教程(2)\|ArchBoy](http://archboy.org/2013/05/15/gnupg-pgp-encrypt-decrypt-file-and-digital-signing-easy-tutorial/ "使用 GnuPG 實現文件加密和數字簽名——PGP 30分鐘簡明教程(2)")
 
-2. [GnuPG|Gentoo Wiki](http://wiki.gentoo.org/wiki/GnuPG "GnuPG --Gentoo Wiki")
+2. [GnuPG\|Gentoo Wiki](http://wiki.gentoo.org/wiki/GnuPG "GnuPG --Gentoo Wiki")
 
-3. [GnuPG|Arch Wiki](https://wiki.archlinux.org/index.php/GnuPG "GnuPG --Arch Wiki")
+3. [GnuPG\|Arch Wiki](https://wiki.archlinux.org/index.php/GnuPG "GnuPG --Arch Wiki")
 
-4. [PGP|維基百科](http://zh.wikipedia.org/wiki/PGP "PGP --維基百科")
+4. [PGP\|維基百科](http://zh.wikipedia.org/wiki/PGP "PGP --維基百科")
 
-5. [RSA加密算法|維基百科](http://zh.wikipedia.org/wiki/RSA%E5%8A%A0%E5%AF%86%E6%BC%94%E7%AE%97%E6%B3%95http://zh.wikipedia.org/wiki/RSA%E5%8A%A0%E5%AF%86%E6%BC%94%E7%AE%97%E6%B3%95 "RSA加密算法 --維基百科")
+5. [RSA加密算法\|維基百科](http://zh.wikipedia.org/wiki/RSA%E5%8A%A0%E5%AF%86%E6%BC%94%E7%AE%97%E6%B3%95http://zh.wikipedia.org/wiki/RSA%E5%8A%A0%E5%AF%86%E6%BC%94%E7%AE%97%E6%B3%95 "RSA加密算法 --維基百科")
 
 6. [MuttGuide/UseGPG](http://dev.mutt.org/trac/wiki/MuttGuide/UseGPG "MuttGuide/UseGPG --Mutt")
 
