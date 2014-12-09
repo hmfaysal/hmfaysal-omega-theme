@@ -382,7 +382,7 @@ e表示只加密，s表示簽名，b表示既加密又簽名，c表示不進行�
 
 # 參考網站
 
-1. [使用 GnuPG 實現文件加密和數字簽名——PGP 30分鐘簡明教程(2)|ArchBoy](http://archboy.org/2013/05/15/gnupg-pgp-encrypt-decrypt-file-and-digital-signing-easy-tutorial/ "使用 GnuPG 實現文件加密和數字簽名——PGP 30分鐘簡明教程(2)")
+1. [使用 GnuPG 實現文件加密和數字簽名——PGP 30分鐘簡明教程(2)\|ArchBoy](http://archboy.org/2013/05/15/gnupg-pgp-encrypt-decrypt-file-and-digital-signing-easy-tutorial/ "使用 GnuPG 實現文件加密和數字簽名——PGP 30分鐘簡明教程(2)")
 
 2. [GnuPG|Gentoo Wiki](http://wiki.gentoo.org/wiki/GnuPG "GnuPG --Gentoo Wiki")
 
