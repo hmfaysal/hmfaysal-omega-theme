@@ -265,10 +265,12 @@ $ gpg --fingerprint
 
 輸出應該包含如下所示：
 
-> pub   2048R/A0A2A2F8 2014-07-09
->       Key fingerprint = DE91 71DC AE38 DE8E AB5A  C423 3E6A 8CC1 A0A2 A2F8
-> uid       [ultimate] ibrother (ibrother in github) <ibrother.linux@gmail.com>
-> sub   2048R/4AAB15B9 2014-07-09
+~~~ bash
+pub   2048R/A0A2A2F8 2014-07-09
+      Key fingerprint = DE91 71DC AE38 DE8E AB5A  C423 3E6A 8CC1 A0A2 A2F8
+uid       [ultimate] ibrother (ibrother in github) <ibrother.linux@gmail.com>
+sub   2048R/4AAB15B9 2014-07-09
+~~~
 
 其中“DE91 71DC AE38 DE8E AB5A  C423 3E6A 8CC1 A0A2 A2F8”就是這個公鑰的指紋，和小夥伴核對確認無誤後就可以簽收了:
 

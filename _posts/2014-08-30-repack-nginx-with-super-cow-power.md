@@ -165,7 +165,7 @@ nginx從1.5.8開始支持TCP_FASTOPEN,在編譯時如果檢測到系統支持TCP
 Checking for TCP_FASTOPEN.......not found
 ~~~
 
-後來發現是glibc版本的問題,/usr/include/netinet/tcp.h頭文件中沒有TCP_FASTOPEN的定義,難道要動頭文件??開玩笑,當然不用了,可以曲線救國
+後來發現是glibc版本的問題,`/usr/include/netinet/tcp.h`頭文件中沒有TCP_FASTOPEN的定義,難道要動頭文件??開玩笑,當然不用了,可以曲線救國
 
 ~~~ bash
 $ cd /tmp/build/nginx/nginx-1.6.1 && vim debian/rules
