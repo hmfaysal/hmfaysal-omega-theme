@@ -623,6 +623,24 @@ html {
   clear: both;
 }
 /* ---------------- */
+/* ---- TABLE ----- */
+/* ---------------- */
+table {
+    border-collapse: collapse;
+    empty-cells: hide;
+}
+table, td, th {
+    border: 1px solid #A1A1A1;
+}
+td, th {
+    padding:3px 7px 2px 7px;
+}
+th {
+    padding-top:5px;
+    padding-bottom:4px;
+    background-color: #eef;
+}
+/* ---------------- */
 /* THEME UTILITITES */
 /* ---------------- */
 /* - Decor -*/
