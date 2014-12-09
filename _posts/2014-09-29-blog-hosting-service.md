@@ -40,7 +40,7 @@ deploy:
   ignore_errors: false
 {% endhighlight %}
 
-4. 接下來修改域名指向俺VPS的ip
+接下來修改域名指向俺VPS的ip
 
 以後執行hexo d就會同步博客到vps上.
 注: 如果沒有購買域名,可以使用俺的二級域名(xxxx.ibrother.me)請一並在郵件中說明.
@@ -49,26 +49,26 @@ deploy:
 
 因爲博客程序可能本身沒有rsync部署的設置,因此只需要以上的1,2,4步驟.在生成靜態網頁後使用如下命令同步(請自行修改相應設置):
 
-```bash
+~~~ bash
 $ rsync -avz --delete -e 'ssh -p 端口' 靜態網頁目錄/ 用戶名@ip:/home/用戶名/blog/
-```
+~~~
 
 爲了方便,可以將上面的命令保存爲腳本文件,比如命名爲blogsync.
-```bash
+~~~ bash
 $ sudo vim /usr/local/bin/blogsync
-```
+~~~
 
 內容如下:
-```bash
+~~~ bash
 #!/bin/sh
 
 rsync -avz --delete -e 'ssh -p 端口' 靜態網頁目錄/ 用戶名@ip:/home/用戶名/blog/
-```
+~~~
 
 加上可執行權限:
-```
+~~~ bash
 $ sudo chmod +x /usr/local/bin/blogsync
-```
+~~~
 以後同步博客,只需要執行blogsync命令.
 
 # ghost博客聚合說明
