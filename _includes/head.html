@@ -5,7 +5,7 @@
 
 {% if site.owner.twitter %}<!-- Twitter Cards -->
 {% if page.imagefeature %}<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="{{ site.url }}/images/{{ page.imagefeature }}">
+<meta name="twitter:image" content="{{ page.imagefeature }}">
 {% else %}<meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="{% if page.image.thumb %}{{ site.url }}/images/{{ page.image.thumb }}{% else %}{{ site.url }}/images/{{ site.logo }}{% endif %}">{% endif %}
 <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
@@ -19,7 +19,7 @@
 <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
 <meta property="og:url" content="{{ site.url }}{{ page.url }}">
 <meta property="og:site_name" content="{{ site.title }}">
-{% if page.imagefeature %}<meta property="og:image" content="{{ site.url }}/images/{{ page.imagefeature }}">{% else %}<meta property="og:image" content="{{ site.url }}/images/{{ site.default_bg }}">{% endif %}
+{% if page.imagefeature %}<meta property="og:image" content="{{ page.imagefeature }}">{% else %}<meta property="og:image" content="{{ site.default_bg }}">{% endif %}
 
 {% if site.google_verify %}<meta name="google-site-verification" content="{{ site.google_verify }}">{% endif %}
 {% if site.bing_verify %}<meta name="msvalidate.01" content="{{ site.bing_verify }}">{% endif %}
@@ -35,8 +35,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     
-    <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="//cdnjscn.b0.upaiyun.com/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="http://cdn.bootcss.com/highlight.js/8.3/styles/solarized_light.min.css" />
+    <link rel="stylesheet" type="text/css" href="//cdnjscn.b0.upaiyun.com/libs/nprogress/0.1.3/nprogress.min.css" />
 
 {% if site.search %}<div class="search-wrapper">
     <div class="search-form">
