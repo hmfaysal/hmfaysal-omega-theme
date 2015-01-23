@@ -74,6 +74,6 @@ We had a weekly update meeting on the project, preparing for the final review. I
 
 # Slack ate my email
 
-Using [Slack](https://africa-arabia-roc.slack.com), I've all but eliminated the need for email. Come on in and join me, it's rad ! I've taken the liberty of creating https://sa-nren.slack.com/messages/general/ as well.
+Using [Slack](https://africa-arabia-roc.slack.com), I've all but eliminated the need for email. Come on in and join me, it's rad ! I've taken the liberty of creating https://sa-nren.slack.com/ as well.
 
 I'm out !
