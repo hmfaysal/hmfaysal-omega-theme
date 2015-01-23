@@ -15,7 +15,7 @@ fin_color:        "255,255,255"
 # Change url to your domain. Leave localhost server or blank when working locally.
 url:              http://brucellino.github.io
 #url:             http://localhost:4000
-site.owner.name: Bruce-Becker
+site.owner.name: Bruce Becker
 # Owner/author information
 owner:
   name:           Bruce Becker
@@ -28,20 +28,20 @@ owner:
   twitter:        brusisceddu
   facebook:       brucellino
   github:         brucellino
-  stackexchange:  
+  stackexchange:
   linkedin:       brucellino
-  instagram:      
+  instagram:
   flickr:         brucellino
   tumblr:         brucellino
-  
+
   # For Google Authorship https://plus.google.com/authorship
   google_plus:    https://plus.google.com/u/0/+BruceBecker
 
 # Analytics and webmaster tools stuff goes here
 google_analytics: UA-50620336-1
-google_verify:      
+google_verify:
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:         
+bing_verify:
 
 # Links to include in footer navigation
 # For external links add external: true
@@ -68,7 +68,8 @@ paginate:    3
 paginate_path: "page:num"
 
 # https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink:   /:categories/:title
+#permalink:   /:categories/:date/:title
+permalink: pretty
 
 kramdown:
   auto_ids: true
@@ -78,7 +79,7 @@ kramdown:
   use_coderay: false
 
   coderay:
-    coderay_line_numbers: 
+    coderay_line_numbers:
     coderay_line_numbers_start: 1
     coderay_tab_width: 4
     coderay_bold_every: 10
