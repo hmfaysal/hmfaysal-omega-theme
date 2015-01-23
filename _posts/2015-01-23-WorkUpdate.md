@@ -19,8 +19,10 @@ I missed the weekly SANREN project update meeting this week because my poor boy 
 ## Support summary
 
 This week :
+
   * we've closed 4 COD tickets and have
   * 3 new tickets opened
+
 In total, there are 7 tickets open against two sites (CHPC and Zewail City)
 
 ## A/R improvements
