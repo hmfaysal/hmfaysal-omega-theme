@@ -1,7 +1,7 @@
 title:            Tang Qi
 description:      "你不能把这个世界，让给你所鄙视的人"
 logo:             tangqi.jpg
-disqus_shortname: tangqi92
+disqus_shortname: Tang Qi
 # Assign a default image for your site's header and footer
 default_bg:       default_bg1.jpg
 search:           true
@@ -36,7 +36,7 @@ owner:
   flickr:         
   tumblr:         
   # For Google Authorship https://plus.google.com/authorship
-  google_plus:    
+  google_plus:    https://plus.google.com/u/0/111462351334549127124
 
 # Analytics and webmaster tools stuff goes here
 google_analytics:   
