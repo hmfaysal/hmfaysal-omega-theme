@@ -26,8 +26,7 @@ owner:
   avatar:         tangqi.jpg
   email:          tangqiwork@gmail.com
   # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
-  description:    , Qatar. His interests are anything that&#8217;s related to math, from math itself to programming languages to music to physics to engineering to philosophy.
-  # Social networking links used in footer. Update and remove as you like.
+  description:    
   twitter:        tangqi92
   facebook:       
   github:         tangqi92
