@@ -1,7 +1,7 @@
 title:            Tang Qi
 description:      "你不能把这个世界，让给你所鄙视的人"
 logo:             tangqi.jpg
-disqus_shortname: Tang Qi
+disqus_shortname: tangqi92githubio
 # Assign a default image for your site's header and footer
 default_bg:       default_bg1.jpg
 search:           true
@@ -22,7 +22,7 @@ url:
 
 # Owner/author information
 owner:
-  name:           tangqi
+  name:           Tang Qi
   avatar:         tangqi.jpg
   email:          tangqiwork@gmail.com
   # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
