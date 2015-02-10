@@ -1,7 +1,6 @@
-
 ---
 layout: page
-permalink: /index.html
+permalink: /tangqi92/index.html
 title: Hossain Mohd Faysal
 tags: [Hossain, Mohd, Faysal, hmfaysal]
 image:
