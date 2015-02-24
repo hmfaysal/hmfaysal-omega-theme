@@ -4,7 +4,7 @@ title: "A place for us all"
 description: Thoughts on an e-Science Commons Strategy in South Africa
 headline: "Thoughts on an e-Science Commons Strategy in South Africa"
 category: blog
-tags: [strategy, thoughts, blog, e-Science, e-Commons, constituency]
+tags: [strategy, thoughts, blog, e-Science, e-Commons, constituency, digital divide]
 image:
   feature: keep-calm-reboot-620x360.jpg
 comments: true
@@ -71,17 +71,40 @@ I invite the interested reader however to take a look at the various regional di
 
 Many claim that the rise of network capacity and fall in price of computing and data resources has led to a "democratisation" of science. What is meant is that there is a lower barrier to entry to research, since there are more resources available, to a wider range of researchers. However, this is not democracy, this is at best egalitariansim, and at worst demagogy. One of the unfortunate side effects of the rapid reduction in barriers to entry is that the sharing motive is undermined and there is a large temptation to "go it alone". This might lead eager groups, projects, initiatives to quickly develop even sizeable resources, instead of following a slower adoption route on shared or mutualised resources, only to discover later that there is a need to share. We refer to this as the "erosion of the commons".
 
-Hey, what if we didn't have to draw battle lines around what was "yours" and what was "ours" ? If ***decentralisation*** were a viable option for building e-Infrastructure, we wouldn't have to. We could allow the network to play the aggregating and multiplying role it does so well, and avoid the erosion of a common platform for research and innovation. Easier said than done, of course - the limiting factor here, I submit, is the governing structure that ***enables*** a dynamic and sustainable decentralised e-Infrastructure. Providing a bedrock, as NICIS could indeed do would go a long way, but more important, I think, is **constituency**.
+Hey, what if we didn't have to draw battle lines around what was "yours" and what was "ours" ? If ***decentralisation*** were a viable option for building e-Infrastructure, we wouldn't have to. We could allow the network to play the aggregating and multiplying role it does so well, and avoid the erosion of a common platform for research and innovation. Easier said than done, of course - the limiting factor here, I submit, is the governing structure that ***enables*** a dynamic and sustainable decentralised e-Infrastructure. Providing a bedrock, as NICIS could indeed do would go a long way, but more important, I think, is **constituency**. I submit that a Commons could bring this about and improve things from a resource provider's point of view.
 
 # So, your place or mine...  ?
 
-Let's take a look from the researchers perspective.
+Let's take a look at how a Commons would improve things from the researchers' perspective.
 
 The pillars of cyberinfrastructure have been identified in South Africa as **Data**, **HPC** and **Network**. These pillars make particular sense from a national funding agency perspective, influencing development of centralised interventions. However, in the real world, it's very hard to build something using only one pillar, be it a pillar of "techonlogy", or an institutional pillar. The point is that research is conducted with judicious, sometimes ubiquitous usage of all of these technology pillars, and frequently across institutional boundaries. Researchers do not identify as "HPC" users or "Data" users - and certainly not as belonging to a particular institute - they are simply researchers, so funding their activities within the ambit of any of these "pillars" creates unnecessary barriers. While the pillars are useful for funding agencies to channel their commitments into significant hardware investments, a false dichotomy has been created between services which are in reality complementary. The separation of pillars, while necessary and useful to central funding agencies, thus creates tension and inefficiencies both in the technical community entrusted to build and operate them, as well as the scientific communities which come to rely on them. There are very good reasons for having centralised funding (in order to address issues at schale) as well as independent or institutional funding streams (to ensure that there is a multiplicity and diversity in research and resources), however as often occurs, some convergence in activities is almost inevitable. When this occurs, whether it is technological, methodological, or scientific convergence, a means should exist whereby experience and resources can be shared.
 
-## Avoiding 'Government Housing Project' - ensuring constituency-based participation
+## 'Government Housing' vs 'Community Projects' - ensuring constituency-based participation
 
-Not all South Africans have equal access to e-Science resources and services. It is unrealistic to insist that all research universities to instate their own stand-alone e-Science Centres; this can only be effectively done in a certain environment and at a certain scale. However, we cannot accept such inequalities in our scientific communities, and efforts should be made to ensure access to quality services and performant resources irrespective of geographic location. This could could be done by distributing resources, paid for by some central fund, to remote and disadvantaged communities
+Ok, this bit is going to be controversial... bear with me, and remember that I'm trying to make an argument, in order to get to the facts, so feel free to comment (constructively :smile:) down below.
+
+So, not all South Africans have equal access to e-Science resources and services. It is unrealistic to insist that all research universities to instate their own stand-alone e-Science Centres; this can only be effectively done in a certain environment and at a certain scale. However, we cannot accept such inequalities in our scientific communities, and efforts should be made to ensure access to quality services and performant resources irrespective of geographic location. This could be done by distributing resources, paid for by some central fund, to remote and disadvantaged communities; I refer to this as the "Government Housing" option - whereby a researcher at a disadvantage just has to wait patiently until the central bureaucracy disburses what it's able to in order to respond to their need. There are obvious issues with this, foremost the there is lack of choice and limited resources.
+
+> ***"But certainly having hardware on-hand to work with is beneficial to both the technical and the scientific communities which are isolated by the Digital Divide ? Surely giving these people something, even if it's second-hand equipment, is better than nothing !?"*** <br>
+> - You, shrieking in disblief.
+
+Ok, maybe you didn't quite *shriek*, but you were still quite incredulous, you have to admit. Anyway - to that, I counter just two words:
+
+> ***Power. <br>
+> Pace. <br>***
+> - Me.
+
+My simple analysis is this. First of all there is a **power** crisis in South Africa, which will not likely go away soon. Old kit is notoriously power inefficient, meaning that often donations of second-hand materiel, even if free of capital cost, are often a huge burden on the receiving institute. In some cases, these institutes may not even have adequate data centres to host the kit. If institutes are already straining to keep power consumption to a minimum, proposing to deliver power-hungry and inefficient computing resources to them is likely to exacerbate the situation.
+
+Secondly, the **pace** at which technology is evolving means that the sites which have only access to second- or third-generation equipment will *de-facto* be second-rate citizens of the e-Science world, learning obsolete methods and technology while the rest steam ahead.
+
+Now, there is certainly a lot that can be done with older equipment, and the turnover rate of cutting-edge infrastructure is indeed very high. However, these resources will only be efficient in a *system* which allows various workloads to be executed by the relevant resources. This is not possible in state where resources are disconnected, but - while not solved problem - can be done in a decentralised, connected system.
+
+The conventional wisdom says that you conduct your cutting-edge, grand-challenge research on  expensive Tier-1 resources, and everything else on the Tier-2 resources. However, this belies the power of the network to *flatten* the world. 
+
+As far as resource deployment goes, in my opinion, piecemeal installations are a pretty bad idea.
+
+
 
 ## The Craftsperson and the Third Career.
 
