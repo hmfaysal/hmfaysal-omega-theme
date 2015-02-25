@@ -149,14 +149,19 @@ One of the aspects to emerge from the cloud computing paradigm is that hardware 
 
 Ok - the **actual** hardware is not code, but as soon as you turn it on, it's executing something. The Operating System is code. The hypervisor is code. The Private Cloud manager is code. The guest OS is code. The service running the application is code...
 
-Things get even more 'meta' from there... For example, we wrote some [Ansible](http://www.ansible.com) roles which **describe** a state of services consisting of a [Shibboleth IDP](http://shibboleth.net/) supported by an [OpenLDAP backend](http://www.openldap.org) containing identities of people who would like to use a service. The authors  of this service are not the ones operating the various instances of it, and it's something that can be deployed by changing a few variables and at the push of a button.
+Things get even more 'meta' from there... For example, we wrote some [Ansible](http://www.ansible.com) roles which **describe** a state of services consisting of a [Shibboleth IDP](http://shibboleth.net/) supported by an [OpenLDAP backend](http://www.openldap.org) containing identities of people who would like to use a service[^IdPArticle]. The authors  of this service are not the ones operating the various instances of it, and it's something that can be deployed by changing a few variables and at the push of a button.
+
+Consider now the roles involved in this. Previously, there was *The Expert*[^BOFH]. All knowledge resided with this shadowy, reclusive individual and there was almost total isolation between them and their users. What we have now is a richer society of software developers, integration services, code reviewers, volunteer contributors... and the eventual operators and user. Now, the motivation for the developers to write generically-applicable code is dependent on having a wide deploy base; the overhead for developing integration services and code reviews similarly is only justifiable if there is a need for high-quality re-usable software, *etc*. In other words, this highly beneficial symbiotic relationship cannot happen in a vaccuum - it needs the right environment.
+
+Again, this is what SAGrid was supposed to be, and what "the project formerly known as SAGrid" should be within NICIS.
 
 ## Fork my infrastructure.
 
-Something astounding has happened in the last few years, arising from the convergence of the software development and IT operations commmunity, and the ability to virtualise resources: entire infrastructures can be "forked" from pre-existing ones. The rise of "social-coding" websites - most prominently [Github](http://github.com) has made writing and sharing code much easier and systematic, as well as providing an easy means of provenance.
+Something astounding has happened in the last few years, arising from the convergence of the software development and IT operations commmunity, and the ability to virtualise resources: entire infrastructures can be "forked" from pre-existing ones. The rise of "social-coding" websites - most prominently [Github](http://github.com) has made writing and sharing code much easier and systematic, as well as providing an easy means of provenance, by tracking the network of forks and contributions of repositories. 
 
 ## We, for one, welcome our new robot overlords.
 
+A last word on automation.
 
 
 # Conclusions and future work.
@@ -183,3 +188,5 @@ NICIS recognises that there is a need for a cross-cutting activity to enhance an
 [^eScienceCentres]: Good examples are the [Oxford e-Reseach Centre](http://www.oerc.ox.ac.uk/), the [Monash e-Research Centre](https://platforms.monash.edu/eresearch/) and the [Netherlands e-Science Centre](https://www.esciencecenter.nl/)
 [^EUorDST]: The EC FP7 and H2020 funding mechanisms have played this role well, and national funding from South Africa's DST for example could play such a role at a smaller scale.
 [^OriginalJRU]: The founding members of the SAGrid JRU were : The UCT-CERN Research Centre, UCT Information and Communication Technology Services, iThemba LABS, the University of the Free State Computer Services Department, Department of Information Technology, University of the North­West, Department of Information Technology, University of Johannesburg, University of the Witwatersrand, Bioinformatics research group.
+[^BOFH]: Also known as the [BOFH](http://en.wikipedia.org/wiki/Bastard_Operator_From_Hell)
+[^IdPArticle]: This is described at length at http://aaroc.github.io/devops/2014/10/24/DevOps-v0-0-3-Release/
