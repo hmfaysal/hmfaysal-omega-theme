@@ -10,7 +10,25 @@ image:
 comments: true
 mathjax: true
 ---
-
+<!-- TOC depth:6 withLinks:1 updateOnSave:1 -->
+- [TL;DR](#tldr)
+- [Thoughts on Strategy for an e-Infrastructure Commons](#thoughts-on-strategy-for-an-e-infrastructure-commons)
+	- [Openness](#openness)
+	- [The Commons](#the-commons)
+	- [Have you tried rebooting the system ?](#have-you-tried-rebooting-the-system-)
+- [Systems thinking for Cyberinfrastructure.](#systems-thinking-for-cyberinfrastructure)
+	- [Evolving the revolution](#evolving-the-revolution)
+		- [What does the internet think of all this ?](#what-does-the-internet-think-of-all-this-)
+	- [The Network won.](#the-network-won)
+- [So, your place or mine...  ?](#so-your-place-or-mine-)
+	- ['Government Housing' vs 'Community Projects' - ensuring constituency-based participation](#government-housing-vs-community-projects-ensuring-constituency-based-participation)
+- [The Craftsperson and the Third Career.](#the-craftsperson-and-the-third-career)
+	- [DevOps, Software-Defined Infrastructure and transferrable skills](#devops-software-defined-infrastructure-and-transferrable-skills)
+	- [Fork my infrastructure.](#fork-my-infrastructure)
+	- [We, for one, welcome our new robot overlords.](#we-for-one-welcome-our-new-robot-overlords)
+- [Conclusions and future work.](#conclusions-and-future-work)
+- [References and Footnotes](#references-and-footnotes)
+<!-- /TOC -->
 # TL;DR
 
 Some thoughts informing a new strategy for an e-Science commons. I'd really appreciate some input and criticism.
