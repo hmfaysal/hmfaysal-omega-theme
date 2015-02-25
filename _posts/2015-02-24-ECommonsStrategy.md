@@ -27,6 +27,7 @@ mathjax: true
 	- [DevOps, Software-Defined Infrastructure and transferrable skills](#devops-software-defined-infrastructure-and-transferrable-skills)
 	- [Fork my infrastructure.](#fork-my-infrastructure)
 	- [We, for one, welcome our new robot overlords.](#we-for-one-welcome-our-new-robot-overlords)
+- [Doing Research on the Research Infrastructure](#doing-research-on-the-research-infrastructure)
 - [Conclusions and future work.](#conclusions-and-future-work)
 - [References and Footnotes](#references-and-footnotes)
 <!-- /TOC -->
@@ -164,17 +165,26 @@ Something astounding has happened in the last few years, arising from the conver
 
 On the one hand, you'll be giving some people a job close to the hardware. On the other hand, the training material will be obsolete the moment it's written. The market for HPC system administrators isn't all that large compared to the industry IT sector, so in this case, the training will always have a limited audience and traction. On the other hand, if you've got a robust and quality Software-Defined Infrastructure, why even train the system administrators ? It would be a better investment to improve the software development capabilities of a specialised, (distributed) team and let automated testing, monitors, deployment and integration do the rest.
 
-
 ## We, for one, welcome our new robot overlords.
 
-A last word on automation. The strategy of "the project formerly known as SAGrid" should explicitly take into account the automation trend. "Robots" refer to services which perform both menial and in some cases advanced tasks which were previously done "by-hand". We've implemented this in automated continuous integration of scientific applications[^Jenkins], and are working on doing this for infrastructure services with Ansible, Puppet and Rundeck. What's missing in our skillset at the moment is also what seems to be something of a common trend in Big Data - Artificial Intelligence.
+A last word on automation. The strategy of "the project formerly known as SAGrid" should explicitly take into account the automation trend. "Robots" refer to services which perform both menial and in some cases advanced tasks which were previously done "by-hand". We've implemented this in automated continuous integration of scientific applications[^Jenkins], and are working on doing this for infrastructure services with Ansible, Puppet and Rundeck. What's missing in our skillset at the moment is also what seems to be something of a common trend in Big Data - Artificial Intelligence. Developing a deep monitoring and reporting system, and developing appropropriate responses to events is a realistic goal which is already being done by companies with far larger infrastructures and tighter constraints than ours[^NetFlix].
 
+# Doing Research on the Research Infrastructure
+
+Many of the areas of development touched on require **actual research** in their field. The prospect of developing research infrastructure that is both friendly and to the communities that it serves, as well as conducive to inward-looking research that improves and extends it is very appealing. There is a very wide range of topics in e-Science which could immediately be tackled -
+reproducible research workflows, resilient computing, semantic enrichment of research data sets, machine data mining, multiscale middleware... the list is endless. The point, however, is that this research can ***only be conducted with access to an e-Infrastructure at scale***. Taken together with the focus on Openness and the approximation that "Everything = code", "the project formerly known as SAGrid" stands to provide a fertile environment for innovation, improving both itself and the communities which it serves. "Itself" here  refers both to the pillars of cyberinfrastructure which it cuts across, as well as the wider constituency of resource providers.
 
 # Conclusions and future work.
 
-NICIS recognises that there is a need for a cross-cutting activity to enhance and fully enable researchers using cyberinfrastructure. In my view this strategy should rest, as SAGrid initially did, on the desire, needs and efforts of a committed community of contributors: universities, research laboratories and large research groups. By adopting a paradigm of **constituency** - shared ownership and community-developed services and tools, based on **open standards** - the system could be sustainable. Relevant directed interventions at scale by a central funding agency[^EUorDST] could help ensure that the development of a commons is more attractive than the development of individual, isolated systems. New tools and methodologies are speeding up the deployment and increasing the range of services that can be realistically offered. Enabling this acceleration is Open Source software, and the rise of DevOps culture which allows good collaborative software development methodologies to be applied to infrastructure services themselves. Recognising the importance of these hitherto "hidden" technical experts and allowing them to bridge the scientific and technical communities they serve can bring great benefit to both.  
+NICIS recognises that there is a need for a cross-cutting activity to enhance and fully enable researchers using cyberinfrastructure. In my view this strategy should rest, as SAGrid initially did, on the desire, needs and efforts of a committed community of contributors: universities, research laboratories and large research groups. By adopting a paradigm of **constituency** - shared ownership and community-developed services and tools, based on **open standards** - the system could be sustainable. Relevant directed interventions at scale by a central funding agency[^EUorDST] could help ensure that the development of a commons is more attractive than the development of individual, isolated systems. New tools and methodologies are speeding up the deployment and increasing the range of services that can be realistically offered. Enabling this acceleration is Open Source software, and the rise of DevOps culture which allows good collaborative software development methodologies to be applied to infrastructure services themselves. Recognising the importance of these hitherto "hidden" technical experts and allowing them to bridge the scientific and technical communities they serve can bring great benefit to both.
 
-This pontificating can and should go on forever, however in the meantime, we really do need a concrete strategy with mission, vision and objectives, in order to define projects that can be funded so that we can implement them. This will of course happen in a more reserved context, but the authors of this strategy should be the stakeholders themselves, not the implementing agency. 
+This pontificating can and should go on forever, however in the meantime we really do need a concrete strategy with mission, vision and objectives, in order to define projects that can be funded so that we can implement them. This will of course happen in a more reserved context, but the authors of this strategy should be the stakeholders themselves, not the implementing agency, so that a proper mandate is obtained. Suffice to say that with some strategic changes, we can transform a fairly dated production service grid that tangentially collaborated with other infrastructure initiatives into a fully-interoperable **Open E-Science Commons**, which is our ultimate goal.
+
+Finally, lots of work needs to be done on funding models and interaction with the private sector. This has been explicitly avoided in this work, to keep things on track. A very good starting point will be the [EGI Pay Per Use](https://www.egi.eu/news-and-media/newsletters/Inspired_Issue_10/pay-per-use_models.html)[^PayPerUseWiki], but it would be perhaps hasty to envision a fully market-based cyberinfrastructure in South Africa. I would reserve this until "v2.1".
+
+Before you complain that I've left out something take a look at the length of this article. Congrats, by the way - you made it to the end ! Yes, there is plenty still to write about and do. I look forward therefore to your commments and feedback.
+
+Bruce
 
 # References and Footnotes
 
@@ -199,3 +209,5 @@ This pontificating can and should go on forever, however in the meantime, we rea
 [^BOFH]: Also known as the [BOFH](http://en.wikipedia.org/wiki/Bastard_Operator_From_Hell)
 [^IdPArticle]: This is described at length at http://aaroc.github.io/devops/2014/10/24/DevOps-v0-0-3-Release/
 [^Jenkins]: Most recently presented [here](http://www.slideshare.net/brucellino/jenkins-43354970)
+[^NetFlix]: NetFlix's [Simian Army](http://techblog.netflix.com/2011/07/netflix-simian-army.html) is a good example.
+[^PayPerUseWiki]: See also the [EGI Pay-Per-Use final report](https://documents.egi.eu/public/ShowDocument?docid=1391)
