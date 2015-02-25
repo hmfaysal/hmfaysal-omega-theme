@@ -162,7 +162,7 @@ Something astounding has happened in the last few years, arising from the conver
 
 > Should we be hiring system administrators to operate complex services, or developing a software capability that allows massive automation ? Should we be hiring research scientists to run applications, or research software engineers to develop applications ?
 
-On the one hand, you'll be giving some people a job close to the hardware. On the other hand, the training material will be obsolete the moment it's written. The market for HPC system administrators isn't all that large compared to the industry IT sector, so in this case, the training will always have a limited audience and traction. On the other hand, if you've got a robust and quality Software-Defined Infrastructure, why even train the system administrators ? It would be a better investment to improve the software development capabilities of a specialised, (distributed) team and let automated testing, monitors, deployment and integration do the rest. 
+On the one hand, you'll be giving some people a job close to the hardware. On the other hand, the training material will be obsolete the moment it's written. The market for HPC system administrators isn't all that large compared to the industry IT sector, so in this case, the training will always have a limited audience and traction. On the other hand, if you've got a robust and quality Software-Defined Infrastructure, why even train the system administrators ? It would be a better investment to improve the software development capabilities of a specialised, (distributed) team and let automated testing, monitors, deployment and integration do the rest.
 
 
 ## We, for one, welcome our new robot overlords.
@@ -173,6 +173,8 @@ A last word on automation. The strategy of "the project formerly known as SAGrid
 # Conclusions and future work.
 
 NICIS recognises that there is a need for a cross-cutting activity to enhance and fully enable researchers using cyberinfrastructure. In my view this strategy should rest, as SAGrid initially did, on the desire, needs and efforts of a committed community of contributors: universities, research laboratories and large research groups. By adopting a paradigm of **constituency** - shared ownership and community-developed services and tools, based on **open standards** - the system could be sustainable. Relevant directed interventions at scale by a central funding agency[^EUorDST] could help ensure that the development of a commons is more attractive than the development of individual, isolated systems. New tools and methodologies are speeding up the deployment and increasing the range of services that can be realistically offered. Enabling this acceleration is Open Source software, and the rise of DevOps culture which allows good collaborative software development methodologies to be applied to infrastructure services themselves. Recognising the importance of these hitherto "hidden" technical experts and allowing them to bridge the scientific and technical communities they serve can bring great benefit to both.  
+
+This pontificating can and should go on forever, however in the meantime, we really do need a concrete strategy with mission, vision and objectives, in order to define projects that can be funded so that we can implement them. This will of course happen in a more reserved context, but the authors of this strategy should be the stakeholders themselves, not the implementing agency. 
 
 # References and Footnotes
 
