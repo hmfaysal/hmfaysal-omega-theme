@@ -22,6 +22,7 @@ mathjax: true
 	- [The Network won.](#the-network-won)
 - [So, your place or mine...  ?](#so-your-place-or-mine-)
 	- ['Government Housing' vs 'Community Projects' - ensuring constituency-based participation](#government-housing-vs-community-projects-ensuring-constituency-based-participation)
+		- [The world is flat.](#the-world-is-flat)
 - [The Craftsperson and the Third Career.](#the-craftsperson-and-the-third-career)
 	- [DevOps, Software-Defined Infrastructure and transferrable skills](#devops-software-defined-infrastructure-and-transferrable-skills)
 	- [Fork my infrastructure.](#fork-my-infrastructure)
@@ -121,6 +122,8 @@ My simple analysis is this. First of all there is a **power** crisis in South Af
 Secondly, the **pace** at which technology is evolving means that the sites which have only access to second- or third-generation equipment will *de-facto* be second-rate citizens of the e-Science world, learning obsolete methods and technology while the rest steam ahead.
 
 Now, there is certainly a lot that can be done with older equipment, and the turnover rate of cutting-edge infrastructure is indeed very high. However, these resources will only be efficient in a *system* which allows various workloads to be executed by the relevant resources. This is not possible in state where resources are disconnected, but - while not solved problem - can be done in a decentralised, connected system.
+
+### The world is flat.
 
 The conventional wisdom says that you conduct your cutting-edge, grand-challenge research on  expensive Tier-1 resources, and everything else on the Tier-2 resources. However, this belies the power of the network to *flatten* the world and as far as resource deployment goes, in my opinion, piecemeal installations are a pretty bad idea. A relevant model, I suggest, is not a **hierarchy of resources**, but a **complex-adaptive system** of services. This is a much more realistic representation of a real e-Infrastructure, due to it's changing, complex nature. The distribution of resources should be thus done in the context of a self-interacting ***system***, rather than islands of kit. Now, the NICIS report clearly recognises that we have (and should have) a System of some kind - an **Eco**system, for example - but I think the critical issue is that it is a complex, dynamic system; one capable of interacting with itself, self-organising and capable of generating structures beyond simple hierarchy. In keeping with the analogy, this all depends on the boundary conditions and external constraints placed on the system.
 
