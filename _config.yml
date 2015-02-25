@@ -62,7 +62,7 @@ links:
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    Africa/Johannesburg
 future:      true
-highlighter:    true
+highlighter: pygments
 markdown:    kramdown
 paginate:    3
 paginate_path: "page:num"
