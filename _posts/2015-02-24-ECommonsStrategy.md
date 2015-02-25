@@ -30,6 +30,7 @@ mathjax: true
 - [Conclusions and future work.](#conclusions-and-future-work)
 - [References and Footnotes](#references-and-footnotes)
 <!-- /TOC -->
+
 # TL;DR
 
 Some thoughts informing a new strategy for an e-Science commons. I'd really appreciate some input and criticism.
@@ -157,11 +158,16 @@ Again, this is what SAGrid was supposed to be, and what "the project formerly kn
 
 ## Fork my infrastructure.
 
-Something astounding has happened in the last few years, arising from the convergence of the software development and IT operations commmunity, and the ability to virtualise resources: entire infrastructures can be "forked" from pre-existing ones. The rise of "social-coding" websites - most prominently [Github](http://github.com) has made writing and sharing code much easier and systematic, as well as providing an easy means of provenance, by tracking the network of forks and contributions of repositories. 
+Something astounding has happened in the last few years, arising from the convergence of the software development and IT operations commmunity, and the ability to virtualise resources: entire infrastructures can be "forked" from pre-existing ones. The rise of "social-coding" websites - most prominently [Github](http://github.com) has made writing and sharing code much easier and systematic, as well as providing an easy means of provenance, by tracking the network of forks and contributions of repositories. Not only does this dramatically reduce the time to deployment of new resources, services and indeed entire sites, but also introduces new variables into the e-Infrastructure ecosystem, and has significant implications for what training should look like. Leading into my discussion of automation below, a question arises:
+
+> Should we be hiring system administrators to operate complex services, or developing a software capability that allows massive automation ? Should we be hiring research scientists to run applications, or research software engineers to develop applications ?
+
+On the one hand, you'll be giving some people a job close to the hardware. On the other hand, the training material will be obsolete the moment it's written. The market for HPC system administrators isn't all that large compared to the industry IT sector, so in this case, the training will always have a limited audience and traction. On the other hand, if you've got a robust and quality Software-Defined Infrastructure, why even train the system administrators ? It would be a better investment to improve the software development capabilities of a specialised, (distributed) team and let automated testing, monitors, deployment and integration do the rest. 
+
 
 ## We, for one, welcome our new robot overlords.
 
-A last word on automation.
+A last word on automation. The strategy of "the project formerly known as SAGrid" should explicitly take into account the automation trend. "Robots" refer to services which perform both menial and in some cases advanced tasks which were previously done "by-hand". We've implemented this in automated continuous integration of scientific applications[^Jenkins], and are working on doing this for infrastructure services with Ansible, Puppet and Rundeck. What's missing in our skillset at the moment is also what seems to be something of a common trend in Big Data - Artificial Intelligence.
 
 
 # Conclusions and future work.
@@ -190,3 +196,4 @@ NICIS recognises that there is a need for a cross-cutting activity to enhance an
 [^OriginalJRU]: The founding members of the SAGrid JRU were : The UCT-CERN Research Centre, UCT Information and Communication Technology Services, iThemba LABS, the University of the Free State Computer Services Department, Department of Information Technology, University of the North­West, Department of Information Technology, University of Johannesburg, University of the Witwatersrand, Bioinformatics research group.
 [^BOFH]: Also known as the [BOFH](http://en.wikipedia.org/wiki/Bastard_Operator_From_Hell)
 [^IdPArticle]: This is described at length at http://aaroc.github.io/devops/2014/10/24/DevOps-v0-0-3-Release/
+[^Jenkins]: Most recently presented [here](http://www.slideshare.net/brucellino/jenkins-43354970)
