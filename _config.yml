@@ -28,7 +28,7 @@ owner:
   twitter:        brusisceddu
   facebook:       brucellino
   github:         brucellino
-  stackexchange:
+  stackexchange:  brucellino
   linkedin:       brucellino
   instagram:
   flickr:         brucellino
@@ -62,7 +62,7 @@ links:
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    Africa/Johannesburg
 future:      true
-pygments:    true
+highlighter:    true
 markdown:    kramdown
 paginate:    3
 paginate_path: "page:num"
@@ -70,7 +70,8 @@ paginate_path: "page:num"
 # https://github.com/mojombo/jekyll/wiki/Permalinks
 #permalink:   /:categories/:date/:title
 permalink: pretty
-
+gems:
+  - jemoji
 kramdown:
   auto_ids: true
   footnote_nr: 1
