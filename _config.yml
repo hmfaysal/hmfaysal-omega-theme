@@ -26,15 +26,17 @@ owner:
   avatar:         tangqi.jpg
   email:          tangqiwork@gmail.com
   # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
-  description:    
+  description:  
+  weibo:          2236029452  
+  github:         tangqi92 
   twitter:        tangqi92
   facebook:       
-  github:         tangqi92
   stackexchange:  http://stackoverflow.com/users/4405174/tang-qi
   linkedin:       
   instagram:      
   flickr:         
-  tumblr:         
+  tumblr:  
+
   # For Google Authorship https://plus.google.com/authorship
   google_plus:    https://plus.google.com/u/0/111462351334549127124
 
