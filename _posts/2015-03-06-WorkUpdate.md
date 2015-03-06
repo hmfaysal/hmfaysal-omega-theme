@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Week 10 projects update
-description: What I've been up to in the 3rd week of January
+description: What I've been up to in the 10th week of 2015
 headline: Week 10 (2015) work update
 category: blog
 tags: [work, projects, update]
