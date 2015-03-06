@@ -48,6 +48,11 @@
                     <i class="icon-github"></i>
                 </a>
             </li>{% endif %}
+            {% if site.owner.weibo %}<li>
+                <a href="http://weibo.com/{{ site.owner.weibo }}" data-toggle="tooltip" title="{{ site.owner.name}} on Weibo" target="_blank">
+                    <i class="fa fa-weibo"></i>
+                </a>
+            </li>{% endif %}
         </ul>
             <div>
                 <a href="{{ site.url }}/tangqi/">{{ site.owner.name }}</a> &copy; {{ site.time | date: '%Y' }} &bull; All rights reserved.  
