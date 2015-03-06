@@ -41,6 +41,8 @@ I've opened the pull request for the next pre-release of the [DevOps](http://git
 
 The CHAIN-REDS final conference is coming up at the end of the month. I will be representing the Sub-Saharan region, and making a demo of the Executable Infrastructure we think is so cool. The demo will show the deployment of an integrated LDAP/IdP and Science Gateway with Ansible.
 
+I also invited the [H3Africa Bio Net](http://www.h3abionet.org) project to the conference, which will be funded by the project. This will be a great opportunity to cross-pollinate ideas and needs.
+
 ## HPC Survey
 
 The project is running as one of it's final deliverables an HPC survey, coordinated by GRNET. We need to get the feedback of all of the "HPC" centres in the region, so that we can construct the state of the art of the region regarding usage and adoption. This has been started. Of course we expect input from the CHPC, but more importantly also the newer sites in Tanzania, Zimbabwe, Kenya etc.
