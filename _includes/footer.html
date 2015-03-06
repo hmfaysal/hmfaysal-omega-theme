@@ -50,8 +50,12 @@
             </li>{% endif %}
         </ul>
             <div>
-                <a href="{{ site.url }}/tangqi/">{{ site.owner.name }}</a> &copy; {{ site.time | date: '%Y' }} &bull; All rights reserved.
+                <a href="{{ site.url }}/tangqi/">{{ site.owner.name }}</a> &copy; {{ site.time | date: '%Y' }} &bull; All rights reserved.  
             </div>
+            <div>
+                Powered by <a href="http://jekyllrb.com">jekyll</a> &bull; Using the <a href="http://chrisbayot.com/license">HMFaysal Omega theme</a>
+            </div>
+            {% for link in site.links %}
             <ul class="menu-items">
             {% for link in site.links %}
             <li>
