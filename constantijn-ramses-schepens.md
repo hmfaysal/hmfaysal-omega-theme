@@ -30,10 +30,12 @@ The things I am hoping to chronicle in this blog post are precisely these intere
 <hr>
 \* I may even slip in some (or more?) stuff on obsessively healthy living, including food and exercising.
 
-
+{% highlight javascript%}
 keyThingsAboutMe =
-&nbsp;&nbsp;  mind: [ meditation, learning, exploration, traveling, culture, startups ]
-&nbsp;&nbsp;  body:
-&nbsp;&nbsp;&nbsp;&nbsp;    food: [ organic, natural, sugar-free, fresh, salubrious ]
-&nbsp;&nbsp;&nbsp;&nbsp;    exercise: [ gym, diet, routine, scuba diving ]
-&nbsp;&nbsp;  soul: [ philosophy, spirituality, atheism ]
+  mind: [ meditation, learning, exploration, traveling, culture, startups ]
+  body:
+    food: [ organic, natural, sugar-free, fresh, salubrious ]
+    exercise: [ gym, diet, routine, scuba diving ]
+  soul: [ philosophy, spirituality, atheism ]
+{% endhighlight %}
+
