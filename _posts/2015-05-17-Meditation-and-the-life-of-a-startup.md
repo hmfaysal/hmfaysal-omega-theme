@@ -16,7 +16,7 @@ image:
 comments: false
 mathjax: null
 featured: true
-published: false
+published: true
 ---
 
 _Mind_, _body_, _soul_. I aim on a daily basis to improve myself, but not just on one of these fronts, I want to improve on all of them. I think in most modern societies a disproportionately large focus is placed on the body. That is why I want to spend some time discussing mind and soul. Of course they are all intimately linked, and I in no way mean that you shouldn’t also focus on physical health.
