@@ -2,7 +2,7 @@
 layout: page
 permalink: /constantijn-ramses-schepens/index.html
 title: Constantijn Ramses Schepens
-tags: [Hossain, Mohd, Faysal, hmfaysal]
+tags:
 image:
   feature: tijn-ProfilePhoto.JPG
 ---
