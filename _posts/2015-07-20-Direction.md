@@ -68,7 +68,7 @@ I tried being a physicist. I got a Ph.D. and did two postdocs. I worked at CERN.
 <img src="{{ site_url }}/images/mebeingascientist.jpg">
 <img src="{{ site_url }}/images/legitscientistopenday.jpg">
 <figcaption>
-For brief period of time, I was a real scientist.
+For a brief period of time, I was a real scientist.
 </figcaption>
 </figure>
 
