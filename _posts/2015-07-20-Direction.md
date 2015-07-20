@@ -133,7 +133,7 @@ Duncan, at around 36 years old, was on the verge of a new path in life. Before h
 
 So, I had my turn and made my choices. These have taken me to all kinds of unexpected places and taught me all kinds of lessons, which is the story of my life so far. I won't bore you with the details - for those, best find me here, bring a bottle of Jack, a pack of cards and a couple of hours of downtime - but those are no longer important.
 
-The paths my life has taken have helped create the starting blocks for Federico and Costanza. They are my Huascar&agrave;n, my final journey,  Cristina is my Perez. I put in the time preparing as Duncan did, before this turn in my life - he put in hours in the gym and got into the best physical shape he could be in for what lay ahead. I sweated and suffered and strained and groaned too - turning into a dad is a metamorphasis that required a sight more than just a few hours in the gym ! We wanted this, and now we're committed - out there in the wild, one step at a time.
+The paths my life has taken have helped create the starting blocks for Federico and Costanza. They are my Huascar&agrave;n, my final journey,  Cristina is my Perez. I put in the time preparing, as Duncan did, before this turn in my life. He put in hours in the gym and got into the best physical shape he could be in for what lay ahead - I sweated and suffered and strained and groaned too  (turning into a dad is a metamorphasis that required a sight more than just a few hours in the gym !) We wanted this, and now we're committed - out there in the wild, one step at a time.
 
 ----
 
