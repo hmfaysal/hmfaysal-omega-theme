@@ -56,9 +56,9 @@ I remind myself that no matter what, the time I've got left is limited. I could 
 
 We were warned, after Duncan, not to idolise him, and we didn't. Duncan didn't become perfection in death, and those who remember him still remember him, I think, in a way that would be commensurate with the man that he was: imperfect and intense. I was lucky to have had that bit of time in his glow reflected upon me thanks to the almost accidental co-location with him in that office[^nothappy]. Having his few personal belongings around me after we heard the news was a powerful, stinging experience.
 
-I remember so very vaguely the real facts of that time, and inevitably I've replaced history with memories, which are are different at evey telling. I vaguely remember how he told Sahal and I (probably others too) that unless we were 100 % committted to research, the life of a physicist was not for us, that there were many other things to do with our life and not to take this path - study, sacrifice, stress, focus and almost exclusion from the "real world" - for granted. He had walked an unorthodox path to where wanted to be and had left scars on his own life and that of others in the wake. Maybe it was just me, but I was convinced that there was no higher calling than to uncover the universe, and that sacrificing myself to this life would lead me to Physics Valhalla.
+I remember so very vaguely the real facts of that time, and inevitably I've replaced history with memories, which are are different at evey telling. I vaguely remember how he told Sahal and I (probably others too) that unless we were 100 % committted to research, the life of a physicist was not for us, that there were many other things to do with our life and not to take this path - study, sacrifice, stress, focus and almost exclusion from the "real world" - for granted. He had walked an unorthodox path to where he wanted to be and had left scars on his own life and that of others in the wake. Maybe it was just me, but I was convinced that there was no higher calling than to uncover the universe, and that sacrificing myself to this life would lead me to Physics Valhalla. It would  be worth it, and besides, chicks dig scars.
 
-"Not so, you twat", said Duncs.
+"Not so, you twat", said Duncs. Except for the scars bit.
 
 # Stop, I want to get off.
 
