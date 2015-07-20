@@ -94,7 +94,7 @@ Ya, except then I had to grow up and face reality.
 
 > Me the physicist faced up perhaps the first adult realisation of his life : he sucked as a physicist.
 
-Ok, maybe "suck" is a bit harsh, but go find me a physicist who uses soft, gentle terms to describe anything - we're not a particularly flowery, smooshy, soft, feathery bunch. I worked hard and got half as much done as others around me. That, in my mind, was stupid. I thought that physics  was bigger than me, that I was not so significant and that given this, I should make way for others to do the job better than me. I'm glad they did.
+Ok, maybe "suck" is a bit harsh, but go find me a physicist who uses soft, gentle terms to describe anything - we're not a particularly flowery, smooshy, soft, feathery bunch - kak is kak. I worked hard and got half as much done as others around me. That, in my mind, was stupid. I thought that physics  was bigger than me, that I was not so significant and that given this, I should make way for others to do the job better than me. I'm glad they did.
 
 Instead of doing and getting in the way, I would get out of the way and *enable*. I looked for a niche, perhaps found one, and got to work building something that would make others rock, while scratching a personal itch. I chose a big problem and slowly, slowly hacked away chunks of it... no serac on my back, just a long, interminable, digital snow of work.  Was this what I had changed careers for ? Was this what Duncan referring to when he suggested there was a bunch of other careers out there that would constitute a life well spent ? I cannot answer this question...
 
