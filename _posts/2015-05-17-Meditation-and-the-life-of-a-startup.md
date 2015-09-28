@@ -10,12 +10,12 @@ tags:
   - entrepreneurship
   - startups
 image:
-  feature: "tijn-meditation--610x406.jpg"
+  feature: tijn-meditation.jpg
   credit: http://huntnewsnu.com/
   creditlink: "http://huntnewsnu.com/files/2015/01/meditation--610x406.jpg"
 comments: false
 mathjax: null
-featured: true
+featured: false
 published: true
 ---
 

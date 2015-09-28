@@ -19,6 +19,7 @@ fin_color:        "255,255,255"
 # or use the hint from http://jekyllrb.com/docs/github-pages/ to keep this the same
 # whether working locally or remotely. Start Jekyll with: jekyll serve --baseurl ''
 url: http://blog.ramses.io
+# url:
 
 # Owner/author information
 owner:
@@ -152,6 +153,8 @@ prose:
               value: philosophy
             - name: "Healthy-Living"
               value: healthyliving
+            - name: "General"
+              value: general
           alterable: true
       - name: "tags"
         field:

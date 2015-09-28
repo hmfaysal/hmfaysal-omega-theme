@@ -27,8 +27,10 @@ To start with, I am not a Buddhist and don't plan to become one, but have found 
 
 The things I am hoping to chronicle in this blog post are precisely these interests(*) and how they progress over time. Never thought hardware could make you misunderstand JavaScript OR expressions, think again, but that is a discussion for another time.
 
+EDIT: Thanks for reading this far, but it turns out I'm just going to write about stuff that I love and just feel like writing about. Many posts will still follow these themes though, so you haven't wasted your time getting here!
+
 <hr>
-\* I may even slip in some (or more?) stuff on obsessively healthy living, including food and exercising.
+\* I may even slip in some (or more?) stuff on obsessively healthy living, including food and exercising. Oh, and just add in delicious food too.
 
 {% highlight javascript%}
 keyThingsAboutMe =
