@@ -211,3 +211,4 @@ Bruce
 [^Jenkins]: Most recently presented [here](http://www.slideshare.net/brucellino/jenkins-43354970)
 [^NetFlix]: NetFlix's [Simian Army](http://techblog.netflix.com/2011/07/netflix-simian-army.html) is a good example.
 [^PayPerUseWiki]: See also the [EGI Pay-Per-Use final report](https://documents.egi.eu/public/ShowDocument?docid=1391)
+[^WhoSaidIt]: If anybody knows who did, please let me know!
