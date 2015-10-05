@@ -216,7 +216,7 @@ q {
 }
 @include hyphens(none);
 pre {
-  
+
 }@include text-shadow(none);
 /* - Font weight classes - */
 .black {
@@ -412,7 +412,9 @@ blockquote:before {
   background-color: rgba(255, 255, 255, 0.15);
 }
 .overlay:after {
-  background-color: rgba(0, 0, 0, 0.65);
+  /*background-color: rgba(0, 0, 0, 0.65);*/
+  background-color: rgba(57, 74, 77, 0.4);
+
 }
 #masthead {
   background-color: #1e1e1f;
@@ -3866,7 +3868,7 @@ a#slide:hover{
     }
 
 a#slide:after{
-    content:"F"
+    content:"R"
     }
 
 a#slide.slide:after{
@@ -4013,7 +4015,7 @@ body.slide{
 /*      Responsive      */
 
 @media screen and (max-width:1140px){
-    
+
     #header,
     #posts-container,
     .entry .text,
@@ -4022,7 +4024,7 @@ body.slide{
     .entry .details{
         width:700px
         }
-    
+
     }
 
 @media screen and (max-width:700px){
@@ -4047,9 +4049,9 @@ body.slide{
 
 
 @media screen and (max-width:500px){
-    
+
     a#slide{
-        position:absolute    
+        position:absolute
         }
 
 
