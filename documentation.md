@@ -94,6 +94,7 @@ mailchimp:
 mailchimp_uuid:
 mailchimp_lid:
 
+
 # Links to include in top navigation
 # For external links add external: true
 links:
