@@ -90,9 +90,9 @@ google_verify:
 bing_verify:
 
 # Mailchimp PopUp to Subscribers
-mailchimp:
-mailchimp_uuid:
-mailchimp_lid:
+- mailchimp:
+- mailchimp_uuid:
+- mailchimp_lid:
 
 
 # Links to include in top navigation
