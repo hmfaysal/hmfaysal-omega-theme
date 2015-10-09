@@ -89,6 +89,11 @@ google_verify:
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
 bing_verify:
 
+# Mailchimp PopUp to Subscribers
+mailchimp: 
+mailchimp_uuid: 
+mailchimp_lid: 
+
 # Links to include in top navigation
 # For external links add external: true
 links:
@@ -334,6 +339,17 @@ Including a link to your Google+ profile has the added benefit of displaying [Go
 #### Google Analytics and Webmaster Tools
 
 Your Google Analytics ID goes here along with meta tags for [Google Webmaster Tools](http://support.google.com/webmasters/bin/answer.py?hl=en&answer=35179) and [Bing Webmaster Tools](https://ssl.bing.com/webmaster/configure/verify/ownershi) site verification.
+
+#### Mailchimp PopUp to get Subscribers 
+
+You need: 
+1 - Create a list (to your future subscribers) in mailchimp.com (https://us10.admin.mailchimp.com/lists/).
+2 - Create a sign up form (PopUp type) inside of the list page. You can customize your PopUp. Generate the embedded code and get the UUID and LID fields on the generated code.
+3 - Put your UUID and LID code in _config.yml (mailchimp_uuid and mailchimp_lid).
+4 - Put (mailchimp: true) in _config.yml if you want the the PopUp appear in all screens (don't worry, appear just a time by user or when user delete cookies) or put (mailchimp: true) just on the page that you want the PopUp.
+
+[Optional - Send automatic email (one time by day or week) about new post]
+5 - Go to https://us10.admin.mailchimp.com/campaigns/, create a new campaign of the type Rss campaign. Just configurate to point for www.youdomain.com/feed.xml, choice the created list and a template.
 
 #### Top Navigation Links
 

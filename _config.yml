@@ -43,7 +43,12 @@ owner:
 google_analytics:   UA-39365944-7
 google_verify:      
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:         
+bing_verify:
+
+# Mailchimp PopUp Subscribers (mailchimp: true = all pages, or set page by page)
+mailchimp: true
+mailchimp_uuid: YOUR_UUID
+mailchimp_lid: YOUR_LID
 
 # Links to include in footer navigation
 # For external links add external: true

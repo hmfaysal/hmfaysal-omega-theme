@@ -86,4 +86,9 @@ $("a#click-pages").click(function(){
   })();
 </script>
 {% endif %}
+
+{% if page.mailchimp or site.mailchimp %}
+<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us10.list-manage.com","uuid":'{{ site.mailchimp_uuid }}',"lid":'{{ site.mailchimp_lid }}'}) })</script>
+{% endif %}
+
 {% if page.comments %}{% include disqus_comments.html %}{% endif %}
