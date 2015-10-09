@@ -90,9 +90,9 @@ google_verify:
 bing_verify:
 
 # Mailchimp PopUp to Subscribers
-mailchimp: 
-mailchimp_uuid: 
-mailchimp_lid: 
+mailchimp:
+mailchimp_uuid:
+mailchimp_lid:
 
 # Links to include in top navigation
 # For external links add external: true
@@ -342,10 +342,14 @@ Your Google Analytics ID goes here along with meta tags for [Google Webmaster To
 
 #### Mailchimp PopUp to get Subscribers 
 
-You need: 
+You need:
+
 1 - Create a list (to your future subscribers) in mailchimp.com (https://us10.admin.mailchimp.com/lists/).
+
 2 - Create a sign up form (PopUp type) inside of the list page. You can customize your PopUp. Generate the embedded code and get the UUID and LID fields on the generated code.
+
 3 - Put your UUID and LID code in _config.yml (mailchimp_uuid and mailchimp_lid).
+
 4 - Put (mailchimp: true) in _config.yml if you want the the PopUp appear in all screens (don't worry, appear just a time by user or when user delete cookies) or put (mailchimp: true) just on the page that you want the PopUp.
 
 [Optional - Send automatic email (one time by day or week) about new post]
