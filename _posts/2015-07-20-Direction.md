@@ -70,6 +70,7 @@ I tried being a physicist. I got a Ph.D. and did two postdocs. I worked at CERN.
 <figcaption>
 For a brief period of time, I was a real scientist.
 </figcaption>
+
 </figure>
 
 It was a tiny, almost insignificant contribution - but it was mine. I gave  6 years of my life from 2002 to 2008 almost entirely to that endeavour, trying to bring the focus, intensity and sense of mission that Duncan left me with to becoming "me, the physicist."

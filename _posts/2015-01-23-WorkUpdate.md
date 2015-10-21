@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: Week4 projects update
 description: What I've been up to in the 4th week of January
 headline: Week 4 (2015) work update
