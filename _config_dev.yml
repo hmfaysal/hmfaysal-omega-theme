@@ -1,0 +1,91 @@
+title:            Digital Dissident
+description:      "Diary of a digital dissident"
+logo:             omikron.png
+disqus_shortname: brucellino
+# Assign a default image for your site's header and footer
+default_bg:       default-bg.jpg
+search:           true
+share:            true
+# Read Time is a calculator tp provide post read-time based on word count. Usage is recommended.
+readtime:         true
+# Turn on or off the fin animations in the header and footer
+animated_fins:	  true
+# Specify the fin color in RGB value
+fin_color:        "255,255,255"
+# Change url to your domain. Leave localhost server or blank when working locally.
+#url:              http://brucellino.github.io
+url:             http://localhost:4000
+site.owner.name: Bruce Becker
+# Owner/author information
+owner:
+  name:           Bruce Becker
+  avatar:         bruce-becker.jpg
+  email:          brucellino@gmail.com
+  # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
+  description:    'Bruce Becker: ex-physicist and volleyball freak; quasi socialist; dad; not-quite-hacker; grid guy.'
+  # Social networking links used in footer. Update and remove as you like.
+  # To register at HMFAYSAL SOCIAL, visit http://social.hmfaysal.tk
+  twitter:        brusisceddu
+  facebook:       brucellino
+  github:         brucellino
+  stackexchange:  brucellino
+  linkedin:       brucellino
+  instagram:
+  flickr:         brucellino
+  tumblr:         brucellino
+
+  # For Google Authorship https://plus.google.com/authorship
+  google_plus:    https://plus.google.com/u/0/+BruceBecker
+
+# Analytics and webmaster tools stuff goes here
+google_analytics: UA-50620336-1
+google_verify:
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify:
+
+# Links to include in footer navigation
+# For external links add external: true
+links:
+  - title: Home
+    url: /
+    external: false
+    icon: home
+#  - title: <i class="icon-book"></i> Documentation
+#    url: /documentation
+  - title: Categories
+    url: /categories
+  - title: Tags
+    url: /tags
+  - title: Bruce who?
+    url: /Bruce-Becker
+
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:    Africa/Johannesburg
+future:      true
+highlighter: rouge
+markdown:    kramdown
+paginate:    3
+paginate_path: "page:num"
+
+# https://github.com/mojombo/jekyll/wiki/Permalinks
+#permalink:   /:categories/:date/:title
+permalink: pretty
+gems:
+  - jemoji
+  - jekyll-feed
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  use_coderay: false
+
+  coderay:
+    coderay_line_numbers:
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: class
+
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Gemfile", "Capfile", "Gemfile.lock", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
