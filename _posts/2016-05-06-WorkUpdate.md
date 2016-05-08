@@ -10,7 +10,34 @@ image:
   feature: cape-town.jpg
 comments: true
 ---
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
+- [AAROC Operations](#aaroc-operations)
+	- [ROD](#rod)
+	- [Accounting](#accounting)
+- [CODE-RADE](#code-rade)
+	- [LibSVM](#libsvm)
+	- [HTK](#htk)
+- [Performance Study](#performance-study)
+	- [Novel jobs](#novel-jobs)
+		- [Messaging](#messaging)
+		- [Metatadata registration](#metatadata-registration)
+	- [Data Management](#data-management)
+	- [Compute performance](#compute-performance)
+	- [Reproducible science](#reproducible-science)
+- [Sci-GaIA](#sci-gaia)
+	- [Web forum](#web-forum)
+	- [Winter School](#winter-school)
+	- [THOR](#thor)
+- [What's on my plate ?](#whats-on-my-plate-)
+	- [AAROC Ops](#aaroc-ops)
+	- [CODE-RADE / AfricaGrid User Support](#code-rade-africagrid-user-support)
+	- [SciGaIA](#scigaia)
+	- [General research](#general-research)
+	- [Meraka / SANREN](#meraka-sanren)
+- [Footnotes](#footnotes)
+
+<!-- /TOC -->
 Here is a brief summary of the things I've been working on in the 16th week of 2016.
 
 # AAROC Operations
