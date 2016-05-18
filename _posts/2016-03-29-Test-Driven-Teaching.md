@@ -39,7 +39,7 @@ A fundamental difference between the "old" way of doing things and the "new" way
 
 > If something is worth doing, it's worth keeping
 
-"Keeping" in this case means putting your work into a change-controlled repository and working in a methodical way with this, using the version and change control tools at your disposal. In my opnion, this means "Use Git, duh.", which has the corollary of "Put your repo on Github"[^OrBitbucket]. This automatically provides you with an environment _conducive to collaboration_. Who knows, chances are that nobody but you, the author of the code, will ever look at - much less use ! - the code that you write, but working from the start in a manner which makes future re-use likely is a very good insurance policy.
+"Keeping" in this case means putting your work into a change-controlled repository and working in a methodical way with this, using the version and change control tools at your disposal. In my opinion, this means "Use Git, duh.", which has the corollary of "Put your repo on Github"[^OrBitbucket]. This automatically provides you with an environment _conducive to collaboration_. Who knows, chances are that nobody but you, the author of the code, will ever look at - much less use ! - the code that you write, but working from the start in a manner which makes future re-use likely is a very good insurance policy.
 
 ## <i class="fa fa-fighter-jet"></i> Cruise Missiles for Miggies[^miggie] ?
 
