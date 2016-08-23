@@ -67,6 +67,7 @@ $("a#click-pages").click(function(){
   })( jQuery, window );
 </script>
 {% endif %}
+
 {% if site.google_analytics %}
 <!-- Asynchronous Google Analytics snippet -->
 <script>
@@ -84,4 +85,5 @@ $("a#click-pages").click(function(){
   })();
 </script>
 {% endif %}
+
 {% if page.comments %}{% include disqus_comments.html %}{% endif %}

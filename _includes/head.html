@@ -1,16 +1,23 @@
 <meta charset="utf-8">
 <title>{% if page.title %}{{ page.title }} &#8211; {% endif %}{{ site.title }}</title>
 <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-{% if page.tags %}<meta name="keywords" content="{{ page.tags | join: ', ' }}">{% endif %}
+{% if page.tags %}
+<meta name="keywords" content="{{ page.tags | join: ', ' }}">
+{% endif %} 
 
-{% if site.owner.twitter %}<!-- Twitter Cards -->
-{% if page.imagefeature %}<meta name="twitter:card" content="summary_large_image">
+{% if site.owner.twitter %}
+<!-- Twitter Cards -->
+    {% if page.imagefeature %}
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="{{ site.url }}/images/{{ page.imagefeature }}">
-{% else %}<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="{% if page.image.thumb %}{{ site.url }}/images/{{ page.image.thumb }}{% else %}{{ site.url }}/images/{{ site.logo }}{% endif %}">{% endif %}
+    {% else %}
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="{% if page.image.thumb %}{{ site.url }}/images/{{ page.image.thumb }}{% else %}{{ site.url }}/images/{{ site.logo }}{% endif %}">
+    {% endif %}
 <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
 <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-<meta name="twitter:creator" content="@{{ site.owner.twitter }}">{% endif %}
+<meta name="twitter:creator" content="@{{ site.owner.twitter }}">
+{% endif %}
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
@@ -19,37 +26,55 @@
 <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
 <meta property="og:url" content="{{ site.url }}{{ page.url }}">
 <meta property="og:site_name" content="{{ site.title }}">
-{% if page.imagefeature %}<meta property="og:image" content="{{ site.url }}/images/{{ page.imagefeature }}">{% else %}<meta property="og:image" content="{{ site.url }}/images/{{ site.default_bg }}">{% endif %}
 
-{% if site.google_verify %}<meta name="google-site-verification" content="{{ site.google_verify }}">{% endif %}
-{% if site.bing_verify %}<meta name="msvalidate.01" content="{{ site.bing_verify }}">{% endif %}
+{% if page.imagefeature %}
+<meta property="og:image" content="{{ site.url }}/images/{{ page.imagefeature }}">
+{% else %}
+<meta property="og:image" content="{{ site.url }}/images/{{ site.default_bg }}">
+{% endif %}
+
+{% if site.google_verify %}
+<meta name="google-site-verification" content="{{ site.google_verify }}">
+{% endif %}
+
+{% if site.bing_verify %}
+<meta name="msvalidate.01" content="{{ site.bing_verify }}">
+{% endif %}
 
 {% capture canonical %}{{ site.url }}{% if site.permalink contains '.html' %}{{ page.url }}{% else %}{{ page.url | remove:'index.html' | strip_slash }}{% endif %}{% endcapture %}
 <link rel="canonical" href="{{ canonical }}">
 <link href="{{ site.url }}/feed.xml" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
-{% if site.owner.google_plus %}<link rel="author" href="{{ site.owner.google_plus }}?rel=author">{% endif %}
+
+{% if site.owner.google_plus %}
+<link rel="author" href="{{ site.owner.google_plus }}?rel=author">
+{% endif %}
 
 <!-- http://t.co/dKP3o1e -->
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    
-    <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/style.css" />
 
-{% if site.search %}<div class="search-wrapper">
+<link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/style.css" />
+
+{% if site.search %}
+<div class="search-wrapper">
     <div class="search-form">
         <input type="text" class="search-field" placeholder="Search...">
         <i class="icon-remove-sign"></i>
-        <ul class="search-results post-list"></ul><!-- /.search-results -->
-    </div><!-- /.search-form -->
-</div><!-- ./search-wrapper -->{% endif %}
+        <ul class="search-results post-list"></ul>
+        <!-- /.search-results -->
+    </div>
+    <!-- /.search-form -->
+</div>
+<!-- ./search-wrapper -->
+{% endif %}
 
 {% if page.mathjax %}
 <!--Load Mathjax-->
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script>
+<script>
         MathJax.Hub.Config({
             config: ["MMLorHTML.js"],
             extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
@@ -72,7 +97,8 @@
             },
             showProcessingMessages: false
         });
-    </script>{% endif %}
+</script>
+{% endif %}
 
 
 <!-- Icons -->
