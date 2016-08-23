@@ -37,7 +37,7 @@ description: "An archive of posts sorted by categories."
     {% if group == null or group == post.group %}
   <li>
     <a href="{{ site.url }}{{ post.url }}">
-      {{ post.title }}<span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%B %d, %Y" }}</time>
+      {{ post.title }}<span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%B %d, %Y" }}</time></span>
     </a>
   </li>
     {% endif %}

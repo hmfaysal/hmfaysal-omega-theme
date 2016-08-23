@@ -353,7 +353,7 @@ tags: [tags]
 		<div class="post-body bordered-bottom">
 			{% assign excerptsize = post.excerpt | number_of_words %} 
 			
-		{% if excerptsize <=1 00 and excerptsize>= 50 %}
+		{% if excerptsize <= 100 and excerptsize >= 50 %}
 			<p class="lead">{{ post.excerpt | strip_html }}&hellip;</p>
 		{% else %}
 			<p>{{ post.content | strip_html | truncatewords:100 }}&hellip;</p>
@@ -720,7 +720,7 @@ tags: [tags]
 		<div class="post-body bordered-bottom">
 			{% assign excerptsize = post.excerpt | number_of_words %}
 			
-		{% if excerptsize <=1 00 and excerptsize>= 50 %}
+		{% if excerptsize <= 100 and excerptsize >= 50 %}
 			<p class="lead">{{ post.excerpt | strip_html }}&hellip;</p>
 		{% else %}
 			<p>{{ post.content | strip_html | truncatewords:100 }}&hellip;</p>

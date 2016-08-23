@@ -4,7 +4,7 @@
     </p>
     <ul class="social-mini">
         <li>
-            <a href="https://twitter.com/intent/tweet?text=&quot;{{ page.title }}&quot;%20{{ site.url }}{{ page.url }}%20via%20&#64;{{ site.owner.twitter }}"
+            <a href="https://twitter.com/intent/tweet?text={{ page.title | cgi_escape }}%20{{ site.url }}{{ page.url }}%20via%20&#64;{{ site.owner.twitter }}"
                 onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" data-toggle="tooltip"
                 title="Share on Twitter" itemprop="Twitter">
                 <i class="icon-twitter"></i>
