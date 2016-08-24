@@ -1,77 +1,170 @@
 <!DOCTYPE html>
-<html>
-<!--
-====================================================
-    __  ____  ______________  _______ ___    __ 
-   / / / /  |/  / ____/   \ \/ / ___//   |  / / 
-  / /_/ / /|_/ / /_  / /| |\  /\__ \/ /| | / /  
- / __  / /  / / __/ / ___ |/ /___/ / ___ |/ /___
-/_/ /_/_/  /_/_/   /_/  |_/_//____/_/  |_/_____/
-                                                     
-====================================================
-Owner Name: Hossain Mohammad Faysal
-Profile: https://www.facebook.com/hmfaysal
-Version: 1.1
-Description: Awesome dude, awesome life
-====================================================
--->
+<html lang="en">
+
 <head>
-{% include head.html %}
+    {% include head.html %}
 </head>
-<body class="post-template" itemscope itemtype="http://schema.org/WebPage">  
-{% include header.html %}
-<div id="main" class="content" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
-    <div class="container">
-        <div class="row">
-            <article class="post col-md-8 col-md-offset-2 hentry" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-            {% if site.wpm %}
-            {% assign readtime = page.content | strip_html | number_of_words | append: '.0' | divided_by:site.wpm %}
-            {% else %}
-            {% assign readtime = page.content | strip_html | number_of_words | append: '.0' | divided_by:180 %}
-            {% endif %}
-            {% assign modifiedtime = page.modified | date: "%Y%m%d" %}
-            {% assign posttime = page.date | date: "%Y%m%d" %}
+
+<body class="post-template" itemscope itemtype="http://schema.org/WebPage">
+
+    {% include header.html %}
+
+    <div id="main" class="content" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+        <div class="container">
+            <div class="row">
+                <article class="post col-md-8 col-md-offset-2 hentry" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+                {% if site.wpm %}
+                    {% assign readtime = page.content | strip_html | number_of_words | append: '.0' | divided_by:site.wpm %}
+                {% else %}
+                    {% assign readtime = page.content | strip_html | number_of_words | append: '.0' | divided_by:180 %}
+                {% endif %}
+                
+                {% assign modifiedtime = page.modified | date: "%Y%m%d" %}
+                {% assign posttime = page.date | date: "%Y%m%d" %}
+
                     <header class="post-header entry-header">
-                    {% if page.featured %}<div class="cursive">this post is featured</div>{% endif %}
-                        {% if page.link %}
-                        <h1 class="post-title text-center hyper lighter entry-title" itemprop="headline"><a href="{{ page.link }}" data-toggle="tooltip" title="Go to {{ page.link }}" style="color: #fff; background-color: #45ADA8; border-radius: 4px; padding: 10px">{% if page.type == 'quote' %}<i class="icon-quote-left"></i> {% endif %}{% if page.type == 'status' %}<i class="icon-retweet"></i> {% endif %}{% if page.type == 'video' %}<i class="icon-play-circle"></i> {% endif %}{% if page.type == 'photo' %}<i class="icon-picture"></i> {% endif %}{{ page.title }} <span class="link-arrow">&rarr;</span></a></h1>
-                        {% else %}
-                        <h1 class="post-title text-center hyper lighter bordered-bottom entry-title" itemprop="headline">{% if page.type == 'quote' %}<i class="icon-quote-left"></i> {% endif %}{% if page.type == 'status' %}<i class="icon-retweet"></i> {% endif %}{% if page.type == 'video' %}<i class="icon-play-circle"></i> {% endif %}{% if page.type == 'photo' %}<i class="icon-picture"></i> {% endif %}{{ page.title }}</h1>
+
+                    {% if page.featured %}
+                        <div class="cursive">this post is featured</div>
+                    {% endif %}
+
+                    {% if page.link %}
+                        <h1 class="post-title text-center hyper lighter entry-title" itemprop="headline">
+                            <a href="{{ page.link }}" data-toggle="tooltip" title="Go to {{ page.link }}" style="color: #fff; background-color: #45ADA8; border-radius: 4px; padding: 10px">
+                            {% if page.type == 'quote' %}
+                                <i class="icon-quote-left"></i>
+                            {% endif %}
+
+                            {% if page.type == 'status' %}
+                                <i class="icon-retweet"></i>
+                            {% endif %}
+
+                            {% if page.type == 'video' %}
+                                <i class="icon-play-circle"></i>
+                            {% endif %}
+
+                            {% if page.type == 'photo' %}                        
+                                <i class="icon-picture"></i> 
+                            {% endif %}
+                        
+                                {{ page.title }}<span class="link-arrow">&rarr;</span>
+                            </a>
+                        </h1>
+                    {% else %}
+                        <h1 class="post-title text-center hyper lighter bordered-bottom entry-title" itemprop="headline">
+                        {% if page.type == 'quote' %}
+                            <i class="icon-quote-left"></i>
                         {% endif %}
+                            
+                        {% if page.type == 'status' %}
+                            <i class="icon-retweet"></i>
+                        {% endif %}
+                        
+                        {% if page.type == 'video' %}
+                            <i class="icon-play-circle"></i>
+                        {% endif %}
+
+                        {% if page.type == 'photo' %}
+                            <i class="icon-picture"></i>
+                        {% endif %}
+                            {{ page.title }}
+                        </h1>
+                    {% endif %}
+
                         <div class="cursive" style="color: #000; font-style:italic;">{{ page.description }}</div>
-                        <div class="post-info text-center small">
-                            {% if page.modified %}<span class="entry-date date published">{% else %}<span class="entry-date date published updated">{% endif %}<time datetime="{{ page.date | date_to_xmlschema }}" class="post-time" itemprop="datePublished">{{ page.date | date: "%d %b %Y" }}</time><span>{% if page.modified %}{% if modifiedtime != posttime %} and <code>last modified on <span class="entry-date date updated"><time datetime="{{ page.modified | date: "%Y-%m-%d" }}" itemprop="dateModified">{{ page.modified | date: "%d %b %Y" }}</time></code></span>{% endif %}{% endif %}
-                            in <span class="post-tags">{% for tag in page.categories %}<a href="{{ site.url }}/categories/index.html#{{ page.categories | cgi_encode }}" data-toggle="tooltip" title="Other posts from the {{ tag | capitalize }} category" rel="tag">{{ tag | capitalize }}</a>{% unless forloop.last %}&nbsp;&bull;&nbsp;{% endunless %}{% endfor %}</span>{% if site.readtime %}&nbsp;<span class="post-tags"><i class="icon-time"></i>&nbsp;{% if readtime > 1 and readtime < 1.5 %}1 minute read{% endif %}{% if readtime > 1.5 %}<span class="time">{{ readtime }}</span> minutes read{% endif %}{% if readtime < 1 %}Less than 1 minute read{% endif %}</span>{% endif %}
-                        </div>
+
+                            <div class="post-info text-center small">
+                            {% if page.modified %}
+                                <span class="entry-date date published">
+                            {% else %}
+                                <span class="entry-date date published updated">
+                            {% endif %}
+                            
+                                    <time datetime="{{ page.date | date_to_xmlschema }}" class="post-time" itemprop="datePublished">{{ page.date | date: "%d %b %Y" }}</time>
+                                </span>
+                            {% if page.modified %}
+                                {% if modifiedtime != posttime %} 
+                                    and <code>last modified on <span class="entry-date date updated"><time datetime="{{ page.modified | date: "%Y-%m-%d" }}" itemprop="dateModified">{{ page.modified | date: "%d %b %Y" }}</time></code></span>
+                                {% endif %}
+                            {% endif %}
+
+                                in <span class="post-tags">
+
+                            {% for tag in page.categories %}
+                                    <a href="{{ site.url }}/categories/index.html#{{ page.categories | cgi_encode }}" data-toggle="tooltip" title="Other posts from the {{ tag | capitalize }} category" rel="tag">{{ tag | capitalize }}</a>
+                                {% unless forloop.last %}
+                                    &nbsp;&bull;&nbsp;
+                                {% endunless %}
+                            {% endfor %}
+                                </span>
+                            
+                            {% if site.readtime %}&nbsp;
+                                <span class="post-tags"><i class="icon-time"></i>&nbsp;
+
+                            {% if readtime > 1 and readtime < 1.5 %}
+                                    1 minute read
+                            {% endif %}
+
+                            {% if readtime > 1.5 %}
+                                    <span class="time">{{ readtime }}</span> minutes read
+                            {% endif %}
+                                
+                            {% if readtime < 1 %}
+                                    Less than 1 minute read
+                            {% endif %}
+
+                                </span>
+                            {% endif %}
+                            </div>
+
                     </header>
+
                     <div class="post-body bordered-bottom" itemprop="description">
-                        {% if page.video %}
+                    {% if page.video %}
                         {% assign video_embed = page.video | remove:'https://www.youtube.com/watch?v=' %}
                         <iframe width="940" height="529" src="//www.youtube.com/embed/{{ video_embed }}?theme=light&amp;color=white" frameborder="0" allowfullscreen> </iframe>
-                        {% endif %}
+                    {% endif %}
+
                         {{ content }}
+
                         <br>
+
                     {% assign tagsize = page.tags.size %}
                     {% if tagsize != 0 %}
-                    <div class="entry-tags text-center">
-                    
-                        <i class="icon-tags"></i>&nbsp;Tagged with {% for tag in page.tags %}<a href="{{ site.url }}/tags/index.html#{{ tag | cgi_encode }}" data-toggle="tooltip" title="Posts tagged with {{ tag }}" rel="tag">{{ tag }}</a>{% unless forloop.last %}&nbsp;&bull;&nbsp;{% endunless %}{% endfor %}
-                    
-                    </div>
+                        <div class="entry-tags text-center">
+                            <i class="icon-tags"></i>&nbsp;
+                                Tagged with 
+                            {% for tag in page.tags %}
+                                <a href="{{ site.url }}/tags/index.html#{{ tag | cgi_encode }}" data-toggle="tooltip" title="Posts tagged with {{ tag }}" rel="tag">{{ tag }}</a>
+
+                                {% unless forloop.last %}
+                                &nbsp;&bull;&nbsp;
+                                {% endunless %}
+                            {% endfor %}
+                        </div>
                     {% endif %}
                     </div>
-        </div>
-                    <footer class="post-footer entry-meta">
-                        {% if site.share %}{% include share.html %}{% endif %}
-                        {% include signoff.html %} 
-                        {% if site.disqus_shortname and page.comments == true %}<div id="disqus_thread"></div><!-- /#disqus_thread -->{% endif %}
-                    </footer>
-            </article>
-    </div>
-</div>
-{% include footer.html %}
 
-    
-{% include scripts.html %} 
+                    <footer class="post-footer entry-meta">
+                    {% if site.share %}
+                        {% include share.html %}
+                    {% endif %}
+
+                        {% include signoff.html %} 
+                        
+                    {% if site.disqus_shortname and page.comments == true %}
+                        <div id="disqus_thread"></div><!-- /#disqus_thread -->
+                    {% endif %}
+                    </footer>
+
+                </article>
+            </div>
+        </div>
+    </div>
+
+    {% include footer.html %}
+
+    {% include scripts.html %}
+        
 </body>
 </html>

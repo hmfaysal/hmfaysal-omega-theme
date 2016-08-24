@@ -1,7 +1,7 @@
 ---
 ---
 callback([
-{% for post in site.posts reversed | sort: title %}
+{% for post in site.posts reversed %}
   {
     "text": "{{post.title | replace:'"','\"'}}",
     "href": "{{site.url}}{{post.url}}"
