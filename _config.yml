@@ -14,7 +14,7 @@ animated_fins:    true
 # Specify the fin color in RGB value
 fin_color:        "255,255,255"
 # Change url to your domain. Leave localhost server or blank when working locally.
-baseurl:          / 
+baseurl:          /hmfaysal-omega-theme
 # Add pagination support
 gems:             [jekyll-paginate]
 
@@ -51,6 +51,8 @@ links:
     url: /
     external: false
     icon: home
+  - title: <i class="icon-book"></i> Documentation
+    url: /documentation
   - title: Categories
     url: /categories
   - title: Tags
