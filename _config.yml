@@ -16,26 +16,41 @@ fin_color:        "255,255,255"
 # Change url to your domain. Leave localhost server or blank when working locally.
 url:              http://localhost:4000
 # baseurl:           
-# Add pagination support
-gems:             [jekyll-paginate]
 
+# Gems used
+gems:
+  - jekyll-feed
+  - jelyll-archives
+  - jekyll-pagination
+
+# Archives configuration
+# https://github.com/jekyll/jekyll-archives/blob/master/docs/configuration.md
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layout: 'archive'
+  permalinks:
+    # year: '/:year/'
+    # month: '/:year/:month/'
+    # day: '/:year/:month/:day/'
+    tag: '/archive/tag/:name/'
+    category: '/archive/category/:name/'
 
 # Owner/author information
-owner:
+author:
   name:           Your Name
-  avatar:         your-photo.jpg
+  picture:        your-photo.jpg
   email:          your@email.com
   # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
   description:    Some Details about yourself
   # Social networking links used in footer. Update and remove as you like.
-  # To register at HMFAYSAL SOCIAL, visit http://social.hmfaysal.tk
   twitter:
   facebook:
   github:
   linkedin:
   instagram:
   tumblr:
-  hmfaysalsocial:
   # For Google Authorship https://plus.google.com/authorship
   google_plus:    "http://plus.google.com/123123123123132123"
 

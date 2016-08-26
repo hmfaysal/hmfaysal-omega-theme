@@ -99,7 +99,7 @@ owner:
 # Analytics and webmaster tools stuff goes here
 google_analytics:
 google_verify:
-# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+# https://ssl.bing.com/webmaster/configure/verify/authorship Option 2 content= goes here
 bing_verify:
 
 # Links to include in top navigation
