@@ -20,7 +20,7 @@ url:              http://localhost:4000
 # Gems used
 gems:
   - jekyll-feed
-  - jelyll-archives
+  - jekyll-archives
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
@@ -88,6 +88,7 @@ sitemap:
 timezone:    America/New_York
 future:      true
 markdown:    kramdown
+highlighter: rouge
 paginate:    6
 paginate_path: "/blog/:num/"
 
@@ -105,11 +106,3 @@ kramdown:
   footnote_nr: 1
   entity_output: as_char
   toc_levels: 1..6
-  enable_coderay: false
-
-  coderay:
-    coderay_line_numbers: 
-    coderay_line_numbers_start: 1
-    coderay_tab_width: 4
-    coderay_bold_every: 10
-    coderay_css: class

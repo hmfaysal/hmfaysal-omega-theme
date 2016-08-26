@@ -1,7 +1,12 @@
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="{{ site.url }}/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="{{ site.url }}/assets/js/vendor/jquery-1.12.4.min.js"><\/script>')</script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+  crossorigin="anonymous"></script>
+
 <script src="{{ site.url }}/assets/js/scripts.min.js"></script>
-<script type="text/javascript" src="{{ site.url }}/assets/js/waypoints.min.js"></script>
+<script type="text/javascript" src="{{ site.url }}/assets/js/plugins/jquery.waypoints.min.js"></script>
 <script type="text/javascript" src="{{ site.url }}/assets/js/script.js"></script>
 <script type='text/javascript'>$(document).ready(function(){$(".time").text(function(a,b){return Math.round(parseFloat(b))})});</script>
 
@@ -29,9 +34,7 @@ $("a#click-pages").click(function(){
 
 /*      End-Slides      */
 
-</script>
-
-{% if site.search %}
+</script> {% if site.search %}
 <!-- Jekyll Simple Search option -->
 <script>
   $(document).ready(function() {
@@ -65,10 +68,7 @@ $("a#click-pages").click(function(){
         bs.canvas.removeClass('search-overlay');
     });
   })( jQuery, window );
-</script>
-{% endif %}
-
-{% if site.google_analytics %}
+</script> {% endif %} {% if site.google_analytics %}
 <!-- Asynchronous Google Analytics snippet -->
 <script>
   var _gaq = _gaq || [];
@@ -83,7 +83,4 @@ $("a#click-pages").click(function(){
     ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
-</script>
-{% endif %}
-
-{% if page.comments %}{% include disqus_comments.html %}{% endif %}
+</script> {% endif %} {% if page.comments %} {% include disqus_comments.html %} {% endif %}
