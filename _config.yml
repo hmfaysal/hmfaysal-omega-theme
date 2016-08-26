@@ -14,8 +14,8 @@ animated_fins:    true
 # Specify the fin color in RGB value
 fin_color:        "255,255,255"
 # Change url to your domain. Leave localhost server or blank when working locally.
-url:              localhost
-baseurl:          / 
+url:              http://localhost:4000
+# baseurl:           
 # Add pagination support
 gems:             [jekyll-paginate]
 
@@ -76,7 +76,13 @@ paginate:    6
 paginate_path: "/blog/page/:num"
 
 # https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink:   /:categories/:title
+collections:
+  posts:
+    output: true
+    permalink: /blog/:categories/:title
+  pages:
+    output: true
+    permalink: /:title
 
 kramdown:
   auto_ids: true
