@@ -109,7 +109,7 @@ links:
     url: /
     external: false
     icon: home
-  - title: <i class="icon-book"></i> Documentation
+  - title: <i class="fa fa-book"></i> Documentation
     url: /documentation
   - title: Categories
     url: /categories

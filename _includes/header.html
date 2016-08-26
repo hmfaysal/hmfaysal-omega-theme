@@ -2,7 +2,7 @@
 <div class="search-wrapper">
     <div class="search-form">
         <input type="text" class="search-field" placeholder="Search...">
-        <i class="icon-remove-sign"></i>
+        <i class="fa fa-remove-sign"></i>
         <ul class="search-results post-list"></ul>
         <!-- /.search-results -->
     </div>
@@ -22,7 +22,7 @@
                 <a href="{{ link.url }}">{{ link.title }}</a> {% else %}
                 <a href="{{ site.url }}{{ link.url }}">{{ link.title }}</a> {% endif %} </li>
             {% endfor %}
-            <li><a href="{{ site.url }}/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+            <li><a href="{{ site.url }}/feed.xml" title="Atom/RSS feed"><i class="fa fa-rss"></i> Feed</a></li>
         </ul>
     </nav>
 </aside>
@@ -38,7 +38,7 @@
 
 {% if site.search %}
     <button class="menu-button animated fade dosearch">
-        <i class="icon-search"></i>
+        <i class="fa fa-search"></i>
     </button> 
 {% endif %} 
 
