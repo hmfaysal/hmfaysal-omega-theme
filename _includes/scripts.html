@@ -36,7 +36,7 @@ $("a#click-pages").click(function(){
 <script>
   $(document).ready(function() {
       $('.search-field').simpleJekyllSearch({
-          jsonFile : '{{ site.url }}/search.json',
+          jsonFile : '{{ site.url }}/assets/json/search.json',
           searchResults : '.search-results',
           template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
           noResults: '<p>Nothing found.</p>'

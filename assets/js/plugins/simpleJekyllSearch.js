@@ -8,7 +8,7 @@
 (function ($) {
     $.fn.simpleJekyllSearch = function (options) {
         var settings = $.extend({
-            jsonFile: '/search.json',
+            jsonFile: '/assets/json/search.json',
             jsonFormat: 'title,category,desc,url,date,shortdate',
             template: '<a href="{url}" title="{title}">{title}</a>',
             searchResults: '.results',

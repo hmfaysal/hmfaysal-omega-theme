@@ -135,6 +135,7 @@ DEPENDENCIES
   github-pages
   jekyll-archives
   jekyll-feed
+  jekyll-gist
   jekyll-sitemap
 
 BUNDLED WITH
