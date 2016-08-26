@@ -21,9 +21,10 @@ url:              http://localhost:4000
 gems:
   - jekyll-feed
   - jelyll-archives
-  - jekyll-pagination
+  - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
+  - jekyll-seo-tag
 
 # Archives configuration
 # https://github.com/jekyll/jekyll-archives/blob/master/docs/configuration.md
@@ -59,8 +60,6 @@ author:
 # Analytics and webmaster tools stuff goes here
 google_analytics:
 google_verify:
-# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:
 
 # Links to include in top navigation
 # For external links add external: true
@@ -90,13 +89,13 @@ timezone:    America/New_York
 future:      true
 markdown:    kramdown
 paginate:    6
-paginate_path: "/blog/page/:num"
+paginate_path: "/blog/:num/"
 
 # https://github.com/mojombo/jekyll/wiki/Permalinks
 collections:
   posts:
     output: true
-    permalink: /blog/:categories/:title
+    permalink: /blog/:title
   pages:
     output: true
     permalink: /:title
