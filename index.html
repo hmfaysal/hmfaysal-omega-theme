@@ -395,7 +395,7 @@ tags: [tags]
 </div>
 	{% endif %}
 	{% else %}
-	{% for post in site.posts %}
+	{% for post in paginator.posts %}
 
 		{% assign readtime = post.content | strip_html | number_of_words | append: '.0' | divided_by:site.wpm %}
 		{% assign modifiedtime = post.modified | date: "%Y%m%d" %}

@@ -61,7 +61,7 @@ timezone:    America/New_York
 future:      true
 markdown:    kramdown
 paginate:    6
-paginate_path: "page:num"
+paginate_path: "/blog/page/:num"
 
 # https://github.com/mojombo/jekyll/wiki/Permalinks
 permalink:   /:categories/:title
