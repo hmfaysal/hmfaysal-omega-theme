@@ -14,6 +14,7 @@ animated_fins:    true
 # Specify the fin color in RGB value
 fin_color:        "255,255,255"
 # Change url to your domain. Leave localhost server or blank when working locally.
+url:              localhost
 baseurl:          / 
 # Add pagination support
 gems:             [jekyll-paginate]
@@ -55,6 +56,17 @@ links:
     url: /categories
   - title: Tags
     url: /tags
+
+# Sitemap configuration
+# https://github.com/kinnetica/jekyll-plugins
+sitemap:
+    file: "/sitemap.xml"
+    exclude:
+        - "/atom.xml"
+        - "/feed.xml"
+        - "/feed/index.xml"
+    include_posts:
+        - "/index.html"
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    America/New_York
