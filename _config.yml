@@ -22,6 +22,8 @@ gems:
   - jekyll-feed
   - jelyll-archives
   - jekyll-pagination
+  - jekyll-sitemap
+  - jekyll-gist
 
 # Archives configuration
 # https://github.com/jekyll/jekyll-archives/blob/master/docs/configuration.md
