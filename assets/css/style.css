@@ -869,6 +869,12 @@ html {
 /* ----------- */
 body {
   font-family: 'Merriweather', serif;
+  font-size: 18px;
+  line-height: 1.71428571;
+}
+
+p {
+  margin: 0 0 30px;
 }
 
 body input,
@@ -1059,7 +1065,7 @@ input[type="search"]::-webkit-search-decoration,input[type="search"]::-webkit-se
   font-size: 2rem;
 }
 
-.search-form .icon-remove-sign {
+.search-form #search-close {
   position: absolute;
   top: .6rem;
   right: 1rem;

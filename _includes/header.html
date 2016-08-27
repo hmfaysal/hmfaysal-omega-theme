@@ -1,9 +1,11 @@
 {% if site.search %}
 <div class="search-wrapper">
     <div class="search-form">
-        <input type="text" class="search-field" placeholder="Search...">
-        <i class="fa fa-remove-sign"></i>
-        <ul class="search-results post-list"></ul>
+        <input type="text" id="search-input" class="search-field" placeholder="Search...">
+        <i id="search-close" class="fa fa-times-circle"></i>
+        <h4>Search results</h4>
+        <ul id="results-container" class="search-results post-list">
+        </ul>
         <!-- /.search-results -->
     </div>
     <!-- /.search-form -->
@@ -29,9 +31,11 @@
 
 {% if page.imagefeature %}
 <header id="masthead" class="blog-background overlay align-center align-middle animated from-bottom" style="background-image: url({{ site.url }}/images/{{ page.imagefeature }})"
-    itemscope itemtype="http://schema.org/Organization">{% if page.imagecredit %}<span class="image-credit">Photo Credit: <a href="{{ page.imagecreditlink }}" target="_blank">
-        {{ page.imagecredit }}</a></span>
-{% endif %} {% else %}
+    itemscope itemtype="http://schema.org/Organization">
+    {% if page.imagecredit %}
+    <span class="image-credit">Photo Credit: <a href="{{ page.imagecreditlink }}" target="_blank"> {{ page.imagecredit }}</a></span>
+    {% endif %}
+{% else %}
 <header id="masthead" class="blog-background overlay align-center align-middle animated from-bottom" style="background-image: url({{ site.url }}/images/{{ site.default_bg }})"
     itemscope itemtype="http://schema.org/Organization">
 {% endif %}
