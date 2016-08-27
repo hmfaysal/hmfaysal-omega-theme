@@ -518,7 +518,7 @@ blockquote:before {
 body,
 html {
   height: 100%;
-  max-height: 100%;
+  /*max-height: 100%;*/
 }
 /* - Blog and post headers - */
 #masthead {

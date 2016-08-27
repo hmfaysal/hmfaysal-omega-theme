@@ -6,7 +6,7 @@
 (function ($) {
     "use strict";
 
-    $(document).ready(function(){
+    $(document).ready(function () {
 
         // Tooltip init
         tooltipInit();
@@ -19,37 +19,45 @@
 
     });
 
-// Init waypoints for header and footer animations
-function waypointsInit() {
-    $('#masthead').waypoint(function(direction) {
-       $(this).addClass('animation-on');
-    });
+    // Init waypoints for header and footer animations
+    function waypointsInit() {
 
-    $('#main').waypoint(function(direction) {
-       $('#masthead').toggleClass('animation-on');
-    });
+        var headerWaypoint = new Waypoint({
+            element: document.getElementById('masthead'),
+            offset: -5,
+            handler: function (direction) {
+                if (direction === 'down')
+                    this.element.classList.remove('animation-on');
+                else
+                    this.element.classList.add('animation-on');
+            }
+        });
 
-    $('#footer').waypoint(function(direction) {
-      $(this).toggleClass('animation-on');
-    } , { offset: 'bottom-in-view' });
-}
+        var footerWaypoint = new Waypoint({
+            element: document.getElementById('footer'),
+            handler: function (direction) {
+                this.element.classList.toggle('animation-on');
+            }
+        });
 
-// Init bootstrap tooltip
-function tooltipInit() {
-    $('[data-toggle]').tooltip();
-}
+    }
 
-function postInit() {
-    // Set lead paragraphs
-    $('.post-body p:first-child').addClass('lead');
+    // Init bootstrap tooltip
+    function tooltipInit() {
+        $('[data-toggle]').tooltip();
+    }
 
-    // Set feature image
-    var featured = $('.featured-image').find('img').attr('src');
-    if (featured) {
-        $('#masthead').css('backgroundImage','url('+featured+')');
-        $('#footer').css('backgroundImage','url('+featured+')');
-    };
-}
+    function postInit() {
+        // Set lead paragraphs
+        $('.post-body p:first-child').addClass('lead');
 
-}(jQuery));
+        // Set feature image
+        var featured = $('.featured-image').find('img').attr('src');
+        if (featured) {
+            $('#masthead').css('backgroundImage', 'url(' + featured + ')');
+            $('#footer').css('backgroundImage', 'url(' + featured + ')');
+        };
+    }
+
+} (jQuery));
 
