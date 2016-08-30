@@ -19,7 +19,8 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6 {
   margin: 0;
 }
 
@@ -56,15 +57,10 @@ h3 small {
   font-size: 13px;
 }
 
-h4,
-h5,
-h6 {
-  line-height: 24px;
-}
-
 h4 {
   margin-top: 24px;
   margin-bottom: 16px;
+  line-height: 24px;
   font-size: 16px;
   text-transform: uppercase;
 }
@@ -74,11 +70,13 @@ h4 small {
 }
 
 h5 {
+  line-height: 24px;
   font-size: 16px;
   text-transform: uppercase;
 }
 
 h6 {
+  line-height: 24px;
   font-size: 13px;
   text-transform: uppercase;
   margin: 0;
