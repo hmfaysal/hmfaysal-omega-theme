@@ -14,7 +14,8 @@ animated_fins:    true
 # Specify the fin color in RGB value
 fin_color:        "255,255,255"
 # Change url to your domain. Leave localhost server or blank when working locally.
-baseurl:              /hmfaysal-omega-theme
+url:              http://hmfaysal.me
+baseurl:          /hmfaysal-omega-theme
 # baseurl:           
 
 # Gems used
