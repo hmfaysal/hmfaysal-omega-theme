@@ -11,7 +11,7 @@ description: "An archive of posts sorted by date."
   {% if post.featured %}
   <li>
     <article>
-      <i class="icon-star-half-empty"></i>
+      <i class="fa fa-star-half-empty"></i>
       <a href="{{ site.url }}{{ post.url }}">
         {{ post.title }} <span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></span>
       </a>

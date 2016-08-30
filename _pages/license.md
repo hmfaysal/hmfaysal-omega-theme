@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /license/index.html
+permalink: /license/
 title: LICENSE
 description: "License for Jekyll theme HMFAYSAL OMEGA."
 headline: "The MIT License"

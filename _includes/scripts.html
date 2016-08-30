@@ -1,9 +1,17 @@
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="{{ site.url }}/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-<script src="{{ site.url }}/assets/js/scripts.min.js"></script>
-<script type="text/javascript" src="{{ site.url }}/assets/js/waypoints.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="{{ site.url }}/assets/js/vendor/jquery-1.12.4.min.js"><\/script>')</script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+  crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="{{ site.url }}/assets/js/plugins/jekyll-search.min.js"></script>
+<script type="text/javascript" src="{{ site.url }}/assets/js/plugins/jquery.fitvids.js"></script>
+<script type="text/javascript" src="{{ site.url }}/assets/js/plugins/jquery.waypoints.min.js"></script>
+<script type="text/javascript" src="{{ site.url }}/assets/js/plugins/jquery.magnific-popup.min.js"></script>
+<script type="text/javascript" src="{{ site.url }}/assets/js/main.js"></script>
 <script type="text/javascript" src="{{ site.url }}/assets/js/script.js"></script>
-<script type='text/javascript'>$(document).ready(function(){$(".time").text(function(a,b){return Math.round(parseFloat(b))})});</script>
+<!--<script type='text/javascript'>$(document).ready(function(){$(".time").text(function(a,b){return Math.round(parseFloat(b))})});</script>-->
 
 <script type="text/javascript">
 
@@ -34,19 +42,22 @@ $("a#click-pages").click(function(){
 {% if site.search %}
 <!-- Jekyll Simple Search option -->
 <script>
-  $(document).ready(function() {
-      $('.search-field').simpleJekyllSearch({
-          jsonFile : '{{ site.url }}/search.json',
-          searchResults : '.search-results',
-          template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
-          noResults: '<p>Nothing found.</p>'
-        });
-  });
+
+   SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: '{{ site.url}}/assets/json/search.json',
+        searchResultTemplate: '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
+        noResultsText: '<p>Nothing found.</p>',
+        limit: 10,
+        fuzzy: false,
+        exclude: ['Welcome']
+      });
 
   (function( $, window, undefined ) {
     
      var bs = {
-          close: $(".icon-remove-sign"),
+          close: $("#search-close"),
           searchform: $(".search-form"),
           canvas: $("body"),
           dothis: $('.dosearch')
@@ -84,6 +95,8 @@ $("a#click-pages").click(function(){
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 </script>
-{% endif %}
+{% endif %} 
 
-{% if page.comments %}{% include disqus_comments.html %}{% endif %}
+{% if page.comments %}
+{% include disqus_comments.html %}
+{% endif %}

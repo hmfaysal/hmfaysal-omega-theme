@@ -14,35 +14,52 @@ animated_fins:    true
 # Specify the fin color in RGB value
 fin_color:        "255,255,255"
 # Change url to your domain. Leave localhost server or blank when working locally.
-url:              /hmfaysal-omega-theme
-# Add pagination support
-gems:             [jekyll-paginate]
+url:              http://localhost:4000
+# baseurl:           
 
+# Gems used
+gems:
+  - jekyll-feed
+  - jekyll-archives
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-seo-tag
+
+# Archives configuration
+# https://github.com/jekyll/jekyll-archives/blob/master/docs/configuration.md
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layout: 'archive'
+  permalinks:
+    # year: '/:year/'
+    # month: '/:year/:month/'
+    # day: '/:year/:month/:day/'
+    tag: '/archive/tag/:name/'
+    category: '/archive/category/:name/'
 
 # Owner/author information
-owner:
+author:
   name:           Your Name
-  avatar:         your-photo.jpg
+  picture:        your-photo.jpg
   email:          your@email.com
   # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
   description:    Some Details about yourself
   # Social networking links used in footer. Update and remove as you like.
-  # To register at HMFAYSAL SOCIAL, visit http://social.hmfaysal.tk
   twitter:
   facebook:
   github:
   linkedin:
   instagram:
   tumblr:
-  hmfaysalsocial:
   # For Google Authorship https://plus.google.com/authorship
   google_plus:    "http://plus.google.com/123123123123132123"
 
 # Analytics and webmaster tools stuff goes here
 google_analytics:
 google_verify:
-# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:
 
 # Links to include in top navigation
 # For external links add external: true
@@ -51,35 +68,41 @@ links:
     url: /
     external: false
     icon: home
-  - title: <i class="icon-book"></i> Documentation
-    url: /documentation
   - title: Categories
     url: /categories
   - title: Tags
     url: /tags
-  - title: Faysal who?
-    url: /hossain-mohd-faysal
+
+# Sitemap configuration
+# https://github.com/kinnetica/jekyll-plugins
+sitemap:
+    file: "/sitemap.xml"
+    exclude:
+        - "/atom.xml"
+        - "/feed.xml"
+        - "/feed/index.xml"
+    include_posts:
+        - "/index.html"
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    America/New_York
 future:      true
 markdown:    kramdown
+highlighter: rouge
 paginate:    6
-paginate_path: "page:num"
+paginate_path: "/blog/:num/"
 
 # https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink:   /:categories/:title
+collections:
+  posts:
+    output: true
+    permalink: /blog/:title
+  pages:
+    output: true
+    permalink: /:title
 
 kramdown:
   auto_ids: true
   footnote_nr: 1
   entity_output: as_char
   toc_levels: 1..6
-  enable_coderay: false
-
-  coderay:
-    coderay_line_numbers: 
-    coderay_line_numbers_start: 1
-    coderay_tab_width: 4
-    coderay_bold_every: 10
-    coderay_css: class

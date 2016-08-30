@@ -1,9 +1,11 @@
 {% if site.search %}
 <div class="search-wrapper">
     <div class="search-form">
-        <input type="text" class="search-field" placeholder="Search...">
-        <i class="icon-remove-sign"></i>
-        <ul class="search-results post-list"></ul>
+        <input type="text" id="search-input" class="search-field" placeholder="Search...">
+        <i id="search-close" class="fa fa-times-circle"></i>
+        <h4>Search results</h4>
+        <ul id="results-container" class="search-results post-list">
+        </ul>
         <!-- /.search-results -->
     </div>
     <!-- /.search-form -->
@@ -22,23 +24,25 @@
                 <a href="{{ link.url }}">{{ link.title }}</a> {% else %}
                 <a href="{{ site.url }}{{ link.url }}">{{ link.title }}</a> {% endif %} </li>
             {% endfor %}
-            <li><a href="{{ site.url }}/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+            <li><a href="{{ site.url }}/feed.xml" title="Atom/RSS feed"><i class="fa fa-rss"></i> Feed</a></li>
         </ul>
     </nav>
 </aside>
 
 {% if page.imagefeature %}
 <header id="masthead" class="blog-background overlay align-center align-middle animated from-bottom" style="background-image: url({{ site.url }}/images/{{ page.imagefeature }})"
-    itemscope itemtype="http://schema.org/Organization">{% if page.imagecredit %}<span class="image-credit">Photo Credit: <a href="{{ page.imagecreditlink }}" target="_blank">
-        {{ page.imagecredit }}</a></span>
-{% endif %} {% else %}
+    itemscope itemtype="http://schema.org/Organization">
+    {% if page.imagecredit %}
+    <span class="image-credit">Photo Credit: <a href="{{ page.imagecreditlink }}" target="_blank"> {{ page.imagecredit }}</a></span>
+    {% endif %}
+{% else %}
 <header id="masthead" class="blog-background overlay align-center align-middle animated from-bottom" style="background-image: url({{ site.url }}/images/{{ site.default_bg }})"
     itemscope itemtype="http://schema.org/Organization">
 {% endif %}
 
 {% if site.search %}
     <button class="menu-button animated fade dosearch">
-        <i class="icon-search"></i>
+        <i class="fa fa-search"></i>
     </button> 
 {% endif %} 
 
@@ -60,7 +64,7 @@
 {% else %}
     <div class="inner">
         <div class="container">
-            <a class="brand" href="{{ site.url }}" itemprop="url">
+            <a class="brand" href="{{ site.url }}/" itemprop="url">
                 {% if site.logo %}<img itemprop="logo" src="{{ site.url }}/images/{{ site.logo }}" alt="{{ site.title }} Logo" />{% endif %}
                 <h1 class="blog-title light" itemprop="name">
                     {{ site.title }}
