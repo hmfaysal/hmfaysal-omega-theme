@@ -24,20 +24,21 @@
 
         var headerWaypoint = new Waypoint({
             element: document.getElementById('masthead'),
-            offset: -5,
             handler: function (direction) {
                 if (direction === 'down')
                     this.element.classList.remove('animation-on');
                 else
                     this.element.classList.add('animation-on');
-            }
+            },
+            offset: -5
         });
 
         var footerWaypoint = new Waypoint({
             element: document.getElementById('footer'),
             handler: function (direction) {
                 this.element.classList.toggle('animation-on');
-            }
+            },
+            offset: 'bottom-in-view'
         });
 
     }
