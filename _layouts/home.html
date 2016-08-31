@@ -31,19 +31,19 @@
                 {% if link.external %}
                     <a href="{{ link.url }}">{{ link.title }}</a>
                 {% else %}
-                    <a href="{{ site.url }}{{ link.url }}">{{ link.title }}</a>
+                    <a href="{{ link.url }}">{{ link.title }}</a>
                 {% endif %}
                 </li>
 {% endfor %}            
-                <li><a href="{{ site.url }}/feed.xml" title="Atom/RSS feed"><i class="fa fa-rss"></i> Feed</a></li>
+                <li><a href="/feed.xml" title="Atom/RSS feed"><i class="fa fa-rss"></i> Feed</a></li>
             </ul>
         </nav>
     </aside>
 
 {% if page.imagefeature %}
-    <header id="masthead" class="blog-background overlay align-center align-middle animated from-bottom"  style="background-image: url({{ site.url }}/images/{{ page.imagefeature }})" itemscope itemtype="http://schema.org/Organization">
+    <header id="masthead" class="blog-background overlay align-center align-middle animated from-bottom"  style="background-image: url(/images/{{ page.imagefeature }})" itemscope itemtype="http://schema.org/Organization">
 {% else %}
-    <header id="masthead" class="blog-background overlay align-center align-middle animated from-bottom"  style="background-image: url({{ site.url }}/images/{{ site.default_bg }})" itemscope itemtype="http://schema.org/Organization">
+    <header id="masthead" class="blog-background overlay align-center align-middle animated from-bottom"  style="background-image: url(/images/{{ site.default_bg }})" itemscope itemtype="http://schema.org/Organization">
 {% endif %}
 
 {% if site.search %}
@@ -55,8 +55,8 @@
 {% if site.description %}
         <div class="inner">
             <div class="container">
-                <a class="brand light" href="{{ site.url }}" itemprop="url">
-                    {% if site.logo %} <img itemprop="logo" src="{{ site.url }}/images/{{ site.logo }}" alt="{{ site.title }} Logo" /> {% endif %}
+                <a class="brand light" href="" itemprop="url">
+                    {% if site.logo %} <img itemprop="logo" src="/images/{{ site.logo }}" alt="{{ site.title }} Logo" /> {% endif %}
                     <h1 class="blog-title light" itemprop="name">
                         {{ site.title }}
                     </h1>
@@ -69,8 +69,8 @@
 {% else %}
         <div class="inner">
             <div class="container">
-                <a class="brand" href="{{ site.url }}" itemprop="url">
-                    <img itemprop="logo" src="{{ site.url }}/images/{{ site.logo }}" alt="{{ site.title }} Logo" />
+                <a class="brand" href="" itemprop="url">
+                    <img itemprop="logo" src="/images/{{ site.logo }}" alt="{{ site.title }} Logo" />
                 <h1 class="blog-title light" itemprop="name">
                     {{ site.title }}
                 </h1>

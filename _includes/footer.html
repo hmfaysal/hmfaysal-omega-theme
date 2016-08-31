@@ -1,7 +1,7 @@
 {% if page.imagefeature %}
-    <footer id="footer" class="blog-background overlay text-center align-middle animated from-top" style="background-image: url({{ site.url }}/images/{{ page.imagefeature }})">
+    <footer id="footer" class="blog-background overlay text-center align-middle animated from-top" style="background-image: url(/images/{{ page.imagefeature }})">
 {% else %}
-<footer id="footer" class="blog-background overlay text-center align-middle animated from-top" style="background-image: url({{ site.url }}/images/{{ site.default_bg }})">
+<footer id="footer" class="blog-background overlay text-center align-middle animated from-top" style="background-image: url(/images/{{ site.default_bg }})">
 {% endif %}
 
     <div class="inner">
@@ -60,7 +60,7 @@
                 {% endif %}
             </ul>
             <div>
-                <a href="{{ site.url }}/about/">{{ site.author.name }}</a> &copy; {{ site.time | date: '%Y' }} &bull;
+                <a href="/about/">{{ site.author.name }}</a> &copy; {{ site.time | date: '%Y' }} &bull;
                 All rights reserved.
             </div>
             <ul class="menu-items">
@@ -69,11 +69,11 @@
                     {% if link.external %}
                     <a href="{{ link.url }}">{% if link.icon %}<i class="fa fa-{{ link.icon }}"></i> {% else %} {{ link.title }}{% endif %} </a>&nbsp;&bull;
                     {% else %}
-                    <a href="{{ site.url }}{{ link.url }}">{% if link.icon %}<i class="fa fa-{{ link.icon }}"></i>{% else %}{{ link.title }}{% endif %}</a>&nbsp;&bull;
+                    <a href="{{ link.url }}">{% if link.icon %}<i class="fa fa-{{ link.icon }}"></i>{% else %}{{ link.title }}{% endif %}</a>&nbsp;&bull;
                     {% endif %}
                 </li>
                 {% endfor %}
-                <li><a href="{{ site.url }}/feed.xml" title="Atom/RSS feed"><i class="fa fa-rss"></i> Feed</a></li>
+                <li><a href="/feed.xml" title="Atom/RSS feed"><i class="fa fa-rss"></i> Feed</a></li>
             </ul>
         </div>
     </div>

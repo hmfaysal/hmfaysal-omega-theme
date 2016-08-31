@@ -91,7 +91,7 @@
                                 in <span class="post-tags">
 
                             {% for tag in page.categories %}
-                                    <a href="{{ site.url }}/categories/index.html#{{ page.categories | cgi_encode }}" data-toggle="tooltip" title="Other posts from the {{ tag | capitalize }} category" rel="tag">{{ tag | capitalize }}</a>
+                                    <a href="/categories/index.html#{{ page.categories | cgi_encode }}" data-toggle="tooltip" title="Other posts from the {{ tag | capitalize }} category" rel="tag">{{ tag | capitalize }}</a>
                                 {% unless forloop.last %}
                                     &nbsp;&bull;&nbsp;
                                 {% endunless %}
@@ -135,7 +135,7 @@
                             <i class="fa fa-tags"></i>&nbsp;
                                 Tagged with 
                             {% for tag in page.tags %}
-                                <a href="{{ site.url }}/tags/index.html#{{ tag | cgi_encode }}" data-toggle="tooltip" title="Posts tagged with {{ tag }}" rel="tag">{{ tag }}</a>
+                                <a href="/tags/index.html#{{ tag | cgi_encode }}" data-toggle="tooltip" title="Posts tagged with {{ tag }}" rel="tag">{{ tag }}</a>
 
                                 {% unless forloop.last %}
                                 &nbsp;&bull;&nbsp;

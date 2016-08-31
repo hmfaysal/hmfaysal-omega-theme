@@ -22,26 +22,26 @@ tags: [tags]
 	<article class="post col-md-10 col-md-offset-1">
 		<header class="post-header">
 			<h2 class="post-title text-center super lighter">
-				<a href="{{ site.url }}{{ post.url }}"><i class="fa fa-quote-left"></i> {{ post.excerpt | strip_html }}</a>
+				<a href="{{ post.url }}"><i class="fa fa-quote-left"></i> {{ post.excerpt | strip_html }}</a>
 	        </h2>
 	        <p class="light small text-center">
 	        	Share this Quote
 	        </p>
 	        <ul class="social-mini text-center">
 	        	<li>
-	            	<a href="https://twitter.com/intent/tweet?text=&quot;{{ post.title }}&quot;%20{{ site.url }}{{ post.url }}%20via%20&#64;{{ site.author.twitter }}"
+	            	<a href="https://twitter.com/intent/tweet?text=&quot;{{ post.title }}&quot;%20{{ post.url }}%20via%20&#64;{{ site.author.twitter }}"
 	                	onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" data-toggle="tooltip" title="Share on Twitter">
 	                    <i class="fa fa-twitter"></i>
 	                </a>
 	            </li>
 	            <li>
-	            	<a  href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ post.url }}"
+	            	<a  href="https://www.facebook.com/sharer/sharer.php?u={{ post.url }}"
 	                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" data-toggle="tooltip" title="Share on Facebook">
 	                    <i class="fa fa-facebook"></i>
 	                </a>
 	            </li>
 	            <li>
-	                <a href="https://plus.google.com/share?url={{ site.url }}{{ post.url }}"
+	                <a href="https://plus.google.com/share?url={{ post.url }}"
 	                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" data-toggle="tooltip" title="Share on Google plus">
 	                        <i class="fa fa-google-plus"></i>
 	                </a>
@@ -49,11 +49,11 @@ tags: [tags]
 	        </ul>
 			<div class="post-body bordered-bottom text-center">
 			{% if post.description %}
-				<a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="{{ post.description }}" class="more-link btn btn-danger btn-large">
+				<a href="{{ post.url }}" data-toggle="tooltip" title="{{ post.description }}" class="more-link btn btn-danger btn-large">
 			        <i class="fa fa-link"></i> permalink...
 			    </a>
 			{% else %}
-			    <a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="Read more about {{ post.title }}" class="more-link btn btn-danger btn-large">
+			    <a href="{{ post.url }}" data-toggle="tooltip" title="Read more about {{ post.title }}" class="more-link btn btn-danger btn-large">
 			        <i class="fa fa-link"></i> permalink...
 			    </a>
 			{% endif %}
@@ -68,26 +68,26 @@ tags: [tags]
 	<article class="post col-md-10 col-md-offset-1">
 		<header class="post-header">
 			<h2 class="post-title text-center super lighter">
-				<a href="{{ site.url }}{{ post.url }}" style="color: #c91b26"><i class="fa fa-retweet"></i> "{{ post.excerpt | strip_html }}"</a>
+				<a href="{{ post.url }}" style="color: #c91b26"><i class="fa fa-retweet"></i> "{{ post.excerpt | strip_html }}"</a>
 			</h2>
 			<p class="light small text-center">
 				Share this Status
 			</p>
 			<ul class="social-mini text-center">
 				<li>
-					<a href="https://twitter.com/intent/tweet?text=&quot;{{ post.title }}&quot;%20{{ site.url }}{{ post.url }}%20via%20&#64;{{ site.author.twitter }}"
+					<a href="https://twitter.com/intent/tweet?text=&quot;{{ post.title }}&quot;%20{{ post.url }}%20via%20&#64;{{ site.author.twitter }}"
 						onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" data-toggle="tooltip" title="Share on Twitter">
 						<i class="fa fa-twitter"></i>
 					</a>
 				</li>
 				<li>
-					<a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ post.url }}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
+					<a href="https://www.facebook.com/sharer/sharer.php?u={{ post.url }}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
 						data-toggle="tooltip" title="Share on Facebook">
 						<i class="fa fa-facebook"></i>
 					</a>
 				</li>
 				<li>
-					<a href="https://plus.google.com/share?url={{ site.url }}{{ post.url }}" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"
+					<a href="https://plus.google.com/share?url={{ post.url }}" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"
 						data-toggle="tooltip" title="Share on Google plus">
 						<i class="fa fa-google-plus"></i>
 					</a>
@@ -107,7 +107,7 @@ tags: [tags]
 					
 				{% for tag in post.categories %}
 				
-				<a href="{{ site.url }}/categories/index.html#{{ post.categories | cgi_encode }}" data-toggle="tooltip" title="Other posts from the {{ tag | capitalize }} category" rel="tag">
+				<a href="/categories/index.html#{{ post.categories | cgi_encode }}" data-toggle="tooltip" title="Other posts from the {{ tag | capitalize }} category" rel="tag">
 					{{ tag | capitalize }}
 				</a>
 
@@ -131,12 +131,12 @@ tags: [tags]
 		<header class="post-header">
 			{% if post.link %}
 			<h2 class="post-title text-center super lighter">
-				<a href="{{ site.url }}{{ post.url }}" style="color: #fff; background-color: #45ADA8; border-radius: 4px; padding: 10px">
+				<a href="{{ post.url }}" style="color: #fff; background-color: #45ADA8; border-radius: 4px; padding: 10px">
 					<i class="fa fa-play-circle"></i> {{ post.title }}
 				</a>
 			{% else %}
 				<h2 class="post-title text-center super lighter bordered-bottom">
-					<a href="{{ site.url }}{{ post.url }}"><i class="fa fa-play-circle"></i> {{ post.title }}</a>
+					<a href="{{ post.url }}"><i class="fa fa-play-circle"></i> {{ post.title }}</a>
 			{% endif %}
 			</h2>
 
@@ -152,7 +152,7 @@ tags: [tags]
 				in <span class="post-tags">
 
 				{% for tag in post.categories %}
-				<a href="{{ site.url }}/categories/index.html#{{ post.categories | cgi_encode }}" data-toggle="tooltip" title="Other posts from the {{ tag | capitalize }} category" rel="tag">
+				<a href="/categories/index.html#{{ post.categories | cgi_encode }}" data-toggle="tooltip" title="Other posts from the {{ tag | capitalize }} category" rel="tag">
 					{{ tag | capitalize }}
 				</a>
 					{% unless forloop.last %}
@@ -195,11 +195,11 @@ tags: [tags]
 
 			<div class="text-center">
 			{% if post.description %}
-				<a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="{{ post.description }}" class="more-link btn btn-danger btn-large">
+				<a href="{{ post.url }}" data-toggle="tooltip" title="{{ post.description }}" class="more-link btn btn-danger btn-large">
 					<i class="fa fa-link"></i> see more...
 				</a>
 			{% else %}
-				<a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="Read more about {{ post.title }}" class="more-link btn btn-danger btn-large">
+				<a href="{{ post.url }}" data-toggle="tooltip" title="Read more about {{ post.title }}" class="more-link btn btn-danger btn-large">
 					<i class="fa fa-link"></i> see more...
 				</a>
 			{% endif %}
@@ -215,22 +215,22 @@ tags: [tags]
 		<header class="post-header">
 			{% if post.photo %}
 			<figure>
-				<a href="{{ site.url }}{{ post.url }}"><img src="{{ site.url }}/images/{{ post.photo }}" alt="{{ post.title }}" itemprop="image"></a>
+				<a href="{{ post.url }}"><img src="/images/{{ post.photo }}" alt="{{ post.title }}" itemprop="image"></a>
 			</figure>
 			{% else %}
 			<figure>
-				<a href="{{ site.url }}{{ post.url }}"><img src="{{ site.url }}/images/{{ post.imagefeature }}" alt="{{ post.title }}" itemprop="image"></a>
+				<a href="{{ post.url }}"><img src="/images/{{ post.imagefeature }}" alt="{{ post.title }}" itemprop="image"></a>
 			</figure>
 			{% endif %}
 			
 			{% if post.link %}
 			<h2 class="post-title text-center super lighter">
-				<a href="{{ site.url }}{{ post.url }}" style="color: #fff; background-color: #45ADA8; border-radius: 4px; padding: 10px">
+				<a href="{{ post.url }}" style="color: #fff; background-color: #45ADA8; border-radius: 4px; padding: 10px">
 					<i class="fa fa-picture-o"></i> {{ post.title }}
 				</a>
 			{% else %}
 			<h2 class="post-title text-center super lighter bordered-bottom">
-				<a href="{{ site.url }}{{ post.url }}">
+				<a href="{{ post.url }}">
 					<i class="fa fa-picture-o"></i> {{ post.title }}
 					</a>
 			{% endif %}
@@ -248,7 +248,7 @@ tags: [tags]
 			in <span class="post-tags">
 				
 			{% for tag in post.categories %}
-			<a href="{{ site.url }}/categories/index.html#{{ post.categories | cgi_encode }}" data-toggle="tooltip" title="Other posts from the {{ tag | capitalize }} category" rel="tag">
+			<a href="/categories/index.html#{{ post.categories | cgi_encode }}" data-toggle="tooltip" title="Other posts from the {{ tag | capitalize }} category" rel="tag">
 				{{ tag | capitalize }}
 			</a>
 			{% unless forloop.last %}
@@ -277,11 +277,11 @@ tags: [tags]
 			<p>{{ post.content | strip_html | truncatewords:100 }}&hellip;</p>
 			<div class="text-center">
 			{% if post.description %}
-				<a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="{{ post.description }}" class="more-link btn btn-danger btn-large">
+				<a href="{{ post.url }}" data-toggle="tooltip" title="{{ post.description }}" class="more-link btn btn-danger btn-large">
 					<i class="fa fa-link"></i> read more...
 				</a>
 			{% else %}
-				<a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="Read more about {{ post.title }}" class="more-link btn btn-danger btn-large">
+				<a href="{{ post.url }}" data-toggle="tooltip" title="Read more about {{ post.title }}" class="more-link btn btn-danger btn-large">
 					<i class="fa fa-link"></i> read more...
 				</a>
 			{% endif %}
@@ -302,12 +302,12 @@ tags: [tags]
 		
 		{% if post.link %}
 			<h2 class="post-title text-center super lighter">
-				<a href="{{ site.url }}{{ post.url }}" style="color: #fff; background-color: #45ADA8; border-radius: 4px; padding: 10px">
+				<a href="{{ post.url }}" style="color: #fff; background-color: #45ADA8; border-radius: 4px; padding: 10px">
 					<i class="fa fa-link"></i> {{ post.title }}
 				</a>
 		{% else %}
 				<h2 class="post-title text-center super lighter bordered-bottom">
-					<a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a> 
+					<a href="{{ post.url }}">{{ post.title }}</a> 
 		{% endif %}
 			</h2>
 
@@ -323,7 +323,7 @@ tags: [tags]
 			in <span class="post-tags">
 				
 			{% for tag in post.categories %}
-				<a href="{{ site.url }}/categories/index.html#{{ post.categories | cgi_encode }}" data-toggle="tooltip" title="Other posts from the {{ tag | capitalize }} category" rel="tag">
+				<a href="/categories/index.html#{{ post.categories | cgi_encode }}" data-toggle="tooltip" title="Other posts from the {{ tag | capitalize }} category" rel="tag">
 					{{ tag | capitalize }}
 				</a>
 			{% unless forloop.last %}
@@ -360,11 +360,11 @@ tags: [tags]
 		{% endif %}
 			<div class="text-center">
 			{% if post.description %}
-				<a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="{{ post.description }}" class="more-link btn btn-danger btn-large">
+				<a href="{{ post.url }}" data-toggle="tooltip" title="{{ post.description }}" class="more-link btn btn-danger btn-large">
 					<i class="fa fa-link"></i> read more...
 				</a>
 			{% else %}
-				<a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="Read more about {{ post.title }}" class="more-link btn btn-danger btn-large">
+				<a href="{{ post.url }}" data-toggle="tooltip" title="Read more about {{ post.title }}" class="more-link btn btn-danger btn-large">
 					<i class="fa fa-link"></i> read more...
 				</a>
 			{% endif %}
@@ -381,14 +381,14 @@ tags: [tags]
 		<nav class="pagination" role="navigation">
 		{% if paginator.previous_page %}
 			{% if paginator.previous_page == 1 %}
-        	<a class="newer-posts" href="{{ site.url }}">&larr; Newer Posts</a>
+        	<a class="newer-posts" href="">&larr; Newer Posts</a>
 			{% else %}
-			<a class="newer-posts" href="{{ site.url }}/blog/{{ paginator.previous_page }}">&larr; Newer Posts</a>
+			<a class="newer-posts" href="/blog/{{ paginator.previous_page }}">&larr; Newer Posts</a>
 			{% endif %}
 		{% endif %}
     	<span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
 		{% if paginator.next_page %}   
-    		<a class="older-posts" href="{{ site.url }}/blog/{{ paginator.next_page }}">Older Posts &rarr;</a>
+    		<a class="older-posts" href="/blog/{{ paginator.next_page }}">Older Posts &rarr;</a>
  		{% endif %}
 		</nav>
     </div>
@@ -406,26 +406,26 @@ tags: [tags]
 	<article class="post col-md-10 col-md-offset-1">
 		<header class="post-header">
 			<h2 class="post-title text-center super lighter">
-				<a href="{{ site.url }}{{ post.url }}"><i class="fa fa-quote-left"></i> {{ post.excerpt | strip_html }}</a>
+				<a href="{{ post.url }}"><i class="fa fa-quote-left"></i> {{ post.excerpt | strip_html }}</a>
 			</h2>
 			<p class="light small text-center">
 				Share this Quote
 			</p>
 			<ul class="social-mini text-center">
 				<li>
-					<a href="https://twitter.com/intent/tweet?text=&quot;{{ post.title }}&quot;%20{{ site.url }}{{ post.url }}%20via%20&#64;{{ site.author.twitter }}"
+					<a href="https://twitter.com/intent/tweet?text=&quot;{{ post.title }}&quot;%20{{ post.url }}%20via%20&#64;{{ site.author.twitter }}"
 						onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" data-toggle="tooltip" title="Share on Twitter">
 						<i class="fa fa-twitter"></i>
 					</a>
 				</li>
 				<li>
-					<a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ post.url }}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
+					<a href="https://www.facebook.com/sharer/sharer.php?u={{ post.url }}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
 						data-toggle="tooltip" title="Share on Facebook">
 						<i class="fa fa-facebook"></i>
 					</a>
 				</li>
 				<li>
-					<a href="https://plus.google.com/share?url={{ site.url }}{{ post.url }}" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"
+					<a href="https://plus.google.com/share?url={{ post.url }}" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"
 						data-toggle="tooltip" title="Share on Google plus">
 						<i class="fa fa-google-plus"></i>
 					</a>
@@ -433,11 +433,11 @@ tags: [tags]
 			</ul>
 			<div class="post-body bordered-bottom text-center">
 			{% if post.description %}
-				<a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="{{ post.description }}" class="more-link btn btn-danger btn-large">
+				<a href="{{ post.url }}" data-toggle="tooltip" title="{{ post.description }}" class="more-link btn btn-danger btn-large">
 					<i class="fa fa-link"></i> permalink...
 				</a>
 			{% else %}
-				<a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="Read more about {{ post.title }}" class="more-link btn btn-danger btn-large">
+				<a href="{{ post.url }}" data-toggle="tooltip" title="Read more about {{ post.title }}" class="more-link btn btn-danger btn-large">
 					<i class="fa fa-link"></i> permalink...
 				</a>
 			{% endif %}
@@ -453,26 +453,26 @@ tags: [tags]
 	<article class="post col-md-10 col-md-offset-1">
 		<header class="post-header">
 			<h2 class="post-title text-center super lighter">
-				<a href="{{ site.url }}{{ post.url }}" style="color: #c91b26"><i class="fa fa-retweet"></i> "{{ post.excerpt | strip_html }}"</a>
+				<a href="{{ post.url }}" style="color: #c91b26"><i class="fa fa-retweet"></i> "{{ post.excerpt | strip_html }}"</a>
 			</h2>
 			<p class="light small text-center">
 				Share this Status
 			</p>
 			<ul class="social-mini text-center">
 				<li>
-					<a href="https://twitter.com/intent/tweet?text=&quot;{{ post.title }}&quot;%20{{ site.url }}{{ post.url }}%20via%20&#64;{{ site.author.twitter }}"
+					<a href="https://twitter.com/intent/tweet?text=&quot;{{ post.title }}&quot;%20{{ post.url }}%20via%20&#64;{{ site.author.twitter }}"
 						onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" data-toggle="tooltip" title="Share on Twitter">
 						<i class="fa fa-twitter"></i>
 					</a>
 				</li>
 				<li>
-					<a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ post.url }}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
+					<a href="https://www.facebook.com/sharer/sharer.php?u={{ post.url }}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
 						data-toggle="tooltip" title="Share on Facebook">
 						<i class="fa fa-facebook"></i>
 					</a>
 				</li>
 				<li>
-					<a href="https://plus.google.com/share?url={{ site.url }}{{ post.url }}" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"
+					<a href="https://plus.google.com/share?url={{ post.url }}" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"
 						data-toggle="tooltip" title="Share on Google plus">
 						<i class="fa fa-google-plus"></i>
 					</a>
@@ -488,7 +488,7 @@ tags: [tags]
 			
 				in <span class="post-tags">
 				{% for tag in post.categories %}
-					<a href="{{ site.url }}/categories/index.html#{{ post.categories | cgi_encode }}" data-toggle="tooltip" title="Other posts from the {{ tag | capitalize }} category" rel="tag">
+					<a href="/categories/index.html#{{ post.categories | cgi_encode }}" data-toggle="tooltip" title="Other posts from the {{ tag | capitalize }} category" rel="tag">
 						{{ tag | capitalize }}
 					</a>
 				{% unless forloop.last %}
@@ -512,10 +512,10 @@ tags: [tags]
 		<header class="post-header">
 		{% if post.link %}
 			<h2 class="post-title text-center super lighter">
-				<a href="{{ site.url }}{{ post.url }}" style="color: #fff; background-color: #45ADA8; border-radius: 4px; padding: 10px"><i class="fa fa-play-circle"></i> {{ post.title }}</a>
+				<a href="{{ post.url }}" style="color: #fff; background-color: #45ADA8; border-radius: 4px; padding: 10px"><i class="fa fa-play-circle"></i> {{ post.title }}</a>
 		{% else %}
 			<h2 class="post-title text-center super lighter bordered-bottom">
-				<a href="{{ site.url }}{{ post.url }}"><i class="fa fa-play-circle"></i> {{ post.title }}</a>
+				<a href="{{ post.url }}"><i class="fa fa-play-circle"></i> {{ post.title }}</a>
 		{% endif %}
 			</h2>
 			<div class="post-info text-center small">
@@ -528,7 +528,7 @@ tags: [tags]
 				
 				in <span class="post-tags">
 				{% for tag in post.categories %}
-					<a href="{{ site.url }}/categories/index.html#{{ post.categories | cgi_encode }}" data-toggle="tooltip" title="Other posts from the {{ tag | capitalize }} category" rel="tag">
+					<a href="/categories/index.html#{{ post.categories | cgi_encode }}" data-toggle="tooltip" title="Other posts from the {{ tag | capitalize }} category" rel="tag">
 						{{ tag | capitalize }}
 					</a>
 				{% unless forloop.last %}
@@ -567,11 +567,11 @@ tags: [tags]
 
 			<div class="text-center">
 			{% if post.description %}
-				<a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="{{ post.description }}" class="more-link btn btn-danger btn-large">
+				<a href="{{ post.url }}" data-toggle="tooltip" title="{{ post.description }}" class="more-link btn btn-danger btn-large">
 					<i class="fa fa-link"></i> see more...
 				</a>
 			{% else %}
-				<a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="Read more about {{ post.title }}" class="more-link btn btn-danger btn-large">
+				<a href="{{ post.url }}" data-toggle="tooltip" title="Read more about {{ post.title }}" class="more-link btn btn-danger btn-large">
 					<i class="fa fa-link"></i> see more...
 				</a>
 			{% endif %}
@@ -587,22 +587,22 @@ tags: [tags]
 		<header class="post-header">
 		{% if post.photo %}
 			<figure>
-				<a href="{{ site.url }}{{ post.url }}"><img src="{{ site.url }}/images/{{ post.photo }}" alt="{{ post.title }}" itemprop="image"></a>
+				<a href="{{ post.url }}"><img src="/images/{{ post.photo }}" alt="{{ post.title }}" itemprop="image"></a>
 			</figure>
 		{% else %}
 			<figure>
-				<a href="{{ site.url }}{{ post.url }}"><img src="{{ site.url }}/images/{{ post.imagefeature }}" alt="{{ post.title }}" itemprop="image"></a>
+				<a href="{{ post.url }}"><img src="/images/{{ post.imagefeature }}" alt="{{ post.title }}" itemprop="image"></a>
 			</figure>
 		{% endif %}
 		
 		{% if post.link %}
 			<h2 class="post-title text-center super lighter">
-				<a href="{{ site.url }}{{ post.url }}" style="color: #fff; background-color: #45ADA8; border-radius: 4px; padding: 10px">
+				<a href="{{ post.url }}" style="color: #fff; background-color: #45ADA8; border-radius: 4px; padding: 10px">
 					<i class="fa fa-picture-o"></i> {{ post.title }}
 				</a>
 		{% else %}
 			<h2 class="post-title text-center super lighter bordered-bottom">
-				<a href="{{ site.url }}{{ post.url }}">
+				<a href="{{ post.url }}">
 					<i class="fa fa-picture-o"></i> {{ post.title }}
 				</a>
 		{% endif %}
@@ -619,7 +619,7 @@ tags: [tags]
 
 				in <span class="post-tags">
 				{% for tag in post.categories %}
-					<a href="{{ site.url }}/categories/index.html#{{ post.categories | cgi_encode }}" data-toggle="tooltip" title="Other posts from the {{ tag | capitalize }} category" rel="tag">
+					<a href="/categories/index.html#{{ post.categories | cgi_encode }}" data-toggle="tooltip" title="Other posts from the {{ tag | capitalize }} category" rel="tag">
 						{{ tag | capitalize }}
 					</a>
 				{% unless forloop.last %}
@@ -647,11 +647,11 @@ tags: [tags]
 			<p>{{ post.content | strip_html | truncatewords:100 }}&hellip;</p>
 			<div class="text-center">
 			{% if post.description %}
-				<a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="{{ post.description }}" class="more-link btn btn-danger btn-large">
+				<a href="{{ post.url }}" data-toggle="tooltip" title="{{ post.description }}" class="more-link btn btn-danger btn-large">
 					<i class="fa fa-link"></i> read more...
 				</a>
 			{% else %}
-				<a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="Read more about {{ post.title }}" class="more-link btn btn-danger btn-large">
+				<a href="{{ post.url }}" data-toggle="tooltip" title="Read more about {{ post.title }}" class="more-link btn btn-danger btn-large">
 					<i class="fa fa-link"></i> read more...
 				</a>
 			{% endif %}
@@ -671,12 +671,12 @@ tags: [tags]
 		
 		{% if post.link %}
 			<h2 class="post-title text-center super lighter">
-				<a href="{{ site.url }}{{ post.url }}" style="color: #fff; background-color: #45ADA8; border-radius: 4px; padding: 10px">
+				<a href="{{ post.url }}" style="color: #fff; background-color: #45ADA8; border-radius: 4px; padding: 10px">
 					<i class="fa fa-link"></i> {{ post.title }}
 				</a>
 		{% else %}
 			<h2 class="post-title text-center super lighter bordered-bottom">
-				<a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a> {% endif %}
+				<a href="{{ post.url }}">{{ post.title }}</a> {% endif %}
 			</h2>
 
 			<div class="post-info text-center small">
@@ -689,7 +689,7 @@ tags: [tags]
 
 			in <span class="post-tags">
 			{% for tag in post.categories %}
-			<a href="{{ site.url }}/categories/index.html#{{ post.categories | cgi_encode }}" data-toggle="tooltip" title="Other posts from the {{ tag | capitalize }} category" rel="tag">
+			<a href="/categories/index.html#{{ post.categories | cgi_encode }}" data-toggle="tooltip" title="Other posts from the {{ tag | capitalize }} category" rel="tag">
 				{{ tag | capitalize }}
 			</a>
 			{% unless forloop.last %}
@@ -728,11 +728,11 @@ tags: [tags]
 
 			<div class="text-center">
 			{% if post.description %}
-				<a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="{{ post.description }}" class="more-link btn btn-danger btn-large">
+				<a href="{{ post.url }}" data-toggle="tooltip" title="{{ post.description }}" class="more-link btn btn-danger btn-large">
 					<i class="fa fa-link"></i> read more...
 				</a>
 			{% else %}
-				<a href="{{ site.url }}{{ post.url }}" data-toggle="tooltip" title="Read more about {{ post.title }}" class="more-link btn btn-danger btn-large">
+				<a href="{{ post.url }}" data-toggle="tooltip" title="Read more about {{ post.title }}" class="more-link btn btn-danger btn-large">
 					<i class="fa fa-link"></i> read more...
 				</a>
 			{% endif %}
