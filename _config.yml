@@ -3,7 +3,7 @@ description:      Dallas, TX FTC team 3734
 logo:             omikron.png
 disqus_shortname: shortname
 # Assign a default image for your site's header and footer
-default_bg:       backround.png
+default_bg:       default_bg.jpg
 search:           true
 share:            true
 # Read Time is a calculator tp provide post read-time based on word count. Usage is recommended.
