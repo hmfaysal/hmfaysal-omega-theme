@@ -43,7 +43,7 @@ jekyll-archives:
 # Owner/author information
 author:
   name:           Imperial Robotics
-  picture:        your-photo.jpg
+  picture:        favicon.png
   email:          semimperialrobotics@gmail.com
   # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
   description:    We FTC team 3734 called Imperial Robotics located at the School of Science and Engineering in Dallas, TX. Our mission is to spread robotics in the world so that people learn how fun and engaging the robotics competitions of FIRST are. This year, we hope to participate in several communtiy service projects and build a robot using the help of the community. We want to bring everyone together to create something that is truely revolutional.
