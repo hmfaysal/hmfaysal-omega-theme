@@ -2,7 +2,7 @@
 layout: post
 type: status
 title: "Welcome to Velocity Vortex"
-description: 
+description: Introduction to our new Competition
 headline: 
 modified: 2016-09-10
 category: status
@@ -11,6 +11,8 @@ image:
 comments: true
 mathjax: 
 ---
+"Welcome to Velocity Vortex"
+
 
 9/10/2016
 
