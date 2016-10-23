@@ -17,11 +17,16 @@ Team Members:
 Captian: Austin Davis(11th)
 
 
+
+
 Developers: 
 
 Lead: Abhijit Bhattaru(10th)
 
 Micheal(11th)
+
+
+
 
 
 Programers:
@@ -33,6 +38,8 @@ Maximo Mateo(10th)
 Robin Delgado(9th)
 
 Britney Remirez (10th)
+
+
 
 
 Build Team:
