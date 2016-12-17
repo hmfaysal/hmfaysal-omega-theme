@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "A Strive for Success"    # Title of the post
+title: "Hi guys by Charlotyte"    # Title of the post
 description:        # Description of the post, used for Facebook Opengraph & Twitter
-headline: Markdown Syntax Test      # Will appear in bold letters on top of the post
-modified: 2016-12-10                 # Date
+headline: FTC Team 3734 Dallas, TX      # Will appear in bold letters on top of the post
+modified: 2016-12-17                 # Date
 category: personal
 tags: []
 image: 
