@@ -98,20 +98,7 @@
                             {% endfor %}
                                 </span>
                             
-                            {% if site.readtime %}&nbsp;
-                                <span class="post-tags"><i class="fa fa-clock-o"></i>&nbsp;
 
-                            {% if readtime > 1 and readtime < 1.5 %}
-                                    1 minute read
-                            {% endif %}
-
-                            {% if readtime > 1.5 %}
-                                    <span class="time">{{ readtime }}</span> minutes read
-                            {% endif %}
-                                
-                            {% if readtime < 1 %}
-                                    Less than 1 minute read
-                            {% endif %}
 
                                 </span>
                             {% endif %}
@@ -151,10 +138,7 @@
                     {% endif %}
 
                         {% include signoff.html %} 
-                        
-                    {% if site.disqus_shortname and page.comments == true %}
-                        <div id="disqus_thread"></div><!-- /#disqus_thread -->
-                    {% endif %}
+
                     </footer>
 
                 </article>
