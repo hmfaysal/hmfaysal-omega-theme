@@ -43,3 +43,26 @@ We tried to do everything we could to fix the bot for our final qualification ma
 any connection issue, rewiring the motor controllers, replacing the battery, etc. We ended up getting it to almost work.
 During the match, our robot threw the errors again and died. Strangely, this match was between rank 1 and 2 vs rank 3 and 4
 (we were surprisngly rank 4). We won the match but we were bumped down to rank 6 by the end of the qualification matches</p>
+
+<p>During the period from the end of our last qualification match to the time alliance picks were selected, we spent time attempting
+to fix the robot. We tried to go debug the bot at the practice field in the pit. During this time, we tried everything we could. We
+reset both phones, reconfiguered the program, reset the wifi direct connection, rewired everything, downloaded the code again, etc.
+Just before alliance picks, we came to the conclusion that the bot could not be fixed and it was time for us to step away from the bot.
+However, one of our team members didn't give up. He attempted to take some parts off and re place them. He found one thing that the rest
+of the team had not checked. The cord connecting the phone to the Power Distribution Module was loose. This meant that the code would
+not be able to control the robot at certian periods of time, therefore incapacitating it. We decided to get replacement cords and place
+them on the bot. After further testing, we were able to get the bot functioning at full capacity. At this point, we were just hoping that
+we would get picked by an alliance.
+
+
+
+
+
+
+
+
+
+
+
+
+
