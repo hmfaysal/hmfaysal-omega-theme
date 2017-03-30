@@ -6,7 +6,7 @@ disqus_shortname: shortname
 default_bg:       default_bg.jpg
 search:           true
 share:            true
-# Read Time is a calculator tp provide post read-time based on word count. Usage is recommended.
+# Read Time is a calculator to provide post read-time based on word count. Usage is recommended.
 readtime:         true
 # Turn on or off the fin animations in the header and footer
 triangleheader:	  true
