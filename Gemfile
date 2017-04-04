@@ -8,3 +8,5 @@ group :jekyll_plugins do
     gem 'jekyll-gist'
     gem 'jekyll-seo-tag'
  end
+
+gem 'jekyll-compose', group: [:jekyll_plugins]
