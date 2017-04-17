@@ -1,0 +1,176 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,800|Lora:400italic|Playfair+Display:700);
+@font-face {
+	font-weight: normal;
+	font-style: normal;
+	font-family: 'codropsicons';
+	src:url('../fonts/codropsicons/codropsicons.eot');
+	src:url('../fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/codropsicons/codropsicons.woff') format('woff'),
+		url('../fonts/codropsicons/codropsicons.ttf') format('truetype'),
+		url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');
+}
+
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.clearfix:before, .clearfix:after { display: table; content: ''; }
+.clearfix:after { clear: both; }
+
+
+body {
+	background: #fff;
+	color: #69606b;
+	font-weight: 400;
+	font-size: 22px;
+	line-height: 1.5;
+	font-family: 'Raleway', Arial, sans-serif;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	overflow-x: hidden;
+}
+
+.demo-7 {
+	background: #f5f5f5;
+}
+
+.demo-5 {
+	background: #f8dab4;
+	color: #5c554c;
+}
+
+.demo-6 {
+	background: #f1f1f1;
+}
+
+.demo-1 {
+	background: #43434b;
+}
+
+a {
+	outline: none;
+	color: #cf4a5c;
+	text-decoration: none;
+}
+
+a:hover, a:focus {
+	color: #69606b;
+}
+
+.demo-4 a {
+	color: #43939d;
+}
+
+.demo-4 a:hover,
+.demo-4 a:focus {
+	color: #7b8d92;
+}
+
+.demo-8 a {
+	color: #cf7000;
+}
+
+.demo-8 a:hover,
+.demo-8 a:focus {
+	color: #cf7000;
+}
+
+/* To Navigation Style */
+.codrops-top {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-transform: uppercase;
+	font-weight: 800;
+	font-size: 0.6em;
+	padding: 0 32px;
+	letter-spacing: 1px;
+	z-index: 10000;
+}
+
+.codrops-top a {
+	display: inline-block;
+	color: #fff;
+	text-decoration: none;
+	-webkit-transform: translateY(20px);
+	transform: translateY(20px);
+}
+
+.codrops-top span.right {
+	float: right;
+}
+
+.codrops-top span.right a {
+	display: block;
+	float: left;
+}
+
+.codrops-icon:before {
+	text-transform: none;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	font-family: 'codropsicons';
+	text-align: center;
+	speak: none;
+	margin: 0 0.55em 0 0;
+	-webkit-font-smoothing: antialiased;
+}
+
+.codrops-icon-drop:before {
+	content: "\e001";
+}
+
+.codrops-icon-prev:before {
+	content: "\e004";
+}
+
+.codrops-demos {
+	padding: 0 0 1em;
+	position: relative;
+}
+
+.codrops-demos a {
+	font-weight: 800;
+	text-transform: uppercase;
+	font-size: 0.6em;
+	letter-spacing: 1px;
+	padding: 0.3em 0;
+	display: inline-block;
+	opacity: 0.7;
+	margin: 0 0.5em;
+	white-space: nowrap;
+	color: #cf4a5c;
+}
+
+.codrops-demos a:hover,
+.codrops-demos a.current-demo {
+	opacity: 1;
+	color: #69606b;
+}
+
+.codrops-demos a.current-demo {
+	border-bottom: 3px solid #69606b;
+}
+
+.related {
+	padding: 3em 0;
+	text-align: center;
+	font-size: 1.5em;
+	position: relative;
+}
+
+.demo-5 .related {
+	width: 60%;
+	margin-left: 40%;
+}
+
+@media screen and (max-width: 40em) {
+
+	.codrops-icon span {
+		display: none;
+	}
+
+	.related {
+		font-size: 80%;
+	}
+
+}
