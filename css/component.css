@@ -56,7 +56,7 @@ html, body, .container, .header {
 
 .title h1 {
 	padding: 0 0 0.2em;
-	color: #fff;
+	color: #6DA7C5;
 	font-weight: 800;
 	font-size: 3.25em;
 	margin: 0 auto;
@@ -682,12 +682,12 @@ button.trigger span::before {
 	font-style: italic;
 	font-weight: 400;
 	padding: 0 0 0.5em 0;
-	color: #516165;
+	color: #384861;
 }
 
 .intro-effect-side .header p {
 	opacity: 0;
-	color: #7b8d92;
+	color: #301A0C;
 	-webkit-transform: translateY(100px);
 	transform: translateY(100px);
 }
@@ -839,10 +839,10 @@ button.trigger span::before {
 }
 
 .intro-effect-sidefixed .title h1 {
-	font-family: 'Playfair Display', serif;
-	font-weight: 700;
+	font-family: 'Graduate', cursive;
+	/*font-weight: 700;*/
 	padding: 0 0 0.5em 0;
-	color: #585a66;
+	color: #301A0C;
 }
 
 .intro-effect-sidefixed .title p {
@@ -1040,13 +1040,13 @@ button.trigger span::before {
 }
 
 .intro-effect-grid .header h1 {
-	font-family: 'Playfair Display', serif;
+	font-family: 'Graduate', cursive;
 	font-weight: 700;
 	padding: 0 0 0.6em;
 }
 
 .intro-effect-grid.modify .header h1 {
-	color: #2d3b44;
+	color: #384861;
 }
 
 .intro-effect-grid .header p {
@@ -1104,8 +1104,8 @@ button.trigger span::before {
 }
 
 .intro-effect-grid .grid li h2 {
-	font-family: 'Playfair Display', serif;
-	font-weight: 700;
+	font-family: 'Graduate', cursive;
+	/*font-weight: 700;*/
 	padding-bottom: 0.4em;
 	margin: 1em;
 	color: #fff;
@@ -1127,62 +1127,26 @@ button.trigger span::before {
 	top: 0;
 	left: 0;
 	height: 50%;
-	width: 25%;
-	background-image: url(../img/thumbs/1.jpg);
+	width: 50%;
+	background-image: url(../img/thumbs/personal.jpg);
 }
 
 .intro-effect-grid .grid li:nth-child(2) {
 	top: 50%;
 	left: 0;
 	height: 50%;
-	width: 25%;
-	background-image: url(../img/thumbs/2.jpg);
+	width: 50%;
+	background-image: url(../img/thumbs/research.jpg);
 }
 
 .intro-effect-grid .grid li:nth-child(3) {
 	top: 0;
-	left: 25%;
+	left: 50%;
 	height: 100%;
-	width: 25%;
-	background-image: url(../img/thumbs/5.jpg);
-}
-
-.intro-effect-grid .grid li:nth-child(4) {
-	top: 0;
-	left: 50%;
-	height: 50%;
 	width: 50%;
-	background-image: url(../img/thumbs/4.jpg);
+	background-image: url(../img/thumbs/digital-delta.jpg);
 }
 
-.intro-effect-grid .grid li:nth-child(5) {
-	top: 50%;
-	left: 50%;
-	height: 50%;
-	width: 25%;
-	background-image: url(../img/thumbs/8.jpg);
-	-webkit-transform: scale(0);
-	transform: scale(0);
-	opacity: 0;
-}
-
-.intro-effect-grid.modify .grid li:nth-child(5) {
-	-webkit-transform: scale(1);
-	transform: scale(1);
-	opacity: 1;
-}
-
-.intro-effect-grid .grid li:nth-child(5) h2 {
-	color: #de8721;
-}
-
-.intro-effect-grid .grid li:nth-child(6) {
-	top: 50%;
-	left: 75%;
-	height: 50%;
-	width: 25%;
-	background-image: url(../img/thumbs/6.jpg);
-}
 
 .intro-effect-grid.modify .bg-img {
 	-webkit-transform: translateY(-100%);
