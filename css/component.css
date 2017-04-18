@@ -839,7 +839,7 @@ button.trigger span::before {
 }
 
 .intro-effect-sidefixed .title h1 {
-	font-family: 'Graduate', cursive;
+	font-family: 'Gruppo', cursive;
 	/*font-weight: 700;*/
 	padding: 0 0 0.5em 0;
 	color: #301A0C;
@@ -1040,7 +1040,7 @@ button.trigger span::before {
 }
 
 .intro-effect-grid .header h1 {
-	font-family: 'Graduate', cursive;
+	font-family: 'Gruppo', cursive;
 	font-weight: 700;
 	padding: 0 0 0.6em;
 }
@@ -1104,7 +1104,7 @@ button.trigger span::before {
 }
 
 .intro-effect-grid .grid li h2 {
-	font-family: 'Graduate', cursive;
+	font-family: 'Gruppo', cursive;
 	/*font-weight: 700;*/
 	padding-bottom: 0.4em;
 	margin: 1em;
