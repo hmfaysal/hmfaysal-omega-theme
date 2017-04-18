@@ -1,0 +1,65 @@
+/* color palette */
+/*
+Old :
+Link : #cf7000
+content : #2e3337
+header modify: #2d3b44
+header p : #4c6270
+
+
+New :
+Navy Blue #18121E
+Gunmetal  #233237
+Rusty Red #984B43
+Warm Yellow #EAC67A
+
+Modern:
+Screen:      #C5C1C0
+Steel:         #0A1612
+Denim:      #1A2930
+Marigold: #F7CE3E
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,800|Lora:400italic|Playfair+Display:700);
+@font-face {
+	font-weight: normal;
+	font-style: normal;
+	font-family: 'codropsicons';
+	src:url('../fonts/codropsicons/codropsicons.eot');
+	src:url('../fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/codropsicons/codropsicons.woff') format('woff'),
+		url('../fonts/codropsicons/codropsicons.ttf') format('truetype'),
+		url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');
+}
+
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.clearfix:before, .clearfix:after { display: table; content: ''; }
+.clearfix:after { clear: both; }
+
+
+body {
+	background: #233237;
+	color: #EAC67A;
+	font-weight: 400;
+	font-size: 22px;
+	line-height: 1.5;
+	font-family: 'Raleway', Arial, sans-serif;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	overflow-x: hidden;
+}
+
+.demo-6 {
+	background: #18121E;
+}
+
+
+a {
+	outline: none;
+	color: #984B43;
+	text-decoration: none;
+}
+
+a:hover, a:focus {
+	color: #69606b;
+}
