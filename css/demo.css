@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Gruppo|Montserrat|Lora');
+@font-face {
+	font-weight: normal;
+	font-style: normal;
+	font-family: 'codropsicons';
+	src:url('..	/fonts/codropsicons/codropsicons.eot');
+	src:url('../fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/codropsicons/codropsicons.woff') format('woff'),
+		url('../fonts/codropsicons/codropsicons.ttf') format('truetype'),
+		url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');
+}
+
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.clearfix:before, .clearfix:after { display: table; content: ''; }
+.clearfix:after { clear: both; }
+
+
+body {
+	background: #fff;
+	color: #69606b;
+	font-weight: 400;
+	font-size: 22px;
+	line-height: 1.5;
+	font-family: 'Montserrat', sans-serif;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	overflow-x: hidden;
+}
+
+.demo-6 {
+	background: #f1f1f1;
+}
+
+
+a {
+	outline: none;
+	color: #384861;
+	text-decoration: none;
+}
+
+a:hover, a:focus {
+	color: #6DA7C5;
+}
+
+
+@media screen and (max-width: 40em) {
+
+	.codrops-icon span {
+		display: none;
+	}
+
+	.related {
+		font-size: 80%;
+	}
+
+}
