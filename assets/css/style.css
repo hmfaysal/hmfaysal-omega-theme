@@ -1,13 +1,5 @@
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700);
-@import url(http://fonts.googleapis.com/css?family=Merriweather:400,300,400italic,700);
-/*!
- * HMFAYSAL OMEGA v1.0.0
- * Responsive Jekyll Theme
- *
- * Copyright 2014 Hossain Mohd Faysal
- *
- * Designed and built with all the love in the world by @hmfaysal
- */
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Raleway');
+
 /* ------------------------ */
 /* GENERAL TYPOGRAPHY RULES */
 /* ------------------------ */
@@ -358,8 +350,17 @@ pre {
 /* ------------ */
 /* THEME COLORS */
 /* ------------ */
+
+/* Colour palette from  https://www.canva.com/color-palette/
+based on the background image
+Orange Red #DB2E04
+Sandy Brown #FBBC36
+Saddle Brown #41120C
+Maroon #1F0704
+*/
+
 body {
-  color: #424143;
+  color: #1F0704;
 }
 h1,
 h2,
@@ -371,31 +372,31 @@ h6,
   color: #1e1e1f;
 }
 a {
-  color: #807f83;
-  border-color: #807f83;
+  color: #41120c;
+  border-color: #41120c;
 }
 a:hover {
-  color: #67666a;
-  border-color: #67666a;
+  color: #FBBC36;
+  border-color: #FBBC36;
 }
 blockquote:before {
-  background: #807f83;
+  background: #FBBC36;
 }
 .post-title {
-  color: #807f83;
+  color: #720F04;
 }
 .post-info {
-  color: #67666a;
+  color: #FBBC36;
 }
 .pagination {
-  color: #67666a;
+  color: #720F04;
 }
 .bordered-top:after,
 .bordered-bottom:after {
   background-color: #cbc9cf;
 }
 .social-icons a {
-  color: #cbc9cf;
+  color: #DB2E04;
   background-color: rgba(255, 255, 255, 0.35);
 }
 .social-icons a:hover {
