@@ -1,6 +1,6 @@
-title:            Digital Dissident
-description:      "Diary of a digital dissident"
-logo:             omikron.png
+title: "Dr. Bruce Becker"
+description:      "Get a second opinion..."
+logo: personal-logo.png
 disqus_shortname: brucellino
 # Assign a default image for your site's header and footer
 default_bg:       default-bg.jpg
@@ -14,7 +14,7 @@ animated_fins:	  true
 fin_color:        "255,255,255"
 # Change url to your domain. Leave localhost server or blank when working locally.
 #url:              http://brucellino.github.io
-url:             https://localhost:4000
+url:             http://localhost:4000
 site.owner.name: Bruce Becker
 # Owner/author information
 owner:
