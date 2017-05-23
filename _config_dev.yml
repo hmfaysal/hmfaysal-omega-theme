@@ -51,7 +51,22 @@ links:
   - title: Tags
     url: /tags
   - title: Bruce who?
-    url: /Bruce-Becker
+    url: /about
+
+home_links:
+  - title: Home
+    url: https://brucellino.github.io
+    internal: false
+  - title: About
+    url: /about
+    internal: true
+  - title: Articles
+    url: /articles
+    internal: true
+  - title: Todo
+    url: /writing-list
+    internal: true
+
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    Africa/Johannesburg

@@ -50,12 +50,18 @@ links:
     url: /about
 
 home_links:
+  - title: Home
+    url: https://brucellino.github.io
+    internal: false
   - title: About
     url: /about
-  - title: Presentations
-    url: /presentations
-  - title: projects
-    url: /projects
+    internal: true
+  - title: Articles
+    url: /articles
+    internal: true
+  - title: Todo
+    url: /writing-list
+    internal: true
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    Africa/Johannesburg
