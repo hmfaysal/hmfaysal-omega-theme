@@ -13,7 +13,7 @@ animated_fins:	  true
 # Specify the fin color in RGB value
 fin_color:        "255,255,255"
 # Change url to your domain. Leave localhost server or blank when working locally.
-url:              http://brucellino.github.io/blog
+url:              https://brucellino.github.io/blog
 #url:             http://localhost:4000
 site.owner.name: Bruce Becker
 # Owner/author information
@@ -21,10 +21,7 @@ owner:
   name:           Bruce Becker
   avatar:         bruce-becker.jpg
   email:          brucellino@gmail.com
-  # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
   description:    'Bruce Becker: ex-physicist and volleyball freak; quasi socialist; doubledad; not-quite-hacker; grid guy; open everything.'
-  # Social networking links used in footer. Update and remove as you like.
-  # To register at HMFAYSAL SOCIAL, visit http://social.hmfaysal.tk
   twitter:        brusisceddu
   facebook:       brucellino
   github:         brucellino
