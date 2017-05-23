@@ -8,51 +8,29 @@
 {% else %}
 <header id="masthead" class="blog-background overlay align-center align-middle animated from-bottom"  style="background-image: url({{ site.url }}/images/{{ site.default_bg }})" itemscope itemtype="http://schema.org/Organization">
 {% endif %}
-{% if site.description %}
     <div class="inner">
         <div class="container">
             <a class="brand light" href="{{ site.url }}" role="banner" itemprop="url">
-
-                {% if site.logo %}<img itemprop="logo" src="{{ site.url }}/images/{{ site.logo }}" alt="{{ site.title }} Logo" />{% endif %}
-
+                <img itemprop="logo" src="{{ site.url }}/images/{{ site.logo }}" alt="{{ site.title }} Logo" />
             <h1 class="blog-title light" itemprop="name">
                 {{ site.title }}
             </h1>
-
             </a>
-            <h2 class="blog-description light bordered bordered-top" itemprop="description">
-                {{ site.description }}
-            </h2>
+            <ul class="menu-items nav nav-pills nav-stacked">
+              <li role="presentation"><a href="{{ site.url }}">Home</a></li>
+              <li role="presentation"><a href="{{ site.url }}/presentations">Presentations</a></li>
+              <li role="presentation"><a href="{{ site.url }}/projects">Projects</a></li>
+            </ul>
         </div>
     </div>
-    {% else %}
-    <div class="inner">
-        <div class="container">
-            <a class="brand" href="{{ site.url }}" role="banner" itemprop="url">
-
-                    <img itemprop="logo" src="{{ site.url }}/images/{{ site.logo }}" alt="{{ site.title }} Logo" />
-
-            <h1 class="blog-title light" itemprop="name">
-                {{ site.title }}
-            </h1>
-
-            </a>
-        </div>
-    </div>
-    {% endif %}
 </header>
-
-
-
 <div id="main" class="content" role="main" itemprop="mainContentOfPage">
     <div class="container">
-        <div class="row">
             <div class="page-body" itemprop="description">
             {{ content }}
-            </div>
-        </div>
-    </div>
-</div>
+          </div> <!-- page-body -->
+    </div> <!-- container -->
+</div> <!-- main -->
     {% include footer.html %}
 
 {% include scripts.html %}

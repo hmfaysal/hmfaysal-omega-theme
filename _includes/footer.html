@@ -13,11 +13,6 @@
                     <i class="icon-twitter"></i>
                 </a>
             </li>{% endif %}
-            {% if site.owner.facebook %}<li>
-                <a href="http://facebook.com/{{ site.owner.facebook }}" data-toggle="tooltip" title="{{ site.owner.name}} on Facebook" target="_blank">
-                    <i class="icon-facebook"></i>
-                </a>
-            </li>{% endif %}
             {% if site.owner.google_plus %}<li>
                 <a href="{{ site.owner.google_plus }}" data-toggle="tooltip" title="{{ site.owner.name}} on Google+" target="_blank">
                     <i class="icon-google-plus"></i>
@@ -47,9 +42,7 @@
             <p class="copy-text">
                 <a href="{{ site.url }}/about/">{{ site.owner.name }}</a> &copy; {{ site.time | date: '%Y' }} &bull; All rights reserved.
             </p>
-            <p class="copy-text">
-                Powered by <a href="http://jekyllrb.com">Jekyll</a>
-            </p>
+
             <ul class="menu-items">
             {% for link in site.links %}
             <li>

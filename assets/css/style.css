@@ -4,6 +4,9 @@
 /* GENERAL TYPOGRAPHY RULES */
 /* ------------------------ */
 /* - Body typography - */
+content {
+  padding: 0;
+}
 body {
   -webkit-font-smoothing: antialiased;
   font-size: 18px;
@@ -396,11 +399,11 @@ blockquote:before {
   background-color: #cbc9cf;
 }
 .social-icons a {
-  color: #DB2E04;
-  background-color: rgba(255, 255, 255, 0.35);
+  color: #720F04;
+  background-color: #DB2E04;
 }
 .social-icons a:hover {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: #FBBC36;
 }
 .overlay:after {
   background-color: rgba(0, 0, 0, 0.65);
@@ -445,7 +448,7 @@ html {
   display: table;
   text-align: center;
   width: 100%;
-  height: 33%;
+  height: 45%;
   padding: 24px 0;
   margin-bottom: 36px;
   box-sizing: border-box;
@@ -638,7 +641,7 @@ html {
     background-attachment: scroll;
   }
 }
-/* - Inner allignment - */
+/* - Inner alignment - */
 .inner {
   display: table-cell;
   vertical-align: top;
@@ -659,6 +662,7 @@ html {
 /* - Overlay - */
 .overlay:after {
   content: "";
+  padding: 20px;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -677,9 +681,9 @@ html {
   display: block;
   position: absolute;
   height: 1px;
-  width: 80px;
+  width: 120px;
   left: 50%;
-  margin-left: -40px;
+  /*margin-left: -40px;*/
 }
 .bordered-top:after {
   top: 0;
@@ -1060,6 +1064,10 @@ a [class*=" icon-"] {
 .dropdown-submenu:hover > a > [class^="icon-"],
 .dropdown-submenu:hover > a > [class*=" icon-"] {
   background-image: none;
+}
+.nav>li>a:focus, .nav>li>a:hover {
+  background-color: #DB2E04;
+  color: #FBBC36;
 }
 /* keeps Bootstrap styles with and without icons the same */
 .btn [class^="icon-"].icon-large,
@@ -3234,14 +3242,43 @@ img.mfp-img {
 ::-webkit-scrollbar-thumb:window-inactive {
     background: rgba(0,0,0,0.2);
 }
+/* nav */
+.nav-items {
+  margin: 0;
+  padding: 0 0 48px;
+  font-family: Playfair Display;
+  list-style-type: none;
+  font-style:
+}
+.nav-items li {
+  display: inline-block;
+  color: #DB2E04;
+}
+.nav-items a{
+
+}
+.nav-items a:hover {
+  background-color: #FBBC36;
+}
+
 /* - Menu - */
 .menu-items {
   margin: 0;
-  padding: 0 0 48px;
+  padding: 1.5em;
   list-style-type: none;
+  text-align: center;
 }
 .menu-items li {
   display: inline-block;
+}
+.menu-items a {
+  color: #DB2E04;
+}
+.menu-items a:hover{
+  color: #fbbc36;
+}
+.nav a: hover {
+  background-color: #DB2E04;
 }
 .notice {
     padding: .5em 1em;
