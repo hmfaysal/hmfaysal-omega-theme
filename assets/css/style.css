@@ -1758,7 +1758,10 @@ img.mfp-img {
 .nav-items a:hover {
   background-color: #FBBC36;
 }
-
+.nav>li>a:focus, .nav>li>a:hover {
+  background-color: #FBBC36;
+  color: #DB2E04;
+}
 /* - Menu - */
 .menu-items {
   margin: 0;

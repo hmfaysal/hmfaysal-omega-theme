@@ -83,7 +83,7 @@ gems:
   - jemoji
   - jekyll-feed
   - jekyll-paginate
-kramdown:
+syntax_highlighter_opts:
   auto_ids: true
   footnote_nr: 1
   entity_output: as_char
