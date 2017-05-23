@@ -1,6 +1,6 @@
-title:            Digital Dissident
-description:      "Diary of a digital dissident"
-logo:             omikron.png
+title: "Dr. Bruce Becker"
+description:      "Get a second opinion..."
+logo: personal-logo.png
 disqus_shortname: brucellino
 # Assign a default image for your site's header and footer
 default_bg:       default-bg.jpg
@@ -8,10 +8,6 @@ search:           true
 share:            true
 # Read Time is a calculator tp provide post read-time based on word count. Usage is recommended.
 readtime:         true
-# Turn on or off the fin animations in the header and footer
-animated_fins:	  true
-# Specify the fin color in RGB value
-fin_color:        "255,255,255"
 # Change url to your domain. Leave localhost server or blank when working locally.
 url:              https://brucellino.github.io/blog
 #url:             http://localhost:4000
@@ -23,14 +19,11 @@ owner:
   email:          brucellino@gmail.com
   description:    'Bruce Becker: ex-physicist and volleyball freak; quasi socialist; doubledad; not-quite-hacker; grid guy; open everything.'
   twitter:        brusisceddu
-  facebook:       brucellino
   github:         brucellino
   stackexchange:  brucellino
   linkedin:       brucellino
   instagram:
   flickr:         brucellino
-  tumblr:         brucellino
-
   # For Google Authorship https://plus.google.com/authorship
   google_plus:    https://plus.google.com/u/0/+BruceBecker
 
@@ -61,7 +54,7 @@ timezone:    Africa/Johannesburg
 future:      true
 highlighter: rouge
 markdown:    kramdown
-paginate:    3
+paginate:    5
 paginate_path: "page:num"
 
 # https://github.com/mojombo/jekyll/wiki/Permalinks
