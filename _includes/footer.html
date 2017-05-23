@@ -65,33 +65,4 @@
         </ul>
         </div>
     </div>
-    {% if site.animated_fins %}
-        <div class="decor-wrapper">
-            <svg id="footer-decor" class="decor top" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none">
-
-                <path class="large left" d="M0 0 L50 50 L0 100" fill="rgba({{ site.fin_color }}, .1)"></path>
-                <path class="large right" d="M100 0 L50 50 L100 100" fill="rgba({{ site.fin_color }}, .1)"></path>
-
-                <path class="medium left" d="M0 0 L50 50 L0 66.6" fill="rgba({{ site.fin_color }}, .3)"></path>
-                <path class="medium right" d="M100 0 L50 50 L100 66.6" fill="rgba({{ site.fin_color }}, .3)"></path>
-
-                <path class="small left" d="M0 0 L50 50 L0 33.3" fill="rgba({{ site.fin_color }}, .5)"></path>
-                <path class="small right" d="M100 0 L50 50 L100 33.3" fill="rgba({{ site.fin_color }}, .5)"></path>
-
-                <path d="M0 0 L50 50 L100 0 L0 0" fill="rgba(255,255,255, 1)"></path>
-
-                <path d="M48 48 L50 51 L52 48 L48 48" fill="rgba(255,255,255, 1)"></path>
-
-            </svg>
-        </div>
-    {% else %}
-        <div class="decor-wrapper">
-            <svg id="footer-decor" class="decor top" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none">
-                <path d="M0 0 L50 50 L100 0 L0 0" fill="rgba(255,255,255, 1)"></path>
-
-                <path d="M48 48 L50 51 L52 48 L48 48" fill="rgba(255,255,255, 1)"></path>
-
-            </svg>
-        </div>
-    {% endif %}
 </footer>
