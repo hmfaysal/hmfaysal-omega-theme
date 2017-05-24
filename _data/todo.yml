@@ -5,3 +5,9 @@
                           I would like to put in some styles and rework my Blog.
   done: true
   date: 23-05-2017
+
+- title: Flattening the Stack
+  description: |
+                          Now that we're all cloudy, what is the minimum stack that sites can deploy in order to maintain interoperability ?
+  done: false
+  date: 
