@@ -18,7 +18,7 @@
             </a>
             <ul class="menu-items nav nav-pills nav-stacked">
               {% for link in site.home_links %}
-              <li role="presentation">{% if link.internal %}<a href="{{site.url}}/{{ link.url }}" {% else %}<a href="{{ link.url }}" {% endif %}>{{ link.title }}</a></li>
+              <li role="presentation">{% if link.internal %}<a href="{{site.url}}/{{ link.url }}" {% else %}<a href="{{ link.url }}" {% endif %}><i class="fa fa-{{ link.icon }}"></i> {{ link.title }}</a></li>
               {% endfor %}
             </ul>
         </div>

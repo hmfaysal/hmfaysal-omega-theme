@@ -7,14 +7,13 @@
         <a class="brand light" href="{{ site.url }}" role="banner" itemprop="url">
 
                 {% if site.logo %}<img itemprop="logo" src="{{ site.url }}/images/{{ site.logo }}" alt="{{ site.title }} Logo" />{% endif %}
-
-            <h1 class="blog-title light" itemprop="name">
-                {{ site.title }}
+            <h1 class="post-title light" itemprop="name">
+                {{ page.title }}
             </h1>
 
             </a>
             {% if page.headline %}
-            <h2 class="blog-description light bordered bordered-top" itemprop="description">
+            <h2 class="post-description " itemprop="description">
                 {{ page.headline }}
             </h2>
             {% endif %}

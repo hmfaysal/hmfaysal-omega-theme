@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Raleway');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Raleway|Permanent+Marker');
 
 /* ------------------------ */
 /* GENERAL TYPOGRAPHY RULES */
@@ -18,10 +18,12 @@ h3,
 h4,
 h5 {
   margin: 0;
+  color: #41120C;
 }
 h1 {
   font-size: 36px;
   font-family: Playfair Display;
+  color: #41120C;
   line-height: 48px;
   margin-bottom: 24px;
 }
@@ -30,6 +32,7 @@ h1 small {
 }
 h2 {
   font-size: 24px;
+  color: #41120C;
   line-height: 24px;
   margin-top: 24px;
   margin-bottom: 12px;
@@ -372,7 +375,7 @@ h4,
 h5,
 h6,
 .lead {
-  color: #1e1e1f;
+  color: #41120C;
 }
 a {
   color: #41120c;
@@ -478,6 +481,7 @@ html {
   padding-top: 12px;
   margin-top: 12px;
   font-size: 18px;
+
 }
 #main {
   position: relative;
@@ -505,6 +509,11 @@ html {
   margin-bottom: 12px;
   padding-bottom: 12px;
 }
+.post-description {
+  font-family: 'Permanent Marker', cursive;
+}
+
+
 /* - Post info - */
 .post-info {
   margin-bottom: 24px;
@@ -533,7 +542,7 @@ html {
 }
 /* - Post Share - */
 .post-share {
-  margin-bottom: 48px;
+  margin-bottom: 36px;
 }
 /* - Post Author - */
 .post-author {
@@ -547,7 +556,7 @@ html {
 /* - Post Avatar - */
 .post-avatar {
   max-width: 150px;
-  margin: 0 auto 12px;
+  margin: 0 auto 10px;
 }
 /* -  Pagination - */
 .pagination {
@@ -678,11 +687,11 @@ html {
 .bordered-top:after,
 .bordered-bottom:after {
   content: '';
-  display: block;
-  position: absolute;
-  height: 1px;
+  /*display: center;
+  position: absolute;*/
+  height: 2px;
   width: 120px;
-  left: 50%;
+  /*left: 50%;*/
   /*margin-left: -40px;*/
 }
 .bordered-top:after {
@@ -719,12 +728,12 @@ html {
 }
 .social-mini {
   margin: 0;
-  padding: 0 0 24px;
+  padding: 0 0 10px;
   list-style-type: none;
 }
 .social-mini li {
   display: inline-block;
-  font-size: 16px;
+  font-size: 20px;
   padding: 0 12px;
 }
 /* - Responsive videos -*/
@@ -772,6 +781,7 @@ h4,
 h5,
 h6 {
   font-family: 'Playfair Display', sans-serif;
+  color:
 }
 h1.lighter,
 h2.lighter,
