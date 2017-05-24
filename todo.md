@@ -15,7 +15,7 @@ I often get <i class="fa fa-lightbulb-o"></i> ideas popping into my head. At the
 {% unless item.done %}
   <li><i class="fa-li fa fa-lightbulb-o"></i> <strong>{{ item.title }}</strong> - {{ item.description }}</li>
 {% else %}
-  <li><i class="fa-li fa fa-check-square-o"></i> {{ item.title }} - {{ item.description }} ({{ item.date | date: '%b %d, %Y'}})</li>
+  <li><i class="fa-li fa fa-check-square-o"></i> <strong>{{ item.title }}</strong> - {{ item.description }} ({{ item.date | date: '%b %d, %Y'}})</li>
 {% endunless %}
 {% endfor %}
 </ul>
