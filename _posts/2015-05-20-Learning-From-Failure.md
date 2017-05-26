@@ -2,11 +2,11 @@
 layout: post
 title: Learning from failure
 description: When someone asks you the question that you've been trying to answer for years.
-headline: Question everything ! ...  but also, answer sometimes.
+headline: Question everything ! ...  but also, answer questions sometimes.
 category: blog
-tags: [SAGrid, failure, thesituation]
+tags: [SAGrid, failure, thesituation, history]
 image:
-  feature:
+  feature: plan-b.jpg
 comments: true
 ---
 
