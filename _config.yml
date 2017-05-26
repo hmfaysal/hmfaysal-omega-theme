@@ -76,6 +76,7 @@ permalink: pretty
 gems:
   - jemoji
   - jekyll-feed
+  - jekyll-paginate
 syntax_highlighter_opts:
   auto_ids: true
   footnote_nr: 1
