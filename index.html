@@ -49,11 +49,11 @@ tags: [Bruce, Becker, personal, computing, science, applications, blog, Catania,
 	<div class="pagination text-center">
 		<span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
 		{% if paginator.previous_page %}
-	    <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
+	    <a href="{{site.url}}/{{ paginator.previous_page_path }}" class="previous">Previous</a>
 	  {% endif %}
 
 	  {% if paginator.next_page %}
-	    <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+	    <a href="{{site.url}}/{{ paginator.next_page_path }}" class="next">Next</a>
 	  {% else %}
 	    <span class="next ">Next</span>
 	  {% endif %}
