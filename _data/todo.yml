@@ -15,3 +15,8 @@
 - title: Invasive species
   description: |
                           So often, people or projects come in with the aim of "helping" African initiatives to "develop", ignoring the fragile ecosystem that has been already created. I'd like to investigate the analogy here with things like bacteria colonies.
+ done: false
+
+- title: The Missing Middle
+  description: |
+			  We are building e-Infrastructure, not for ourselves, but for user communities. Who decides what is good architecture, what are the right tools, how we work together ? Let's suppose for a moment that there is too much top-down policy pressure and imagine what a good strong "middle" could bring to the ecosystem. What if e-Infrastructure engineers could organise and support themselves, for the greater good ? 
