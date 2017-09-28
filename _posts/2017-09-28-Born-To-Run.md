@@ -109,7 +109,7 @@ We already did step 3 above and I already had some of the prerequisites installe
 And now to start it :
 
 {% highlight bash %}
-HUBOT_SLACK_TOKEN=xoxb-247524119120-dFDSDrv9WvFJizpIbfSuByNc ./bin/hubot --adapter slack
+HUBOT_SLACK_TOKEN=xoxb-hahaha ./bin/hubot --adapter slack
 npm WARN hubot-help@0.2.2 requires a peer of coffee-script@^1.12.6 but none was installed.
 [Thu Sep 28 2017 11:20:36 GMT+0200 (CEST)] INFO Logged in as the_boss of bots-bots-bots
 [Thu Sep 28 2017 11:20:38 GMT+0200 (CEST)] INFO Slack client now connected
