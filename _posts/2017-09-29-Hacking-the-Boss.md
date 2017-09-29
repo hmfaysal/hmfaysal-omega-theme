@@ -3,7 +3,7 @@ layout: post
 title: Hacking the Boss
 description: > 
               Some notes on building a slack bot to help out our team. (Part II)
-headline: Born to run
+headline: Born to run (Part II)
 category: blog
 tags:
   - bot
