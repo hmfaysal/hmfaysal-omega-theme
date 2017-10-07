@@ -1,15 +1,14 @@
 ---
 layout: post
-type: status
-title: "Welcome to Velocity Vortex"
-description: Introduction to our new Competition
-headline: 
-modified: 2016-09-10
-category: status
+title: "Welcome to Velocity Vortex"    # Title of the post
+description:        # Description of the post, used for Facebook Opengraph & Twitter
+headline: Markdown Syntax Test      # Will appear in bold letters on top of the post
+modified: 2016-9-10                 # Date
+category: personal
+tags: []
 image: 
-  feature: 
 comments: true
-mathjax: 
+mathjax:
 ---
 "Welcome to Velocity Vortex"
 
