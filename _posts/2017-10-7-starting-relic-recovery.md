@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Starting Relic Recovery"    # Title of the post
-description:        # Description of the post, used for Facebook Opengraph & Twitter
+title: "Starting Relic Recovery"       # Title of the post
+description:       # Description of the post, used for Facebook Opengraph & Twitter
 headline: Markdown Syntax Test      # Will appear in bold letters on top of the post
-modified: 2017-10-7                 # Date
+modified: 17-10-7                 # Date
 category: personal
 tags: []
 image: 
