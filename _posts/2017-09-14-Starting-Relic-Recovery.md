@@ -1,8 +1,8 @@
 ---
 layout: post
 type: status
-title: "Starting Relic Recovery"
-description: 
+title: "Starting Recovery Relic"
+description: Introduction to our new Competition
 headline: 
 modified: 2017-09-14
 category: status
