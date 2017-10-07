@@ -1,13 +1,11 @@
 ---
 layout: post
 type: status
-title: "Starting Relic Recovery"
-description: 
-headline: 
-modified: 2017-09-14
-category: status
-image: 
-  feature: 
+title: "Sample Status Post"
+description: "This is a sample status"
+category: Sample-Posts
+tags: [sample post, status]
+imagefeature: picture-10.jpg
 comments: true
 mathjax: 
 ---
