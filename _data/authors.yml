@@ -1,15 +1,11 @@
 default_author:
-  name:           Your Name
-  picture:        your-photo.jpg
-  email:          your@email.com
+  name:           Imperial Robotics
+  picture:        GroupPicture.JPG
+  email:          semimperialrobotics@gmailcom
   # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
-  description:    Some Details about yourself
+  description:    Dallas, TX FTC Team 3734
   # Social networking links used in footer. Update and remove as you like.
-  twitter:
-  facebook:
-  github:
-  linkedin:
-  instagram:
-  tumblr:
+  twitter: imperialrob3734
+  instagram: imperialrob3734
   # For Google Authorship https://plus.google.com/authorship
   google_plus:    "http://plus.google.com/123123123123132123"
