@@ -1,14 +1,17 @@
 ---
 layout: post
 type: status
-title: "Sample Status Post"
-description: "This is a sample status"
-category: Sample-Posts
-tags: [sample post, status]
-imagefeature: picture-10.jpg
+title: "Welcome to Velocity Vortex"
+description: 
+headline: 
+modified: 2016-09-10
+category: status
+image: 
+  feature: 
 comments: true
 mathjax: 
 ---
+
 9/14/17
 
 
