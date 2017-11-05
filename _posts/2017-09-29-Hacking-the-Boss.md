@@ -14,7 +14,6 @@ image:
   attribution: null
 comments: true
 mathjax: false
-discourse: true
 ---
 
 # Walking before you're born to run

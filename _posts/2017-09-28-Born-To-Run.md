@@ -14,14 +14,13 @@ image:
   attribution: null
 comments: true
 mathjax: false
-discourse: true
 ---
 
-# A bot to help our team get :poop: done.
+# A bot to help our team get :poop: done
 
-Let's cut to the chase: getting things done requires a sidekick these days. 
+Let's cut to the chase: getting things done requires a sidekick these days.
 I don't know about you guys, but I used to get upwards of a hundred reminders a week via email telling me to do thing. 
-These reminders come at times which I have no control over, interrupt me and usually always get put in the "do this later" bin. 
+These reminders come at times which I have no control over, interrupt me and usually always get put in the "do this later" bin.
 Worse, most of  these tasks were pretty banal and ripe for automation - some of them were "meta-tasks" like, "remember to remind person of thing they have to do". 
 Sure, co-ordination is necessary, but why does a _human_ have to do it ? 
 Surely, I should  be able to hand off these cat-herding exercises to a bot and focus on the actual problems at hand, not the organisation and counting of such. 
