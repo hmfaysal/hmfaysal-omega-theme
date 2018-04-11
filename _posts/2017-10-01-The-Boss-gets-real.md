@@ -11,7 +11,7 @@ tags:
   - notes
   - sitrep
 image:
-  feature: the_boss_cover.jpg
+  feature: images/the_boss_cover.jpg
   attribution: null
 comments: true
 mathjax: false
