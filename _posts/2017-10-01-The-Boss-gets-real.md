@@ -20,7 +20,7 @@ mathjax: false
 # Time to get real
 
 So, we've [created a slack bot based on Hubot]({% post_url 2017-09-28-Born-To-Run %}), and [written a deployment scheme]({%post_url 2017-09-29-Hacking-the-Boss %}) which is  [12 factor-y](http://12factor.net). The bot comes with a few batteries included, such as common scripts for finding pictures of cats and throwing pugs at one another, which is great and all. But we came here to chew bubblegum and get :poop: done - and we're all out of bubblegum !
-<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/eYwHuNOBcqNsA" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/eYwHuNOBcqNsA" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
 
 We need to start giving this dude some things to do - things which are currently taking up _our_ human time. That's why we started this whole thing in the first place: so that we'd spend less time on boring admin and more time rocking and hacking.
 
