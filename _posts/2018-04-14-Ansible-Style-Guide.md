@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "e-Infrastructure Components that are Built to Last"
-description: ""
-headline: "Improving the reusability of infrastructure components"
+description: "Green is the New Black"
+headline: "Quality never goes out of style"
 category: blog
 tags:
   - community
@@ -19,7 +19,13 @@ comments: true
 mathjax: false
 ---
 
-**TL;DR :loudspeaker: We have started work on an [Ansible Style Guide](https://github.com/EGI-Foundation/Ansible-Style-Guide). We hope it will address some of the waste in our community, and ultimately improve the quality of our infrastructure**
+**TL;DR :loudspeaker:**
+
+----
+
+**We have started work on an [Ansible Style Guide](https://github.com/EGI-Foundation/Ansible-Style-Guide). We hope it will encourage re-use and collaboration in our community, increase the velocity of delivery, and ultimately improve the quality of our infrastructure**
+
+----
 
 - [The dark art of turning computers into science](#the-dark-art-of-turning-computers-into-science)
   - [Keeping pace, together](#keeping-pace--together)
@@ -38,25 +44,29 @@ mathjax: false
 
 # The dark art of turning computers into science
 
-Computing is pervasive in our modern society.
-There is almost no aspect of education, research or business which is _not_ in some way dependent on IT infrastructures and services - indeed many are coming to rely on these *entirely*.
-
-These infrastructures, which we have come to describe as **"e-Infrastructures"**, have to be _built_, and the way in which they are built and delivered informs aspects of their usability, fitness for purpose, scalability, sustainability, cost-effectiveness, and more.
-There are many ways to describe what e-Infrasructures are[^ECDef], but I like to think of it as:
+**"e-Infrastructures"** composed of many different ICT services underpin much of modern research activities.
+Despite their importance, they are rarely seen or interacted with directly by researchers themselves, which makes them difficult to talk about[^AskMyMom].
+Just like any other kind of research infrastructure however, they have to be _built_, and the way in which they are built and delivered informs aspects of their usability, fitness for purpose, scalability, sustainability, cost-effectiveness, and more.
+There are many ways to describe what e-Infrastructures are[^ECDef], but I like to think of it as:
 
 > **e-Infrastructures**: the dark art of turning computers into science.
 
-The tricky thing about e-Infrastructures is that you can't build them in isolation!
+There are of course as many ways to turn computers into science as there are computers (or scientists, for that matter) - but there's only so far you can get by yourself.
+At some point, you need to scale - either by accessing more computer resources, or by accessing more people through services which enable collaboration.
+This is where you start moving from doing research which needs computers, to research which needs infrastructures.
+This is a qualitatively different undertaking.
+
+The same thing that makes this research (and hence the e-Infrastructures which underpin them) so tricky also makes them powerful: **you can't do them in isolation.**
 Their value lies not in in their components, but in the _interaction_ between these components -- and the most important component in them has always been **people**.
 
 Now, if we want to wield the magic that turns computers into science, we'd best do it at a pace which research itself requires, preferably without breaking things.
-We've[^WhoIsWe] not been around long enough to see where "Move Fast and Break Things" leads eventually. Spoiler alert, it's not[^xkcd] good[^TheBook] (_ie_, everything is broken).
+We've[^WhoIsWe] not been around long enough to see where "Move Fast and Break Things" leads eventually. Spoiler alert, it's not[^xkcd] good[^TheBook] (_i.e._, everything is broken).
 
-Based purely on my own experience however, infrastructures often lag behind the pace of development of their components.
-This makes sense - there is always more rapid development at the edges of technology than at its centre.
-It's called the "Bleeding Edge"[^BleedingEdge] for a reason, though: that's where most of the pain is!
-There is perhaps a sweet spot in terms of proximity to the bleeding edge.
-We want to move fast enough for infrastructures to adopt relevant new technologies (before communities get fed up with the slow pace and branch off on their own), but not so fast that we break things.
+Based purely on my own experience however, infrastructures often lag considerably behind the pace of development of their components.
+This makes sense - there is always more rapid development at the edges of technology than at its centre; it's called the "Bleeding Edge"[^BleedingEdge] for a reason, after all: that's where most of the pain is!
+But why do we have to make a choice between a decaying, if stable infrastructure, and one which is so brittle that it hurts to use it?
+There is perhaps a sweet spot in terms of proximity to the bleeding edge - a situation where we can move fast enough for infrastructures to adopt relevant new technologies (before communities get fed up with the slow pace and branch off on their own), but not so fast that we break things.
+
 
 ## Keeping pace, together
 
@@ -99,7 +109,7 @@ as to what constitutes good style, and more importantly _what constitutes bad st
 
 Part of the security that comes with adopting a tool like Ansible[^CanNotMust] is the huge community that comes along with it.
 The fact that it is in use in so many different environments, with so many different goals and usage patterns, is in a way a vaccine against bias.
-This diversity can be channeled into some form of common understanding of what constitutes good style, and highlighting where the flexibility of the tool or language is being abused (as well as whether that abuse is justified).
+This diversity can be channelled into some form of common understanding of what constitutes good style, and highlighting where the flexibility of the tool or language is being abused (as well as whether that abuse is justified).
 
 Almost all languages have their linters[^ListOfLinters], and Ansible is no different.
 There are in fact two different style checkers for Ansible:
@@ -158,7 +168,7 @@ Found 3 roles matching your search:
 
 Uh-oh...
 
-Ok - but middleware components will be there, right?
+OK - but middleware components will be there, right?
 I'll save you a lot of frustration, dear reader - they are not.
 This is not to say that a lot of work has not been done in our community in writing roles for "domestic use".
 The tragedy is however that all this effort usually doesn't produce a result of sufficient quality and scope that it's reusable.
@@ -168,7 +178,6 @@ Now, this is usually a problem with the role metadata, meaning that either it's 
 
 For a role to be re-used, it has to be absolutely trustworthy, and this means putting some more effort into developing these infrastructure components, with a wider appreciation of it's benefit to the wider community.
 
-Furthermore, 
 All of these problems could be entirely avoided, and transparently to the developer, by slightly changing the environment and making the development process a little more frictionless.
 
 ## Solving the problem at the source
@@ -176,7 +185,7 @@ All of these problems could be entirely avoided, and transparently to the develo
 ### A better generator
 
 Ansible, like almost any good tool out there, provides a neat way to generate a skeleton for a new project: [`ansible-galaxy init`](http://docs.ansible.com/ansible/latest/reference_appendices/galaxy.html#create-roles).
-It's clear that many of the roles for EGI infrastructure that have been produced so far have not taken advantage of this, from the missing directories, files, *etc*, but even those that _have_ been generated with Ansible Galaxy have conflicting or missing metadata[^Typical], resulting in them failing to show up in the Galaxy search.
+It's clear that many of the roles for EGI infrastructure that have been produced so far have not taken advantage of this, from the missing directories, files, *etc.*, but even those that _have_ been generated with Ansible Galaxy have conflicting or missing metadata[^Typical], resulting in them failing to show up in the Galaxy search.
 
 **But why should we be fiddling about with metadata in the first place?**
 
@@ -199,22 +208,21 @@ Which now begs the question:
 
 There are two things we can do to improve both the re-usability of the role and the life of the developer:
 
-  - Write the tests first
-  - Generate appropriate test coverage along with the role skeleton
+- Write the tests first
+- Generate appropriate test coverage along with the role skeleton
 
-The former needs a whole post in infrastructure spec tests, which hopefully will come soon.
+The former needs a whole post in infrastructure spec tests, which is in the pipeline.
 For the latter, we can easily include at least a default [testing scenario with molecule](http://molecule.readthedocs.io/), as well as a [`.travis.yml`](https://docs.travis-ci.com) so that the role can have continuous integration.
 
+# Summary
 
-# Summary 
-
-This won't solve _all_ of our problems and certainly doesn't _guarantee_ re-use of existing roles, but laying this groundwork and making it easy to write solid, widely-applicable roles will help. Infrastructure components should be reliable, do what they says they do, satisfy the needs of the community rather than the individual, and not introduce any vulnerabilities!
+This won't solve _all_ of our problems and certainly doesn't _guarantee_ re-use of existing roles, but laying this groundwork and making it easy to write solid, widely applicable roles will help. Infrastructure components should be reliable, do what they says they do, satisfy the needs of the community rather than the individual, and not introduce any vulnerabilities!
 
 Stay tuned...
 
 # References and Footnotes
 
-[^xkcd]: See https://xkcd.com/1428/
+[^xkcd]: See [XKCD 1428](https://xkcd.com/1428/)
 [^TheBook]: See "Move Fast and Break Things: How Facebook, Google, and Amazon Cornered Culture and Undermined Democracy", by Jonathan Taplin
 [^IaC]: See the book "Infrastructure as Code: Managing Servers in the Cloud", by Keif Morris, ISBN-13 9781491924358
 [^SREBook]: See the Google [Site Reliability Book](https://landing.google.com/sre/book/index.html)
@@ -222,8 +230,9 @@ Stay tuned...
 [^WhoKnows]: I don't go so far as to say the "best" way, because for one thing that sounds like a strong opinion, and has the arrogance to assert that the current moment is special. Instead of instigating divisive opinions or hedging (by adding varied adjectives like "best known" or "current best"), I prefer to accept the position that what we lay out together through consensus will inevitably be incomplete, but will be better than what we have tried and failed at before.
 [^ECDef]: Let's just go with the [EC description](https://ec.europa.eu/digital-single-market/en/e-infrastructures)
 [^BleedingEdge]: Hayes, Thomas C. (21 March 1983). "Hope at Storage Technology". The New York Times. Retrieved 10 September 2013.
-[^ServiceComponent]: See https://wiki.egi.eu/wiki/Glossary_V3#Service_Component
+[^ServiceComponent]: See [the Service Component description in the EGI wiki](https://wiki.egi.eu/wiki/Glossary_V3#Service_Component)
 [^ListOfLinters]: A brief search threw up [@caramelomartins/awesome-linters](https://github.com/caramelomartins/awesome-linters) which more than illustrates the point, I think.
 [^Typical]: Typically missing OS support, or using the wrong tags for the operating systems.
 [^CanNotMust]: I don't mean to imply that this tool has been adopted by the _entire_ community, just that if people in our community _want_ to adopt it, then they can do so.
-[^others]: For ruby-based tools like [Chef](http://chef.io) or [Puppet](https://puppet.com) the situation is actually way better. Chef for example has a very powerful [food critic](http://www.foodcritic.io/). Compared to Ansible Lint's few rules, Food Critic is way ahead with over 100.
+[^others]: For ruby-based tools like [Chef](http://chef.io) or [Puppet](https://puppet.com) the situation is actually way better. Chef for example has a powerful [food critic](http://www.foodcritic.io/). Compared to Ansible Lint's few rules, Food Critic is way ahead with over 100.
+[^AskMyMom]: Just ask my mom or every other unsatisfied person who has asked me what I do for a living.
