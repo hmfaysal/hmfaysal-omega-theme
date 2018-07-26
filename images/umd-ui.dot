@@ -1,0 +1,32 @@
+digraph UMD_UI {   
+  umd [
+    shape=rectangle;
+    color="#720F04";
+    fontcolor="#720F04";
+    fontname="Permanent Marker";
+    fontsize="16";
+    label="Ansible Role :\nUMD";
+    margin=.3;
+  ]
+  voms_client [
+    shape=rectangle;
+    color="#720F04";
+    fontcolor="#720F
+    04;"
+    fontname="Permanent Marker";
+    fontsize="16";
+    label="Ansible Role: \nVOMS client";
+    margin=.3
+  ]
+  ui [
+    shape=rectangle;
+    color="#720F04";
+    fontcolor="#720F04;"
+    fontname="Permanent Marker";
+    fontsize="16";
+    label="Ansible Role: \nUser Interface";
+    margin=.3
+  ]
+  umd -> voms_client;
+  voms_client -> ui;
+}

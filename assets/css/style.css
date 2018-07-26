@@ -523,6 +523,7 @@ html {
 .post-body {
   padding-bottom: 36px;
   margin-bottom: 36px;
+  padding-left: 40px;
 }
 .post-template .post-body {
   padding-bottom: 36px;
@@ -1088,6 +1089,8 @@ figure {
     padding-bottom: 10px;
     margin: 0;
     *zoom: 1;
+    padding-top: 3.2em;
+    padding-bottom: 3.2em;
 }
 
 figure:before,figure:after {
@@ -1163,8 +1166,13 @@ svg:not(:root) {
     overflow: hidden;
 }
 figcaption {
-    padding-top: 10px;
-    text-align: center;
+    padding-top: 1.6em;
+    padding-bottom: 1.6em;
+    text-align: justify;
+    margin: auto;
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 0.8em;
+    max-width: 50%;
 }
 #disqus_thread {
     margin-top: 2em;

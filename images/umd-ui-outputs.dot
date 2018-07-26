@@ -1,0 +1,117 @@
+digraph UMD_UI {
+  dpi=100;
+  center=true;
+  umd [
+    shape=rectangle;
+    color="#720F04";
+    fontcolor="#720F04";
+    fontname="Permanent Marker";
+    fontsize="16";
+    label="Ansible Role:\nUMD";
+    margin=.3;
+  ];
+  apply_umd [
+    group=apply_role;
+    image="./Ansible-Mark-Large-RGB-Black.png";
+    height=0.75
+    color=white;
+    width=0.75;
+    label="";
+    fixedsize=true;
+  ];
+  umd_product_container [
+    group=container;
+    image="quay-emoji.png"
+    height=0.75;
+    width=0.75;
+    color=white;
+    label="";
+    fixedsize=true;
+  ]
+  voms_client [
+    shape=rectangle;
+    color="#720F04";
+    fontcolor="#720F
+    04;"
+    fontname="Permanent Marker";
+    fontsize="16";
+    label="Ansible Role: \nVOMS client";
+    margin=.3
+  ];
+  apply_voms_client [
+    group=apply_role;
+    image="./Ansible-Mark-Large-RGB-Black.png";
+    height=0.75
+    color=white;
+    width=0.75;
+    label="";
+    fixedsize=true;
+  ];
+  voms_client_product_container [
+    group=container;
+    image="quay-emoji.png"
+    height=0.75;
+    width=0.75;
+    color=white;
+    label="";
+    fixedsize=true;
+  ];
+  ui [
+    shape=rectangle;
+    color="#720F04";
+    fontcolor="#720F04;"
+    fontname="Permanent Marker";
+    fontsize="16";
+    label="Ansible Role: \nUser Interface";
+    margin=.3;
+  ];
+
+  umd -> voms_client;
+  voms_client -> ui;
+
+  // Define the UMD process
+  umd -> apply_umd [ 
+    label="Apply \nUMD role";
+    fontname="IBM Plex Mono";
+    ];
+  apply_umd -> umd_product_container [
+    label="UMD Container";
+    fontname="IBM Plex Mono";
+  ];
+
+  // Define VOMS client process
+  voms_client -> apply_voms_client [
+    label="Apply VOMS\n client role";
+    fontname="IBM Plex Mono";
+  ];
+  apply_voms_client -> voms_client_product_container [
+    label="VOMS client\nContainer";
+    fontname="IBM Plex Mono";
+  ];
+
+  // align role
+  {
+    edge[style=invis];
+    umd->voms_client;
+    voms_client->ui;
+  }
+
+  // align deployment items
+  {
+    edge[style=invis];
+    apply_umd->apply_voms_client;
+    umd_product_container->voms_client_product_container;
+  }
+  { // align umd process items 
+    rank = same;
+    umd;
+    apply_umd;
+    umd_product_container;
+  }
+  { // align voms-client process items
+    rank=same; 
+    voms_client; 
+    apply_voms_client;
+    voms_client_product_container 
+    };
+}
