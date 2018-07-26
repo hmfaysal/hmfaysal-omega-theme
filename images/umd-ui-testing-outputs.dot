@@ -28,6 +28,15 @@ digraph UMD_UI {
     label="";
     fixedsize=true;
   ];
+  test_umd [
+    group=test;
+    image="testinfra_logo.png"
+    height=0.75;
+    width=0.75;
+    color=white;
+    label="";
+    fixedsize=true;
+  ];
   umd_product_container [
     group=container;
     image="quay-emoji.png"
@@ -36,7 +45,7 @@ digraph UMD_UI {
     color=white;
     label="";
     fixedsize=true;
-  ]
+  ];
   voms_client_repo [
     group=repo;
     image="GitHub-Mark-64px.png";
@@ -45,7 +54,7 @@ digraph UMD_UI {
     width=0.75;
     label="";
     fixedsize=true;   
-  ]
+  ];
   voms_client [
     shape=rectangle;
     color="#720F04";
@@ -62,6 +71,15 @@ digraph UMD_UI {
     height=0.75
     color=white;
     width=0.75;
+    label="";
+    fixedsize=true;
+  ];
+  test_voms_client [
+    group=test;
+    image="testinfra_logo.png"
+    height=0.75;
+    width=0.75;
+    color=white;
     label="";
     fixedsize=true;
   ];
@@ -92,58 +110,129 @@ digraph UMD_UI {
     label="Ansible Role: \nUser Interface";
     margin=.3;
   ];
+  apply_ui [
+    group=apply_role;
+    image="./Ansible-Mark-Large-RGB-Black.png";
+    height=0.75
+    color=white;
+    width=0.75;
+    label="";
+    fixedsize=true;
+  ]
+  test_ui [
+    group=test;
+    image="testinfra_logo.png"
+    height=0.75;
+    width=0.75;
+    color=white;
+    label="";
+    fixedsize=true;
+  ];
+  ui_product_container [
+    group=container;
+    image="quay-emoji.png"
+    height=0.75;
+    width=0.75;
+    color=white;
+    label="";
+    fixedsize=true;
+  ];
 
+  // Define Role dependency tree
   umd -> voms_client;
   voms_client -> ui;
   
   // Define the UMD process
-  umd -> apply_umd [ 
+  umd -> umd_repo [
+    label="Commit";
+    fontname="IBM Plex Mono";
+  ]
+  umd_repo -> apply_umd [ 
     label="Apply \nUMD role";
     fontname="IBM Plex Mono";
     ];
-  apply_umd -> umd_product_container [
+  apply_umd -> test_umd [
+    label="Test\nUMD role";
+    fontname="IBM Plex Mono";
+  ];
+  test_umd -> umd_product_container [
     label="UMD Container";
     fontname="IBM Plex Mono";
   ];
 
   // Define VOMS client process
-  voms_client -> apply_voms_client [
+  voms_client -> voms_client_repo [
+    label="Commit";
+    fontname="IBM Plex Mono";
+  ]
+  voms_client_repo -> apply_voms_client [
     label="Apply VOMS\n client role";
     fontname="IBM Plex Mono";
   ];
-  apply_voms_client -> voms_client_product_container [
+  apply_voms_client->test_voms_client [
+    label="Test VOMS\n client role";
+    fontname="IBM Plex Mono";
+  ];
+  test_voms_client -> voms_client_product_container [
     label="VOMS client\nContainer";
     fontname="IBM Plex Mono";
   ];
 
-  // align role items
+  // define UI process
+  ui -> ui_repo [
+    label="Commit";
+    fontname="IBM Plex Mono";
+  ];
+  ui_repo -> apply_ui [
+    label="Apply User\nInterface role";
+    fontname="IBM Plex Mono";
+  ];
+  apply_ui -> test_ui [
+    label="Test User\nInterface role";
+    fontname="IBM Plex Mono";
+  ];
+  test_ui -> ui_product_container [
+    label="User Interface\nContainer";
+    fontname="IBM Plex Mono";
+  ];
+  
+  // align deployment items
   {
     edge[style=invis];
     umd->voms_client;
     voms_client->ui;
-  }
-  // align repo items
-  {
-    edge[style=invis];
-    umd_repo -> voms_client_repo;
-    voms_client_repo -> ui_repo;
-  }
-  // align deployment items
-  {
-    edge[style=invis];
+    umd_repo->voms_client_repo;
+    voms_client_repo->ui_repo;
     apply_umd->apply_voms_client;
+    apply_voms_client->apply_ui;
+    test_umd->test_voms_client;
+    test_voms_client->test_ui;
     umd_product_container->voms_client_product_container;
+    voms_client_product_container->ui_product_container;
   }
+
   { // align umd process items 
     rank = same;
     umd;
+    umd_repo
     apply_umd;
+    test_umd
     umd_product_container;
   }
   { // align voms-client process items
     rank=same; 
     voms_client; 
+    voms_client_repo;
     apply_voms_client;
+    test_voms_client;
     voms_client_product_container 
     };
+    {// align UI process items
+      rank=same;
+      ui;
+      ui_repo;
+      apply_ui;
+      test_ui;
+      ui_product_container;
+    }
 }

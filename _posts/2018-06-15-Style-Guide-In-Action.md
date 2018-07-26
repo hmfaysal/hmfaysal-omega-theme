@@ -77,6 +77,11 @@ Figure 2: Representation of the expression of the Ansible role and the resulting
 
 In this way, we can continue modelling individual roles and map events in source code to artifacts in production. The final touches to our modelling flow are added in [Figure 3](#figure3), where we add the links to the respective GitHub repositories and the all-important testing phase - more on that in [a later section](#tests-and-development-of-roles).
 
+<figure>
+<img src="{{ site.url }}/images/>
+<figcaption>
+</figcaption>
+</figure>
 # Action
 
 
