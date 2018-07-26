@@ -78,37 +78,49 @@ Figure 2: Representation of the expression of the Ansible role and the resulting
 In this way, we can continue modelling individual roles and map events in source code to artifacts in production. The final touches to our modelling flow are added in [Figure 3](#figure3), where we add the links to the respective GitHub repositories and the all-important testing phase - more on that in [a later section](#tests-and-development-of-roles).
 
 <figure>
-<img src="{{ site.url }}/images/>
+<img src="{{ site.url }}/images/umd-ui-testing-outputs.png">
 <figcaption>
+Figure 3: Schematic diagram of the full continuous integration and delivery of UMD configurations, as well as dependency tree respective Ansible roles, for the simple case of the User Interface. In this case, we deliver pre-built and Docker images to the Quay registry. Testing is done with <a href="http://testinfra.readthedocs.io/">TestInfra</a>, a python-based infrastructure spec tool.
 </figcaption>
 </figure>
+
 # Action
 
+Now that we have a clear idea of how to go about modelling our roles, and putting the tools in place for our continuous integration and delivery pipeline, we can take a closer look at using the EGI Ansible Style Guide to get started.
 
+## Getting started
 
-## Generate
+The first thing you need to do is get the style guide, and use it to create a new Ansible role. Ansible roles are usually generated with the  [Ansible Galaxy CLI](https://docs.ansible.com/ansible/latest/cli/ansible-galaxy.html?highlight=galaxy#init) command `init`, but this uses a role skeleton which doesn't cover many of EGI's bases.
+We therefore  use the `egi-galaxy-template` in the Style Guide repo to generate a better one:
 
 ```bash
-
-ansible-galaxy init --role-skeleton=ansible-style-guide/egi-galaxy-template ansible-wn-role
-
+git clone https://github.com/EGI-Foundation/ansible-style-guide
+ansible-galaxy init --role-skeleton=ansible-style-guide/egi-galaxy-template ansible-role-wn`
 ```
+We now have a shiny new Ansible role : `ansible-role-wn`.
+Before we go about implementing it, we need to have a means for implementing tests and generating test scenarios.
+Typically we use [Molecule](http://molecule.readthedocs.io/) for this, which is great for generating a full set of test scenarios and strategies.
 
-Now for tests
+Install Molecule with pip and generate a scenario, using a virtualenv^[VEnv]:
 
 ```bash
-molecule init scenario -r ansible-wn-role
+$ virtualenv style
+$ source style/bin/activate
+(style)$ pip install molecule
+(style)$ molecule init scenario -r ansible-role-wn
 ```
 
 ## Initial Commit
 
-At this point we have an empty (but stylish) role.
-Tests should pass:
+At this point we have an empty (but stylish) role in a clean environment  and a default testing scenario.
+
+Tests should pass[^MoleculeTest]:
 
 ```bash
-
+molecule lint
+molecule dependency
+molecule create
 molecule converge
-
 molecule verify
 ```
 
@@ -129,7 +141,9 @@ There are several
 
 ### Refactor
 
+
 ### Test Coverage
+
 
 ### Style guide controls
 
@@ -137,3 +151,5 @@ There are several
 # References and Footnotes
 
 [^AlsoEdgeComputing]: "Developers of middleware components" is a very EGI-federation-specific way of thinking of this audience. What I have in mind is maintainers or product owners who want their products to live in the EOSC ecosystem. Even products which may live at the boundary of this ecosystem may be relevant.
+[^VEnv]: The virtualenv allows you to stay on a fixed Ansible, TestInfra and Molecule version (which will be requested during CI on the build platform), as well as ensure that the role is compatible between Python2 and Python3.
+[^MoleculeTest]: This is long-hand for `molecule test`, which will execute the full testing strategy.
