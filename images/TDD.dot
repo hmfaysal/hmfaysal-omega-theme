@@ -1,0 +1,110 @@
+digraph TDD {
+  rankdir="TB";
+   // nodes
+  create [
+    color="#720F04";
+    shape="plaintext";
+    fontcolor="#720F04";
+    fontname="Permanent Marker";
+    fontsize="16";
+    margin=0;
+  ];
+  lint [
+    color="#720F04";
+    shape="plaintext";
+    fontcolor="#720F04";
+    fontname="Permanent Marker";
+    fontsize="16";
+    margin=0;
+  ];
+  dependency [
+    color="#720F04";
+    shape="plaintext";
+    fontcolor="#720F04";
+    fontname="Permanent Marker";
+    fontsize="16";
+    margin=0;
+  ];
+  converge [
+    color="#720F04";
+    shape="plaintext";
+    fontcolor="#720F04";
+    fontname="Permanent Marker";
+    fontsize="16";
+    margin=0;
+  ];
+  verify [
+    color="#720F04";
+    shape="plaintext";
+    fontcolor="#720F04";
+    fontname="Permanent Marker";
+    fontsize="16";
+    margin=0;
+  ];
+  red [
+    color="#720F04";
+    shape="plaintext";
+    pencolor=red;
+    fontcolor="#720F04";
+    fontname="Permanent Marker";
+    fontsize="16";
+    margin=0;
+  ];
+  green [
+    color="#720F04";
+    shape="plaintext";
+    fontcolor="#720F04";
+    fontname="Permanent Marker";
+    fontsize="16";
+    margin=0;
+  ];
+  refactor [
+    color="#720F04";
+    shape="plaintext";
+    fontcolor="#720F04";
+    fontname="Permanent Marker";
+    fontsize="16";
+    margin=0;
+  ];
+  // graph 
+  lint -> dependency [
+    label="Static language checks\n(YAML, Python, Ruby)";
+    fontname="IBM Plex Mono";
+  ];
+  dependency -> create [
+    label="Check Ansible\nrole dependencies";
+    fontname="IBM Plex Mono";
+  ]; 
+  create -> converge [
+    label="Create base\nenvironment ";
+    fontname="IBM Plex Mono";
+  ];
+  converge -> verify [
+    label="Provision with\nplaybook";
+    fontname="IBM Plex Mono";
+  ];
+  verify -> red [
+    label="Run (failing)\ninfra tests";
+    fontname="IBM Plex Mono";
+  ];
+  red -> converge [
+    label="Implement\nfunctionality";
+    fontname="IBM Plex Mono";
+  ];
+  verify -> green [
+    label="Run (passing)\ninfra tests";
+    fontname="IBM Plex Mono";
+  ];
+  green -> refactor [
+    label="Refactor code\nand tests";
+    fontname="IBM Plex Mono";
+  ];
+  refactor -> converge [
+    label="Repeat\nprovisioning";
+    fontname="IBM Plex Mono";
+  ];
+  refactor -> verify [
+    label="Ensure refactored code\npasses tests";
+    fontname="IBM Plex Mono";
+  ];
+}

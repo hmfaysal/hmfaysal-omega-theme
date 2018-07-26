@@ -22,7 +22,17 @@ The intended audience is the developers of middleware components[^AlsoEdgeComput
 A typical case would be an existing product which performs some specific function _e.g._, a storage management front-end service.
 Another case would be the one I want to use as an example here - the so-called "worker-node" function.
 
-The worker node is essentially a composition of clients which interact with infrastructure components... "*validate user token*", "*get data*", "*submit workload request to your local resource manager*", "*check how that's going*", "*send accounting data*", _etc_.
+## Case: Worker Node
+
+The worker node is essentially a composition of clients which interact with infrastructure components: 
+  
+  * "*validate user token*"
+  * "*get data*"
+  * "*submit workload request to your local resource manager*"
+  * "*check how that's going*"
+  * "*send accounting data*"
+
+_etc_. 
 If we were starting out now, these functions might well be built as serverless endpoints, but as with all things infrastructure-related, one has to deal with the legacy of what came before.
 
 The worker node function has typically been distributed as a meta-package in OS repositories - an RPM or DEB which expresses all of the necessary dependencies.
@@ -48,11 +58,7 @@ This could include, for example, hard-coding certain paths, asserting the presen
 All of these would be examples of "bad behaviour", since the integration of the site into the federation is not done according to a central prescription, but according to an OLA agreed to by both parties.
 
 We therefore need to deliver not only _products_, but also _strategies for deploying_ those products, which are flexible enough to respect local site policies.
-If we are to be fluid, we also need a high degree of **trust** that the final result will not only perform as advertised (ie, works, and does what it needs to do), but also won't break local setups.
-
-The only way to do this is ... to actually do it.
-
-The Ansible Style Guide describes aspects of developing, testing, documenting and delivering the role.
+If we are to be fluid, we also need a high degree of **trust** that the final result will not only perform as advertised (_i.e._, works, and does what it needs to do), but also won't break local setups. The Ansible Style Guide describes aspects of developing, testing, documenting and delivering the role. 
 It is more about _how_ than _what_, because the overriding, big-picture goal is to **solve problems and have them** _**stay solved**_.
 
 The way to do this is, as with most engineering problems, to factor out the big problem into smaller ones in some logical way.
@@ -77,7 +83,7 @@ Figure 2: Representation of the expression of the Ansible role and the resulting
 
 In this way, we can continue modelling individual roles and map events in source code to artifacts in production. The final touches to our modelling flow are added in [Figure 3](#figure3), where we add the links to the respective GitHub repositories and the all-important testing phase - more on that in [a later section](#tests-and-development-of-roles).
 
-<figure>
+<figure id="figure3">
 <img src="{{ site.url }}/images/umd-ui-testing-outputs.png">
 <figcaption>
 Figure 3: Schematic diagram of the full continuous integration and delivery of UMD configurations, as well as dependency tree respective Ansible roles, for the simple case of the User Interface. In this case, we deliver pre-built and Docker images to the Quay registry. Testing is done with <a href="http://testinfra.readthedocs.io/">TestInfra</a>, a python-based infrastructure spec tool.
@@ -101,7 +107,7 @@ We now have a shiny new Ansible role : `ansible-role-wn`.
 Before we go about implementing it, we need to have a means for implementing tests and generating test scenarios.
 Typically we use [Molecule](http://molecule.readthedocs.io/) for this, which is great for generating a full set of test scenarios and strategies.
 
-Install Molecule with pip and generate a scenario, using a virtualenv^[VEnv]:
+Install Molecule with pip, and generate a scenario, using a virtualenv^[VEnv]:
 
 ```bash
 $ virtualenv style
@@ -114,7 +120,7 @@ $ source style/bin/activate
 
 At this point we have an empty (but stylish) role in a clean environment  and a default testing scenario.
 
-Tests should pass[^MoleculeTest]:
+Running the test strategy should result in all of it passing[^MoleculeTest]:
 
 ```bash
 molecule lint
@@ -124,32 +130,154 @@ molecule converge
 molecule verify
 ```
 
-But this means absolutely nothing. We need to start adding some failing tests.
+This means absolutely nothing, of course - we need to start adding some failing tests !
 
 
 ## Tests and Development of Roles
 
-The EGI UMD follows a [ATDD](https://en.wikipedia.org/wiki/Acceptance_test%E2%80%93driven_development) pattern.
-There are several 
+The EGI UMD follows something similar to an [Acceptance Test Driven Development](https://en.wikipedia.org/wiki/Acceptance_test%E2%80%93driven_development) pattern.
 
-[Test-Driven Development](https://en.wikipedia.org/wiki/Test-driven_development)
+There are several products, each of which are testing independently upstream by their owners, and candidates for inclusion in the distribution are then communicated to the release co-ordination team.
+This team then checks whether the [**UMD Quality Criteria**](http://egi-qc.github.io/) are respected by the product, and whether the new version breaks anything already in production.
+There are several strategies for doing this, and the one which makes the most sense varies from product to product.
+Then of course, there is the **expected functionality of the product** as it would be in production.
+Finally, there is the consideration that we expect these roles to be **deployed into production**, which means that the configurations should be hardened and secure by design.
+Deploying faulty configurations into production environments - even with fully-patched software - can lead to serious degradation in operational security.
+
+We therefore need to implement tests for each of these, as far as we can.
+
+[Test-Driven Development](https://en.wikipedia.org/wiki/Test-driven_development)[^TDD], from Extreme Programming[^XP2] suggests that engineering proceed on a **"Red, Green, Refactor"** cadence.
 
 ### Red
 
+Considering we are developing the functionality of a worker node here, the first thing we could check for is that the relevant packages are actually present.
+Using [TestInfra's `package`](https://testinfra.readthedocs.io/en/latest/modules.html#testinfra.modules.package.Package) module, we can write this assertion.
+
+```python
+def test_packages(host, pkg):
+        assert host.package(pkg).is_installed
+```
+
+Seems simple, right?
+All we need to do is pass the correct fixtures to the function `test_packages`, to see whether the host we will provision with molecule is in the desired state.
+
+It is important to remember what we are testing for here.
+We are **not** testing whether the Ansible playbook has run correctly - or even **_whether_** an Ansible playbook has run at all - we are simply making assertions about the host.
+These assertions should be true no matter how the host arrived at its current state, and of course should reflect the desired state in production environments.
+
+We therefore need to consult the source of truth[^WN_repo] for the worker node package requirements - the same repository that the product team is maintaining which the UMD team has tested and done the QC tests on - to write the fixtures for this test. 
+
+We can still converge the role with no problems (nothing has been implemented yet), but when it comes to running the tests (`molecule verify`), we will be duly informed that they are all <span class="text-danger text-uppercase text-monospace">failing</span>
+
+Great success. Go ahead and add that test to the scenario:
+
+```bash
+git add molecule/default/test_packages.py
+git commit -m "Added failing test for packages"
+git push
+```
+
+**Note**: using the EGI Ansible Style Guide, there is a `.travis.yml` already set up for you if you want to do CI on Travis. All you need to do is enable the repository and Travis will take care of the rest.
+
 ### Green
 
+The next step in TDD is to implement **_just enough_** code to make that test pass.
+With Ansible, this is amost too easy:
 
-### Refactor
+First, create a variable in `defaults/main.yml` to hold the packages that need to be present, taking into account differences across operating systems and OS releases:
+
+```yaml
+---
+# defaults/main.yml
+packages:
+  redhat:
+    '6':
+      - wn_pkg_1
+      - wn_pkg_2
+    '7':
+      - WN_1
+      - WN_2
+  debian:
+    jessie:
+      - worker_node
+    stretch:
+      - worker_node
+```
+
+Next, add a task which ensures that those packages are present:
+
+```yaml
+---
+# tasks/main.yml
+- name: Ensure worker node packages are present
+  package:
+    name: {% raw %}"{{ item }}"{% endraw %}
+    state: present
+  loop: {% raw %}"{{{% endraw %} packages[ansible_os_family|lower][ansible_os_distribution_major] {% raw %}}}{% endraw %}"
+```
+
+Here, we take advantage of the facts gathered by Ansible identifying the host OS and version - which of course is why we crafted the  variable `packages` in the way we did.
+
+Of course, these tasks need to be applied in an actual playbook. Molecule creates the simplest possible playbook for the scenario for you:
+
+```yaml
+# molecule/default/playbook.yml
+---
+- name: Converge
+  hosts: all
+  roles:
+  - role: ansible-role-wn
+```
+This playbook is used during the `converge` stage.
+If there are any dependencies which are required (which are now clear from our dependency tree!), they can be added before the application of the role you are working on :
+
+```yaml
+# molecule/default/playbook.yml
+---
+- name: Converge
+  hosts: all
+  roles:
+    - {role: EGI-Foundation.umd, release: 4, tags: "UMD" }
+    - {role: EGI-Foundation.voms-client, tags: "VOMS" }
+    - {role: ansible-role-wn, tags: "wn"}
+```
+
+Once we have implemented the functionality, we repeat the converge and verify until the tests are passing.
+
+### Refactor, repeat
+
+<figure id="figure4">
+<img src="{{ site.url }}/images/TDD.png">
+<figcaption>
+Figure 4: Schematic representation of a Test-Driven Development of an Ansible role.
+</figcaption>
+</figure>
+
+Once the tests are passing, we take another look over our code and tests and try to ascertain whether the tests are really doing what we want them to do and whether that part of the role has been implemented in the best possible way.
+[Figure 4](#figure4) shows a general workflow of how this should be done.
 
 
-### Test Coverage
+## Conclusions
 
+Clearly, we are not done with the development of the worker node role.
+However we can be sure that application of this role to any production site will **not break the site** - a very important point!
+We now have a solid base from which to step to the next iteration, adding tests for desired behaviour and functionality to achieve it as we go.
+We also have the means to express this role in arbitrary environments - be they bare metal, hypervisor virtualisation, or Linux containers - all from a **_single_** well-maintained role.
 
-### Style guide controls
+As discusssed [above](#case-worker-node) The worker node needs to be able to perform many functions - we should try to implement tests for as many of these functions as we can.
+Similarly, as many of the EGI Quality Criteria should be included in our test coverage, so that we can ensure sites that by applying these roles off-the-shelf, they will be increasing the stability of their site and decreasing their day-to-day operations load.
+
+Furthermore, by using a **common style guide** for developing these roles, we make it easier to get started for others who want to contribute.
+The style guide helps peers and collaborators do code review when features or development is proposed via pull request, and gives clear guidelines for how these contributions should be recognised.
+
+All in all, this is a small step towards improving the stability of sites in the EGI federation, without compromising agility and quality, and reducing the friction in the middleware delivery pipeline.
 
 
 # References and Footnotes
 
-[^AlsoEdgeComputing]: "Developers of middleware components" is a very EGI-federation-specific way of thinking of this audience. What I have in mind is maintainers or product owners who want their products to live in the EOSC ecosystem. Even products which may live at the boundary of this ecosystem may be relevant.
+[^AlsoEdgeComputing]: "Developers of middleware components" is an EGI-federation-specific way of thinking of this audience. What I have in mind is maintainers or product owners who want their products to live in the EOSC ecosystem. Even products which may live at the boundary of this ecosystem may be relevant.
 [^VEnv]: The virtualenv allows you to stay on a fixed Ansible, TestInfra and Molecule version (which will be requested during CI on the build platform), as well as ensure that the role is compatible between Python2 and Python3.
 [^MoleculeTest]: This is long-hand for `molecule test`, which will execute the full testing strategy.
+[^TDD]: A good overview of test-driven development was written buy [Martin Fowler](https://www.martinfowler.com/bliki/TestDrivenDevelopment.html)
+[^XP2]: [Beck, K., & Andres, C. (2015). Extreme programming explained: Second edition, embrace change. Boston: Addison-Wesley.](https://www.amazon.com/gp/product/0321278658)
+[^WN_repo]: In this case, it's the <a href="https://github.com/EGI-foundation/wn-metapackage"><i class="fa fa-github"></i> WN Metapackage repository</a>

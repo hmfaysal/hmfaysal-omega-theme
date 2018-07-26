@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Raleway|Permanent+Marker');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Raleway|Permanent+Marker|IBM+Plex+Mono');
 
 /* ------------------------ */
 /* GENERAL TYPOGRAPHY RULES */
@@ -523,7 +523,9 @@ html {
 .post-body {
   padding-bottom: 36px;
   margin-bottom: 36px;
-  padding-left: 40px;
+  padding-left: 15%;
+  padding-right: 15%;
+  text-align: justify;
 }
 .post-template .post-body {
   padding-bottom: 36px;
