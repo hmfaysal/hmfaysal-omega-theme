@@ -176,7 +176,26 @@ This style guide therefore provides important context and objective measures of 
 
 ### One role, many scenarios
 
+The underlying platform is changing.
+We are building sites on top of local clouds, putting services in virtual machines and containers, virtualising networks, building DMZs, _etc_.
+This implies that there are several _scenarios_ in which a particular product can be deployed -- scenarios which should be accounted for and tested if possible.
+The product development team should not be obliged to consider the _specifics_ of any given scenario, as long as the product provides a means for proper configuration in that scenario.
+A collaboration is necessary between the operators at the sites and the product development teams to ensure that the various production environments are considered and can be mocked up during testing.
+
+
 ### Testing and Trusting
+
+So, is it feasible to apply traditional Test-Driven Development[^TDD] to our infrastructure components?
+If it were possible to write a _specification_ of the desired state of a service after deployment, this would allow us to write **infrastructure tests** which that state would have to pass -- and we could then write the code that allows that test to pass.
+There are two widely-used toolkits for writing these specifications:
+
+- **[TestInfra](https://testinfra.readthedocs.io/en/latest/) :snake:** - a [pytest](https://docs.pytest.org/en/latest/) plugin
+- **[Inspec](http://inspec.io/) :gem:** - an extension of [RSpec](https://www.inspec.io/docs/reference/inspec_and_friends/) developed by [Chef](https://chef.io) as a replacement for [ServerSpec](https://serverspec.org/resource_types.html)
+
+What is needed is 
+Molecule provides a general-purpose mock and testing framework for Ansible roles
+Allows developer to define many deployment scenarios and test against them : 
+Easiest is to test in Docker, but can test against OpenStack or bare-metal scenarios, from given starting points
 
 ### Better use of existing infrastructure
 
@@ -195,3 +214,4 @@ This style guide therefore provides important context and objective measures of 
 [^Ansible]: See [How Ansible Works](https://www.ansible.com/overview/how-ansible-works)
 [^MyStory]: This is my story! I'll decide who the heros are...
 [^NoCream]: Spoiler Alert: there are no roles on Galaxy for CREAM. That's what we're here to fix.
+[^TDD]: See _e.g._ [the TDD chapter](https://www.jamesshore.com/Agile-Book/test_driven_development.html) in James Shore's book on Agile development.
