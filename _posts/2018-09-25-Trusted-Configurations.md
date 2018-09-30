@@ -56,7 +56,7 @@ Sure, there may be parts of the system which it cannot be held responsible for, 
 Not bad for a bunch of shell scripts.
 
 <figure>
-<img src="../images/squirrel-sword.jpg">
+<img src="{{ site.url }}/images/squirrel-sword.jpg">
 <figcaption class="text-center">Spoiler Alert<br><small>Image courtesy of <a href="https://hvops.com/articles/ansible-vs-shell-scripts/">High-Velocity Ops</a></small></figcaption>
 </figure>
 
