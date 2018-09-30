@@ -11,7 +11,7 @@ tags:
   - testing
   - TDD
 image: 
-  feature: 
+  feature: "rawpixel-973108-unsplash.jpg"
 ---
 
 A massive issue has been lurking beneath the success of e-infrastructures like EGI: **the complexity of configuration management in a widely-distributed, federated environment.**
