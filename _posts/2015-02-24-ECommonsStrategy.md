@@ -11,25 +11,27 @@ comments: true
 mathjax: true
 ---
 <!-- TOC depth:6 withLinks:1 updateOnSave:1 -->
+
 - [TL;DR](#tldr)
 - [Thoughts on Strategy for an e-Infrastructure Commons](#thoughts-on-strategy-for-an-e-infrastructure-commons)
-	- [Openness](#openness)
-	- [The Commons](#the-commons)
-	- [Have you tried rebooting the system ?](#have-you-tried-rebooting-the-system-)
-- [Systems thinking for Cyberinfrastructure.](#systems-thinking-for-cyberinfrastructure)
-	- [Evolving the revolution](#evolving-the-revolution)
-		- [What does the internet think of all this ?](#what-does-the-internet-think-of-all-this-)
-	- [The Network won.](#the-network-won)
-- [So, your place or mine...  ?](#so-your-place-or-mine-)
-	- ['Government Housing' vs 'Community Projects' - ensuring constituency-based participation](#government-housing-vs-community-projects-ensuring-constituency-based-participation)
-		- [The world is flat.](#the-world-is-flat)
+  - [Openness](#openness)
+  - [The Commons](#the-commons)
+  - [Have you tried rebooting the system](#have-you-tried-rebooting-the-system)
+- [Systems thinking for Cyberinfrastructure](#systems-thinking-for-cyberinfrastructure)
+  - [Evolving the revolution](#evolving-the-revolution)
+    - [What does the internet think of all this](#what-does-the-internet-think-of-all-this)
+  - [The Network won](#the-network-won)
+- [So, your place or mine](#so-your-place-or-mine)
+  - ['Government Housing' vs 'Community Projects' - ensuring constituency-based participation](#government-housing-vs-community-projects---ensuring-constituency-based-participation)
+    - [The world is flat.](#the-world-is-flat)
 - [The Craftsperson and the Third Career.](#the-craftsperson-and-the-third-career)
-	- [DevOps, Software-Defined Infrastructure and transferrable skills](#devops-software-defined-infrastructure-and-transferrable-skills)
-	- [Fork my infrastructure.](#fork-my-infrastructure)
-	- [We, for one, welcome our new robot overlords.](#we-for-one-welcome-our-new-robot-overlords)
+  - [DevOps, Software-Defined Infrastructure and transferrable skills](#devops-software-defined-infrastructure-and-transferrable-skills)
+  - [Fork my infrastructure.](#fork-my-infrastructure)
+  - [We, for one, welcome our new robot overlords.](#we-for-one-welcome-our-new-robot-overlords)
 - [Doing Research on the Research Infrastructure](#doing-research-on-the-research-infrastructure)
 - [Conclusions and future work.](#conclusions-and-future-work)
 - [References and Footnotes](#references-and-footnotes)
+
 <!-- /TOC -->
 
 # TL;DR
@@ -44,27 +46,54 @@ I've been tasked with writing a strategy for "SAGrid" in the context of the Nati
 
 Apart from the many technological (r)evolutions that we've witnessed during the last few years, there has been one major socialogical shift in the communities of scientists - the shift towards **Openness**. Open as in :
 
-  * [Open Source](http://en.wikipedia.org/wiki/Open_source) - to make it easy to share
-  * [Open Access](http://en.wikipedia.org/wiki/Open_access) (for content, but also for  [infrastructure](http://en.wikipedia.org/wiki/Open_communication)) - to provide a fair playing field
-  * [Open Standards](http://en.wikipedia.org/wiki/Open_standard) - to ensure interoperability and avoid lock-in
+- [Open Source](http://en.wikipedia.org/wiki/Open_source) - to make it easy to share
+- [Open Access](http://en.wikipedia.org/wiki/Open_access) (for content, but also for  [infrastructure](http://en.wikipedia.org/wiki/Open_communication)) - to provide a fair playing field
+- [Open Standards](http://en.wikipedia.org/wiki/Open_standard) - to ensure interoperability and avoid lock-in
 
 I'm not learned enough personally to argue (at least not with the data to back up claims) that "Science = Openness", and certainly there are domains (pharma, duh) where secrecy is paramount. But let's take a step back and talk not of how things are but how we think they *should* be. It's hard to argue the case that a publicly-funded research infrastructure as cross-cutting as e-Infrastructure *should* be closed. What we should keep foremost in our minds that we are talking about the development of the bedrock of 21st century science...
 
 ## The Commons
 
-SAGrid (and subsequently the [Africa-Arabia Regional Operations Centre](http://aaroc.github.io) was founded on the principle of *collective action*[^Meraka] - we created a federation of human, electronic and physical resources that belonged to no single institute, but were shared amongst all, and coordinated by a third-party. Sounded great, and if it had been actually implemented this way, we may have seen far better success, but what actually happened was a sort of reluctant "ceding of territory" by the participating institutes to this coordinating third party (the CSIR in this case), which many people then came to believe was "the grid". This put it at odds with other projects, institutes and services, instead of allowing it to become a catalyst for the sharing of resources and scaling of activities. This is, in my opinion, a travesty[^TragedyOfTheCommons] and something I'd kinda like to help fix.
+SAGrid (and subsequently the [Africa-Arabia Regional Operations
+Centre](http://www.africa-grid.org) was founded on the principle of *collective
+action*[^Meraka] - we created a federation of human, electronic and physical
+resources that belonged to no single institute, but were shared amongst all, and
+coordinated by a third-party.
+Sounded great, and if it had been actually implemented this way, we may have
+seen far better success, but what actually happened was a sort of reluctant
+"ceding of territory" by the participating institutes to this coordinating third
+party (the CSIR in this case), which many people then came to believe was "the
+grid".
+This put it at odds with other projects, institutes and services, instead of
+allowing it to become a catalyst for the sharing of resources and scaling of
+activities.
+This is, in my opinion, a travesty[^TragedyOfTheCommons] and something I'd kinda like to help fix.
 
-There has been a lot said about "The Commons" - there are the Creative Commons, and the Public Domain; there's even a [Creative Commons for Science](http://creativecommons.org/science), and there's an intensive movement for making a scholarly commons, by opening access to scholarly communications of all kinds. However, we still haven't made the case well for a commons of Cyberinfrastructure[^RDA]. Everybody *still* wants to do everything themselves, when it comes to building computational and data infrastructure. The reasons are manifold... Perhaps because ["Nobody does it better"](https://www.youtube.com/watch?v=mfmQe_eBvrc) (than themselves); perhaps because they're scared that "sharing = ceding"; perhaps just because the interfaces were obtuse and unnatural. The grid was **not** supposed to serve large communities with established structures, but to provide a framework to allow access to all researchers, irrespective of geographic location or institutional affiliation. I'm willing to take the responsibility for most of this failure[^resp], but only because those who were *supposed* to take the responsibility (the representative Joint Research Unit) arguably did not. Perhaps the timing was wrong, perhaps the milieu unfavourable, perhaps...
+There has been a lot said about "The Commons" - there are the Creative Commons,
+and the Public Domain; there's even a [Creative Commons for
+Science](http://creativecommons.org/science), and there's an intensive movement
+for making a scholarly commons, by opening access to scholarly communications of
+all kinds. However, we still haven't made the case well for a commons of
+Cyberinfrastructure[^RDA].
+Everybody *still* wants to do everything themselves, when it comes to building
+computational and data infrastructure. The reasons are manifold... Perhaps
+because ["Nobody does it better"](https://www.youtube.com/watch?v=mfmQe_eBvrc)
+(than themselves); perhaps because they're scared that "sharing = ceding";
+perhaps just because the interfaces were obtuse and unnatural.
+The grid was **not** supposed to serve large communities with established
+structures, but to provide a framework to allow access to all researchers,
+irrespective of geographic location or institutional affiliation.
+I'm willing to take the responsibility for most of this failure[^resp], but only because those who were *supposed* to take the responsibility (the representative Joint Research Unit) arguably did not. Perhaps the timing was wrong, perhaps the milieu unfavourable, perhaps...
 
 Well, certainly all of the above is true, but I think the fundamental point of a Commons is :
 
 > You get out what you put in.
 
-##  Have you tried rebooting the system ?
+## Have you tried rebooting the system
 
 I think it's fair to say that SAGrid  **did not become what I wanted**. It can be useful to draw a line in sand, to define an end of a period, to say "le Roi est mort, vive le Roi !". With the development of NICIS, we have a perfect opportunity to re-design the collaborative, open, participatory infrastructure that I had originally envisioned along with the founding members[^OriginalJRU].
 
-# Systems thinking for Cyberinfrastructure.
+# Systems thinking for Cyberinfrastructure
 
 The [National Integrated Cyberinfrastructure System](http://www.dst.gov.za/index.php/resource-center/cyber-infrastructure2) (NICIS) defines a framework for the creation of national cyberinfrastructure system. Taking shape after long consultation and consideration of the state of affairs, it makes provision for centralised funding and deployment of computing, data and network infrastructure, amongst other things. This acknowledges the wide variety of needs that are faced by scientific communities and individual researchers, as well as the scale of large projects which rely fundamentally on e-Infrastructure. However, it also recognises that there is a need for [systems thinking](http://en.wikipedia.org/wiki/Systems_thinking) in the development of this framework[^DanielAdams-RDA-14].
 
@@ -76,7 +105,7 @@ Production ["service-grids"](http://en.wikipedia.org/wiki/Open_Grid_Services_Arc
 
 As technology has evolved, instead of "dying", they have adopted the evolutionary benefits of clouds - **resource virtualisation, flexible infrastructure management, self-service, pay-per-use**, etc. At the same time, research methodologies used on these infrastructures are also crossing boundaries and domains. Fifteen years ago, HPC and data infrastructure were considered necessary to very few research activities. Ten years ago, taking advantage of the momentum created essentially by big physics projects' computing requirements these were adopted by other areas such as bioinformatics, as the boundary of what was computationally feasible was beaten back by technological advance. The rise of the network, especially in Sub-Saharan Africa, was a long-awaited revolution that promised to destroy distance[^TheNetwork]. Sticking with the the lustral theme, in 2010 'cloud computing' was so vaguely defined that it begged ridicule when considered as a serious replacement for production service grids. In 2015, proposing the deployment of a static, isolated (albeit federated and shared) infrastructure would negate the capacity of networks to reduce the barriers to collaboration which impede scientific discovery and innovation.
 
-### What does the internet think of all this ?
+### What does the internet think of all this
 
 In general, I'm wary of putting faith in the unwashed masses of the internet at large, but there is something to be said for general trends. Taking 'interest in' (*ie*, 'searching for') topics as a proxy for their uptake and relevance, we can get some idea of where people are focussing their efforts. Now, [Google Trends](http://trends.google.com) only goes back to 2004, while the seminal work on Grid Computing was written in 1999[^TheGrid], so we have to be careful of interpreting the trends. However a second edition[^TheGrid2] was coincidentally released in 2004, so we might as well use that as a reference. Here's how people have searched google for "HPC", "Big Data", "Grid Computing" and "Cloud Computing" since then[^IntriguingSearches]:
 
@@ -90,7 +119,7 @@ The searches for "grid computing" are making their way to extinction, while thos
 
 I invite the interested reader however to take a look at the various regional distinctions -  the "cloud computing" trend ***kills*** the others in the Sub-Saharan Region[^trendInFigshare].
 
-## The Network won.
+## The Network won
 
 Many claim that the rise of network capacity and fall in price of computing and data resources has led to a "democratisation" of science. What is meant is that there is a lower barrier to entry to research, since there are more resources available, to a wider range of researchers. However, this is not democracy, this is at best egalitariansim, and at worst demagogy. One of the unfortunate side effects of the rapid reduction in barriers to entry is that the **sharing motive** is undermined and there is a large temptation to "go it alone". This might lead eager groups, projects, initiatives to quickly develop even sizeable resources, instead of following a slower adoption route on shared or mutualised resources, only to discover later that there is a need to share. At this point though, the damage is done, and re-building the trust necessary to share resources can quite long. We refer to this as the **"erosion of the commons"**.
 
@@ -98,17 +127,43 @@ Hey, what if we didn't have to draw battle lines around what was "yours" and wha
 
 NICIS could indeed go a long way to providing a bedrock of trust, but more important, I think, is the aspect of **constituency**. I submit that a Commons could bring this about and improve things from a resource provider's point of view.
 
-# So, your place or mine...  ?
+# So, your place or mine
 
 Let's take a look at how a Commons would improve things from the researchers' perspective.
 
-The pillars of cyberinfrastructure have been identified in South Africa as **Data**, **HPC** and **Network**. These pillars make particular sense from a national funding agency perspective, influencing development of centralised interventions. However, in the real world, it's very hard to build something using only one pillar, be it a pillar of "techonlogy", or an institutional pillar. The point is that research is conducted with judicious, sometimes ubiquitous usage of all of these technology pillars, and frequently across institutional boundaries. Researchers do not identify as "HPC" users or "Data" users - and certainly not as belonging to a particular institute - they are simply researchers, so funding their activities within the ambit of any of these "pillars" creates unnecessary barriers. While the pillars are useful for funding agencies to channel their commitments into significant hardware investments, a false dichotomy has been created between services which are in reality complementary. The separation of pillars, while necessary and useful to central funding agencies, thus creates tension and inefficiencies both in the technical community entrusted to build and operate them, as well as the scientific communities which come to rely on them. There are very good reasons for having centralised funding (in order to address issues at scale) as well as independent or institutional funding streams (to ensure that there is a multiplicity and diversity in research and resources), however as often occurs, some convergence in activities is almost inevitable. When this occurs, whether it is technological, methodological, or scientific convergence, a means should exist whereby experience and resources can be shared.
+The pillars of cyberinfrastructure have been identified in South Africa as
+**Data**, **HPC** and **Network**.
+These pillars make particular sense from a national funding agency perspective,
+influencing development of centralised interventions.
+However, in the real world, it's very hard to build something using only one
+pillar, be it a pillar of "techonlogy", or an institutional pillar.
+The point is that research is conducted with judicious, sometimes ubiquitous
+usage of all of these technology pillars, and frequently across institutional
+boundaries.
+Researchers do not identify as "HPC" users or "Data" users - and certainly not
+as belonging to a particular institute - they are simply researchers, so funding
+their activities within the ambit of any of these "pillars" creates unnecessary
+barriers.
+While the pillars are useful for funding agencies to channel their commitments
+into significant hardware investments, a false dichotomy has been created
+between services which are in reality complementary.
+The separation of pillars, while necessary and useful to central funding
+agencies, thus creates tension and inefficiencies both in the technical
+community entrusted to build and operate them, as well as the scientific
+communities which come to rely on them.
+There are very good reasons for having centralised funding (in order to address
+issues at scale) as well as independent or institutional funding streams (to
+ensure that there is a multiplicity and diversity in research and resources),
+however as often occurs, some convergence in activities is almost inevitable.
+When this occurs, whether it is technological, methodological, or scientific convergence, a means should exist whereby experience and resources can be shared.
 
 ## 'Government Housing' vs 'Community Projects' - ensuring constituency-based participation
 
 Ok, this bit is going to be controversial... bear with me, and remember that I'm trying to make an argument, in order to get to the facts, so feel free to comment (constructively :smile:) down below.
 
-So, not all South Africans have equal access to e-Science resources and services. It is unrealistic to insist that all research universities will instate and host their own institutional HPC centres, let alone stand-alone e-Science Centres; this can only be effectively done in a certain environment and at a certain scale. However, we cannot accept such inequalities in our scientific communities, and efforts should be made to ensure access to quality services and performant resources irrespective of geographic location. This could be done by distributing resources, paid for by some central fund, to remote and disadvantaged communities; I refer to this as the "Government Housing" option - whereby a researcher at a disadvantage just has to wait patiently until the central bureaucracy disburses what it's able to in order to respond to their need. There are obvious issues with this, foremost the there is lack of choice and limited resources.
+So, not all South Africans have equal access to e-Science resources and
+services.
+It is unrealistic to insist that all research universities will instate and host their own institutional HPC centres, let alone stand-alone e-Science Centres; this can only be effectively done in a certain environment and at a certain scale. However, we cannot accept such inequalities in our scientific communities, and efforts should be made to ensure access to quality services and performant resources irrespective of geographic location. This could be done by distributing resources, paid for by some central fund, to remote and disadvantaged communities; I refer to this as the "Government Housing" option - whereby a researcher at a disadvantage just has to wait patiently until the central bureaucracy disburses what it's able to in order to respond to their need. There are obvious issues with this, foremost the there is lack of choice and limited resources.
 
 > ***"But certainly having hardware on-hand to work with is beneficial to both the technical and the scientific communities which are isolated by the Digital Divide ? Surely giving these people something, even if it's second-hand equipment, is better than nothing !?"*** <br>
 > - You, shrieking in disblief.
