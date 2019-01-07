@@ -13,7 +13,7 @@ mathjax: false
 
 Ok, it's 2016. David Bowie is dead, but he's filling my eardrums right now anyway. I've got a good github streak going, since the final days of 2015, and I guess I'm on a roll. Here goes the blogging thing again.
 
-# Why now ?
+# Why now
 
 It's not like I have regular readers (ha !), but I know I'm going to come back and read this later. I do that with everything I write... what made me get down to this right now ? Inspiration is a precious, fleeting and necessary prerequisite for getting anything down "on paper" for me - so why did I have it now ? I think it comes down to not wanting to waste time. It comes down to not wanting to get to the end of the year, look back and think "damn, have I even accomplished anything  ?".
 

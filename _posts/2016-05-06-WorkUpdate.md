@@ -13,28 +13,28 @@ comments: true
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [AAROC Operations](#aaroc-operations)
-	- [ROD](#rod)
-	- [Accounting](#accounting)
+  - [ROD](#rod)
+  - [Accounting](#accounting)
 - [CODE-RADE](#code-rade)
-	- [LibSVM](#libsvm)
-	- [HTK](#htk)
+  - [LibSVM](#libsvm)
+  - [HTK](#htk)
 - [Performance Study](#performance-study)
-	- [Novel jobs](#novel-jobs)
-		- [Messaging](#messaging)
-		- [Metatadata registration](#metatadata-registration)
-	- [Data Management](#data-management)
-	- [Compute performance](#compute-performance)
-	- [Reproducible science](#reproducible-science)
+  - [Novel jobs](#novel-jobs)
+    - [Messaging](#messaging)
+    - [Metatadata registration](#metatadata-registration)
+  - [Data Management](#data-management)
+  - [Compute performance](#compute-performance)
+  - [Reproducible science](#reproducible-science)
 - [Sci-GaIA](#sci-gaia)
-	- [Web forum](#web-forum)
-	- [Winter School](#winter-school)
-	- [THOR](#thor)
-- [What's on my plate ?](#whats-on-my-plate-)
-	- [AAROC Ops](#aaroc-ops)
-	- [CODE-RADE / AfricaGrid User Support](#code-rade-africagrid-user-support)
-	- [SciGaIA](#scigaia)
-	- [General research](#general-research)
-	- [Meraka / SANREN](#meraka-sanren)
+  - [Web forum](#web-forum)
+  - [Winter School](#winter-school)
+  - [THOR](#thor)
+- [What's on my plate](#whats-on-my-plate)
+  - [AAROC Ops](#aaroc-ops)
+  - [CODE-RADE / AfricaGrid User Support](#code-rade--africagrid-user-support)
+  - [SciGaIA](#scigaia)
+  - [General research](#general-research)
+  - [Meraka / SANREN](#meraka--sanren)
 - [Footnotes](#footnotes)
 
 <!-- /TOC -->
@@ -93,7 +93,7 @@ We had a [pull request](https://github.com/AAROC/DevOps/pull/319) from Bouchra t
 
 In the future, I might want to include some coverage of the Ansible playbooks here that describe how well we can reproducibly orchestrate at least the core services of the ROC, should a bus error[^BusError] ever occur.
 
-#  CODE-RADE
+# CODE-RADE
 
 We've had a good few weeks for [CODE-RADE](http://www.africa-grid.org/CODE-RADE), which has proved itself, both on the integration as well as on the delivery side. We had the opportunity to showcase the platform due to a request for support from a student at NWU working on their masters. This is discussed below in [Performance Study](#performance-study)[^Incidentally]. CODE-RADE was also extended to the Moroccan sites, and after some discussion with them, we've had our first request for an application from outside of South Africa - [Mothur](http://www.mothur.org/), a bioinformatics application which requires huge memory[^NoSurprise]. Mothur is being integrated by the Moroccans, so I'll report on the SVM and HTK applications (in the machine-learning domain), which took up my time.
 
@@ -121,7 +121,7 @@ Pulse of the CODE-RADE repository for week 18 2016
 
 [HTK](http://htk.eng.cam.ac.uk/) is a Hidden Markhov chain Toolkit widely used in machine learning in the human language domain. It has been previously used by folks in Meraka for speech recognition studies. Version 3.4.1 and 3.5.beta-1 entered CODE-RADE in Build 148. This was one of the applications used in [the performance study](#performance-study). Whilst the applications of the package are all available and working, there seems to be some incompatibility with the data sets used in the study. This has been reported in [CODE-RADE #67](https://github.com/AAROC/CODE-RADE/issues/67), and not yet resolved. The data set assumes the so-called "ASR template" set of scripts, and work has started in integrating those [as a component of CODE-RADE](http://ci.sagrid.ac.za/job/ASR%20template/)
 
-#  Performance Study
+# Performance Study
 
 As mentioned previously, there is a M.Sc. student at NWU who is conducting a study of the performance of using the grid for massive machine-learning processing, using the SVM and HTK methods. A lot of time was spent with him on Slack to understand the scope and needs of the study. The submission of the jobs to actually perform the study was done myself since :
 
@@ -202,7 +202,6 @@ lcg-cp -v --vo sagrid lfn:/grid/sagrid/nwu-hlt/NCHLT/NCHLT_${DATASET}.tar.gz fil
 
 for the input data management.
 
-
 ## Compute performance
 
 One of the main elements of this study was to determine the most efficient strategy for parallelising the workflow. The workflow is principally data-bound, and can be parametrically paralellised by dataset. However, within the processing of each data set there are further levels of parallelism, which can be implemented as task-based or with distributed memory. In order to estimate how to most efficiently split the workflow, a scan over parameters which determined the level of serial _vs_ parallel execution had to be done. As overhead to each set of parameters though was the data staging time - the time it takes to ship data from the online storage to the worker node input sandbox, before processing can begin. There is expected to be large variation in this timing, due to network conditions. The compute performance study was therefore organised into two phases :
@@ -216,7 +215,6 @@ These values were collected during the runs at the participating sites and at th
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Welcome back SAGRID. After a long absence, we&#39;re very pleased to welcome back sagrid jobs onto the cluster -- now running about 140 jobs.</p>&mdash; Scott Hazelhurst (@ZAWitsCore) <a href="https://twitter.com/ZAWitsCore/status/727563962376695812">May 3, 2016</a></blockquote>[^UghCaps]
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
 
 ## Reproducible science
 
@@ -246,8 +244,7 @@ Most work during this week for the [Sci-GaIA Winter School](http://courses.sci-g
 
 Finally, for the week's report, I did a bit of work on the [THOR](https://project-thor.eu/) side. Two weeks ago, [I wrote about how it might be beneficial to the CSIR researchers and the CSIR itself](http://www.africa-grid.org/blog/2016/04/11/ORCID-impact/) if [ORCID](http://orcid.org) could be made to sort the objects in my profile by some sort of "importance", as defined by whoever. This started quite an email exchange, and made it to the [THOR blog](https://project-thor.eu/2016/04/15/growing-number-of-thor-ambassadors-join-us/). This week, there was followup from the DataCite guys on [the idea of linking Github to ORCID](https://project-thor.readme.io/v1.0/discuss/56bc793e27425d0d00ccd38a) in order to include software products  in ORCID and link them to data and journal products in the same profile. I'm glad to see that the same ["ungodly union"](https://github.com/arfon/fidgit) that worked for first Figshare and then Zenodo is getting traction here too.
 
-
-# What's on my plate ?
+# What's on my plate
 
 So, what's left on my plate ? In no particular order :
 

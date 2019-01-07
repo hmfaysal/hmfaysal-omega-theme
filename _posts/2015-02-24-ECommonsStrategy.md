@@ -23,13 +23,13 @@ mathjax: true
   - [The Network won](#the-network-won)
 - [So, your place or mine](#so-your-place-or-mine)
   - ['Government Housing' vs 'Community Projects' - ensuring constituency-based participation](#government-housing-vs-community-projects---ensuring-constituency-based-participation)
-    - [The world is flat.](#the-world-is-flat)
-- [The Craftsperson and the Third Career.](#the-craftsperson-and-the-third-career)
+    - [The world is flat](#the-world-is-flat)
+- [The Craftsperson and the Third Career](#the-craftsperson-and-the-third-career)
   - [DevOps, Software-Defined Infrastructure and transferrable skills](#devops-software-defined-infrastructure-and-transferrable-skills)
-  - [Fork my infrastructure.](#fork-my-infrastructure)
-  - [We, for one, welcome our new robot overlords.](#we-for-one-welcome-our-new-robot-overlords)
+  - [Fork my infrastructure](#fork-my-infrastructure)
+  - [We, for one, welcome our new robot overlords](#we-for-one-welcome-our-new-robot-overlords)
 - [Doing Research on the Research Infrastructure](#doing-research-on-the-research-infrastructure)
-- [Conclusions and future work.](#conclusions-and-future-work)
+- [Conclusions and future work](#conclusions-and-future-work)
 - [References and Footnotes](#references-and-footnotes)
 
 <!-- /TOC -->
@@ -163,7 +163,19 @@ Ok, this bit is going to be controversial... bear with me, and remember that I'm
 
 So, not all South Africans have equal access to e-Science resources and
 services.
-It is unrealistic to insist that all research universities will instate and host their own institutional HPC centres, let alone stand-alone e-Science Centres; this can only be effectively done in a certain environment and at a certain scale. However, we cannot accept such inequalities in our scientific communities, and efforts should be made to ensure access to quality services and performant resources irrespective of geographic location. This could be done by distributing resources, paid for by some central fund, to remote and disadvantaged communities; I refer to this as the "Government Housing" option - whereby a researcher at a disadvantage just has to wait patiently until the central bureaucracy disburses what it's able to in order to respond to their need. There are obvious issues with this, foremost the there is lack of choice and limited resources.
+It is unrealistic to insist that all research universities will instate and host
+their own institutional HPC centres, let alone stand-alone e-Science Centres;
+this can only be effectively done in a certain environment and at a certain
+scale.
+However, we cannot accept such inequalities in our scientific communities, and
+efforts should be made to ensure access to quality services and performant
+resources irrespective of geographic location.
+This could be done by distributing resources, paid for by some central fund, to
+remote and disadvantaged communities; I refer to this as the "Government
+Housing" option - whereby a researcher at a disadvantage just has to wait
+patiently until the central bureaucracy disburses what it's able to in order to
+respond to their need.
+There are obvious issues with this, foremost the there is lack of choice and limited resources.
 
 > ***"But certainly having hardware on-hand to work with is beneficial to both the technical and the scientific communities which are isolated by the Digital Divide ? Surely giving these people something, even if it's second-hand equipment, is better than nothing !?"*** <br>
 > - You, shrieking in disblief.
@@ -178,13 +190,35 @@ My simple analysis is this. First of all there is a **power** crisis in South Af
 
 Secondly, the **pace** at which technology is evolving means that the sites which have only access to second- or third-generation equipment will *de-facto* be second-rate citizens of the e-Science world, learning obsolete methods and technology while the rest steam ahead.
 
-Now, there is certainly a lot that can be done with older equipment, and the turnover rate of cutting-edge infrastructure is indeed very high. However, these resources will only be efficient in a *system* which allows various workloads to be executed by the relevant resources. This is not possible in state where resources are disconnected, but - while not solved problem - can be done in a decentralised, connected system.
+Now, there is certainly a lot that can be done with older equipment, and the
+turnover rate of cutting-edge infrastructure is indeed very high.
+However, these resources will only be efficient in a *system* which allows various workloads to
+be executed by the relevant resources.
+This is not possible in state where resources are disconnected, but - while not solved problem - can be done in a decentralised, connected system.
 
-### The world is flat.
+### The world is flat
 
-The conventional wisdom says that you conduct your cutting-edge, grand-challenge research on  expensive Tier-1 resources, and everything else on the Tier-2 resources. However, this belies the power of the network to *flatten* the world and as far as resource deployment goes, in my opinion, piecemeal installations are a pretty bad idea. A relevant model, I suggest, is not a **hierarchy of resources**, but a **complex-adaptive system** of services. This is a much more realistic representation of a real e-Infrastructure, due to it's changing, complex nature. The distribution of resources should be thus done in the context of a self-interacting ***system***, rather than islands of kit. Now, the NICIS report clearly recognises that we have (and should have) a System of some kind - an **Eco**system, for example - but I think the critical issue is that it is a complex, dynamic system; one capable of interacting with itself, self-organising and capable of generating structures beyond simple hierarchy. In keeping with the analogy, this all depends on the boundary conditions and external constraints placed on the system.
+The conventional wisdom says that you conduct your cutting-edge, grand-challenge
+research on  expensive Tier-1 resources, and everything else on the Tier-2
+resources.
+However, this belies the power of the network to *flatten* the world and as far
+as resource deployment goes, in my opinion, piecemeal installations are a pretty
+bad idea.
+A relevant model, I suggest, is not a **hierarchy of resources**, but a
+**complex-adaptive system** of services.
+This is a much more realistic representation of a real e-Infrastructure, due to
+it's changing, complex nature. The distribution of resources should be thus done
+in the context of a self-interacting ***system***, rather than islands of kit.
+Now, the NICIS report clearly recognises that we have (and should have) a System
+of some kind - an **Eco**system, for example - but I think the critical issue is
+that it is a complex, dynamic system; one capable of interacting with itself,
+self-organising and capable of generating structures beyond simple hierarchy.
+In keeping with the analogy, this all depends on the boundary conditions and external constraints placed on the system.
 
-If the external constraints promoted the natural tendency of the system to support itself, and inhibited the natural tendency of the system to disintegrate, it could do some really useful work. I explored this concept while in the context of the Africa-Arabia Regional Operations Centre [last year in Nairobi]() - here's a quick refresher :  
+If the external constraints promoted the natural tendency of the system to
+support itself, and inhibited the natural tendency of the system to
+disintegrate, it could do some really useful work.
+I explored this concept while in the context of the Africa-Arabia Regional Operations Centre last year in Nairobi - here's a quick refresher :  
 
 <iframe src="http://prezi.com/embed/89bkbbre5vk1/?bgcolor=ffffff&amp;lock_to_path=1&amp;autoplay=0&amp;autohide_ctrls=0#" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" frameborder="0" height="500" width="800"></iframe>
 
@@ -192,11 +226,33 @@ If you had the time to go through that prezi, well done ! If not, long story sho
 
 > Allowing technical communities to re-organise and interact coherently with scientific communities can result in a productive environment for both. Neither a "Government Housing" project, nor a featureless, undirected pool of resources will make a productive e-Science Commons.
 
-# The Craftsperson and the Third Career.
+# The Craftsperson and the Third Career
 
-Finally, let's discuss a different aspect of an e-Infrastructure Commons - that of the people who operate and develop it. In a service-based economy, two distinct parties exist - the service *providers* and service *consumers*. There are distinct relationships between these two parties (service demand and supply for example), however it is assumed that there is very little overlap in activities. We have a model of modern IT professionals, working in a service-provision department, interacting via pre-agreed SLA's to provide services to professional researchers who select and consume them. However, given the cutting edge nature of these services, and the fact that they are operated within research environments, the reality is that there is often a great deal of overlap. Since there is such complexity in these platforms, at times there is no neat separation between research and research support staff. We have thus seen the emergence of a third career path, being neither researcher nor research support, and emergence of Research Software Engineers - craftspeople who work at the interface of a scientific domain, and the technologies which enable it. Innovation in this boundary between infrastructure, services, and science is highly creative, and difficult to fit into traditional institutional silos, or in our case cyberinfrastructure pillars. Whilst institutes in South Africa are starting to recognise this by the creation of e-Science Centres[^UCTeResearch] to employ the Research Software Engineers and Craftspeople, this trend has shown great payoff abroad[^eScienceCentres].
+Finally, let's discuss a different aspect of an e-Infrastructure Commons - that
+of the people who operate and develop it. In a service-based economy, two
+distinct parties exist - the service *providers* and service *consumers*.
+There are distinct relationships between these two parties (service demand and
+supply for example), however it is assumed that there is very little overlap in
+activities.
+We have a model of modern IT professionals, working in a service-provision
+department, interacting via pre-agreed SLA's to provide services to professional
+researchers who select and consume them.
+However, given the cutting edge nature of these services, and the fact that they
+are operated within research environments, the reality is that there is often a
+great deal of overlap. Since there is such complexity in these platforms, at
+times there is no neat separation between research and research support staff.
+We have thus seen the emergence of a third career path, being neither researcher
+nor research support, and emergence of Research Software Engineers -
+craftspeople who work at the interface of a scientific domain, and the
+technologies which enable it.
+Innovation in this boundary between infrastructure, services, and science is
+highly creative, and difficult to fit into traditional institutional silos, or
+in our case cyberinfrastructure pillars.
+Whilst institutes in South Africa are starting to recognise this by the creation of e-Science Centres[^UCTeResearch] to employ the Research Software Engineers and Craftspeople, this trend has shown great payoff abroad[^eScienceCentres].
 
-In immediate terms, we consider that identifying and developing capacity in this new career path consists in identifying **relevant, transferable skills**. This is quite often conflated with the "DevOps" paradigm, where there is better empathy and collaboration between those operating infrastructures and those developing it; indeed, where they often are one and the same team.
+In immediate terms, we consider that identifying and developing capacity in this
+new career path consists in identifying **relevant, transferable skills**.
+This is quite often conflated with the "DevOps" paradigm, where there is better empathy and collaboration between those operating infrastructures and those developing it; indeed, where they often are one and the same team.
 
 ## DevOps, Software-Defined Infrastructure and transferrable skills
 
@@ -204,7 +260,13 @@ One of the aspects to emerge from the cloud computing paradigm is that hardware 
 
 > To a first approximation, <b>Everything = Code</b>
 
-Ok - the **actual** hardware is not code, but as soon as you turn it on, it's executing something. The Operating System is code. The hypervisor is code. The Private Cloud manager is code. The guest OS is code. The service running the application is code...
+Ok - the **actual** hardware is not code, but as soon as you turn it on, it's
+executing something.
+The Operating System is code.
+The hypervisor is code.
+The Private Cloud manager is code.
+The guest OS is code.
+The service running the application is code...
 
 Things get even more 'meta' from there... For example, we wrote some [Ansible](http://www.ansible.com) roles which **describe** a state of services consisting of a [Shibboleth IDP](http://shibboleth.net/) supported by an [OpenLDAP backend](http://www.openldap.org) containing identities of people who would like to use a service[^IdPArticle]. The authors  of this service are not the ones operating the various instances of it, and it's something that can be deployed by changing a few variables and at the push of a button.
 
@@ -212,7 +274,7 @@ Consider now the roles involved in this. Previously, there was *The Expert*[^BOF
 
 Again, this is what SAGrid was supposed to be, and what "the project formerly known as SAGrid" should be within NICIS.
 
-## Fork my infrastructure.
+## Fork my infrastructure
 
 Something astounding has happened in the last few years, arising from the convergence of the software development and IT operations commmunity, and the ability to virtualise resources: entire infrastructures can be "forked" from pre-existing ones. The rise of "social-coding" websites - most prominently [Github](http://github.com) has made writing and sharing code much easier and systematic, as well as providing an easy means of provenance, by tracking the network of forks and contributions of repositories. Not only does this dramatically reduce the time to deployment of new resources, services and indeed entire sites, but also introduces new variables into the e-Infrastructure ecosystem, and has significant implications for what training should look like. Leading into my discussion of automation below, a question arises:
 
@@ -220,7 +282,7 @@ Something astounding has happened in the last few years, arising from the conver
 
 On the one hand, you'll be giving some people a job close to the hardware. On the other hand, the training material will be obsolete the moment it's written. The market for HPC system administrators isn't all that large compared to the industry IT sector, so in this case, the training will always have a limited audience and traction. On the other hand, if you've got a robust and quality Software-Defined Infrastructure, why even train the system administrators ? It would be a better investment to improve the software development capabilities of a specialised, (distributed) team and let automated testing, monitors, deployment and integration do the rest.
 
-## We, for one, welcome our new robot overlords.
+## We, for one, welcome our new robot overlords
 
 A last word on automation. The strategy of "the project formerly known as SAGrid" should explicitly take into account the automation trend. "Robots" refer to services which perform both menial and in some cases advanced tasks which were previously done "by-hand". We've implemented this in automated continuous integration of scientific applications[^Jenkins], and are working on doing this for infrastructure services with Ansible, Puppet and Rundeck. What's missing in our skillset at the moment is also what seems to be something of a common trend in Big Data - Artificial Intelligence. Developing a deep monitoring and reporting system, and developing appropropriate responses to events is a realistic goal which is already being done by companies with far larger infrastructures and tighter constraints than ours[^NetFlix].
 
@@ -229,7 +291,7 @@ A last word on automation. The strategy of "the project formerly known as SAGrid
 Many of the areas of development touched on require **actual research** in their field. The prospect of developing research infrastructure that is both friendly and to the communities that it serves, as well as conducive to inward-looking research that improves and extends it is very appealing. There is a very wide range of topics in e-Science which could immediately be tackled -
 reproducible research workflows, resilient computing, semantic enrichment of research data sets, machine data mining, multiscale middleware... the list is endless. The point, however, is that this research can ***only be conducted with access to an e-Infrastructure at scale***. Taken together with the focus on Openness and the approximation that "Everything = code", "the project formerly known as SAGrid" stands to provide a fertile environment for innovation, improving both itself and the communities which it serves. "Itself" here  refers both to the pillars of cyberinfrastructure which it cuts across, as well as the wider constituency of resource providers.
 
-# Conclusions and future work.
+# Conclusions and future work
 
 NICIS recognises that there is a need for a cross-cutting activity to enhance and fully enable researchers using cyberinfrastructure. In my view this strategy should rest, as SAGrid initially did, on the desire, needs and efforts of a committed community of contributors: universities, research laboratories and large research groups. By adopting a paradigm of **constituency** - shared ownership and community-developed services and tools, based on **open standards** - the system could be sustainable. Relevant directed interventions at scale by a central funding agency[^EUorDST] could help ensure that the development of a commons is more attractive than the development of individual, isolated systems. New tools and methodologies are speeding up the deployment and increasing the range of services that can be realistically offered. Enabling this acceleration is Open Source software, and the rise of DevOps culture which allows good collaborative software development methodologies to be applied to infrastructure services themselves. Recognising the importance of these hitherto "hidden" technical experts and allowing them to bridge the scientific and technical communities they serve can bring great benefit to both.
 
@@ -256,13 +318,13 @@ Bruce
 [^TheGrid]: ["The Grid: Blueprint for a New Computing Infrastructure"](http://books.google.it/books?id=ONRQAAAAMAAJ), Morgan Kaufmann Publishers, 1999, Ian Foster, Carl Kesselman (Eds)
 [^TheGrid2]: ["The Grid 2: The Grid: Blueprint for a New Computing Infrastructure"](http://books.google.it/books?id=YdVQAAAAMAAJ), Elsevier series in grid computing, 2004, Foster, I. and Kesselman, C. (Eds)
 [^IntriguingSearches]: Boy, there's a lot to play with here, but that's probably best kept in a separate post.
-[^trendInFigshare]: This is a "live" integration of the trend. Since it will change over time, I've put a snapshot of the graph at the time of writing at http://dx.doi.org/10.6084/m9.figshare.1317292
+[^trendInFigshare]: This is a "live" integration of the trend. Since it will change over time, I've put a snapshot of the graph at the time of writing at [doi:10.6084/m9.figshare.1317292](http://dx.doi.org/10.6084/m9.figshare.1317292)
 [^UCTeResearch]: See, for example the recently-constituted [e-Research Centre](http://www.eresearch.uct.ac.za/) at the [Unversity of Cape Town](http://www.uct.ac.za)
 [^eScienceCentres]: Good examples are the [Oxford e-Reseach Centre](http://www.oerc.ox.ac.uk/), the [Monash e-Research Centre](https://platforms.monash.edu/eresearch/) and the [Netherlands e-Science Centre](https://www.esciencecenter.nl/)
 [^EUorDST]: The EC FP7 and H2020 funding mechanisms have played this role well, and national funding from South Africa's DST for example could play such a role at a smaller scale.
 [^OriginalJRU]: The founding members of the SAGrid JRU were : The UCT-CERN Research Centre, UCT Information and Communication Technology Services, iThemba LABS, the University of the Free State Computer Services Department, Department of Information Technology, University of the North­West, Department of Information Technology, University of Johannesburg, University of the Witwatersrand, Bioinformatics research group.
 [^BOFH]: Also known as the [BOFH](http://en.wikipedia.org/wiki/Bastard_Operator_From_Hell)
-[^IdPArticle]: This is described at length at http://aaroc.github.io/devops/2014/10/24/DevOps-v0-0-3-Release/
+[^IdPArticle]: This is described at length at [http://www.africa-grid.org/devops/2014/10/24/DevOps-v0-0-3-Release/](http://aaroc.github.io/devops/2014/10/24/DevOps-v0-0-3-Release/])
 [^Jenkins]: Most recently presented [here](http://www.slideshare.net/brucellino/jenkins-43354970)
 [^NetFlix]: NetFlix's [Simian Army](http://techblog.netflix.com/2011/07/netflix-simian-army.html) is a good example.
 [^PayPerUseWiki]: See also the [EGI Pay-Per-Use final report](https://documents.egi.eu/public/ShowDocument?docid=1391)
