@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Raleway|Permanent+Marker|IBM+Plex+Mono');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono|IBM+Plex+Sans|IBM+Plex+Serif|Permanent+Marker');
 
 /* ------------------------ */
 /* GENERAL TYPOGRAPHY RULES */
@@ -10,6 +10,7 @@ content {
 body {
   -webkit-font-smoothing: antialiased;
   font-size: 18px;
+  font-family: 'IBM Plex Serif', serif;
 }
 /* - Headers - */
 h1,
@@ -19,10 +20,10 @@ h4,
 h5 {
   margin: 0;
   color: #41120C;
+  font-family: 'Permanent Marker', cursive;
 }
 h1 {
   font-size: 36px;
-  font-family: Playfair Display;
   color: #41120C;
   line-height: 48px;
   margin-bottom: 24px;
@@ -75,7 +76,7 @@ h6 {
 }
 /* - Links - */
 a {
-  text-decoration: none;
+co  text-decoration: none;
 }
 @include transition(color 0.2s);
 a:hover {
@@ -94,8 +95,19 @@ a:hover {
 /* - Blockquote - */
 blockquote {
   padding-left: 0;
+  color: #FBBC36;
+  font-size: 2.0em;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: italic;
   border: 0;
   position: relative;
+}
+p::first-letter {
+    font-size: 1.1em;
+    padding-left: 25px;
+}
+p::first-word {
+    font-family: 'Permanent Marker', cursive;
 }
 blockquote:before {
   content: "";
@@ -186,6 +198,10 @@ input[type=number]::-webkit-outer-spin-button {
 /* - Figures - */
 figure {
   margin: 0 0 24px;
+}
+/* Table content */
+td, thead {
+    font-family: 'IBM Plex Sans', sans-serif;
 }
 /* - Pre and code - */
 pre,
@@ -755,45 +771,7 @@ html {
   width: 100%;
   height: 100%;
 }
-/* ----------- */
-/* THEME FONTS */
-/* ----------- */
-body {
-  font-family: 'Raleway', serif;
-}
-body input,
-body textarea,
-body .btn,
-body button {
-  font-family: 'Raleway', serif;
-}
-.lighter {
-  font-weight: 200 !important;
-}
-.light {
-  font-weight: 300 !important;
-}
-.lead {
-  font-size: 18px;
-  font-weight: 400;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Playfair Display', sans-serif;
-  color:
-}
-h1.lighter,
-h2.lighter,
-h3.lighter,
-h4.lighter,
-h5.lighter,
-h6.lighter {
-  font-weight: 200 !important;
-}
+
 /* ---------- */
 /* ANIMATIONS */
 /* ---------- */
@@ -1172,7 +1150,7 @@ figcaption {
     padding-bottom: 1.6em;
     text-align: justify;
     margin: auto;
-    font-family: 'Playfair Display', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
     font-size: 0.8em;
     max-width: 50%;
 }
