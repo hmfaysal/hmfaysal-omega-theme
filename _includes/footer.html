@@ -1,60 +1,84 @@
 {% if page.image.feature %}
-<footer id="footer"  class="blog-background overlay text-center align-middle animated from-top" style="background-image: url({{ site.url }}/images/{{ page.image.feature }})" >
+<footer id="footer" class="blog-background overlay text-center align-middle animated from-top" style="background-image: url({{ site.url }}/images/{{ page.image.feature }})">
 {% else %}
-<footer id="footer"  class="blog-background overlay text-center align-middle animated from-top" style="background-image: url({{ site.url }}/images/{{ site.default_bg }})" >
+<footer id="footer" class="blog-background overlay text-center align-middle animated from-top" style="background-image: url({{ site.url }}/images/{{ site.default_bg }})">
 {% endif %}
-
     <div class="inner">
         <div class="container">
-
             <ul class="social-icons">
-            {% if site.owner.twitter %}<li>
-                <a href="http://twitter.com/{{ site.owner.twitter }}" data-toggle="tooltip" title="{{ site.owner.name}} on Twitter" target="_blank">
-                    <i class="fa fa-twitter"></i>
-                </a>
-            </li>{% endif %}
-            {% if site.owner.google_plus %}<li>
-                <a href="{{ site.owner.google_plus }}" data-toggle="tooltip" title="{{ site.owner.name}} on Google+" target="_blank">
-                    <i class="fa fa-google-plus"></i>
-                </a>
-            </li>{% endif %}
-            {% if site.owner.stackexchange %}<li>
-                <a href="{{ site.owner.stackexchange }}" data-toggle="tooltip" title="{{ site.owner.name}} on StackExchange" target="_blank">
-                    <i class="fa fa-stack-exchange"></i>
-                </a>
-            </li>{% endif %}
-            {% if site.owner.instagram %}<li>
-                <a href="http://instagram.com/{{ site.owner.instagram }}" data-toggle="tooltip" title="{{ site.owner.name}} on Instagram" target="_blank">
-                    <i class="fa fa-instagram"></i>
-                </a>
-            </li>{% endif %}
-            {% if site.owner.flickr %}<li>
-                <a href="http://www.flickr.com/photos/{{ site.owner.flickr }}" data-toggle="tooltip" title="{{ site.owner.name}} on Flickr" target="_blank">
-                    <i class="fa fa-flickr"></i>
-                </a>
-            </li>{% endif %}
-            {% if site.owner.github %}<li>
-                <a href="http://github.com/{{ site.owner.github }}" data-toggle="tooltip" title="{{ site.owner.name}} on Github" target="_blank">
-                    <i class="fa fa-github"></i>
-                </a>
-            </li>{% endif %}
-        </ul>
+                {% if site.owner.twitter %}<li>
+                    <a href="http://twitter.com/{{ site.owner.twitter }}" data-toggle="tooltip" title="{{ site.owner.name}} on Twitter"
+                        target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </li>
+                {% endif %}
+                {% if site.owner.google_plus %}
+                <li>
+                    <a href="{{ site.owner.google_plus }}" data-toggle="tooltip" title="{{ site.owner.name}} on Google+"
+                        target="_blank">
+                        <i class="fab fa-google-plus"></i>
+                    </a>
+                </li>
+                {% endif %}
+                {% if site.owner.stackexchange %}
+                <li>
+                    <a href="{{ site.owner.stackexchange }}" data-toggle="tooltip" title="{{ site.owner.name}} on StackExchange"
+                        target="_blank">
+                        <i class="fab fa-stack-exchange"></i>
+                    </a>
+                </li>{% endif %}
+                {% if site.owner.instagram %}<li>
+                    <a href="http://instagram.com/{{ site.owner.instagram }}" data-toggle="tooltip" title="{{ site.owner.name}} on Instagram"
+                        target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>{% endif %}
+                {% if site.owner.flickr %}<li>
+                    <a href="http://www.flickr.com/photos/{{ site.owner.flickr }}" data-toggle="tooltip" title="{{ site.owner.name}} on Flickr"
+                        target="_blank">
+                        <i class="fab fa-flickr"></i>
+                    </a>
+                </li>{% endif %}
+                {% if site.owner.github %}<li>
+                    <a  href="http://github.com/{{ site.owner.github }}"
+                        data-toggle="tooltip"
+                        title="{{ site.owner.name}} on Github"
+                        target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+                {% endif %}
+                {% if site.owner.keybase %}
+                <li>
+                    <a  href="https://keybase.com/{{ site.owner.keybase }}"
+                        data-toggle="tooltip"
+                        title="{{ site.owner.name }} on Keybase"
+                        target ="_blank">
+                        <i class="fab fa-keybase"></i>
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
             <p class="copy-text">
-                <a href="{{ site.url }}/about/">{{ site.owner.name }}</a> &copy; {{ site.time | date: '%Y' }} &bull; All rights reserved.
+                <a href="{{ site.url }}/about/">{{ site.owner.name }}</a> &copy; {{ site.time | date: '%Y' }}
+                &bull; All rights reserved.
             </p>
 
             <ul class="menu-items">
-            {% for link in site.links %}
-            <li>
-                {% if link.external %}
-                    <a href="{{ link.url }}">{% if link.icon %}<i class="icon-{{ link.icon }}"></i>{% else %}{{ link.title }}{% endif %}</a>&nbsp;&bull;
-                {% else %}
-                    <a href="{{ site.url }}{{ link.url }}">{% if link.icon %}<i class="icon-{{ link.icon }}"></i>{% else %}{{ link.title }}{% endif %}</a>&nbsp;&bull;
-                {% endif %}
-            </li>
-            {% endfor %}
-            <li><a href="{{ site.url }}/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
-        </ul>
+                {% for link in site.links %}
+                <li>
+                    {% if link.external %}
+                    <a href="{{ link.url }}">{% if link.icon %}<i class="icon-{{ link.icon }}"></i>{% else %}{{
+                        link.title }}{% endif %}</a>&nbsp;&bull;
+                    {% else %}
+                    <a href="{{ site.url }}{{ link.url }}">{% if link.icon %}<i class="icon-{{ link.icon }}"></i>{%
+                        else %}{{ link.title }}{% endif %}</a>&nbsp;&bull;
+                    {% endif %}
+                </li>
+                {% endfor %}
+                <li><a href="{{ site.url }}/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+            </ul>
         </div>
     </div>
 </footer>
