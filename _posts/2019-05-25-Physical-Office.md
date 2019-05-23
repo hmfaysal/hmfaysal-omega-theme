@@ -6,7 +6,7 @@ headline: "I am tired of staring at a screen."
 category: blog
 tags: ['personal','workspace','realworld']
 image: 
-  feature: '/images/dustin-lee-19667-unsplash.jpg'
+  feature: 'dustin-lee-19667-unsplash.jpg'
 mathjax: true
 ---
 
