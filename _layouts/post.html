@@ -39,18 +39,17 @@
                     <div class="pagination text-center">
                   		<span class="page_number ">{% if page.previous %}<a href="{{ page.previous.url }}"><i class="fa fa-chevron-left"></i> Previous post : {{ page.previous.title }}</a>{% endif %} &bull; <a href="{{ site.url }}"><i class="fa fa-home"></i></a>{% if page.next %} &bull; <a href="{{ page.next.url }}">Next post : {{ page.next.title }} <i class="fa fa-chevron-right"></i></a>{%endif %}</span>
                     </div>
-        </div>
-                    <footer class="post-footer entry-meta">
-                        {% if site.share %}{% include share.html %}{% endif %}
-                        {% include signoff.html %}
-                        {% if site.disqus_shortname and page.comments %}<div id="disqus_thread"></div><!-- /#disqus_thread -->{% endif %}
-                    </footer>
+                </div>
+                <footer class="post-footer entry-meta">
+                    {% comment %} {% if site.share %}{% include share.html %}{% endif %} {% endcomment %}
+                    {% include signoff.html %}
+                    {% if site.disqus_shortname and page.comments %}<div id="disqus_thread"></div><!-- /#disqus_thread -->{% endif %}
+                </footer>
             </article>
+        </div>
     </div>
+    {% include footer.html %}
+    {% include scripts.html %}
 </div>
-{% include footer.html %}
-
-
-{% include scripts.html %}
 </body>
 </html>
