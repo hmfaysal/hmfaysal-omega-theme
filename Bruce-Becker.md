@@ -14,7 +14,7 @@ If you're looking for other things by Bruce Becker, see [his home page](https://
 >&quot; Viel Hilft Viel &quot;
 ><small><cite title="Timm Morten Steinbeck">Timm Morten Steinbeck</cite></small>
 
-# Bruce Becker is a real person
+## Bruce Becker is a real person
 
 He writes this blog as often as he likes, on whatever he feels. Feel free to leave comments, but don't expect them to be automatically published. He's kinda picky about who says what.
 
@@ -28,10 +28,10 @@ What really makes him happy is when he sees scientists getting work done in a tr
 
 > Bruce is a real person. A pompous, real person.
 
-# Bruce doesn't often agree with you
+## Bruce doesn't often agree with you
 Being a pompous dude most of the time, Bruce has some strong opinions. They are sometimes in somewhat stark contrast with what most people would call "reality", which can be cause for friction. If you, dear reader, can accept this small fact, perhaps you will be less vexed by some of what you may read here. Bruce doesn't really mind, as long as he gets to say what he wants (which is what this or any blog is about after all, isn't it).
 
-# Bruce is actually a friendly guy
+## Bruce is actually a friendly guy
 This blog is for ranting mostly. If you want to get in touch with Bruce - be it for work or friendship - he's usually pretty open to that. Although he uses social networks, he uses them for pretty specific purposes (and we quote):
 
 > - ~~facebook is for talking trash and taking the piss out of real friends~~ I'm done with facebook
