@@ -11,40 +11,66 @@ mathjax: true
 
 ---
 
-- [Contained environments before containers](#contained-environments-before-containers)
-  - [Addressing the issue](#addressing-the-issue)
-- [Design principles](#design-principles)
-  - [Building an appropriate model](#building-an-appropriate-model)
-  - [Data concerns](#data-concerns)
-  - [Deterministic, Idempotent Configuration Functions](#deterministic-idempotent-configuration-functions)
-- [An example: Service VOs required at EGI sites](#an-example-service-vos-required-at-egi-sites)
-- [References and Footnotes](#references-and-footnotes)
+# The EGI High-Throughput Compute Execution Environment
 
-## Contained environments before containers
+----
+
+- [The EGI High-Throughput Compute Execution Environment](#the-egi-high-throughput-compute-execution-environment)
+  - [Contained environments before containers](#contained-environments-before-containers)
+    - [Addressing the issue](#addressing-the-issue)
+  - [Design principles](#design-principles)
+    - [Building an appropriate model](#building-an-appropriate-model)
+    - [Data concerns](#data-concerns)
+    - [Deterministic, Idempotent Configuration Functions](#deterministic-idempotent-configuration-functions)
+  - [An example: Service VOs required at EGI sites](#an-example-service-vos-required-at-egi-sites)
+  - [References and Footnotes](#references-and-footnotes)
+
+----
 
 <p class="lead">Let's start at the beginning.</p>
 
-This is about developing an Ansible role to
-provision relevant compute environments for the gridcloud - also known as the "worker node".
+EGI offers [several services to researchers](https://www.egi.eu/services/).
+One of the most widely-used, indeed the service that kicked this all off, is the [high-throughput compute](https://www.egi.eu/services/high-throughput-compute/)[^batch] service.
+This is a massive service, offering many hundreds of thousands of CPU cores across [more than 300 sites](https://www.egi.eu/federation/data-centres/).
+The characteristics of that service mentioned in the catalogue include
 
-The execution environment is something that has been inherited from the days
-before [Docker](https://www.docker.com), where **shared** access to a resource is granted based on membership of a
-virtual organisation (VO).
-Since the resource was shared, isolation of the environment  needed to be done
-at the shell and user level, which resulted in the need to map incoming requests
-from real people to local users, with local groups based on their roles in the
-respective virtual organisations.
+- Access to high-quality computing resources
+- Integrated monitoring and accounting tools to provide information about the availability and resource consumption
+- Workload and data management tools to manage all computational tasks
+- Large amounts of processing capacity over long periods of time
+- Faster results for your research
+- Shared resources among users, enabling collaborative research
 
-----
+The most important feature however is not mentioned, probably because it is so important that the service is designed to take it for granted: **a common execution environment** across all sites.
+This is in stark contrast to the [EGI Federated Cloud](https://www.egi.eu/federation/egi-federated-cloud/) offering, where users can customise the environment.
+In the EGI batch compute service, the service a common environment is _assumed_ by those using it -- it is very close to what one would think of as **utility computing**.
 
-<div class="text-center">
+This article is about developing an Ansible role to provision relevant compute environments for the HTC service - also known as the [**worker node**](http://repository.egi.eu/2017/08/10/wn-4-0-5/).
 
-<h2>person <i class="fa fa-long-arrow-right" aria-hidden="true"></i> user</h2>
-<h2>role <i class="fa fa-long-arrow-right" aria-hidden="true"></i> group</h2>
+## Contained environments before containers
 
-</div>
+The execution environment is something that has been inherited from the days before [Docker](https://www.docker.com), where **shared** access to a resource is granted based on membership of a virtual organisation (VO).
 
-----
+<figure>
+<img src="images/GridSiteDiagram.svg">
+<figcaption>Diagram of a site supporting several Virtual Organisations (<code>biomed</code>, <code>access.egi.eu</code>, as well as the service VOs <code>ops</code> and <code>dteam</code>).
+The left hand side represents the physical separation of resources into machines (worker nodes), while the right hand side shows the overall allocation of resources in pools dedicated to Virtual Organisations.
+</figcaption>
+</figure>
+
+The central problem is that **users need to be automatically granted access to an environment** which not only contains the relevant software (software executables, libraries, _etc_) and shell (path, defaults, _etc_).
+
+Since the resource was shared, isolation of the environment  needed to be done at the shell and user level, which resulted in the need to map incoming requests from real people to local users, with local groups based on their roles  in the respective virtual organisations.
+
+<table class="table table-borderless table-sm text-center">
+   <tr>
+      <td><h2>Person</h2></td><td><h2><i class="fas fa-long-arrow-alt-right" aria-hidden="true"></i></h2></td><td><h2>User</h2></td>
+   </tr>
+   <tr>
+      <td><h2>Role</h2></td><td><h2><i class="fas fa-long-arrow-alt-right" aria-hidden="true"></i></h2></td><td><h2>Group</h2></td>
+   </tr>
+</table>
+
 
 Not only did environments need to be isolated for different _members_ of the
 VO, but they also for different _jobs_ submitted by the _same member_ of the VO.
@@ -87,9 +113,13 @@ ranges of respective identifiers (UIDs and GIDs).
    </tr>
 </table>
 
-This machinery sounds weird to me in a world where everything is run in a
-container and that separation is provided autmatically, but for the love of
-legacy, let's just pretend it has to be done this way.
+This could be done on the fly, or provisioned up-front.
+Currently we don't have any tooling to provision the local accounts on demand.
+In addition, utlisation patterns for many VOs are often consistent enough such that upfront provisioning based on some aggregated equilibrium scenario would be satisfactory.
+This machinery sounds weird to me in a world where everything is run in a container and that separation is provided automatically.
+It doesn't sound too far-fetched to me to have a service sitting at the gateway that creates a local user on the fly, keeping track of UID, group membership and so on, for the duration of a job and then removes it once the job has been cleaned up.
+
+For the love of legacy however, let's just pretend it has to be done the upfront way.
 
 ### Addressing the issue
 
@@ -107,7 +137,7 @@ and they both try to resolve collissions in uniquely assigning ranges to map
 groups and users to.
 However, I find it unsatisfying to have completely arbitrary patterns of configuration, and wanted to develop a more unbiased approach.
 
-The key question is :
+The key question now is :
 
 > How many groups do we need and how many users should be put into them, respectively?
 
@@ -211,17 +241,17 @@ If we are to configure access for a VO, we need to know:
 
   1. The VO
   1. The Attribute Names (roles) which would need to be mapped
-  2. The local group ids which roles are mapped to.
-  3. The user names which will be added to that group
+  1. The local group ids which roles are mapped to.
+  1. The user names which will be added to that group
 
 We can then execute the following strategy:
 
-  * For all the VOs you want to enable at your site
-    * get the roles for each VO
-    * If the role is used at the site
-      * create a group for it
-      * create an array of users based on the local policy and size or requirements of the role
-      * add those users to the group
+- For all the VOs you want to enable at your site
+ - get the roles for each VO
+ - If the role is used at the site
+   - create a group for it
+   - create an array of users based on the local policy and size or requirements of the role
+   - add those users to the group
   
 This is just a way of saying what we will _do_ with the things we need in the list above.
 Pseudocode might look like this[^StrategyInRuby]:
@@ -316,12 +346,15 @@ In the case of the `ops` VO mentioned before, we have all of the data we need at
 </VoDump>
 ```
 
+So, we can see that information on the roles and resources allocation are included in this.
+
 
 ----
 
 ## References and Footnotes
 
 [^NIST_NVD]: The [National Vulnerability Database (NVD)](https://nvd.nist.gov) of the [U.S. National Institute of Standards and Technologies](https://nist.gov) for example provides a [control](https://nvd.nist.gov/800-53/Rev4/control/AC-2) addressing the management of unused accounts.
-[^NameTheFunctionKind]: I cannot for the life of me remember the term used to refer to functions which are guaranteed to give unique results for every input value.
+[^NameTheFunctionKind]: I cannot for the life of me remember the term used to refer to functions which are guaranteed to give unique results for every input value. **Update**: turns out I was looking for [Injective Function](https://en.wikipedia.org/wiki/Injective_function). HT [@benclifford](https://twitter.com/benclifford/status/1084802910612062209)
 [^TrimmedVOCard]: The VO card has been trimmed of a lot of content which didn't add to the current discussion.
 [^StrategyInRuby]: I've chosen to write it as if it were in Ruby, but you get the idea, hopefully.
+[^batch]: This is also widely referred to as a "batch" service, in other cloud providers.
