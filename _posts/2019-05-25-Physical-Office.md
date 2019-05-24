@@ -12,9 +12,25 @@ mathjax: true
 
 ## New job, new life
 
-A few months ago, a major changed happened in my life -- a career change and a move of house coincided.
-The new job was in a small, entirely remote team, but in a totally different space (intended both as physical as well as business space).
-As I have grown older, priorities have changed and this change meant giving me the opportunity to re-focus my energy on things that would better help realise these new priorities.
+A few months ago, a major change happened in my life: a career change and a move of house coincided.
+The new job is as part of a small, entirely remote team, working on improving the integration, delivery and operations of a suite of applications.
+This is a major change in a way -- a totally different space, intended both as physical as well as business space.
+In other ways, it is the thing I've been preparing for, for the last 5 years.
+I've learned and even taught the theoretical aspects the vague thing we call "DevOps", but haven't had the opportunity to put my knowledge into action in a real operational sense.
+Since I've been in this role, I've felt ever more satisfied with the challenge of solving real problems.
+However, there is more at stake than professional fulfillment.
+
+As I have grown older, personal and family priorities have changed, and this change is giving me the opportunity to re-focus my energy on things that would better help realise these new priorities.
+
+- [New job, new life](#new-job-new-life)
+  - [New life, new environment](#new-life-new-environment)
+- [Staring at a screen is killing me](#staring-at-a-screen-is-killing-me)
+- [Re-introducing actual things](#re-introducing-actual-things)
+- [Food for the mind](#food-for-the-mind)
+- [Get the outside inside](#get-the-outside-inside)
+
+### New life, new environment
+
 It also meant that I would no longer have a nominal office in a place different from home to work in, because I would be working from home.
 
 I've always been comfortable working from home, but a distinction must be drawn between before and after having kids, especially whilst they are small.
@@ -70,7 +86,7 @@ They allow the mind to wander and wonder at the beauty of universe and the order
 However, wall art is not just letting my mind roam free -- sometimes that five minute break is what I need in order to allow my mind to resolve some puzzle that has been blocking me.
 With the right triggers or reminders, this is so much easier.
 
-So, I have started hanging first science porn (graphic art representing the composition of stellar atmospheres, various prints from XKCD, selected posters from the CERN library_etc_) as well as reference cards on the wall.
+So, I have started hanging first science porn (graphic art representing the composition of stellar atmospheres, various [prints from XKCD](https://store.xkcd.com/collections/posters), selected posters from the [CERN library](https://cds.cern.ch/record/2020604) _etc_) as well as reference cards on the wall.
 They are printed in easy-to-read large formats, so that my eyes can rest from staring at a screen, and wherever possible in earthy colours.
 
 ## Get the outside inside
@@ -81,7 +97,7 @@ The background noise in my apartment is close to zero, thankfully, and as I type
 The dominant component in the soundtrack of my office is birdsong, which I am truly grateful for.
 This is only so, however, because my windows are open, letting the outside air in.
 On days when it is too cold, or noisy and the windows are closed, I nevertheless want to have some ambient sound.
-My plan for doing this is to have something like a noisli running on my raspberry pi, over bluetooth speakers above and behind me.
+My plan for doing this is to have something like a [Noisli](https://www.noisli.com) running on my raspberry pi, over bluetooth speakers above and behind me.
 More about that later.
 
 Finally, natural shapes.
