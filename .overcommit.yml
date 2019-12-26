@@ -20,3 +20,5 @@ PreCommit:
     enabled: true
   YamlLint:
     enabled: true
+  Mdl:
+    enabled: true
