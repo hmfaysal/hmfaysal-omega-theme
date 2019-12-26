@@ -7,7 +7,7 @@ category: blog
 tags: [DevOps, coding, blog, boring]
 image:
   feature: 6412587595_02456817d9_z.jpg
-comments: true
+comments: false
 mathjax: false
 ---
 
