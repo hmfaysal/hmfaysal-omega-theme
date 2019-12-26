@@ -124,7 +124,7 @@ networking working on private addresses there, so I haven't been able to
 properly test the
 [Worker Node role](https://github.com/AAROC/DevOps/tree/master/Ansible/role/worker-node).
 
-# CHAIN-REDS
+## CHAIN-REDS
 
 We had a weekly update meeting on the project, preparing for the final review. I
 have to contact APHRC to ensure that they will be coming to the
@@ -133,7 +133,7 @@ in Brussels. We also discussed moving the PID service currently offered by
 [EPIC](http://www.pidconsortium.eu/) to South Africa, along a new prefix for the
 region. This is still pending.
 
-# Slack ate my email
+## Slack ate my email
 
 Using [Slack](https://africa-arabia-roc.slack.com), I've all but eliminated the
 need for email. Come on in and join me, it's rad ! I've taken the liberty of

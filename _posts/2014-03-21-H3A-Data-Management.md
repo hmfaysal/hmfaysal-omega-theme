@@ -5,13 +5,13 @@ description: Some thoughts and feedback from the H3A-BioNet project.
 headline: 'Shifting data safely in Africa'
 category: data management
 tags: [H3A, BioNet, data, movement, secure, identity, federation, pki]
-image: 
-  feature: 
-comments: true 
+image:
+  feature:
+comments: true
 mathjax: true
 ---
 
-# H3A and H3ABioNet
+## H3A and H3ABioNet
 
 The [Human Heredity and Health in Africa](http://www.h3africa.org) project is a continental project funded by NIH and Wellcome Trust. This is actually a network of projects, one of which is the [H3ABioNet](http://www.h3abionet.org/) project. According to the H3ABioNet website, the project is :
 
@@ -21,13 +21,13 @@ while the main goal is :
 
 > to create a sustainable Pan African Bioinformatics Network to support H3Africa researchers and their projects through Bioinformatics capacity development on the African continent.
 
-A large part of the activities of this network is shifting data. Since it's **human genomic data** it has to be moved from where it's collected with extreme care. The data will be collected by field workiers collaborating on the project, all over Africa and sent to a secure staging environment in Cape Town where it can be processed (*e.g.* anonymised). Here, I summarise some thoughts and plans around how this task can be tackled using the services of the [Africa-Arabia Regional Operations Centre](https://roc.africa-grid.org).
+A large part of the activities of this network is shifting data. Since it's **human genomic data** it has to be moved from where it's collected with extreme care. The data will be collected by field workers collaborating on the project, all over Africa and sent to a secure staging environment in Cape Town where it can be processed (*e.g.* anonymised). Here, I summarise some thoughts and plans around how this task can be tackled using the services of the [Africa-Arabia Regional Operations Centre](https://roc.africa-grid.org).
 
 ## Outline
 
-This turned into quite a long article. I first address some [general considarations](#general) and background. Then, I take a look at the isuses around [identity and security](#id), before tackling the main issue of [data](#data), going into detail regarding issues of data movement as well as data management. I then put forward a plan to [implement](#implementatation) full demo which can be taken to production, including the necessary agreements and technology which the ROC can provide. Finally some [next steps](#next) and a summary.
+This turned into quite a long article. I first address some [general considerations](#general) and background. Then, I take a look at the issues around [identity and security](#id), before tackling the main issue of [data](#data), going into detail regarding issues of data movement as well as data management. I then put forward a plan to [implement](#implementation) full demo which can be taken to production, including the necessary agreements and technology which the ROC can provide. Finally some [next steps](#next) and a summary.
 
-# General considerations and requirements {#general}
+## General considerations and requirements {#general}
 
 [CBIO](http://www.cbio.uct.ac.za) is the partner who is responsible for processing the collected data safely and securely. As such, they need to provide a secure storage area, which is nonetheless able to accept incoming data from around the African continent. This can of course be done the *easy* way or any number of *right* ways (there are, as always, many ways to skin this cat, depending on what one takes into account).  If this were a project in the '90s, the solution would have probably looked like:
 
@@ -43,19 +43,20 @@ $$ \frac{function}{form} $$
 ...
 
 Well, perhaps there are exceptions !
+
 <figure class="">
-<img src="/images/87440.strip.gif" >
+  <img src="/images/87440.strip.gif" >
 </figure>
 
 ## Re-use services in a federation
 
-Perhaps it's too ambitious to consider all of the *components* of 'the right way', however one of the *aspects* shoud be to **use existing services where possible**. One of the obvious alternatives is to build a vertical solution, with everything the collaboration will need in one self-contained environment, but considering the geographic distribution and timescale of the project, not to mention ever-present funding constraints, this is probably not a sustainable way to go.
+Perhaps it's too ambitious to consider all of the *components* of 'the right way', however one of the *aspects* should be to **use existing services where possible**. One of the obvious alternatives is to build a vertical solution, with everything the collaboration will need in one self-contained environment, but considering the geographic distribution and timescale of the project, not to mention ever-present funding constraints, this is probably not a sustainable way to go.
 
 There are several services ready to use and others under development which H3ABioNet could use to make it's secure storage accessible to the collaboration. What are the tasks, the functions that need to be executed by the parties involved ? Let's take a further look.
 
 ## Authentication and Authorisation {#id}
 
-You want to be sure you know who is accessing your precious data. This can be done by issuing credentials yourself (ie, user/pass to your resource), however this doesn't scale very well. What's more, it's difficult to know where these users are coming from. You could implement an LDAP backend for authentication, but then you'd have one more thing to adminster. Why not leave the authentication to someone else, and focus on authorisation ?
+You want to be sure you know who is accessing your precious data. This can be done by issuing credentials yourself (ie, user/pass to your resource), however this doesn't scale very well. What's more, it's difficult to know where these users are coming from. You could implement an LDAP backend for authentication, but then you'd have one more thing to administer. Why not leave the authentication to someone else, and focus on authorisation ?
 
 The concept of [Identity Federations](http://www.geant.net/service/eduGAIN/Pages/home.aspx) makes this separation of roles possible. While this is a modern user-friendly way to authenticate, there's also 'good old' PKI - which can be used on the service and server-side to secure and authenticate access. The best case scenario would be that an researcher who wants to request data to be ingested into the repository should authenticate using their local (institutional or national) identity provider, which the service would trust, since it would be included as a service provider in a federation. Authorisation would be done via a local database (ldap, perhaps, but just containing the identities of the trusted users, not their credentials) - or could be done centrally using a system like [Perun](https://perun.metacentrum.cz).
 
@@ -67,13 +68,13 @@ In SAGrid and more generally in AAROC, we offer catch-all services both for Iden
 
 > you can use it right now - [register](https://idp.sagrid.ac.za/register)
 
-Your colleagues can probably use something similar in their own countries too - we have thes IdP's in [Tanzania](https://idp.ternet.or.tz), [Kenya](https://idp.kenet.or.ke), [Nigeria](http://https://ngidp.eko-konnect.net.ng/),  [countries covered by the Arabian States Research Network](https://idp.asren.net) and several othes worldwide[^IDPlist]. If there's a need for an IdP in a country not covered by these, we can easily deploy one, the code is [on github](https://github.com/brucellino/SAGridIdP) and I've written a [page](https://ops.sagrid.ac.za/trac/wiki/IdPLdapInstallationGuide) on how to configure it. We even have an agreement with [Comodo](https://www.comodo.com) to issue commercial-grade certificates to these IdP servers in order to include them in the production federation... there's not much standing in the way of you getting one up and running right now - except of course the fact that it has to abide by federation policies. These are nontrivial, but not crazy.
+Your colleagues can probably use something similar in their own countries too - we have these IdP's in [Tanzania](https://idp.ternet.or.tz), [Kenya](https://idp.kenet.or.ke), [Nigeria](http://https://ngidp.eko-konnect.net.ng/),  [countries covered by the Arabian States Research Network](https://idp.asren.net) and several others worldwide[^IDPlist]. If there's a need for an IdP in a country not covered by these, we can easily deploy one, the code is [on github](https://github.com/brucellino/SAGridIdP) and I've written a [page](https://ops.sagrid.ac.za/trac/wiki/IdPLdapInstallationGuide) on how to configure it. We even have an agreement with [Comodo](https://www.comodo.com) to issue commercial-grade certificates to these IdP servers in order to include them in the production federation... there's not much standing in the way of you getting one up and running right now - except of course the fact that it has to abide by federation policies. These are nontrivial, but not crazy.
 
 ### Social networks
 
 There is a final point to be made on identity providers: **most of us already have one, if not several !**
 
-You'd be hard-pressed to find someone who didn't have a google, facebook, twitter or linked-in account (not to mention github !). Thes are already being used to authenticate users of various applications and services, so it would make sense -- if used judiciously -- to leverage these existing identity providers to authenticate users of the one that H3A BioNet is developing. The main issue here is ensuring that a social identity corresponds to the correct person in real life, since there is no institutional quality assurance on this. In the catch-all IdF we're using, this checking is usually done by first contacting the user on a separate channel and requesting further information not provided by the IdP[^attributes]. As we'll see later, this is becoming very commonplace.
+You'd be hard-pressed to find someone who didn't have a google, facebook, twitter or linked-in account (not to mention github !). These are already being used to authenticate users of various applications and services, so it would make sense -- if used judiciously -- to leverage these existing identity providers to authenticate users of the one that H3A BioNet is developing. The main issue here is ensuring that a social identity corresponds to the correct person in real life, since there is no institutional quality assurance on this. In the catch-all IdF we're using, this checking is usually done by first contacting the user on a separate channel and requesting further information not provided by the IdP[^attributes]. As we'll see later, this is becoming very commonplace.
 
 ## Authorisation
 
@@ -83,7 +84,7 @@ I touched on using Perun to manage authorisation above. According to the [Perun 
 
 We're working with [CESNET](https://www.cesnet.cz) (the developers of Perun) to host such a centralised authorisation service at Meraka[^MerakaPerun]. The benefit to H3A BioNet is that the collaboration can again focus specifically on the service it wants to provide, instead of the overhead for providing it - no need to manage a separate LDAP instance specifically for the data archival service, just define the authorisation in Perun and allow it to manage your service remotely. Even the centralisation of the service can be discussed...
 
-# Data Management {#data}
+## Data Management {#data}
 
 So, AuthN/AuthZ can be solved and provided as service, we can get to the meat of the issue - data management. Data management is not a simple matter, and usually can be considered in three aspects:
 
@@ -114,17 +115,17 @@ Ignoring the actual *content* of the data to be transferred and assuming that va
 Sending party
  : This is the actual user sending the data. The identity, as I've proposed before, could be provided by any number of federated means, not necessarily by the service itself. However, federated identities are not within the trust domain, we need to map the identity to a trusted one, using an authorisation plugin. This will map the federated identity onto a proxy of an x.509 digital robot certificate issued by a trusted CA.
 
-Receving party
+Receiving party
  : The receiving party is the storage endpoint, which would expose a secure interface such as GSI-FTP[^gsiftp], WebDAV[^WebDAV] or HTTP. The security on the receiving side would be provided again by an x.509 host certificate issued to the storage endpoint.
 
 Transferring party
- : The transferring party is the agent which actually initiates, executes and monitors the transfer. Instead of being done by the user itself, this agent should be a proxy, mapped from the user's credentials. This is done by creating a short-lived proxy of a robot certificate - authorisation for issueing the proxy is of course taken care of by the web interface which we'll discuss below.
+ : The transferring party is the agent which actually initiates, executes and monitors the transfer. Instead of being done by the user itself, this agent should be a proxy, mapped from the user's credentials. This is done by creating a short-lived proxy of a robot certificate - authorisation for issuing the proxy is of course taken care of by the web interface which we'll discuss below.
 
 ### Transfer reliability
 
-A robost, reliable transfer protocol is needed in order to make efficient use of
+A robust, reliable transfer protocol is needed in order to make efficient use of
 the bandwidth available. The 'bandwidth available' has a very wide range,
-considering the plactes we're expecting transfer to originate from, and may even
+considering the places we're expecting transfer to originate from, and may even
 venture into the 10 GB/s range. In these cases, you want a protocol which can
 efficiently use that pipe. GridFTP does this by separating the control and
 transfer channels, such that a single control channel is opened to the receiving
@@ -146,7 +147,7 @@ This checkpointing/restarting is not usually provided by vanilla FTP or rsync[^r
 
 ### Transfer performance
 
-As hinted to above, GridFTP will also likely outperform "traditional" transfer protocols such as ftp, rsync, etc, since it's designed for high throughput. Of course, insisting on using it *exclusively* is probably not a wise thing to do, but using it as a default would at least ensure some baseline performance. The main point is to ensure that the receiving side does not have intrinsic limitations which would negate any performance offered by the protocol. The [ESNet Science DMZ pages](http://fasterdata.es.net/network-tuning/) have some good advice as to how to tune the reciving host kernel, filesystem, etc.
+As hinted to above, GridFTP will also likely outperform "traditional" transfer protocols such as ftp, rsync, etc, since it's designed for high throughput. Of course, insisting on using it *exclusively* is probably not a wise thing to do, but using it as a default would at least ensure some baseline performance. The main point is to ensure that the receiving side does not have intrinsic limitations which would negate any performance offered by the protocol. The [ESNet Science DMZ pages](http://fasterdata.es.net/network-tuning/) have some good advice as to how to tune the receiving host kernel, filesystem, etc.
 
 This brings us to a discussion on the interface to these services.
 
@@ -174,19 +175,19 @@ instances of this service -- one in the U.S. and one in Europe[^GlobusOnlineAnno
 It's not clear to me whether it's possible to host a "private" or standalone instance; I suspect not. GlobusOnline is not the only way to make a pretty interface to quite standard services already available on the grid:
 
 - [GridBox](http://sourceforge.net/p/ctsciencegtwys/glibrary/gridbox/ci/master/tree/) - part of the [gLibrary](http://sourceforge.net/projects/glibrary.ctsciencegtwys.p/) project implements something very similar
-- [Catania Science Gateways](catania-science-gateways.it) Data Engine[^DataEngineRef] goes even further to implement a middleware-independent layer to different kinds of storage, leveraging JSR and OGF standards to develop portable components for science gateways.
+- [Catania Science Gateways](https://github.com/csgf/) Data Engine[^DataEngineRef] goes even further to implement a middleware-independent layer to different kinds of storage, leveraging JSR and OGF standards to develop portable components for science gateways.
 
 These alternatives, as far as I know, are actively being pursued by the H3ABioNet collaboration to develop a user-friendly, standards-compliant, secure web-interface to the data staging area.
 
 ### Data movement summary
 
-In summary, I propose that the services necessary to satisfy the design constraints of the collaboration are already in place. Care needs to be taken to quickly develop a demonstrator, using these services, in order to find the 'devils in the details'. I'll provide some concrete steps in [the Implementation section](#Implementation)
+In summary, I propose that the services necessary to satisfy the design constraints of the collaboration are already in place. Care needs to be taken to quickly develop a demonstrator, using these services, in order to find the 'devils in the details'. I'll provide some concrete steps in [the "Implementation" section](#Implementation)
 
 ## Data Management
 
 There is a lot of freedom in terms of data management, but again the H3A BioNet collaboration has defined a minimum level of service which it will offer users and relying parties of the data staging area. Essentially, I interpret these aspects as
 
-High Availability and reslience
+High Availability and resilience
 : The storage area needs to be available near 100 % and needs to be 100 % reliable. This means proper disaster recovery capability, including **off-site storage**.
 
 Adequate and scalable capacity.
@@ -216,7 +217,10 @@ In the [Implementation](#Implementation) section below, we make no assumptions o
 
 ### Scalability and Capacity
 
-The **capacity** required by the collaboration is $$ O(PB) $$, which poses a significant but not unsurmountable challenge. This can easily be addressed by putting in place something like the storage pods from [45 Drives](http://www.45drives.com) -- which the likes of the [SKA](https://www.ska.ac.za/) are doing -- the hardware really doesn't matter that much, as long as one can easily scale it. Another point to consider is filesystem preformance and scalability. Lets's not get into the *"which filesystem should we use"*, but perhaps we can agree that[^nogpfs]
+The **capacity** required by the collaboration is $$ O(PB) $$, which poses a significant but not unsurmountable challenge.
+This can easily be addressed by putting in place something like the storage pods from [45 Drives](http://www.45drives.com) -- which the likes of the [SKA](https://www.ska.ac.za/) are doing -- the hardware really doesn't matter that much, as long as one can easily scale it.
+Another point to consider is filesystem performance and scalability.
+Lets's not get into the *"which filesystem should we use"*, but perhaps we can agree that[^nogpfs]
 
 > There's no reason to use a proprietary filesystem.
 
@@ -228,7 +232,7 @@ Probably good choices would be [ZFS](http://en.wikipedia.org/wiki/ZFS) or [BTRFS
 
 There are several distributed filesystems out there, and to avoid descending into vulgar name-calling and slinging of opinions, I refer to the recent work of Depardon, Le Mahec and Séguin[^DFScomparison]. Some thought needs to go into  the integration of these with the standard grid middleware I'll mention below, though.
 
-# Implementation {#Implementation}
+## Implementation {#Implementation}
 
 Let me now describe a specific implementation schema which would produce a working demonstrator as alluded to before.
 
@@ -261,10 +265,10 @@ Operations tools
 ## Middleware
 
 The ROC supports the following middleware stacks:
-  
+
 - [EMI-3](https://www.eu-emi.eu/releases/emi-3-montebianco/)
 - [UMD-3](http://repository.egi.eu/category/umd_releases/distribution/umd-3/)
-  
+
 The products in these stacks satisfy all of the functional requirements described above.
 
 ## Deployment and Integration
@@ -284,7 +288,7 @@ The following workflow would be executed:
  3. User requests data transfer to UCT using GlobusOnline
  4. Data is stored in staging area and (optional) registered in VO-level file catalogue.
 
-# Next steps and Summary. {#next}
+## Next steps and Summary. {#next}
 
 The next steps would be simply to deploy the SE at UCT, and run the demo. Of course, performance tuning is a whole other story - we proposed to write a baseline study of real-world expectations during the demo, and the update this at various points during the course of the collaboration's activities. We can use dummy data for this, varying file sizes, parallel streams, endpoints, etc.
 
@@ -294,7 +298,7 @@ In summary,
 
 ----
 
-# Footnotes and References
+## Footnotes and References
 
 [^IdFstatus]: The project is being led by SANREN and major South African Universities. SANREN reports that the IdF should be in beta phase by June 2014.
 [^CAstatus]: [The SA e-Science CA](https://security.sanrenn.ac.za/CA) is now in public beta and awaiting accreditation proceedings.
