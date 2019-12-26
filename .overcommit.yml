@@ -21,4 +21,9 @@ PreCommit:
   YamlLint:
     enabled: true
   Mdl:
-    enabled: true
+    enabled: false
+    flags: ['--json', '-r "~MD033"']
+  CustomScript:
+    enabled:  true
+    require_executable: mdl
+    flags: ['-r "~MD033"']
