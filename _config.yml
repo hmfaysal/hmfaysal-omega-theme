@@ -1,6 +1,12 @@
 ---
 title: "Bruce Becker be blogging"
-description: "The Dr is in -- get a second opinion..."
+description: >
+  Bruce Becker:
+  ex-physicist and volleyball freak;
+  automator;
+  quasi socialist;
+  skeptic; African;
+  Islander;  dad; 🏐 🚀 🤔 🇿🇦 🌋 🇮🇹
 logo: personal-logo.png
 disqus_shortname: brucellino
 # Assign a default image for your site's header and footer
@@ -25,7 +31,7 @@ owner:
     open everything.
   twitter: brusisceddu
   github: brucellino
-  stackexchange: brucellino
+  stackexchange: https://stackexchange.com/users/3206984/bruce-becker
   linkedin: brucellino
   keybase: brucellino
   flickr: brucellino

@@ -1,29 +1,36 @@
 ---
 title: "Bruce Becker be blogging"
-description:      "The Dr is in -- get a second opinion..."
 logo: personal-logo.png
 disqus_shortname: brucellino
 # Assign a default image for your site's header and footer
-default_bg:       default-bg.jpg
-share:            true
-# Read Time is a calculator tp provide post read-time based on word count. Usage is recommended.
-readtime:         true
-# Change url to your domain. Leave localhost server or blank when working locally.
-#url:              http://brucellino.github.io
-url:             http://localhost:4000/
+default_bg: default-bg.jpg
+share: true
+# Read Time is a calculator tp provide post read-time based on word count.
+# Usage is recommended.
+readtime: true
+# Change url to your domain.
+# Leave localhost server or blank when working locally.
+url: http://localhost:4000/
+description: >
+  Bruce Becker:
+  ex-physicist and volleyball freak;
+  automator;
+  quasi socialist;
+  skeptic; African;
+  Islander;  dad; 🏐 🚀 🤔 🇿🇦 🌋 🇮🇹
 # Owner/author information
 owner:
-  name:           Bruce Becker
-  avatar:         bruce-becker.jpg
-  email:          brucellino@gmail.com
-  # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
-  description:    'Bruce Becker: ex-physicist and volleyball freak; quasi socialist; skeptic; African; Islander;  dad;'
-  twitter:        brusisceddu
-  github:         brucellino
-  stackexchange:  brucellino
-  linkedin:       brucellino
-  flickr:         brucellino
-  keybase:        brucellino
+  name: Bruce Becker
+  avatar: bruce-becker.jpg
+  email: brucellino@gmail.com
+  # Use the coder's toolbox at
+  # http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
+  twitter: brusisceddu
+  github: brucellino
+  stackexchange: https://stackexchange.com/users/3206984/bruce-becker
+  linkedin: brucellino
+  flickr: brucellino
+  keybase: brucellino
 
 # Links to include in footer navigation
 # For external links add external: true
@@ -32,8 +39,8 @@ links:
     url: /
     external: false
     icon: home
-#  - title: <i class="icon-book"></i> Documentation
-#    url: /documentation
+  #  - title: <i class="icon-book"></i> Documentation
+  #    url: /documentation
   - title: Categories
     url: /categories
   - title: Tags
@@ -59,13 +66,12 @@ home_links:
     internal: true
     icon: list
 
-
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    Africa/Johannesburg
-future:      true
+timezone: Africa/Johannesburg
+future: true
 highlighter: coderay
-markdown:    kramdown
-paginate:    5
+markdown: kramdown
+paginate: 5
 paginate_path: "page:num"
 
 # https://github.com/mojombo/jekyll/wiki/Permalinks
@@ -90,4 +96,24 @@ syntax_highlighter_opts:
     coderay_css: class
 
 include: [".htaccess"]
-exclude: ["lib", "config.rb", "Gemfile", "Capfile", "Gemfile.lock", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
+exclude:
+  [
+    "lib",
+    "config.rb",
+    "Gemfile",
+    "Capfile",
+    "Gemfile.lock",
+    "config",
+    "log",
+    "Rakefile",
+    "Rakefile.rb",
+    "tmp",
+    "less",
+    "*.sublime-project",
+    "*.sublime-workspace",
+    "test",
+    "spec",
+    "Gruntfile.js",
+    "package.json",
+    "node_modules",
+  ]
