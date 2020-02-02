@@ -1,34 +1,34 @@
+---
 title: "Bruce Becker be blogging"
-description:      "The Dr is in -- get a second opinion..."
+description: "The Dr is in -- get a second opinion..."
 logo: personal-logo.png
 disqus_shortname: brucellino
 # Assign a default image for your site's header and footer
-default_bg:       default-bg.jpg
-share:            true
-# Read Time is a calculator tp provide post read-time based on word count. Usage is recommended.
-readtime:         true
-# Change url to your domain. Leave localhost server or blank when working locally.
-url:              https://brucellino.github.io/blog/
-#url:             http://localhost:4000
-# Owner/author information
+default_bg: default-bg.jpg
+share: true
+# Read Time is a calculator to provide post read-time based on word count.
+# Usage is recommended.
+readtime: true
+# Change url to your domain. Leave localhost server or blank
+# when working locally.
+url: https://brucellino.github.io/blog/
 owner:
-  name:           Bruce Becker
-  avatar:         bruce-becker.jpg
-  email:          brucellino@gmail.com
-  description:    'Bruce Becker: ex-physicist and volleyball freak; quasi socialist; doubledad; not-quite-hacker; grid guy; open everything.'
-  twitter:        brusisceddu
-  github:         brucellino
-  stackexchange:  brucellino
-  linkedin:       brucellino
-  keybase:        brucellino
-  flickr:         brucellino
-  # For Google Authorship https://plus.google.com/authorship
-
-# Analytics and webmaster tools stuff goes here
-google_analytics: UA-50620336-1
-google_verify:
-# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:
+  name: Bruce Becker
+  avatar: bruce-becker.jpg
+  email: brucellino@gmail.com
+  description: >
+    Bruce Becker: ex-physicist and volleyball freak;
+    quasi socialist;
+    doubledad;
+    not-quite-hacker;
+    grid guy;
+    open everything.
+  twitter: brusisceddu
+  github: brucellino
+  stackexchange: brucellino
+  linkedin: brucellino
+  keybase: brucellino
+  flickr: brucellino
 
 # Links to include in footer navigation
 # For external links add external: true
@@ -37,8 +37,8 @@ links:
     url: /
     external: false
     icon: home
-#  - title: <i class="icon-book"></i> Documentation
-#    url: /documentation
+  #  - title:                     <i class="icon-book"></i> Documentation
+  #    url:                       /documentation
   - title: Categories
     url: /categories
   - title: Tags
@@ -61,15 +61,14 @@ home_links:
     internal: true
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    Africa/Johannesburg
-future:      true
+timezone: Africa/Johannesburg
+future: true
 highlighter: rouge
-markdown:    kramdown
-paginate:    5
+markdown: kramdown
+paginate: 5
 paginate_path: "/blog/page:num"
 
 # https://github.com/mojombo/jekyll/wiki/Permalinks
-#permalink:   /:categories/:date/:title
 permalink: /:title
 plugins:
   - jemoji
@@ -88,5 +87,25 @@ syntax_highlighter_opts:
     coderay_tab_width: 4
     coderay_bold_every: 10
 
-include: [".htaccess"]
-exclude: ["lib", "config.rb", "Gemfile", "Capfile", "Gemfile.lock", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
+include: []
+exclude:
+  [
+    "lib",
+    "config.rb",
+    "Gemfile",
+    "Capfile",
+    "Gemfile.lock",
+    "config",
+    "log",
+    "Rakefile",
+    "Rakefile.rb",
+    "tmp",
+    "less",
+    "*.sublime-project",
+    "*.sublime-workspace",
+    "test",
+    "spec",
+    "Gruntfile.js",
+    "package.json",
+    "node_modules",
+  ]
