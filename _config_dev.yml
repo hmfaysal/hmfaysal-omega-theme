@@ -1,3 +1,4 @@
+---
 title: "Bruce Becker be blogging"
 description:      "The Dr is in -- get a second opinion..."
 logo: personal-logo.png
@@ -9,32 +10,20 @@ share:            true
 readtime:         true
 # Change url to your domain. Leave localhost server or blank when working locally.
 #url:              http://brucellino.github.io
-url:             http://localhost:4000
-site.owner.name: Bruce Becker
+url:             http://localhost:4000/
 # Owner/author information
 owner:
   name:           Bruce Becker
   avatar:         bruce-becker.jpg
   email:          brucellino@gmail.com
   # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
-  description:    'Bruce Becker: ex-physicist and volleyball freak; quasi socialist; dad; not-quite-hacker; grid guy.'
+  description:    'Bruce Becker: ex-physicist and volleyball freak; quasi socialist; skeptic; African; Islander;  dad;'
   twitter:        brusisceddu
-  facebook:       brucellino
   github:         brucellino
   stackexchange:  brucellino
   linkedin:       brucellino
-  instagram:
   flickr:         brucellino
-  tumblr:         brucellino
-
-  # For Google Authorship https://plus.google.com/authorship
-  google_plus:    https://plus.google.com/u/0/+BruceBecker
-
-# Analytics and webmaster tools stuff goes here
-google_analytics: UA-50620336-1
-google_verify:
-# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:
+  keybase:        brucellino
 
 # Links to include in footer navigation
 # For external links add external: true
@@ -82,7 +71,7 @@ paginate_path: "page:num"
 # https://github.com/mojombo/jekyll/wiki/Permalinks
 #permalink:   /:categories/:date/:title
 permalink: pretty
-gems:
+plugins:
   - jemoji
   - jekyll-feed
   - jekyll-paginate
@@ -94,7 +83,7 @@ syntax_highlighter_opts:
   enable_coderay: false
 
   coderay:
-    coderay_line_numbers:
+    coderay_line_numbers: true
     coderay_line_numbers_start: 1
     coderay_tab_width: 4
     coderay_bold_every: 10
