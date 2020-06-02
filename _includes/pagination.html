@@ -5,14 +5,14 @@
 				<ul class="pagination pagination-centered">
 				{% if paginator.total_pages >= 10 %}
 					{% if paginator.previous_page %} <!-- we are not on the first page -->
-					<li><a href="{{ site.url }}/blog/{{ paginate_url }}">&laquo;&laquo;</a></li>
+					<li><a href="{{ site.url }}/{{ paginate_url }}">&laquo;&laquo;</a></li>
 					{% else %} <!-- we are on the first page -->
 					<li class="disabled"><a>&laquo;&laquo;</a></li>
 					{% endif %}<!-- on first page -->
 					{% if paginator.previous_page == 1 %}
-					<li><a href="{{ site.url }}/blog/{{ paginate_url }}">&laquo;</a></li>
+					<li><a href="{{ site.url }}/{{ paginate_url }}">&laquo;</a></li>
 					{% else %}
-					<li><a href="{{ site.url }}/blog/{{ paginate_url  }}page{{paginator.previous_page}}">&laquo;</a></li>
+					<li><a href="{{ site.url }}/{{ paginate_url  }}page{{paginator.previous_page}}">&laquo;</a></li>
 					{% endif %} <!-- if previous page = 1 -->
 				{% else %}
 <li class="disabled">
@@ -25,7 +25,7 @@
 </li>
 {% else %}
 <li>
-<a href="{{ site.url }}/blog/{{ paginate_url }}">1</a>
+<a href="{{ site.url }}/{{ paginate_url }}">1</a>
 </li>
 {% endif %} <!-- first page -->
 {% for count in (2..paginator.total_pages) %}
@@ -35,13 +35,13 @@
 </li>
 {% else %}
 <li>
-  <a href="{{ site.url }}/blog/{{ paginate_url }}page{{count}}">{{count}}</a>
+  <a href="{{ site.url }}/{{ paginate_url }}page{{count}}">{{count}}</a>
 </li>
 {% endif %}
 {% endfor %}
 {% if paginator.next_page %}
 <li>
-<a href="{{ site.url }}/blog/{{ paginate_url }}page{{paginator.next_page}}">&raquo;</a>
+<a href="{{ site.url }}/{{ paginate_url }}page{{paginator.next_page}}">&raquo;</a>
 </li>
 {% else %}
 <li class="disabled">
@@ -51,7 +51,7 @@
 {% if paginator.total_pages >= 10 %}
 {% if paginator.next_page %}
 <li>
-<a href="{{ site.url }}/blog/{{ paginate_url }}page{{paginator.total_pages}}">&raquo;&raquo;</a>
+<a href="{{ site.url }}/{{ paginate_url }}page{{paginator.total_pages}}">&raquo;&raquo;</a>
 </li>
 {% else %}
 <li class="disabled">
@@ -83,7 +83,7 @@
           {% if paginator.total_pages > 5 %}
           {% if paginator.previous_page %}
               <li>
-                <a href="{{ site.url }}/blog/{{ paginate_url }}">&laquo;&laquo;</a>
+                <a href="{{ site.url }}/{{ paginate_url }}">&laquo;&laquo;</a>
               </li>
           {% else %}
             <li class="disabled">
@@ -94,11 +94,11 @@
           {% if paginator.previous_page %}
             {% if paginator.previous_page == 1 %}
               <li>
-                <a href="{{ site.url }}/blog/{{ paginate_url }}">&laquo;</a>
+                <a href="{{ site.url }}/{{ paginate_url }}">&laquo;</a>
               </li>
             {% else %}
               <li>
-                <a href="{{ site.url }}/blog/{{ paginate_url }}page{{paginator.previous_page}}">&laquo;</a>
+                <a href="{{ site.url }}/{{ paginate_url }}page{{paginator.previous_page}}">&laquo;</a>
               </li>
             {% endif %}
           {% else %}
@@ -115,7 +115,7 @@
             </li>
           {% else %}
             <li>
-              <a href="{{ site.url }}/blog/{{ paginate_url }}">1</a>
+              <a href="{{ site.url }}/{{ paginate_url }}">1</a>
             </li>
           {% endif %}
           {% endif %}
@@ -126,13 +126,13 @@
               </li>
             {% else %}
               <li>
-                <a href="{{ site.url }}/blog/{{ paginate_url }}page{{count}}">{{count}}</a>
+                <a href="{{ site.url }}/{{ paginate_url }}page{{count}}">{{count}}</a>
               </li>
             {% endif %}
           {% endfor %}
           {% if paginator.next_page %}
             <li>
-              <a href="{{ site.url }}/blog/{{ paginate_url }}page{{paginator.next_page}}">&raquo;</a>
+              <a href="{{ site.url }}/{{ paginate_url }}page{{paginator.next_page}}">&raquo;</a>
             </li>
           {% else %}
             <li class="disabled">
@@ -142,7 +142,7 @@
           {% if paginator.total_pages > 5 %}
           {% if paginator.next_page %}
             <li>
-              <a href="{{ site.url }}/blog/{{ paginate_url }}page{{paginator.total_pages}}">&raquo;&raquo;</a>
+              <a href="{{ site.url }}/{{ paginate_url }}page{{paginator.total_pages}}">&raquo;&raquo;</a>
             </li>
           {% else %}
             <li class="disabled">
